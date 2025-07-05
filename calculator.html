@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Anime Vanguards DPS Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/search-tab.css">
+  <link rel="stylesheet" href="styles/unit-icons.css">
+
+  <link rel="stylesheet" href="styles/design/stat-design.css">
+  <link rel="stylesheet" href="styles/design/element-design.css">
+  <link rel="stylesheet" href="styles/design/rarity-design.css">
+  <link rel="stylesheet" href="styles/design/interactable-design.css">
+
+  <link rel="stylesheet" href="styles/calculator/shared.css">
+  <link rel="stylesheet" href="styles/calculator/unit-section.css">
+  <link rel="stylesheet" href="styles/calculator/buffs-section.css">
+  <link rel="stylesheet" href="styles/calculator/stats-section.css">
+</head>
+
+<body>
+  <p class="title">
+    Anime Vanguards DPS Calculator
+  </p>
+
+  <div class="header">
+    <div class="icons-section">
+      <img src="Images/Icons/Hamburger_icon.png" class="hamburger-icon">
+    </div>
+
+    <div class="links-section">
+      <a class="calculator-link"
+        href="https://docs.google.com/spreadsheets/d/1zk9CR-m-njASuTXywtAypeVJwkds_8nUP0V2XARfGo8/edit?gid=0#gid=0"
+        target="_blank">
+        Link To Original Calculator
+      </a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="unit-section">
+      <div class="section-preview">
+        <button class="unit-button">
+          <div id="unit-picture-gradient" class="unit-gradient">
+            <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+            <div class="unit-content">
+              <img id="unit-picture" class="unit-picture">
+            </div>
+          </div>
+        </button>
+
+        <div class="subsection-layout">
+          <div id="unit-display-name" class="section-title general-text"></div>
+
+          <div class="tab-structure">
+            <p id="unit-rarity" class="section-subtitle general-text text-gradient"></p>
+          </div>
+
+          <div class="tab-structure align-left">
+            <div id="unit-element" class="round-form tags image-tag general-text"><img class="element">
+              <p class="general-text"></p>
+            </div>
+            <div id="unit-placement-cost" class="round-form tags">
+              <p class="general-text money text-gradient"></p>
+            </div>
+            <div id="unit-placement-count" class="general-text round-form tags"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="tab-structure">
+          <input id="level-slider" class="slider" type="range" min="1" max="60" step="1" value="60">
+          <div id="level-display" class="general-text round-form tags font-size-20"></div>
+        </div>
+
+        <div class="tab-structure">
+          <button id="trait-input" class="round-form tags image-tag general-text unknown clickable-label"
+            onclick="updateTrait(true)">
+            <img class="element no-select">
+            <p class="general-text text-gradient no-select font-size-20"></p>
+          </button>
+
+          <div id="ascensions-input" class="general-text round-form tags image-tag clickable-label"
+            onclick="updateAscensions(true)">
+            <img class="element no-select" src="Images/Icons/AscensionLogo.webp">
+            <p class="general-text legendary text-gradient no-select font-size-20"></p>
+          </div>
+        </div>
+
+        <div class="stat-potential-tabs">
+          <div class="general-text round-form tags image-tag clickable-label" onclick="focusInput(this)">
+            <img class="element no-select" src="Images/Icons/Dmg_Icon.webp">
+            <input id="dmg-input" class="stat-input general-text clamp-percent-input" type="number" min="0" max="25.0"
+              step="0.1" value="25.0">
+            <span class="percent-symbol no-select">%</span>
+          </div>
+
+          <div class="general-text round-form tags image-tag clickable-label" onclick="focusInput(this)">
+            <img class="element no-select" src="Images/Icons/Spa_icon.webp">
+            <input id="spa-input" class="stat-input general-text clamp-percent-input" type="number" min="0" max="12.5"
+              step="0.1" value="12.5">
+            <span class="percent-symbol no-select">%</span>
+          </div>
+
+          <div class="general-text round-form tags image-tag clickable-label" onclick="focusInput(this)">
+            <img class="element no-select" src="Images/Icons/Rng_icon.webp">
+            <input id="rng-input" class="stat-input general-text clamp-percent-input" type="number" min="0" max="12.5"
+              step="0.1" value="12.5">
+            <span class="percent-symbol no-select">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection-divider general-text">
+        Base Stats
+      </div>
+
+      <div class="subsection">
+        <div class="tab-structure">
+          <div class="aoe-info">
+            <div id="unit-aoe" class="round-form tags image-tag general-text">
+              <img class="element" src="Images/Aoes/Circle.png">
+              <p class="general-text"></p>
+            </div>
+
+            <div id="unit-aoe-hits" class="general-text round-form tags">
+              8 Hits
+            </div>
+          </div>
+
+          <div class="general-text round-form tags">
+            Max Upgrade
+          </div>
+        </div>
+
+        <div class="base-stats">
+          <div class="base-stat">
+            <div class="general-text stat-label font-size-20 damage"><img class="element"
+                src="Images/Icons/Dmg_Icon.webp">Damage</div>
+            <div id="unit-base-damage" class="general-text font-size-20"></div>
+          </div>
+
+          <div class="base-stat">
+            <div class="general-text stat-label font-size-20 spa"><img class="element"
+                src="Images/Icons/Spa_icon.webp">Spa</div>
+            <div id="unit-base-spa" class="general-text font-size-20"></div>
+          </div>
+
+          <div class="base-stat">
+            <div class="general-text stat-label font-size-20 range"><img class="element"
+                src="Images/Icons/Rng_icon.webp">Range</div>
+            <div id="unit-base-range" class="general-text font-size-20"></div>
+          </div>
+
+          <div class="base-stat">
+            <div class="general-text stat-label font-size-20 crit"><img class="element"
+                src="Images/Icons/Crit_Icon.png">Crit</div>
+            <div id="unit-base-crit" class="general-text font-size-20"></div>
+          </div>
+
+          <div class="base-stat">
+            <div class="general-text stat-label font-size-20 critDmg"><img class="element"
+                src="Images/Icons/Crit_Dmg_Icon.png">Crit Dmg</div>
+            <div id="unit-base-crit-dmg" class="general-text font-size-20"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection-divider general-text">
+        Passives
+      </div>
+
+      <div id="passive-container" class="subsection"></div>
+    </div>
+
+    <div class="buffs-section">
+      <div class="section-preview">
+        <button class="unit-button">
+          <div class="unit-gradient mythic">
+            <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+            <div class="unit-content">
+              <img id="familiar-image" class="unit-picture">
+            </div>
+          </div>
+        </button>
+
+        <div class="subsection-layout">
+          <div class="section-title general-text">Familiar and Buffs</div>
+
+          <div class="tab-structure">
+            <p id="familiar-name" class="section-subtitle general-text passive text-gradient"></p>
+          </div>
+
+          <div id="familiar-elements" class="tab-structure"></div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="tab-structure">
+          <div class="general-text round-form tags font-size-20">Element Buff</div>
+
+          <input id="element-slider" class="slider" type="range" min="0" max="5" step="0.1" value="2.5">
+
+          <div id="element-slider-text" class="general-text round-form tags font-size-20 passive-number-padding"></div>
+        </div>
+
+        <div id="familiar-passive" class="passive-layout"></div>
+
+        <div id="corruption-input" class="tab-structure">
+          <button class="round-form tags image-tag general-text unknown dropdown-button"
+            onclick="updateCorruption(true)">
+            <img class="element" src="Images/Familiars/Familiar.webp">
+            <p class="general-text secret text-gradient"></p>
+          </button>
+        </div>
+      </div>
+
+      <div class="subsection-divider general-text">
+        Buffs
+      </div>
+
+      <div class="subsection">
+        <div class="tab-structure search-wrapper">
+          <input id="search-input" class="buff-search general-text round-form" type="text" placeholder="Search Buff">
+
+          <button id="clear-buffs" class="round-form tags general-text button-hover">
+            Clear All
+          </button>
+
+          <button id="max-buffs" class="round-form tags general-text button-hover">
+            Max All
+          </button>
+
+          <div id="suggestion-box" class="suggestion-box hidden">
+            <div class="tab-structure">
+              <select id="buff-filter" class="sort-type tags general-text round-form">
+                <option value="all">All Buffs</option>
+                <option value="damage">Damage Buffs</option>
+                <option value="spa">Spa Buffs</option>
+                <option value="range">Range Buffs</option>
+                <option value="crit">Crit Buffs</option>
+                <option value="critDmg">CritDmg Buffs</option>
+                <option value="multiplicative">Multiplicative Buffs</option>
+                <option value="additive">Additive Buffs</option>
+              </select>
+            </div>
+
+            <div id="buffs-catalog" class="buffs-catalog"></div>
+          </div>
+        </div>
+
+        <div id="buffs-container" class="buffs-container"></div>
+      </div>
+    </div>
+
+    <div class="stat-section">
+      <div class="subsection-divider general-text">
+        Final Stats
+      </div>
+
+      <div class="subsection">
+        <div class="stat-breakdown">
+          <!-- Damage -->
+          <div class="final-stat">
+            <div class="general-text stat-label font-size-20 damage">
+              <img class="element" src="Images/Icons/Dmg_Icon.webp"> Damage
+            </div>
+            <div class="general-text font-size-20 final-stat-number">
+              <div id="unit-final-damage-buff" class="general-text font-size-20 buff round-form tags"></div>
+              <div id="unit-final-damage-value"></div>
+            </div>
+          </div>
+
+          <!-- SPA -->
+          <div class="final-stat">
+            <div class="general-text stat-label font-size-20 spa">
+              <img class="element" src="Images/Icons/Spa_icon.webp"> Spa
+            </div>
+            <div class="general-text font-size-20 final-stat-number">
+              <div id="unit-final-spa-buff" class="general-text font-size-20 buff round-form tags"></div>
+              <div id="unit-final-spa-value"></div>
+            </div>
+          </div>
+
+          <!-- Range -->
+          <div class="final-stat">
+            <div class="general-text stat-label font-size-20 range">
+              <img class="element" src="Images/Icons/Rng_icon.webp"> Range
+            </div>
+            <div class="general-text font-size-20 final-stat-number">
+              <div id="unit-final-range-buff" class="general-text font-size-20 buff round-form tags"></div>
+              <div id="unit-final-range-value"></div>
+            </div>
+          </div>
+
+          <!-- Crit -->
+          <div class="final-stat">
+            <div class="general-text stat-label font-size-20 crit">
+              <img class="element" src="Images/Icons/Crit_Icon.png"> Crit
+            </div>
+            <div class="general-text font-size-20 final-stat-number">
+              <div id="unit-final-crit-buff" class="general-text font-size-20 buff round-form tags"></div>
+              <div id="unit-final-crit-value"></div>
+            </div>
+          </div>
+
+          <!-- Crit Dmg -->
+          <div class="final-stat">
+            <div class="general-text stat-label font-size-20 critDmg">
+              <img class="element" src="Images/Icons/Crit_Dmg_Icon.png"> Crit Dmg
+            </div>
+            <div class="general-text font-size-20 final-stat-number">
+              <div id="unit-final-critdmg-buff" class="general-text font-size-20 buff round-form tags"></div>
+              <div id="unit-final-critdmg-value"></div>
+            </div>
+          </div>
+
+          <!-- Crit Avg -->
+          <div class="final-stat">
+            <div class="general-text stat-label font-size-20 critavg">
+              <img class="element" src="Images/Icons/Crit_Avg_Icon.png"> Crit Avg
+            </div>
+            <div class="general-text font-size-20 final-stat-number">
+              <div id="unit-final-critavg-buff" class="general-text font-size-20 buff round-form tags"></div>
+              <div id="unit-final-critavg-value"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection-divider general-text">
+        Attacks and Dps
+      </div>
+
+      <div id="attacks-container" class="subsection"></div>
+    </div>
+  </div>
+
+  <script src="javascript/icons.js"></script>
+  <script src="javascript/constructors.js"></script>
+
+  <script src="javascript/calculator/unitData/unitTagData.js"></script>
+  <script src="javascript/calculator/unitData/unitStats.js"></script>
+  <script src="javascript/calculator/unitData/unitSorting.js"></script>
+  <script src="javascript/calculator/unitData/unitPassives.js"></script>
+  <script src="javascript/calculator/unitData/unitAttacks.js"></script>
+  <script src="javascript/calculator/unitData/familiarData.js"></script>
+  <script src="javascript/calculator/unitData/buffData.js"></script>
+
+  <script src="javascript/calculator/stats/baseStats.js"></script>
+  <script src="javascript/calculator/stats/finalStats.js"></script>
+
+  <script src="javascript/calculator/formatters.js"></script>
+  <script src="javascript/calculator/units.js"></script>
+  <script src="javascript/calculator/units-inputs.js"></script>
+  <script src="javascript/calculator/buffsHandler.js"></script>
+  <script src="javascript/calculator/passives.js"></script>
+  <script src="javascript/calculator/createBuffs.js"></script>
+  <script src="javascript/calculator/familiars.js"></script>
+  <script src="javascript/calculator/corruptions.js"></script>
+  <script src="javascript/calculator/attacks.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 99px;
+
+  background: rgba(0, 0, 0, .5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, .8);
+}
+
+/* Tab Input*/
+
+.stat-input {
+  padding: 4px 0px;
+  flex-shrink: 0;
+
+  width: 36px;
+
+  font-size: 18px;
+
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+
+  text-align: center;
+}
+
+.stat-input::-webkit-outer-spin-button,
+.stat-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.stat-input:focus {
+  outline: none;
+}
+
+/* Sliders */
+
+.slider {
+  -webkit-appearance: none;
+
+  appearance: none;
+  
+  width: 100%;
+  height: 10px;
+  border-radius: 16px;  
+  background: rgba(0, 0, 0, 0.75);
+  outline: none;
+
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+
+  margin-right: 6px;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; 
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* Buttons */
+
+.button-hover {
+  cursor: pointer;
+}
+
+.button-hover:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.button-hover:active {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+/* Label Buttons */
+
+.clickable-label input[type="checkbox"] {
+  display: none;
+}
+
+.clickable-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  
+  outline: 1px solid rgba(255, 255, 255, .3);
+}
+
+/* Checkboxes */
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+  border-radius: 4px;
+
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  
+  position: relative;
+  transition: background-color 0.2s ease;
+}
+
+.clickable-label input:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+
+  width: 4px;
+  height: 8px;
+  border: solid rgb(0, 0, 0);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.clickable-label input:checked + .checkmark {
+  background-color: #ffffff;
+  
+  border: none;
+}
+
+.no-select {
+  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none;
+}

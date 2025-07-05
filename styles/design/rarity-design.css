@@ -1,0 +1,46 @@
+.koguro {
+  background-image: linear-gradient(150deg, #8369c5 10%, #999999 40%, #ffffff 50%, #999999 60%, #8369c5 90%)
+  /* background-image: linear-gradient(150deg, #8369c5 10%, #ffdd55 20%, #999999 27%, #ffffff 50%, #999999 72%, #ffdd55 80%, #8369c5 90%) */
+}
+
+.vsjw {
+  background-image: linear-gradient(150deg, #5502ff -15%, #5553ff 13%, #160023 29%, #160023 33%, #5553ff 49%, #5502ff 83%);
+}
+
+.divalo {
+  background-image: linear-gradient(150deg, #c00060 10%, #700090 40%, #e0a02d 80%)
+}
+
+.rogita {
+  background-image: linear-gradient(150deg, #e54e6a 10%, #ff0d7f 30%, #ff1e52 60%, #ff4d0b 90%)
+}
+
+.secret {
+  background-image: linear-gradient(150deg, #c60000 10%, #500000 45%, #f40000 80%);
+}
+
+.exclusive {
+  background-image: linear-gradient(150deg, #ec0004 10%, #e385ef 90%);
+}
+
+.mythic {
+  background-image: linear-gradient(-125deg, #33ffcc 15%, #45ff41, #d6ff33, #fdd233, #ff7c33, #ff3346, #ff33b7 85%);
+}
+
+.legendary {
+  background-image: linear-gradient(150deg, #f1ff00 10%, #ff6f00 45%, #ffff00 80%);
+}
+
+.epic {
+  background-image: linear-gradient(150deg, #b20eff 10%, #3e00d4, #ae04ff 80%);
+}
+
+.rare {
+  background-image: linear-gradient(150deg, #08f3ff 10%, #2747d3, #03c6ff);
+}
+
+.text-gradient {
+  color: transparent;
+  background-clip: text;
+  
+}

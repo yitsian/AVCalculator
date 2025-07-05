@@ -1,0 +1,52 @@
+.spark {
+  color: #01e5fb;
+}
+
+.nature {
+  color: #00fd70
+}
+
+.water {
+  color: #1e56fa
+}
+
+.fire {
+  color: #ff9f29
+}
+
+.holy {
+  color: #fffdaa
+}
+
+.passion {
+  color: #ffb9e0
+}
+
+.curse {
+  color: #58008b
+}
+
+.blast {
+  color: #eeeeee
+}
+
+.cosmic {
+  color: #a072fd
+}
+
+.unbound {
+  color: #c00012
+}
+
+.unknown {
+  color: #9f0000
+}
+
+.element {
+  width: 24px;
+
+  object-fit: contain;
+  display: inline-block;
+
+  z-index: 2;
+}

@@ -1,0 +1,45 @@
+.header {
+  display: flex;
+
+  height: 40px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  border-radius: 20px;
+
+  background-color: rgba(255, 255, 255, 0.3);;
+
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icons-section {
+  display: flex;
+
+  height: 100%;
+
+  flex-direction: row;
+  align-items: center;
+}
+
+.hamburger-icon {
+  height: 24px;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.links-section {
+  display: flex;
+
+  height: 100%;
+
+  flex-direction: row;
+  align-items: center;
+}
+
+.calculator-link {
+  margin-right: 10px;
+}

@@ -1,0 +1,45 @@
+.damage {
+ color: #ff5d61;
+}
+
+.spa {
+ color: #74bafa;
+}
+
+.range {
+  color: #ffe968;
+}
+
+.crit {
+  color: #ff9f29
+}
+
+.critDmg {
+  color: #9500eb
+}
+
+.critavg {
+  color: chartreuse;
+}
+
+.buff {
+  color: #00fe6c;
+}
+
+.mult-buff {
+  color: #01e5fb;
+}
+
+.debuff {
+  color: #9f0000
+}
+
+.money {
+  background-image: linear-gradient(180deg, #f2c930 30%, #fa9e10 70%);
+  font-size: 20px;
+  text-shadow: none !important;
+}
+
+.passive {
+  background-image: linear-gradient(#04dfff .25em, #0badff, #0e91ff calc(100% - .25em))
+}

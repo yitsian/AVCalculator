@@ -1,0 +1,22 @@
+# Ignore JPEG and JPG
+*.jpg
+*.jpeg
+
+# Ignore PNG
+*.png
+
+# Ignore GIF
+*.gif
+
+# Ignore WebP
+*.webp
+
+# Ignore BMP
+*.bmp
+
+# Ignore TIFF
+*.tiff
+*.tif
+
+# Ignore SVG
+*.svg

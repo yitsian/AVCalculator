@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  font-family: Fredoka;
+}
+
+html, body {
+  height: 98vh;
+}
+
+html,
+body {
+  display: grid;
+
+  grid-template-rows: auto auto 1fr;
+
+  background-image: url("../Images/Background.webp");
+  background-size: cover;
+}
+
+.title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  border-radius: 36px;
+
+  background-color: rgba(0, 0, 0, .75);
+
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: center;
+
+  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  display: flex;
+
+  overflow: hidden;
+
+  flex: 1;
+
+  flex-direction: row;
+  align-items: stretch;
+  column-gap: 1%;
+}
+
+.round-form {
+  border-radius: 999px;
+  border: none;
+
+  outline: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
+  color: white;
+}
+
+.general-text {
+  margin: 0px;
+
+  color: white;
+  font-weight: 550;
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.font-size-20 {
+  font-size: 20px !important;
+}

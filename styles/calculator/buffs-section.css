@@ -1,0 +1,118 @@
+.buffs-section {
+  display: flex;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  flex: 1;
+
+  flex-direction: column;
+  row-gap: 10px;
+
+  border-radius: 20px;
+
+  padding: 12px;
+  background-color: rgba(60, 60, 60, 0.3);
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.buff-search {
+  flex: 1.5;
+
+  padding: 4px 12px;
+  flex-shrink: 0;
+
+  font-size: 18px;
+}
+
+.suggestion-box {
+  position: absolute;
+  
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+
+  bottom: calc(100% + 12px);
+  left: -12px;
+  right: 0;
+
+  padding: 6px;
+
+  width: calc(100% + 24px);
+
+  background: #212529;
+  border: 3px solid #111;
+  border-radius: 20px;
+
+  max-height: 500px;
+  z-index: 10;
+}
+
+.buffs-catalog {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+  
+  overflow-y: auto;
+}
+
+.buffs-catalog div {
+  cursor: pointer;
+}
+
+.buffs-catalog div:hover {
+  background-color: gray;
+}
+
+.hidden {
+  display: none;
+}
+
+.buffs-container {
+  display: flex;
+
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.buff-layout {
+  display: flex;
+
+  flex-direction: column;
+  gap: 10px;
+
+  border-radius: 20px;
+
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.buff-top {
+  display: flex;
+
+  flex-direction: row;
+  gap: 12px;
+}
+
+.buff-image {
+  height: 90px;
+  width: 90px;
+
+  min-width: 90px;
+}
+
+.buff-image .unit-gradient {
+  padding: 4px;
+}
+
+.buff-description {
+  display: flex;
+
+  flex-direction: column;
+  gap: 6px;
+}
