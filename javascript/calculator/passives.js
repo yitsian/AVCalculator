@@ -4,6 +4,8 @@ function createPassives() {
   const passives = unitPassives[selectedUnit];
   passiveContainer.innerHTML = "";
 
+  if (!passives) return;
+  
   passives.forEach((passive, pIndex) => {
     // Outer layout
     const passiveLayout = document.createElement("div");
@@ -47,7 +49,7 @@ function createPassives() {
           [checkbox, statement] = createPassiveBottom(passiveLayout, condition.type, condition.statement)
         }
 
-        conditionMetaMap[conditionId] = { checkbox, slider, condition };
+        conditionMetaMap[conditionId] = condition;
 
         if (condition.dependancy) {
           const dep = condition.dependancy;

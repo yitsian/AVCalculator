@@ -67,6 +67,9 @@ function renderButtons() {
     // Create the button wrapper
     const btn = document.createElement("button");
     btn.className = "unit-button";
+    btn.onclick = () => {
+      selectUnit(unit.name);
+    }
     unitContainer.appendChild(btn);
 
     // Outer gradient border frame

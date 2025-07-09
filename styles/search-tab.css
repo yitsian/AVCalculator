@@ -1,7 +1,7 @@
 .search-tab {
   display: flex;
   
-  height: 800px;
+  height: 100%;
   width: 500px;
 
   flex-direction: column;
@@ -99,7 +99,7 @@
 }
 
 .selected-tag {
-  background-color: rgba(200, 200, 200, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
   color: rgb(14, 14, 14);
   
   cursor: pointer;

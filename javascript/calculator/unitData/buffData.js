@@ -1,7 +1,7 @@
 const buffData = {
   Worldlines: {
     name: "Worldlines Weather", description: "Worldlines elemental buffs increase Dmg by +20%-150% and debuffs decrease by -50%-100%", background: "secret",
-    image: "Images/Units/Conquerer.webp", multiplicative: false,
+    image: "Images/Units/Conqueror.webp", multiplicative: false,
     conditions: [
       {
         multiplicative: false, type: "Slider", minRange: -100, maxRange: 150, step: 1, buffs: [1, 0, 0, 0, 0, 0]

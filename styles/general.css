@@ -4,7 +4,9 @@
 }
 
 html, body {
-  height: 98vh;
+  height: 100vh;
+
+  margin: 0;
 }
 
 html,
@@ -24,22 +26,20 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
 
-  border-radius: 36px;
-
   background-color: rgba(0, 0, 0, .75);
 
-  color: white;
   font-size: 64px;
   font-weight: bold;
   text-align: center;
-
-  text-shadow: 5px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
 .main {
   display: flex;
 
   overflow: hidden;
+
+  padding-left: 12px;
+  padding-right: 12px;
 
   flex: 1;
 
@@ -70,4 +70,8 @@ body {
 
 .font-size-20 {
   font-size: 20px !important;
+}
+
+.font-size-36 {
+  font-size: 24px !important;
 }

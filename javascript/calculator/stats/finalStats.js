@@ -91,7 +91,7 @@ function updateAttacks() {
     let attackMultiplier = 1;
 
     if (typeof attack.multiplier == "function") {
-      attackMultiplier = attack.multiplier(finalStats)
+      attackMultiplier = attack.multiplier(finalStats, conditionMetaMap)
     } else {
       attackMultiplier = attack.multiplier
     }
@@ -110,6 +110,15 @@ function updateAttacks() {
 
       damageLabels.average.textContent = formatDps(normalAttackDamage * critAvg / finalStats.spa)
       damageLabels.team.textContent = formatDps(normalAttackDamage * critAvg * (trait == "Monarch" ? 1 : unitStats[selectedUnit].placementCount) / finalStats.spa)
+    } else if (attack.type == "Conditional-Dot") {
+      const tickAttackDamage = normalAttackDamage / attack.hits
+
+      statLabels.tick[0].textContent = formatDamage(tickAttackDamage)
+      statLabels.tick[1].textContent = formatBuff(attackMultiplier / attack.hits)
+
+      const damageLabels = attack.damageLabels
+
+      damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
     } else {
       const critAttackDamage = normalAttackDamage * finalStats.critDmg / 100
 

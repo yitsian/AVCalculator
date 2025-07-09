@@ -11,8 +11,6 @@ function searchBuffs(query) {
 
   let statVectorQuery = statToBuffVectorIndex(buffFilter.value)
 
-  console.log(appliedBuffs)
-
   return Object.entries(buffData)
     .filter(([key, data]) => data.name.toLowerCase().includes(lowerQuery))
     .filter(([key, data]) => {
@@ -174,7 +172,8 @@ function createBuff(buffData) {
 
   const deleteBuff = () => {
     buffData.conditions.forEach((condition, index) => {
-      setBuffActive(`${buffData.name}-${index}`, condition, false, 0);
+      clearBuffActive(`${buffData.name}-${index}`)
+      //setBuffActive(`${buffData.name}-${index}`, condition, false, 0);
     });
 
     eventHandlers.forEach(remove => remove());

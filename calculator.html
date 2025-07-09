@@ -24,23 +24,35 @@
   <link rel="stylesheet" href="styles/calculator/unit-section.css">
   <link rel="stylesheet" href="styles/calculator/buffs-section.css">
   <link rel="stylesheet" href="styles/calculator/stats-section.css">
+  <link rel="stylesheet" href="styles/calculator/familiar-popup.css">
 </head>
 
 <body>
-  <p class="title">
-    Anime Vanguards DPS Calculator
-  </p>
+  <div class="title">
+    <div class="text-gradient mythic">
+      Anime Vanguards DPS Calculator
+    </div>
+  </div>
 
   <div class="header">
     <div class="icons-section">
-      <img src="Images/Icons/Hamburger_icon.png" class="hamburger-icon">
+      <button class="tags general-text round-form button-hover font-size-36">Home</button>
+
+      <button class="tags general-text round-form font-size-36 button-hover"
+        onclick="navigateTo('home.html')">Units</button>
+
+      <button class="tags general-text round-form font-size-36 selected-tag"
+        onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
     <div class="links-section">
-      <a class="calculator-link"
-        href="https://docs.google.com/spreadsheets/d/1zk9CR-m-njASuTXywtAypeVJwkds_8nUP0V2XARfGo8/edit?gid=0#gid=0"
-        target="_blank">
-        Link To Original Calculator
+      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button">
+        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
+        <span>Buy me a reroll</span>
+      </a>
+
+      <a class="settings-button button-hover">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg" />
       </a>
     </div>
   </div>
@@ -48,7 +60,7 @@
   <div class="main">
     <div class="unit-section">
       <div class="section-preview">
-        <button class="unit-button">
+        <button class="unit-button" onclick="navigateTo('home.html')">
           <div id="unit-picture-gradient" class="unit-gradient">
             <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
 
@@ -185,7 +197,7 @@
 
     <div class="buffs-section">
       <div class="section-preview">
-        <button class="unit-button">
+        <button id="openPopup" class="unit-button">
           <div class="unit-gradient mythic">
             <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
 
@@ -210,7 +222,7 @@
         <div class="tab-structure">
           <div class="general-text round-form tags font-size-20">Element Buff</div>
 
-          <input id="element-slider" class="slider" type="range" min="0" max="5" step="0.1" value="2.5">
+          <input id="element-slider" class="slider" type="range" min="0" max="5" step="0.1" value="0">
 
           <div id="element-slider-text" class="general-text round-form tags font-size-20 passive-number-padding"></div>
         </div>
@@ -347,6 +359,13 @@
     </div>
   </div>
 
+  <div id="familiar-popup" class="popup hidden">
+    <div class="popup-content">
+      <!-- <span id="closePopup" class="close-btn">&times;</span> -->
+      <div id="familiars-catalog" class="familiars-catalog"></div>
+    </div>
+  </div>
+
   <script src="javascript/icons.js"></script>
   <script src="javascript/constructors.js"></script>
 
@@ -370,6 +389,9 @@
   <script src="javascript/calculator/familiars.js"></script>
   <script src="javascript/calculator/corruptions.js"></script>
   <script src="javascript/calculator/attacks.js"></script>
+
+  <script src="javascript/pageHandler.js"></script>
+  </script>
 </body>
 
 </html>

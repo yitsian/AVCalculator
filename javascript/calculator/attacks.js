@@ -59,7 +59,7 @@ function createAttack(attack = {}) {
   const aoeImage = attack.aoe ? getAttackType(attack.aoe) : unitTagData[selectedUnit].aoes[0];
 
   const aoeIcon = `<img class="element" src="Images/Aoes/${aoeImage}.png">`;
-  const aoeLabel = attack.aoe || unitStats[selectedUnit].aoe ;
+  const aoeLabel = attack.aoe || unitStats[selectedUnit].aoe;
   aoeTag.innerHTML = `${aoeIcon}${aoeLabel}`;
 
   const hitsTag = createElement("div", "general-text round-form tags", aoeInfo);
@@ -80,7 +80,7 @@ function createAttack(attack = {}) {
   let critHitDamageTag, critHitPercentageTag
   let tickHitDamageTag, tickHitPercentageTag
 
-  if (attack.type == "Dot") {
+  if (attack.type == "Dot" || attack.type == "Conditional-Dot") {
     const [tickHit, tickHitDamage, tickHitPercentage] = createFinalStatLabel("Damage per tick", "Images/Icons/Dot_Icon.webp", "debuff")
 
     tickHitDamageTag = tickHitDamage
@@ -114,6 +114,20 @@ function createAttack(attack = {}) {
         statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], crit: [critHitDamageTag, critHitPercentageTag] },
         damageLabels: { average: avgDpsLabel },
         aoe: attack.aoe,
+      };
+      break;
+    
+    case "Conditional-Dot":
+      [avgDps, avgDpsLabel] = createTextStat("Average Damage");
+      attackLayout.appendChild(avgDps);
+
+      attacksMetaMap[attack.name] = {
+        type: attack.type,
+        multiplier: attack.multiplier || 1,
+        statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], tick: [tickHitDamageTag, tickHitPercentageTag] },
+        damageLabels: { average: avgDpsLabel },
+        aoe: attack.aoe,
+        hits: attack.hits
       };
       break;
 
@@ -158,9 +172,32 @@ function createAllAttacks() {
   createAttack()
 
   for (attackIndex in unitAttacks[selectedUnit]) {
-    createAttack(unitAttacks[selectedUnit][attackIndex])
+    const attack = unitAttacks[selectedUnit][attackIndex];
+
+    let attackMultiplier = 1;
+
+    if (typeof attack.multiplier == "function") {
+      attackMultiplier = attack.multiplier(finalStats, conditionMetaMap)
+    } else {
+      attackMultiplier = attack.multiplier
+    }
+
+    if (attackMultiplier > 0) {
+      createAttack(attack)
+    }
   }
 }
 
 createAllAttacks()
 updateAttacks()
+
+finalStats = new Proxy(finalStats, {
+  set(target, prop, value) {
+    if (target[prop] !== value) {
+      target[prop] = value;
+
+      createAllAttacks()
+    }
+    return true;
+  }
+});

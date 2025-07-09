@@ -1,4 +1,4 @@
-const selectedUnit = "Conqueror"
+let selectedUnit = JSON.parse(localStorage.getItem("selectedUnit")) || "Vsjw";
 
 let trait = "Monarch"
 let ascensions = 0

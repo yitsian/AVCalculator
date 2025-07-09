@@ -65,48 +65,57 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
     delete appliedAddBuffs[stat][conditionId];
   }
 
-  if (!isActive) {
-    updateAllMultipliers();
-    updateBaseStats();
-    return;
+  if (isActive) {
+    const buffs = typeof condition.getBuffs === "function"
+      ? condition.getBuffs(value, conditionMetaMap)
+      : condition.buffs;
+
+    const sliderMult = condition.type === "Slider" ? parseFloat(value) : 1;
+    const totalMult = (sliderMult / 100);
+
+    const target = condition.multiplicative ? appliedMultBuffs : appliedAddBuffs;
+
+    target.damage[conditionId] = buffs[0] * totalMult;
+    target.spa[conditionId] = (condition.multiplicative ? -1 : 1) * buffs[1] * totalMult;
+    target.range[conditionId] = buffs[2] * totalMult;
+    target.crit[conditionId] = buffs[3] * totalMult;
+    target.critDmg[conditionId] = buffs[4] * totalMult;
+    target.summon[conditionId] = buffs[5] * totalMult;
   }
 
-  const buffs = typeof condition.getBuffs === "function"
-    ? condition.getBuffs(value)
-    : condition.buffs;
-
-  const sliderMult = condition.type === "Slider" ? parseFloat(value) : 1;
-  const totalMult = (sliderMult / 100);
-
-  const target = condition.multiplicative ? appliedMultBuffs : appliedAddBuffs;
-
-  target.damage[conditionId] = buffs[0] * totalMult;
-  target.spa[conditionId] = -1 * buffs[1] * totalMult;
-  target.range[conditionId] = buffs[2] * totalMult;
-  target.crit[conditionId] = buffs[3] * totalMult;
-  target.critDmg[conditionId] = buffs[4] * totalMult;
-  target.summon[conditionId] = buffs[5] * totalMult;
-
-  updateAllMultipliers();
-  updateBaseStats();
+  recalculateAllPassives();
 }
 
 // Apply or remove a passive buff
-function recalculateAllBuffs() {
+function recalculateAllPassives() {
   // Reset
-  for (const stat in appliedMultBuffs) appliedMultBuffs[stat] = {};
-  for (const stat in appliedAddBuffs) appliedAddBuffs[stat] = {};
+  const isRangeFormat = stat => /^\d+-\d+$/.test(stat);
+
+  for (const stat in appliedMultBuffs) {
+    for (conditionId in appliedMultBuffs[stat]) {
+      if (isRangeFormat(conditionId)) {
+        delete appliedMultBuffs[stat][conditionId]
+      }
+    }
+  }
+
+  for (const stat in appliedAddBuffs) {
+    for (conditionId in appliedAddBuffs[stat]) {
+      if (isRangeFormat(conditionId)) {
+        delete appliedAddBuffs[stat][conditionId]
+      }
+    }
+  }
 
   for (const conditionId in conditionMetaMap) {
-    const meta = conditionMetaMap[conditionId];
-    const condition = meta.condition;
+    const condition = conditionMetaMap[conditionId];
     const isActive = condition.active;
     const value = condition.value ?? 1;
 
     if (!isActive) continue;
 
     const buffs = typeof condition.getBuffs === "function"
-      ? condition.getBuffs(value)
+      ? condition.getBuffs(value, conditionMetaMap)
       : condition.buffs;
 
     const sliderMult = condition.type === "Slider" ? value : 1;
@@ -115,7 +124,7 @@ function recalculateAllBuffs() {
     const target = condition.multiplicative ? appliedMultBuffs : appliedAddBuffs;
 
     target.damage[conditionId] = buffs[0] * totalMult;
-    target.spa[conditionId] = -1 * buffs[1] * totalMult;
+    target.spa[conditionId] = (condition.multiplicative ? -1 : 1) * buffs[1] * totalMult;
     target.range[conditionId] = buffs[2] * totalMult;
     target.crit[conditionId] = buffs[3] * totalMult;
     target.critDmg[conditionId] = buffs[4] * totalMult;
@@ -129,7 +138,7 @@ function recalculateAllBuffs() {
 function buffUpdate(checkbox, slider, valueDisplay, conditionId, condition) {
   const update = () => {
     condition.active = checkbox ? checkbox.checked : true;
-    condition.value = slider ? parseFloat(slider.value) : 1;
+    condition.value = checkbox && !checkbox.checked ? 0 : (slider ? parseFloat(slider.value) : 1);
 
     setBuffActive(conditionId, condition, condition.active, condition.value)
 
@@ -150,4 +159,8 @@ function buffUpdate(checkbox, slider, valueDisplay, conditionId, condition) {
   if (slider) slider.addEventListener("input", update);
 
   update();
+}
+
+function clearBuffActive(conditionID) {
+  setBuffActive(conditionID, {}, false, 0);
 }

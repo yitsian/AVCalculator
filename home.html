@@ -21,20 +21,29 @@
 </head>
 
 <body>
-  <p class="title">
-    Anime Vanguards DPS Calculator
-  </p>
+  <div class="title">
+    <div class="text-gradient mythic">
+      Anime Vanguards DPS Calculator
+    </div>
+  </div>
 
   <div class="header">
     <div class="icons-section">
-      <img src="Images/Icons/Hamburger_icon.png" class="hamburger-icon">
+      <button class="tags general-text round-form button-hover font-size-36">Home</button>
+
+      <button class="tags general-text round-form font-size-36 selected-tag" onclick="navigateTo('home.html')">Units</button>
+
+      <button class="tags general-text round-form button-hover font-size-36" onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
     <div class="links-section">
-      <a class="calculator-link"
-        href="https://docs.google.com/spreadsheets/d/1zk9CR-m-njASuTXywtAypeVJwkds_8nUP0V2XARfGo8/edit?gid=0#gid=0"
-        target="_blank">
-        Link To Original Calculator
+      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button">
+        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
+        <span>Buy me a reroll</span>
+      </a>
+
+      <a class="settings-button button-hover">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg"/>
       </a>
     </div>
   </div>
@@ -62,9 +71,12 @@
       </p>
 
       <div class="sort-options">
-        <button id="permanent" class="tags round-form general-text button-hover" onclick="toggleTag('availability', 'permanent')">Permanent</button>
-        <button id="limited" class="tags round-form general-text button-hover" onclick="toggleTag('availability', 'limited')">Limited</button>
-        <button id="unobtainable" class="tags round-form general-text button-hover" onclick="toggleTag('availability', 'unobtainable')">Unobtainable</button>
+        <button id="permanent" class="tags round-form general-text button-hover"
+          onclick="toggleTag('availability', 'permanent')">Permanent</button>
+        <button id="limited" class="tags round-form general-text button-hover"
+          onclick="toggleTag('availability', 'limited')">Limited</button>
+        <button id="unobtainable" class="tags round-form general-text button-hover"
+          onclick="toggleTag('availability', 'unobtainable')">Unobtainable</button>
       </div>
 
       <p class="catagories general-text">
@@ -192,12 +204,14 @@
           Splash
         </button>
 
-        <button id="ocone" class="tags image-tag round-form general-text button-hover" onclick="toggleTag('aoes', 'ocone')">
+        <button id="ocone" class="tags image-tag round-form general-text button-hover"
+          onclick="toggleTag('aoes', 'ocone')">
           <img class="element" src="Images/Aoes/OCone.png">
           Obtuse Cone
         </button>
 
-        <button id="acone" class="tags image-tag round-form general-text button-hover" onclick="toggleTag('aoes', 'acone')">
+        <button id="acone" class="tags image-tag round-form general-text button-hover"
+          onclick="toggleTag('aoes', 'acone')">
           <img class="element" src="Images/Aoes/ACone.png">
           Acute Cone
         </button>
@@ -232,16 +246,26 @@
       </p>
 
       <div class="sort-options">
-        <button id="ability" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'ability')">Ability</button>
-        <button id="cc" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'cc')">Crowd Control</button>
-        <button id="buffer" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'buffer')">Buffer</button>
-        <button id="debuffer" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'debuffer')">Debuffer</button>
-        <button id="dot" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'dot')">Damage Over Time</button>
-        <button id="summoner" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'summoner')">Summoner</button>
-        <button id="immune" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'immune')">Immune to Stun</button>
-        <button id="meter" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'meter')">Meter</button>
-        <button id="domain" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'domain')">Domain</button>
-        <button id="nuke" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'nuke')">Nuke</button>
+        <button id="ability" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'ability')">Ability</button>
+        <button id="cc" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'cc')">Crowd
+          Control</button>
+        <button id="buffer" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'buffer')">Buffer</button>
+        <button id="debuffer" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'debuffer')">Debuffer</button>
+        <button id="dot" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'dot')">Damage Over Time</button>
+        <button id="summoner" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'summoner')">Summoner</button>
+        <button id="immune" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'immune')">Immune to Stun</button>
+        <button id="meter" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'meter')">Meter</button>
+        <button id="domain" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'domain')">Domain</button>
+        <button id="nuke" class="tags round-form general-text button-hover"
+          onclick="toggleTag('mechanics', 'nuke')">Nuke</button>
       </div>
     </div>
 
@@ -254,6 +278,8 @@
 
   <script src="javascript/icons.js"></script>
   <script src="javascript/main.js"></script>
+
+  <script src="javascript/pageHandler.js"></script></script>
 </body>
 
 </html>

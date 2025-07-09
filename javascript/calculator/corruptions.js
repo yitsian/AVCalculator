@@ -13,18 +13,17 @@ function createCorruption4Slider(min, max) {
   corruptionSlider.min = min;
   corruptionSlider.max = max;
   corruptionSlider.step = 1;
-  corruptionSlider.value = (max - min) / 2;
+  corruptionSlider.value = 0;
   corruptionSlider.id = "corruption-slider";
 
-  corruptionValueDisplay = document.createElement("div", "general-text round-form tags font-size-20 passive-number-padding", corruptionInput);
+  corruptionValueDisplay = createElement("div", "general-text round-form tags font-size-20 passive-number-padding", corruptionInput);
   corruptionValueDisplay.textContent = corruptionSlider.value + "%";
 
-  corruptionSlider.addEventListener("input", () => {
-    corruptionValueDisplay.textContent = corruptionSlider.value + "%";
+  const buff = corruption == 4 ? [1, 0, 0, 0, 0, 0] : familiarsData[selectedFamiliar].buffs.map(number => number / 100)
 
-    const buff = corruption == 4 ? [1, 0, 0, 0, 0, 0] : familiarsData[selectedFamiliar].buffs.map(number => number / 100)
-    setBuffActive("corruption-slider", { multiplicative: true, buffs: buff, type: "Slider" }, true, corruptionSlider.value)
-  })
+  buffUpdate(null, corruptionSlider, corruptionValueDisplay, "corruption-slider", 
+    {multiplicative: corruption == 4 ? true : familiarsData[selectedFamiliar].multiplicative, buffs: buff, type: "Slider"}
+  )
 }
 
 function updateCorruption(change) {
@@ -38,7 +37,7 @@ function updateCorruption(change) {
     }
   }
 
-  if (corruptionSlider) corruptionSlider.remove();
+  if (corruptionSlider) corruptionSlider.remove(); clearBuffActive("corruption-slider");
   if (corruptionValueDisplay) corruptionValueDisplay.remove();
 
   for (sliderIndex in familiarPassiveSliders) {
