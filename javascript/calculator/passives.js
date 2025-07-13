@@ -89,7 +89,7 @@ function createPassiveBottom(passiveLayout, type, minRange, maxRange, step, slid
     slider.min = minRange;
     slider.max = maxRange;
     slider.step = step;
-    slider.value = (maxRange - minRange) / 2;
+    slider.value = 0;
     slider.id = sliderID;
     passiveBottom.appendChild(slider);
 

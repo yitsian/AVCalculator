@@ -3,9 +3,6 @@
 
   height: 60px;
 
-  margin-top: 10px;
-  margin-bottom: 10px;
-
   background-color: rgba(60, 60, 60, 0.6);
 
   flex-direction: row;
@@ -39,34 +36,4 @@
 
   flex-direction: row;
   align-items: center;
-}
-
-.bmc-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 12px;
-  background-color: #FFDD00;
-  border-radius: 99px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-  font-family: sans-serif;
-}
-
-.bmc-button img {
-  height: 24px;
-  margin-right: 8px;
-}
-
-.settings-button {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 6px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 99px;
-}
-
-.settings-button img {
-  height: 28px;
-  filter: invert(1);
 }

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/search-tab.css">
   <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/link-buttons.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
@@ -34,24 +35,22 @@
     </div>
   </div>
 
-  <div class="header">
+  <div class="header header-margin">
     <div class="icons-section">
-      <button class="tags general-text round-form button-hover font-size-36">Home</button>
+      <button class="tags general-text round-form button-hover font-size-36" onclick="navigateTo('home.html')">Home</button>
 
-      <button class="tags general-text round-form font-size-36 button-hover"
-        onclick="navigateTo('home.html')">Units</button>
+      <button class="tags general-text round-form font-size-36 button-hover" onclick="navigateTo('units.html')">Units</button>
 
-      <button class="tags general-text round-form font-size-36 selected-tag"
-        onclick="navigateTo('calculator.html')">Calculator</button>
+      <button class="tags general-text round-form font-size-36 selected-tag" onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
     <div class="links-section">
-      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button">
+      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
         <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
         <span>Buy me a reroll</span>
       </a>
 
-      <a class="settings-button button-hover">
+      <a class="settings-button link-button button-hover">
         <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg" />
       </a>
     </div>
@@ -60,7 +59,7 @@
   <div class="main">
     <div class="unit-section">
       <div class="section-preview">
-        <button class="unit-button" onclick="navigateTo('home.html')">
+        <button class="unit-button" onclick="navigateTo('units.html')">
           <div id="unit-picture-gradient" class="unit-gradient">
             <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
 

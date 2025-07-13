@@ -11,8 +11,10 @@
 
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" href="styles/search-tab.css">
   <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/link-buttons.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
@@ -21,255 +23,109 @@
 </head>
 
 <body>
-  <div class="title">
+  <!-- <div class="title">
     <div class="text-gradient mythic">
       Anime Vanguards DPS Calculator
     </div>
-  </div>
+  </div> -->
 
   <div class="header">
     <div class="icons-section">
-      <button class="tags general-text round-form button-hover font-size-36">Home</button>
+      <button class="tags general-text round-form font-size-36 selected-tag"
+        onclick="navigateTo('home.html')">Home</button>
 
-      <button class="tags general-text round-form font-size-36 selected-tag" onclick="navigateTo('home.html')">Units</button>
+      <button class="tags general-text round-form font-size-36 button-hover"
+        onclick="navigateTo('units.html')">Units</button>
 
-      <button class="tags general-text round-form button-hover font-size-36" onclick="navigateTo('calculator.html')">Calculator</button>
+      <button class="tags general-text round-form button-hover font-size-36"
+        onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
     <div class="links-section">
-      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button">
+      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
         <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
         <span>Buy me a reroll</span>
       </a>
 
-      <a class="settings-button button-hover">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg"/>
+      <a class="settings-button link-button button-hover">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg" />
       </a>
     </div>
   </div>
 
-  <div class="main">
-    <div class="search-tab">
-      <div class="search-index">
-        <input id="search-input" class="sort-search general-text round-form" type="text" placeholder="Search Unit">
-
-        <select id="sort-type" class="sort-type general-text round-form">
-          <option value="rarity">Rarity</option>
-          <option value="cost">Cost</option>
-          <option value="name">Name</option>
-          <option value="element">Element</option>
-        </select>
-
-        <select id="sort-order" class="sort-order general-text round-form">
-          <option value="descending">Descending</option>
-          <option value="ascending">Ascending</option>
-        </select>
-      </div>
-
-      <p class="catagories general-text">
-        Availability
-      </p>
-
-      <div class="sort-options">
-        <button id="permanent" class="tags round-form general-text button-hover"
-          onclick="toggleTag('availability', 'permanent')">Permanent</button>
-        <button id="limited" class="tags round-form general-text button-hover"
-          onclick="toggleTag('availability', 'limited')">Limited</button>
-        <button id="unobtainable" class="tags round-form general-text button-hover"
-          onclick="toggleTag('availability', 'unobtainable')">Unobtainable</button>
-      </div>
-
-      <p class="catagories general-text">
-        Rarity
-      </p>
-
-      <div class="sort-options">
-        <button id="vanguard" class="tags round-form general-text button-hover"
-          onclick="toggleTag('rarities', 'vanguard')">
-          <p class="general-text vsjw text-gradient">Vanguard</p>
-        </button>
-
-        <button id="secret" class="tags round-form button-hover" onclick="toggleTag('rarities', 'secret')">
-          <p class="general-text secret text-gradient">Secret</p>
-        </button>
-
-        <button id="exclusive" class="tags round-form button-hover" onclick="toggleTag('rarities', 'exclusive')">
-          <p class="general-text exclusive text-gradient">Exclusive</p>
-        </button>
-
-        <button id="mythic" class="tags round-form button-hover" onclick="toggleTag('rarities', 'mythic')">
-          <p class="general-text mythic text-gradient">Mythic</p>
-        </button>
-
-        <button id="legendary" class="tags round-form general-text button-hover"
-          onclick="toggleTag('rarities', 'legendary')">
-          <p class="general-text legendary text-gradient">Legendary</p>
-        </button>
-
-        <button id="epic" class="tags round-form general-text button-hover" onclick="toggleTag('rarities', 'epic')">
-          <p class="general-text epic text-gradient">Epic</p>
-        </button>
-
-        <button id="rare" class="tags round-form general-text button-hover" onclick="toggleTag('rarities', 'rare')">
-          <p class="general-text rare text-gradient">Rare</p>
-        </button>
-      </div>
-
-      <p class="catagories general-text">
-        Element
-      </p>
-
-      <div class="sort-options">
-        <button id="spark" class="tags image-tag round-form general-text button-hover spark"
-          onclick="toggleTag('elements', 'spark')">
-          <img class="element" src="Images/Elements/Spark.webp">
-          Spark
-        </button>
-
-        <button id="nature" class="tags image-tag round-form general-text button-hover nature"
-          onclick="toggleTag('elements', 'nature')">
-          <img class="element" src="Images/Elements/Nature.webp">
-          Nature
-        </button>
-
-        <button id="water" class="tags image-tag round-form general-text button-hover water"
-          onclick="toggleTag('elements', 'water')">
-          <img class="element" src="Images/Elements/Water.webp">
-          Water
-        </button>
-
-        <button id="fire" class="tags image-tag round-form general-text button-hover fire"
-          onclick="toggleTag('elements', 'fire')">
-          <img class="element" src="Images/Elements/Fire.webp">
-          Fire
-        </button>
-
-        <button id="holy" class="tags image-tag round-form general-text button-hover holy"
-          onclick="toggleTag('elements', 'holy')">
-          <img class="element" src="Images/Elements/Holy.webp">
-          Holy
-        </button>
-
-        <button id="passion" class="tags image-tag round-form general-text button-hover passion"
-          onclick="toggleTag('elements', 'passion')">
-          <img class="element" src="Images/Elements/Passion.webp">
-          Passion
-        </button>
-
-        <button id="curse" class="tags image-tag round-form general-text button-hover curse"
-          onclick="toggleTag('elements', 'curse')">
-          <img class="element" src="Images/Elements/Curse.webp">
-          Curse
-        </button>
-
-        <button id="blast" class="tags image-tag round-form general-text button-hover blast"
-          onclick="toggleTag('elements', 'blast')">
-          <img class="element" src="Images/Elements/Blast.webp">
-          Blast
-        </button>
-
-        <button id="cosmic" class="tags image-tag round-form general-text button-hover cosmic"
-          onclick="toggleTag('elements', 'cosmic')">
-          <img class="element" src="Images/Elements/Cosmic.webp">
-          Cosmic
-        </button>
-
-        <button id="unbound" class="tags image-tag round-form general-text button-hover unbound"
-          onclick="toggleTag('elements', 'unbound')">
-          <img class="element" src="Images/Elements/Unbound.webp">
-          Unbound
-        </button>
-
-        <button id="unknown" class="tags image-tag round-form general-text button-hover unknown"
-          onclick="toggleTag('elements', 'unknown')">
-          <img class="element" src="Images/Elements/Unknown.webp">
-          Unknown
-        </button>
-      </div>
-
-      <p class="catagories general-text">
-        Final Aoes
-      </p>
-
-      <div class="sort-options">
-        <button id="full" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'full')">
-          <img class="element" src="Images/Aoes/Full.png">
-          Full
-        </button>
-
-        <button id="splash" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'splash')">
-          <img class="element" src="Images/Aoes/Splash.png">
-          Splash
-        </button>
-
-        <button id="ocone" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'ocone')">
-          <img class="element" src="Images/Aoes/OCone.png">
-          Obtuse Cone
-        </button>
-
-        <button id="acone" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'acone')">
-          <img class="element" src="Images/Aoes/ACone.png">
-          Acute Cone
-        </button>
-
-        <button id="stadium" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'stadium')">
-          <img class="element" src="Images/Aoes/Stadium.png">
-          Stadium
-        </button>
-
-        <button id="line" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'line')">
-          <img class="element" src="Images/Aoes/Line.png">
-          Line
-        </button>
-
-        <button id="circle" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'circle')">
-          <img class="element" src="Images/Aoes/Circle.png">
-          Circle
-        </button>
-
-        <button id="single" class="tags image-tag round-form general-text button-hover"
-          onclick="toggleTag('aoes', 'single')">
-          <img class="element" src="Images/Aoes/Single.png">
-          Single
-        </button>
-      </div>
-
-      <p class="catagories general-text">
-        Special Mechanics
-      </p>
-
-      <div class="sort-options">
-        <button id="ability" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'ability')">Ability</button>
-        <button id="cc" class="tags round-form general-text button-hover" onclick="toggleTag('mechanics', 'cc')">Crowd
-          Control</button>
-        <button id="buffer" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'buffer')">Buffer</button>
-        <button id="debuffer" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'debuffer')">Debuffer</button>
-        <button id="dot" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'dot')">Damage Over Time</button>
-        <button id="summoner" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'summoner')">Summoner</button>
-        <button id="immune" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'immune')">Immune to Stun</button>
-        <button id="meter" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'meter')">Meter</button>
-        <button id="domain" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'domain')">Domain</button>
-        <button id="nuke" class="tags round-form general-text button-hover"
-          onclick="toggleTag('mechanics', 'nuke')">Nuke</button>
-      </div>
+  <div class="home-main">
+    <div class="home-title">
+      <span class="text-gradient av-title koguro">Anime Vanguards</span> <br>
+      <span class="text-gradient rogita">Dps Calculator</span>
     </div>
 
-    <div id="units-catalog" class="units-catalog"></div>
+    <div class="general-text home-subheader">An <span class="spark">unofficial</span> online utility for the <span
+        class="debuff">Roblox</span> game, <span class="text-gradient vsjw">Anime Vanguards</span> owned by the group
+      Kitawari. <br>
+      This tool is currently under <span class="buff">development</span> with many features yet to be implemented.
+    </div>
+
+    <div class="home-logs">
+      <div class="log-list">
+        <div class="general-text log-title">Update Log</div>
+
+        <div class="update-container">
+          <div class="general-text update">v0.1 - Concept phase with basic calculations of passive mechanics that are
+            applicable across most units</div>
+        </div>
+
+        <div class="general-text log-title">Planned Features</div>
+
+        <div class="feature-container">
+          <ul class="general-text feature">
+            <li><span class="buff">Summon HP</span> Calculations</li>
+            <li><span class="text-gradient mythic">Trait + Stat Reroll</span> Simulator</li>
+            <li><span class="spark">More Details</span> option in Calculations</li>
+            <li>Dps <span class="unbound">Lists</span></li>
+            <li>Map <span class="range">Range</span> Visualization</li>
+            <li>Add in  <span class="cosmic">Remaining Units</span></li>
+            <li><span class="passion">Scaling</span> for other screen sizes</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="log-list">
+        <div class="general-text log-title">Credits</div>
+
+        <div class="credits-list">
+          <div class="general-text">Designed and developed by: <br> <span class="spark">Monsoon (@migdele) - (Discord: migomigy)</span></div>
+
+          <div class="general-text">Special thanks for help with filling in unit data to: <br> <span class="cosmic">UnDestiEnd</span> | <span class="nature">Crest</span></div>
+
+          <div class="general-text">Assets from Anime Vanguards wiki at <span class="text-gradient rogita">animevanguards.fandom.com</span>.</div>
+          <div class="general-text">Design heavily inspired by calculator for the game Blue Archive at <span class="text-gradient rare">schaledb.com</span>.</div>
+        </div>
+
+        <div class="general-text log-title">Links</div>
+
+        <div class="links-container">
+          <a href="https://github.com/yitsian/HTMLProject" target="_blank" class="link-button github-button">
+            <img src="Images/Icons/Github_Icon.png" />
+            <span>Github</span>
+          </a>
+
+          <a href="https://www.youtube.com/@Migomigy" target="_blank" class="link-button youtube-button">
+            <img src="Images/Icons/Youtube_Icon.png" />
+            <span>Youtube</span>
+          </a>
+          
+          <a href="https://docs.google.com/forms/d/1M_ULU2enKOK_MqAcEpT4zyHFaei00aRFMIG-cB8j7zg" target="_blank" class="link-button forms-button">
+            <img src="Images/Icons/Forms_Icon.svg" />
+            <span>Bugs + Suggestions</span>
+          </a>
+
+          <a href="https://www.youtube.com/@Migomigy" target="_blank" class="link-button docs-button">
+            <img src="Images/Icons/Docs_Icon.png" />
+            <span>Docs List</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="javascript/calculator/unitData/unitTagData.js"></script>
@@ -279,7 +135,8 @@
   <script src="javascript/icons.js"></script>
   <script src="javascript/main.js"></script>
 
-  <script src="javascript/pageHandler.js"></script></script>
+  <script src="javascript/pageHandler.js"></script>
+  </script>
 </body>
 
 </html>

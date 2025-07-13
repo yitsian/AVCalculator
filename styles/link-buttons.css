@@ -1,0 +1,48 @@
+.link-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 99px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  font-family: sans-serif;
+}
+
+.link-button img {
+  height: 24px;
+  margin-right: 8px;
+}
+
+.github-button {
+  background-color: white;
+}
+
+.bmc-button {
+  background-color: #FFDD00;
+}
+
+.forms-button {
+  background-color: rgb(153, 60, 243);
+}
+
+.youtube-button {
+  background-color: darkred;
+  color: white;
+}
+
+.docs-button {
+  background-color: darkblue;
+  color: white;
+}
+
+.settings-button {
+  padding: 6px 6px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.settings-button img {
+  height: 28px;
+  margin: 0;
+  filter: invert(1);
+}

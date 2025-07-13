@@ -150,7 +150,7 @@ let unitPassives = {
       name: "Adrenaline Boost", upgrade: 0,
       conditions: [
         {
-          description: "For every stock missing increase range by +20%.", type: "Slider", min: 0, max: 2, step: 1, suffix: " Stocks Missing",
+          description: "For every stock missing increase Rng by +20%.", type: "Slider", min: 0, max: 2, step: 1, suffix: " Stocks Missing",
           multiplicative: false, buffs: [0, 0, 20, 0, 0, 0]
         }
       ]
@@ -184,7 +184,7 @@ let unitPassives = {
       name: "Rider of Black", upgrade: 0,
       conditions: [
         {
-          description: "Buffs all allies in range by 1% Dmg and 0.5% Rng (Up to 20% and 10%). (Use buffs tab)", type: "None",
+          description: "Buffs all allies in Rng by 1% Dmg and 0.5% Rng (Up to 20% and 10%). (Use buffs tab)", type: "None",
         }
       ]
     },
@@ -267,7 +267,7 @@ let unitPassives = {
       name: "A Welcome Challenge", upgrade: 0,
       conditions: [
         {
-          description: "This unit deals +40% more damage.",
+          description: "This unit deals +40% more Dmg.",
           multiplicative: true, type: 'Statement', statement: 'Target has more hp then this unit', buffs: [40, 0, 0, 0, 0, 0]
         },
       ]
@@ -566,7 +566,7 @@ let unitPassives = {
         },
 
         {
-          description: "Debuffs all allied units in range by 20% damage and 10% range and gain 10% damage and 6% range per allied unit debuffed by this ability.",
+          description: "Debuffs all allied units in range by 20% Dmg and 10% Rng and gain 10% Dmg and 6% Rng per allied unit debuffed by this ability.",
           multiplicative: false, type: "Slider", min: 0, max: 33, step: 1, buffs: [10, 0, 6, 0, 0, 0], suffix: " Units",
         },
       ]
@@ -703,7 +703,7 @@ let unitPassives = {
       name: "Strongest Shadow", upgrade: 0,
       conditions: [
         {
-          description: "DMG +30% and SPA -10%.",
+          description: "Dmg +30% and Spa -10%.",
           multiplicative: false, type: 'Statement', statement: 'Truly simpler times.', buffs: [30, 10, 0, 0, 0, 0]
         },
       ]
@@ -713,8 +713,13 @@ let unitPassives = {
       name: "Shadow Commander", upgrade: 0,
       conditions: [
         {
-          description: "DMG +20% and RNG +10% for 100 seconds",
+          description: "Dmg +20% and Rng +10% for 100 seconds",
           multiplicative: false, type: 'Statement', statement: 'Only after a shadow enters range.', buffs: [20, 0, 10, 0, 0, 0]
+        },
+
+        {
+          description: "Dmg +2.5% each time a shadow defeats an enemy, (up to +25%) from Song Jimwu",
+          multiplicative: false, type: "Slider", min: 0, max: 25, step: 2.5, buffs: [1, 0, 0, 0, 0, 0],
         },
       ]
     },
@@ -767,14 +772,14 @@ let unitPassives = {
   Soburo: [
     {
       name: "Charismatic Leader", upgrade: 0,
-      conditions: [{ description: "Buffs all allies in range by +10% damage and 8% range; When Return to Zero is activated this is increased to 20% damage instead. (Use buffs tab)", type: "None" }]
+      conditions: [{ description: "Buffs all allies in range by +10% Dmg and 8% Rng; When Return to Zero is activated this is increased to 20% Dmg instead. (Use buffs tab)", type: "None" }]
     },
 
     {
       name: "Contracted Spirit", upgrade: 0,
       conditions: [
         {
-          description: "Every upgrade increases range by 2%.",
+          description: "Every upgrade increases Rng by 2%.",
           multiplicative: false, type: "Slider", min: 0, max: 10, step: 1, buffs: [0, 0, 2, 0, 0, 0], suffix: " Upgrades"
         }
       ]
@@ -828,7 +833,7 @@ let unitPassives = {
       name: "Spreading Corruption", upgrade: 0,
       conditions: [
         {
-          description: "-0.2% Spa any time this unit damages an enemy with Evil Incarnate. (Up to 20%)",
+          description: "-0.2% Spa any time this unit attacks an enemy with Evil Incarnate. (Up to 20%)",
           multiplicative: false, type: "Slider", min: 0, max: 20, step: 0.2, buffs: [0, 1, 0, 0, 0, 0],
         }
       ]
@@ -920,7 +925,7 @@ let unitPassives = {
       name: "A Rank Staff", upgrade: 0,
       conditions: [
         {
-          description: "Regerates 1% mana every second and attacks restore 5%. This unit uses between 1 through 100 and for every mana used, gains 4% more damage for next attack. (Avg Dps uses (5 * Spirit bonus + Spa) mana)",
+          description: "Regerates 1% mana every second and attacks restore 5%. This unit uses between 1 through 100 and for every mana used, gains 4% more Dmg for next attack. (Avg Dps uses (5 * Spirit bonus + Spa) mana)",
           multiplicative: true, type: "Slider", min: 0, max: 100, step: 1, buffs: [4, 0, 0, 0, 0, 0],
         }
       ]
@@ -929,7 +934,7 @@ let unitPassives = {
     {
       name: "Family Man", upgrade: 0,
       conditions: [
-        { description: "When mana falls below 10% buff all allies in range by +15% damage and 10% range for 30 seconds (Use buffs tab), Also buffs self by 40% Dmg for 1 attack.", 
+        { description: "When mana falls below 10% buff all allies in range by +15% Dmg and 10% Rng for 30 seconds (Use buffs tab), Also buffs self by 40% Dmg for 1 attack.", 
           multiplicative: false, type: "Statement", statement: "After using mana", buffs: [40, 0, 0, 0, 0, 0] }
       ]
     },
@@ -1267,7 +1272,7 @@ let unitPassives = {
       name: "Enuma Elish", upgrade: 10,
       conditions: [
         {
-          description: "Gains 350% Dmg and 10% range for the ability Enuma Elish which hits all enemies in range",
+          description: "Gains 350% Dmg and 10% Rng for the ability Enuma Elish which hits all enemies in range",
           multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [350, 0, 10, 0, 0, 0]
         },
       ]
@@ -1370,29 +1375,656 @@ let unitPassives = {
     },
   ],
 
-  Ichiga: [
+  Brisket: [
     {
-      name: "Number 1",
-      upgrade: 0,
+      name: "Town Inside Me", upgrade: 0,
       conditions: [
         {
-          description: "+20% Dmg and +10% Rng for every missing life stock.", type: "Slider", min: 0, max: 2, step: 1, suffix: " Stocks",
-          multiplicative: false, buffs: [20, 0, 10, 0, 0, 0], active: false, value: 0
+          description: "Anytime this unit uses meter, gains a 20% Dmg and 10% Rng buff for 20 seconds. (Can be refreshed and stacked up to 5 times)",
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 20, buffs: [1, 0, 0.5, 0, 0, 0],
+        }
+      ]
+    },
+  ],
+
+  GearBoy: [
+    {
+      name: "Growing Boy", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit's next attack does 40% more Dmg. (100% uptime with spirit)",
+          multiplicative: true, type: "Statement", statement: "After consuming a meat stock", buffs: [40, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Anytime a food stock is consumed, gains 1% Dmg. (Up to 30%)",
+          multiplicative: false, type: "Slider", min: 0, max: 30, step: 1, buffs: [1, 0, 0, 0, 0, 0],
         }
       ]
     },
 
     {
-      name: "Save the AV Society",
-      upgrade: 0,
+      name: "Greek Cancel", upgrade: 0,
       conditions: [
         {
-          description: "Increases Dmg and Rng buffs from Number 1 by 5% and 2.5% respectively.", type: "Slider", min: 0, max: 10, step: 1, suffix: " Upgs",
-          multiplicative: false,
-          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["0-0"].value * 5, 0, conditionMetaMap["0-0"].value * 2.5, 0, 0, 0],
-          active: false, value: 0
+          description: "This unit gains +80% Dmg and -10% spa for 30 seconds. (Cannot stack) (100% uptime with spirit)",
+          multiplicative: false, type: "Statement", statement: "After activating Greek cancel", buffs: [80, 10, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Kazzy: [
+    {
+      name: "Heaven and Hell", upgrade: 0,
+      conditions: [
+        {
+          description: "Reduces this unit's Spa by 20% for 30 seconds.",
+          multiplicative: false, type: "Statement", statement: "After swapping forms", buffs: [0, 20, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Toggle Necro form where she gains 80% Dmg and inflicts burn",
+          multiplicative: false, type: "Statement", statement: "Toggle Form", buffs: [80, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Toggle for if attacking bubbled in Necro form to do 160% Dmg",
+          multiplicative: true, type: "Statement", statement: "When attacking bubbled enemy", 
+          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["0-1"].active == true ? 60 : 0, 0, 0, 0, 0, 0],
+        },
+
+        {
+          description: "Bubbled increases next attack Dmg by 30%. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  NotGoodGuy: [
+    {
+      name: "Dragon Install", upgrade: 8,
+      conditions: [
+        {
+          description: "This unit gains +150% Dmg and +30% Rng during this transformation. (Spa is also capped to 6s due to animations)",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff (Uptime TBD)", buffs: [150, 0, 30, 0, 0, 0], extra: (finalStats) => { finalStats.spa = 6 }
+        },
+      ]
+    },
+  ],
+
+  Deruta: [
+    {
+      name: "Scent of Blood", upgrade: 0,
+      conditions: [
+        {
+          description: "The further the attacked enemy is from this unit the more Dmg they take from this unit. (Up to 60%) (Conversion TBD)",
+          multiplicative: true, type: "Slider", min: 0, max: 60, step: 1, buffs: [1, 0, 0, 0, 0, 0],
         }
       ]
-    }
+    },
   ],
+
+  Hercool: [
+    {
+      name: "The Champ", upgrade: 0,
+      conditions: [
+        {
+          description: "Whenever this unit attacks, has a 30% chance to do 0% Dmg. (No longer applies when Mr Boo Arrives is unlocked)",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Debuff", 
+          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["1-0"] ? (conditionMetaMap["1-0"].value == true ? 0 : -30) : -30, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Mr Boo Arrives!", upgrade: 7,
+      conditions: [
+        {
+          description: "This unit gains 100% Dmg, 100% Rng, and 50% Crit.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [100, 0, 100, 50, 0, 0]
+        },
+
+        {
+          description: "Anytime this unit crits buffs all allies in range by 10% Dmg and +15% CritDmg for 15 seconds, doubled for DBZ units. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  Rohan: [
+    {
+      name: "Potential Unleashed", upgrade: 3,
+      conditions: [
+        {
+          description: "This unit gains 30% Crit",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 0, 0, 30, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Ichiga: [
+    {
+      name: "Number 1", upgrade: 0,
+      conditions: [
+        {
+          description: "+20% Dmg and +10% Rng for every missing life stock.", multiplicative: false, type: "Slider", min: 0, max: 2, step: 1, 
+          buffs: [20, 0, 10, 0, 0, 0], suffix: " Stocks",
+        },
+
+        {
+          description: "When a life stock is lost, this unit gains 500% more Dmg on its next attack.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [500, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Save the AV Society", upgrade: 0,
+      conditions: [
+        {
+          description: "Increases Dmg and Rng buffs from Number 1 by 5% and 2.5% respectively.", multiplicative: false, type: "Slider", min: 0, max: 10, step: 1, suffix: " Upgs",
+          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["0-0"].value * 5, 0, conditionMetaMap["0-0"].value * 2.5, 0, 0, 0],
+        }
+      ]
+    },
+
+    {
+      name: "Horn of Salvation", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 200% Dmg for 40s after consuming a life stock",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [200, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Kempache: [
+    {
+      name: "Too Much Power", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 50% more Dmg. Every 3rd attack stuns this unit for as long as 100% of this units Spa. (Doesn't really affect dps)",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Kiskae: [
+    {
+      name: "The Inventor", upgrade: 4,
+      conditions: [
+        {
+          description: "Anytime a bleeding enemy is damaged within this units range, it is inflicted with Wounded, making enemies take 20% more Dmg (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  Yuruicha: [
+    {
+      name: "Shunko Master", upgrade: 0,
+      conditions: [
+        {
+          description: "-5% Spa each attack, resetting every 3rd attack (Avg of 10%)",
+          multiplicative: true, type: "Slider", min: 0, max: 15, step: 5, buffs: [0, 1, 0, 0, 0, 0],
+        },
+
+        {
+          description: "All Spa buffs/debuffs will apply to the Dmg stat. (Not yet implemented just use buffs tab)", type: "None"
+        },
+      ],
+    },
+
+    {
+      name: "God of Lightning", upgrade: 0,
+      conditions: [
+        {
+          description: "If attacking a stunned enemy, removes stun and deals 50% more Dmg. (Counts for lockout)",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Also reduces Spa by 30% for 10 seconds.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 30, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Lilia: [
+    {
+      name: "Master of Rage", upgrade: 0,
+      conditions: [
+        {
+          description: "Every attack increases Dmg by 2% while a summon is on the field (Up to 40%)",
+          multiplicative: false, type: "Slider", min: 0, max: 40, step: 2, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ],
+    },
+  ],
+
+  Ishtar: [
+    {
+      name: "Master of Rage", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +1% with each attack performed. (up to +50%)",
+          multiplicative: false, type: "Slider", min: 0, max: 50, step: 1, buffs: [1, 0, 0, 0, 0, 0],
+        },
+
+        {
+          description: "When in range of another 'Fate' unit, DMG +12% for both/all 'Fate' Units. (Use buffs tab)", type: "None"
+        }
+      ],
+    },
+
+    {
+      name: "Angalta Kigalshe", upgrade: 0,
+      conditions: [
+        {
+          description: "Rng +1% for every kill during Angalta Kigalshe. (up to +22%)",
+          multiplicative: false, type: "Slider", min: 0, max: 22, step: 1, buffs: [0, 0, 1, 0, 0, 0],
+        },
+
+        {
+          description: "This unit gains +200% Dmg for the attack Angalta Kigalshe.",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [200, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  CuChulainn: [
+    {
+      name: "Crimson Anathema", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains Dmg +15% and Spa -10%.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [15, 10, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Fate Piercer", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit does +75% more Dmg when hitting 1 enemy.",
+          multiplicative: true, type: "Statement", statement: "Only when hitting 1 enemy", buffs: [75, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Archer: [
+    {
+      name: "True Hawkeye", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains Crit +35% and CritDmg +50%",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 0, 35, 50, 0, 0]
+        },
+
+        {
+          description: "Spa -1% with each Crit Hit (down to -10%)",
+          multiplicative: false, type: "Slider", min: 0, max: 10, step: 1, buffs: [0, 1, 0, 0, 0, 0],
+        }
+      ]
+    },
+
+    {
+      name: "Shattered Ideal of Self", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +0.1% for each hit on an enemy during Unlimited Forgeries (up to +30%). (Use buffs tab for the ability buff)",
+          multiplicative: false, type: "Slider", min: 0, max: 30, step: 0.1, buffs: [1, 0, 0, 0, 0, 0],
+        }
+      ]
+    },
+  ],
+
+  Saber: [
+    {
+      name: "Sealed Blade of the Wind King", upgrade: 0,
+      conditions: [
+        {
+          description: "(UPG 0-5) Spa -20%. (Not active since this is max upg dps calc for now)", type: "None"
+        },
+
+        {
+          description: "This unit does 100% more Dmg when hitting an enemy for the first time",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [100, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "King of Knights", upgrade: 6,
+      conditions: [
+        {
+          description: "(UPG 6-11) This unit gains Dmg +30%, Spa -10% and Rng +10%",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [30, 10, 10, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Excalibur", upgrade: 10,
+      conditions: [
+        {
+          description: "Dmg +1% with each kill using Excalibur (up to +25%).",
+          multiplicative: false, type: "Slider", min: 0, max: 25, step: 1, buffs: [1, 0, 0, 0, 0, 0],
+        },
+
+        {
+          description: "This unit gains +300% Dmg for 3 attacks when activating Excalibur",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Medea: [
+    {
+      name: "Grand Thaumaturge", upgrade: 0,
+      conditions: [
+        {
+          description: "Spa -1% with each attack performed. (down to -10%)",
+          multiplicative: false, type: "Slider", min: 0, max: 10, step: 1, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Oathbreaker", upgrade: 10,
+      conditions: [
+        {
+          description: "Dmg +7% every time and enemy is nullified. (up to 35%)",
+          multiplicative: false, type: "Slider", min: 0, max: 35, step: 7, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  Medusa: [
+    {
+      name: "Vampiric Lineage", upgrade: 0,
+      conditions: [
+        {
+          description: "For each stack of any status effect on an enemy, DMG +10% against them. (up to +30%)",
+          multiplicative: true, type: "Slider", min: 0, max: 30, step: 10, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Mystic Gaze", upgrade: 7,
+      conditions: [
+        {
+          description: "SPA -2% if an enemy has been successfully petrified. (down to -10%)",
+          multiplicative: true, type: "Slider", min: 0, max: 10, step: 2, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  Johnni: [
+    {
+      name: "Out of Bullets", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains SPA -25%.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 25, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Dmg & Spa +25% after 10 attacks are performed.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [25, -25, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Infinite Spin", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 25% more Dmg for the next 5 attacks after activating Infinite Spin.",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [25, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Giro: [
+    {
+      name: "The Power of Spin", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains SPA -16%, Dmg and Rng +16% after reaching the Golden State.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [16, 16, 16, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Chaso: [
+    {
+      name: "Flowing Blood", upgrade: 0,
+      conditions: [
+        {
+          description: "With each attack performed, Dmg dealt +5% on a bleeding enemy. (up to +50%)",
+          multiplicative: true, type: "Slider", min: 0, max: 50, step: 5, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  Jago: [
+    {
+      name: "Rising Flames", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +0.4% with each kill. (up to +20%)",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 0.4, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Iron Coffin", upgrade: 0,
+      conditions: [
+        {
+          description: "attacks are full aoe and Dmg dealt +50% when hitting burning enemies while Iron Coffin is active.",
+          multiplicative: true, type: "Statement", statement: "Toggle Active Buff", buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Todu: [
+    {
+      name: "Near Death Delusion", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +12% with each attack received. (up to +36%)",
+          multiplicative: false, type: "Slider", min: 0, max: 36, step: 12, buffs: [1, 0, 0, 0, 0, 0],
+        },
+
+        {
+          description: "Spa -4% with use of Boogie. (down to -16%)",
+          multiplicative: false, type: "Slider", min: 0, max: 16, step: 4, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  Akazo: [
+    {
+      name: "Enhanced Regeneration", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +11% with each attack received. (up to +33%)",
+          multiplicative: false, type: "Slider", min: 0, max: 3, step: 11, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Compass Needle", upgrade: 8,
+      conditions: [
+        {
+          description: "Dmg and Rng +33% during Compass Needle",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [33, 0, 33, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Tengon: [
+    {
+      name: "God of Flashiness", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 10% Dmg and Rng",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [10, 0, 10, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Rhythm of Battle", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg dealt +10% with each consecutive attack on the same enemy. (Up to 30%)",
+          multiplicative: true, type: "Slider", min: 0, max: 30, step: 10, buffs: [1, 0, 0, 0, 0, 0],
+        },
+
+        {
+          description: "Spa -2% with each attack performed. (Down to -30%)",
+          multiplicative: true, type: "Slider", min: 0, max: 30, step: 2, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  ChaIn: [
+    {
+      name: "Pristine Hunter", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 20% Crit and 50% CritDmg.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 0, 0, 20, 50, 0]
+        },
+
+        {
+          description: "Gains an additional 15% Crit on bosses.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 0, 0, 15, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Noruto: [
+    {
+      name: "Sage Training", upgrade: 0,
+      conditions: [
+        {
+          description: "After not attacking for 6 seconds, Spa -5%. (down to -15%)",
+          multiplicative: false, type: "Slider", min: 0, max: 15, step: 5, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Blistering Rage", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +2% with each attack performed. (up to +36%)",
+          multiplicative: false, type: "Slider", min: 0, max: 36, step: 2, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  Obita: [
+    {
+      name: "Vanishing Step", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains -3% Spa per wave (down to -12%).",
+          multiplicative: false, type: "Slider", min: 0, max: 12, step: 3, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+  
+  SongJinwu: [
+    {
+      name: "Job Request", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains Dmg +0.1% per takedown. (up to +40%)",
+          multiplicative: false, type: "Slider", min: 0, max: 40, step: 0.1, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "King of the Shadows", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains Dmg +2.5% each time a shadow defeats an enemy. (up to +25%)",
+          multiplicative: false, type: "Slider", min: 0, max: 25, step: 2.5, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
+  Sosuke: [
+    {
+      name: "Way of the Snake", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +2% with each consecutive attack on the same enemy.",
+          multiplicative: true, type: "Slider", min: 0, max: 30, step: 2, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Lightning Powered Assault", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit deals 50% more Dmg to enemies that have been Stunned.",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  VogitaSuper: [
+    {
+      name: "Proud Warrior", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains Spa -20% if the only units in range include the name 'Vogita'.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 20, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Overwhelming Power", upgrade: 0,
+      conditions: [
+        {
+          description: "When only hitting 1 enemy, deal 100% more Dmg.",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [100, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ]
 }

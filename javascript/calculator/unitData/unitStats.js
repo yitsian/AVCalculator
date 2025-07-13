@@ -78,7 +78,6 @@ const unitStats = {
   Deruta: { displayName: "Deruta (Hunt)", placementCount: 3, placementCost: 1300, maxCost: 55100, damage: 4400, spa: 6, range: 44, aoe: "15 Circle", hits: 4 },
   Hercool: { displayName: "Hercool and Mr Boo", placementCount: 3, placementCost: 1800, maxCost: 56400, damage: 2200, spa: 6, range: 25, aoe: "16 Circle", hits: 4 },
   Rohan: { displayName: "Ultimate Rohan", placementCount: 3, placementCost: 2200, maxCost: 62400, damage: 5500, spa: 5, range: 40, aoe: "50 (8 Radius) Splash", hits: 8 },
-  Friran: { displayName: "Friran (Teacher)", placementCount: 3, placementCost: 1400, maxCost: 80100, damage: 6400, spa: 6, range: 45, aoe: "70° Circle", hits: 4 },
   Gazelle: { displayName: "Gazelle (Zombie)", placementCount: 3, placementCost: 2100, maxCost: 41100, damage: 1500, spa: 5, range: 25, aoe: "6 Line", hits: 2 },
   Ichiga: { displayName: "Ichiga (Savior)", placementCount: 3, placementCost: 1200, maxCost: 50400, damage: 4000, spa: 8, range: 35, aoe: "18 Circle", hits: 5 },
   Kempache: { displayName: "Kempache (Feral)", placementCount: 3, placementCost: 1500, maxCost: 90300, damage: 6000, spa: 7, range: 34, aoe: "80° Cone", hits: 4 },
@@ -105,5 +104,5 @@ const unitStats = {
   Obita: { displayName: "Obita (Awakened)", placementCount: 3, placementCost: 2000, maxCost: 65000, damage: 3250, spa: 5, range: 32, aoe: "65° Cone", hits: 4 },
   SongJinwu: { displayName: "Song Jinwu (Monarch)", placementCount: 3, placementCost: 1700, maxCost: 102000, damage: 2990, spa: 6, range: 44, aoe: "16 Circle", hits: 2 },
   Sosuke: { displayName: "Sosuke (Storm)", placementCount: 4, placementCost: 1100, maxCost: 59000, damage: 2563, spa: 8, range: 43, aoe: "16 Circle", hits: 1 },
-  VogitaSuper: { displayName: "Vogita Super (Awakened)", placementCount: 4, placementCost: 1200, maxCost: 64250, damage: 2550, spa: 6, range: 40, aoe: "6 Line", hits: 5 },
+  Vogita: { displayName: "Vogita Super (Awakened)", placementCount: 4, placementCost: 1200, maxCost: 64250, damage: 2550, spa: 6, range: 40, aoe: "6 Line", hits: 5 },
 }

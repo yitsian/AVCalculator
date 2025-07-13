@@ -171,7 +171,7 @@ const unitAttacks = {
 
   Dawntay: [
     {name: "DT Followup", aoe: "Full", hits: 7, type: "Spa-Followup", description: "Follows up with attack 5 every attack during DT for 100% Dmg (Basic also becomes full aoe)", 
-    multiplier: (finalStats, conditions) => {return conditions["1-0"].active == true ? 1 : 0}, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+    multiplier: (finalStats, conditions) => {const crit = finalStats.crit / 100; return conditions["1-0"].active == true ? crit : 0}, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
 
     {name: "Normal Followups", aoe: "28 Circle", hits: 7, type: "Spa-Followup", 
     description: "Follows up each for 50% Dmg up to 4 times as long as this unit lands a crit per followup (Deactivated during DT)", 
@@ -221,5 +221,79 @@ const unitAttacks = {
   Sosora: [
     {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 50% of this unit's DMG over 6s.", 
     multiplier: 0.5, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Brisket: [
+    {name: "Yo-Yo Follow Up!", aoe: "Not Sure", hits: 1, type: "Nuke", 
+    description: "Use 50% meter to do attack 4 for 200% Dmg. (Best use is to use off cd for avg of 5/2.5 attacks to charge with/out Spirit)", 
+    multiplier: 2, image: "Images/Abilities/Yo-Yo_Follow_Up_Ability.webp", gradient: "mythic"},
+  ],
+
+  Kazzy: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 25% of this unit's DMG over 6s when in Necro form.", 
+    multiplier: (finalStats, conditions) => {return conditions["0-1"].active == true ? 0.25 : 0}, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "I Use This to Go Fishing", aoe: "Single", hits: 1, type: "Nuke", 
+    description: "When in Undine form, spawns up to 3 bubbles per Kazzy that does 100% Dmg and applies bubbled", 
+    multiplier: (finalStats, conditions) => {return conditions["0-1"].active == true ? 0 : 1}, image: "Images/Abilities/Queen_of_Man_Ability.webp", gradient: "mythic"},
+  ],
+
+  NotGoodGuy: [
+    {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict Burn equal to 30% of this unit's DMG over 5s (Double this to account for followup)", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Followup", aoe: "35° Cone", hits: 1, type: "Spa-Followup", description: "Anytime this unit attacks a burning enemy, Follow Up with attack 1 for 100% Dmg (4s cd).", 
+    multiplier: 1, image: "Images/Abilities/Hell_Ability.webp", gradient: "mythic"},
+
+    {name: "On Kill Burn", aoe: "Single", hits: 4, type: "Condition-Dot", description: "During Dragon Install, Kills inflict Burn equal to 30% of this unit's (4s cd)", 
+    multiplier: (finalStats, conditions) => {return conditions["0-0"].active == true ? 0.3 : 0}, image: "Images/Abilities/Dragon_Install_Ability.webp", gradient: "secret"},
+  ],
+
+  Rohan: [
+    {name: "Followups", aoe: "12 Circle", hits: 3, type: "Spa-Followup", 
+    description: "Anytime this unit crits on the first hit of its attack follows up with attack 2 for 100% Dmg", 
+    multiplier: (finalStats, conditions) => {const crit = finalStats.crit / 100; return crit}, 
+    image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+  ],
+
+  Kempache: [
+    {name: "Feral Rage", aoe: "Full", hits: 4, type: "Condition-Followup", description: "Lets out a roar any time this unit gets stunned for 80% of their damage in a Full AoE", 
+    multiplier: 0.8, image: "Images/Abilities/Conditional_Followup.webp", gradient: "rare"},
+  ],
+
+  Kiskae: [
+    {name: "Bleed", aoe: "Single", hits: 4, type: "Dot", description: "Attacks inflict bleed equal to 25% of this units damage over 4s per attack", 
+    multiplier: 0.25, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+  ],
+
+  Medusa: [
+    {name: "Bleed", aoe: "Single", hits: 4, type: "Dot", description: "Attacks inflict bleed equal to 30% of this units damage over 4s per attack", 
+    multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+  ],
+
+  Giro: [
+    {name: "Spin, Spin!", aoe: "5 Circle", hits: 4, type: "Condition-Followup", 
+    description: "Landing an attack causes a Steel Ball to drop, dealing 20% of this unit's DMG over 4 seconds. (Drops 2 during Golden State)", 
+    multiplier: 0.2, image: "Images/Abilities/Conditional_Followup.webp", gradient: "rare"},
+  ],
+
+  Chaso: [
+    {name: "Bleed", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict bleed equal to 35% of this units damage over 6s per attack", 
+    multiplier: 0.35, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+  ],
+
+  Jago: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 30% of this unit's DMG over 6s", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  ChaIn: [
+    {name: "Dance! Dance! Dance!", aoe: "270° Cone", hits: 1, type: "Condition-Followup", description: "Inflicts an extra instance of Dmg after performing a dodge, equal to 65% of her Dmg.", 
+    multiplier: 0.65, image: "Images/Abilities/Conditional_Followup.webp", gradient: "rare"},
+  ],
+
+  Obita: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 30% of this unit's DMG over 6s", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
   ]
 }

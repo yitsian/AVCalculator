@@ -7,10 +7,7 @@ html, body {
   height: 100vh;
 
   margin: 0;
-}
 
-html,
-body {
   display: grid;
 
   grid-template-rows: auto auto 1fr;
@@ -21,7 +18,7 @@ body {
 
 .title {
   margin-top: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 10px;
 
   padding-top: 20px;
   padding-bottom: 20px;
@@ -33,6 +30,10 @@ body {
   text-align: center;
 }
 
+.header-margin {
+  margin-bottom: 12px;
+}
+
 .main {
   display: flex;
 
@@ -40,8 +41,9 @@ body {
 
   padding-left: 12px;
   padding-right: 12px;
+  padding-bottom: 12px;
 
-  flex: 1;
+  height: 100%;
 
   flex-direction: row;
   align-items: stretch;
