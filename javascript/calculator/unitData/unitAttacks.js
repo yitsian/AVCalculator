@@ -35,7 +35,7 @@ const unitAttacks = {
   ],
 
   Conqueror: [
-    {name: "Followup", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Follows up every attack for 100% Dmg for every boss in range", 
+    {name: "Followup", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Follows up every attack for 100% Dmg for every boss in range (Bugged to not got the 120% buff atm)", 
     multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
   ],
 

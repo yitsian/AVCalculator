@@ -34,7 +34,7 @@ const buffData = {
   },
 
   Soburo: {
-    name: "Soburo", description: "Buffs all allies in range by +10% Dmg and 8% Rng. Slider is for additional 10% buffs", image: "Images/Units/Soburo.webp", 
+    name: "Soburo", description: "Buffs all allies in range by +10% Dmg and 8% Rng. Slider is for additional 10% buffs", image: "Images/Units/Soburo.webp",
     background: "exclusive", multiplicative: false,
     conditions: [
       {
@@ -58,7 +58,7 @@ const buffData = {
   },
 
   Al: {
-    name: "Al", description: "Anytime this unit cleanses a debuff or status effect from an ally, buff that ally by 25% Dmg and 10% Rng for 30 seconds.", 
+    name: "Al", description: "Anytime this unit cleanses a debuff or status effect from an ally, buff that ally by 25% Dmg and 10% Rng for 30 seconds.",
     background: "exclusive", image: "Images/Units/Al.webp", multiplicative: false,
     conditions: [
       {
@@ -68,8 +68,8 @@ const buffData = {
   },
 
   Astolfo: {
-    name: "Astolfo", 
-    description: "For every enemy hit by this units active, buff all allies in range by 1% Dmg and 0.5% Rng (Up to 20% and 10%). (Spellbook doubles this cap)", 
+    name: "Astolfo",
+    description: "For every enemy hit by this units active, buff all allies in range by 1% Dmg and 0.5% Rng (Up to 20% and 10%). (Spellbook doubles this cap)",
     background: "secret", image: "Images/Units/Astolfo.webp", multiplicative: false,
     conditions: [
       {
@@ -79,8 +79,8 @@ const buffData = {
   },
 
   Foboko: {
-    name: "Foboko", 
-    description: "Reduces the Spa of all allies in range by 5%", 
+    name: "Foboko",
+    description: "Reduces the Spa of all allies in range by 5%",
     background: "secret", image: "Images/Units/Foboko.webp", multiplicative: false,
     conditions: [
       {
@@ -90,7 +90,7 @@ const buffData = {
   },
 
   Hercool: {
-    name: "Hercool", description: "Anytime this unit crits buffs all allies in range by 10% Dmg and +15% CritDmg. Doubled for DBZ units", 
+    name: "Hercool", description: "Anytime this unit crits buffs all allies in range by 10% Dmg and +15% CritDmg. Doubled for DBZ units",
     background: "mythic", image: "Images/Units/Hercool.webp", multiplicative: false,
     conditions: [
       {
@@ -100,11 +100,11 @@ const buffData = {
   },
 
   Boohon: {
-    name: "Boohon", description: "Buffs all DBZ units in range by +10% Dmg and +30% Crit chance.", 
+    name: "Boohon", description: "Buffs all DBZ units in range by +10% Dmg and +30% Crit chance.",
     background: "secret", image: "Images/Units/Boohon.webp", multiplicative: false,
     conditions: [
       {
-        multiplicative: false, type: "Static", statement: "Unit is in range and is DBZ", buffs: [10, 0, 0, 30, 0, 0]
+        multiplicative: false, type: "Static", statement: "DBZ Units", buffs: [10, 0, 0, 30, 0, 0]
       }
     ]
   },
@@ -136,13 +136,123 @@ const buffData = {
     ]
   },
 
+  Archer: {
+    name: "Archer", description: "During Unlimited Forgeries, all enemies take 25% more Dmg as well as 50% more Dmg from blast aliies (stacks).", image: "Images/Units/Archer.webp",
+    background: "mythic", multiplicative: true,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "Blast allies", buffs: [50, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: true, type: "Static", statement: "All allies", buffs: [25, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
   Salter: {
     name: "Salter Debuff", description: "Uncorrupted units within 70% range gain 15% Spa", background: "secret",
-    image: "Images/Units/Saber Alter.webp", multiplicative: false,
+    image: "Images/Units/Salter.webp", multiplicative: false,
     conditions: [
       {
         multiplicative: false, type: "Static", statement: "Unit is in range", buffs: [0, -15, 0, 0, 0, 0]
       }
+    ]
+  },
+
+  FireDomain: {
+    name: "Fire Domain Buff", description: "For 20s, fire allies gain 30% dmg, 45% if last domain was sand + ice", background: "koguro",
+    image: "Images/Abilities/Fire_Domain.png", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Last 2 domains were sand + ice", buffs: [15, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Fire allies", buffs: [30, 0, 0, 0, 0, 0]
+      }
+    ]
+  },
+
+  IceDomain: {
+    name: "Fire Domain Buff", description: "For 20s, water allies gain 30% dmg", background: "koguro",
+    image: "Images/Abilities/Ice_Domain.png", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Water allies", buffs: [30, 0, 0, 0, 0, 0]
+      }
+    ]
+  },
+
+  SandDomainBlast: {
+    name: "Sand Domain Blast Buff", description: "For 20s, blast allies gain 30% more Dmg, 45% if last domain was sand + ice", background: "koguro",
+    image: "Images/Abilities/Sand_Domain.png", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Last 2 domains were sand + ice", buffs: [15, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Blast allies", buffs: [30, 0, 0, 0, 0, 0]
+      }
+    ]
+  },
+
+  SandDomain: {
+    name: "Sand Domain Normal Buff", description: "For 20s, all allies gain 30% more Dmg if last domain was ice, 45% if it was sand + ice", background: "koguro",
+    image: "Images/Abilities/Sand_Domain.png", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Last 2 domains were sand + ice", buffs: [15, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "All allies", buffs: [30, 0, 0, 0, 0, 0]
+      }
+    ]
+  },
+
+  Lfelt: {
+    name: "Lfelt", description: "Heavy Metal Wife: Anytime a Video Game character uses meter or gauge, increase their Dmg by 30% for 1 attack.",
+    background: "secret", image: "Images/Units/Lfelt.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Video Game unit", buffs: [30, 0, 0, 0, 0, 0]
+      }
+    ]
+  },
+
+  Yehowach: {
+    name: "Yehowach", description: "Ashfallen either buffs all units in range by 15% Dmg, or debuffs them by 20% Dmg and 10% Rng",
+    background: "secret", image: "Images/Units/Yehowach.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Debuff Mode (Toggle buff off)", buffs: [-20, 0, -10, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Buff Mode (Toggle debuff off)", buffs: [15, 0, 0, 0, 0, 0]
+      }
+    ]
+  },
+
+  Foo: {
+    name: "Foo", description: "When equiped on an ally that buffs also gives a +2% to 10% (15% c3) Dmg buff for the furation for the buff.",
+    background: "mythic", image: "Images/Familiars/Foo.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 15, step: 0.1, buffs: [1, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  Ishtar: {
+    name: "Ishtar", description: "All fate units in range gain 12% Dmg",
+    background: "mythic", image: "Images/Units/Ishtar.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Fate allies", buffs: [12, 0, 0, 0, 0, 0]
+      },
     ]
   }
 }

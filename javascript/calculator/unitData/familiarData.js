@@ -49,11 +49,23 @@ const familiarsData = {
   },
 
   StrangeCat: {
-
+    image: "Images/Familiars/StrangeCat.webp",
+    elements: ["Omni-Elemental"],
+    type: "Statement",
+    passiveName: "Luck of the gods",
+    passiveDescription: "Yet to be implemented",
+    buffs: [0, 0, 0, 0, 0, 0],
+    multiplicative: true
   },
 
   BlackSpirit: {
-
+    image: "Images/Familiars/BlackSPirit.webp",
+    elements: ["Blast", "Spark", "Nature"],
+    type: "Statement",
+    passiveName: "Dark Spirit",
+    passiveDescription: "Yet to be implemented",
+    buffs: [0, 0, 0, 0, 0, 0],
+    multiplicative: false
   },
 
   Bodibi: {
@@ -61,7 +73,16 @@ const familiarsData = {
   },
 
   Pachiru: {
-
+    image: "Images/Familiars/Pachiru.webp",
+    elements: ["Cosmic", "Fire", "Unbound"],
+    type: "Slider",
+    passiveName: "Lieutenant",
+    passiveDescription: "Every time the equipped unit is stunned increases Dmg by +1.0%-10.0%. (Up to +30.0%)",
+    minRanges: { damage: 0 },
+    maxRanges: { damage: 30 },
+    step: 0.1,
+    buffs: [1, 0, 0, 0, 0, 0],
+    multiplicative: false
   },
 
   Turbo: {
