@@ -174,15 +174,9 @@ function createAllAttacks() {
   for (attackIndex in unitAttacks[selectedUnit]) {
     const attack = unitAttacks[selectedUnit][attackIndex];
 
-    let attackMultiplier = 1;
+    attackMultiplier = attack.multiplier
 
-    if (typeof attack.multiplier == "function") {
-      attackMultiplier = attack.multiplier(finalStats, conditionMetaMap)
-    } else {
-      attackMultiplier = attack.multiplier
-    }
-
-    if (attackMultiplier > 0) {
+    if (attackMultiplier > 0 || typeof attack.multiplier == "function") {
       createAttack(attack)
     }
   }

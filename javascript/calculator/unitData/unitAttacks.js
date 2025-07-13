@@ -105,7 +105,7 @@ const unitAttacks = {
     multiplier: 0.75, image: "Images/Units/ChoyJongEn.webp", gradient: "secret"},
 
     {name: "Intense Burn Nuke", aoe: "Single", hits: 1, type: "Nuke", description: "Enemy receives an extra hit dealing Dmg equal to what the burn dealt. (Only accounts for 1 Choy)", 
-    multiplier: (finalStats, conditions) => {return conditions["1-0"].active == true ? (conditions["1-0"].value * 0.75) : 0},
+    multiplier: (finalStats, conditions) => {return conditions["1-0"].active == true ? (conditions["1-0"].value * 0.075) : 0},
     image: "Images/Units/ChoyJongEn.webp", gradient: "secret"}
   ],
 

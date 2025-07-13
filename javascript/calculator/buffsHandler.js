@@ -153,6 +153,8 @@ function buffUpdate(checkbox, slider, valueDisplay, conditionId, condition) {
     if (slider) {
       valueDisplay.textContent = slider.value + (condition.suffix || "%");
     }
+
+    updateAttacks()
   };
 
   if (checkbox) checkbox.addEventListener("change", update);
