@@ -173,7 +173,6 @@ function createBuff(buffData) {
   const deleteBuff = () => {
     buffData.conditions.forEach((condition, index) => {
       clearBuffActive(`${buffData.name}-${index}`)
-      //setBuffActive(`${buffData.name}-${index}`, condition, false, 0);
     });
 
     eventHandlers.forEach(remove => remove());

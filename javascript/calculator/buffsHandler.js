@@ -8,8 +8,7 @@ let appliedMultBuffs = {
   spa: {},
   range: {},
   crit: {},
-  critDmg: {},
-  summon: {}
+  critDmg: {}
 };
 
 let appliedAddBuffs = {
@@ -17,26 +16,31 @@ let appliedAddBuffs = {
   spa: {},
   range: {},
   crit: {},
-  critDmg: {},
-  summon: {}
+  critDmg: {}
 };
 
-// Initialize all passive multipliers to default (1x)
-function resetPassiveMults() {
+let otherBuffs = {
+  summon: {},
+  burn: {},
+  bleed: {}
+}
+
+function resetBuffs() {
   for (key in statMultBuffs) {
     statMultBuffs[key] = 1;
   }
-}
 
-function resetPassiveAdds() {
   for (key in statAddBuffs) {
     statAddBuffs[key] = 0;
+  }
+
+  for (key in otherStats) {
+    otherStats[key] = 1;
   }
 }
 
 function updateAllMultipliers() {
-  resetPassiveMults();
-  resetPassiveAdds();
+  resetBuffs()
 
   for (const stat in appliedMultBuffs) {
     for (const key in appliedMultBuffs[stat]) {
@@ -55,16 +59,18 @@ function updateAllMultipliers() {
       }
     }
   }
+
+  for (const stat in otherBuffs) {
+    for (const key in otherBuffs[stat]) {
+      const value = otherBuffs[stat][key];
+      if (value) {
+        otherStats[stat] += value;
+      }
+    }
+  }
 }
 
-function setBuffActive(conditionId, condition, isActive, value = 1) {
-  for (const stat in appliedMultBuffs) {
-    delete appliedMultBuffs[stat][conditionId];
-  }
-  for (const stat in appliedAddBuffs) {
-    delete appliedAddBuffs[stat][conditionId];
-  }
-
+function addBuffs(conditionId, condition, isActive, value) {
   if (isActive) {
     const buffs = typeof condition.getBuffs === "function"
       ? condition.getBuffs(value, conditionMetaMap)
@@ -80,16 +86,33 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
     target.range[conditionId] = buffs[2] * totalMult;
     target.crit[conditionId] = buffs[3] * totalMult;
     target.critDmg[conditionId] = buffs[4] * totalMult;
-    target.summon[conditionId] = buffs[5] * totalMult;
-  }
 
-  recalculateAllPassives();
+    if (condition.otherBuffs) {
+      const other = condition.otherBuffs
+
+      otherBuffs.summon[conditionId] = other[0] * totalMult
+      otherBuffs.burn[conditionId] = other[1] * totalMult
+      otherBuffs.bleed[conditionId] = other[2] * totalMult
+    }
+  }
 }
 
-// Apply or remove a passive buff
-function recalculateAllPassives() {
-  // Reset
+function setBuffActive(conditionId, condition, isActive, value = 1) {
   const isRangeFormat = stat => /^\d+-\d+$/.test(stat);
+
+  for (const stat in appliedMultBuffs) {
+    delete appliedMultBuffs[stat][conditionId];
+  }
+
+  for (const stat in appliedAddBuffs) {
+    delete appliedAddBuffs[stat][conditionId];
+  }
+
+  for (const stat in otherBuffs) {
+    delete otherBuffs[stat][conditionId];
+  }
+
+  addBuffs(conditionId, condition, isActive, value)
 
   for (const stat in appliedMultBuffs) {
     for (conditionId in appliedMultBuffs[stat]) {
@@ -107,28 +130,20 @@ function recalculateAllPassives() {
     }
   }
 
+  for (const stat in otherBuffs) {
+    for (conditionId in otherBuffs[stat]) {
+      if (isRangeFormat(conditionId)) {
+        delete otherBuffs[stat][conditionId]
+      }
+    }
+  }
+
   for (const conditionId in conditionMetaMap) {
     const condition = conditionMetaMap[conditionId];
     const isActive = condition.active;
     const value = condition.value ?? 1;
 
-    if (!isActive) continue;
-
-    const buffs = typeof condition.getBuffs === "function"
-      ? condition.getBuffs(value, conditionMetaMap)
-      : condition.buffs;
-
-    const sliderMult = condition.type === "Slider" ? value : 1;
-    const totalMult = sliderMult / 100;
-
-    const target = condition.multiplicative ? appliedMultBuffs : appliedAddBuffs;
-
-    target.damage[conditionId] = buffs[0] * totalMult;
-    target.spa[conditionId] = (condition.multiplicative ? -1 : 1) * buffs[1] * totalMult;
-    target.range[conditionId] = buffs[2] * totalMult;
-    target.crit[conditionId] = buffs[3] * totalMult;
-    target.critDmg[conditionId] = buffs[4] * totalMult;
-    target.summon[conditionId] = buffs[5] * totalMult;
+    addBuffs(conditionId, condition, isActive, value)
   }
 
   updateAllMultipliers();

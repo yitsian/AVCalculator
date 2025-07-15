@@ -53,18 +53,25 @@ function getTraitBonus(trait) {
   }
 }
 
-function formatPassiveDescription(text) {
+function formatKeyWords(text) {
   return text
     .replace(/\bmana\b/gi, `<span class="curse">mana</span>`)
+    .replace(/\bmeter\b/gi, `<span class="curse">meter</span>`)
+    .replace(/\bsummon\b/gi, `<span class="curse">summon</span>`)
     .replace(/\bdmg\b/gi, match => `<span class="damage">${match}</span>`)
     .replace(/\bspa\b/gi, match => `<span class="spa">${match}</span>`)
     .replace(/\brng\b/gi, match => `<span class="range">${match}</span>`)
     .replace(/\bcrit\b/gi, match => `<span class="crit">${match}</span>`)
     .replace(/\bcritdmg\b/gi, match => `<span class="critDmg">${match}</span>`)
     .replace(/\bhealth\b/gi, match => `<span class="buff">${match}</span>`)
-    .replace(/\every\b/gi, match => `<span class="spa">${match}</span>`)
+    .replace(/\bevery\b/gi, match => `<span class="spa">${match}</span>`)
+}
+
+function formatPassiveDescription(text) {
+  return formatKeyWords(text)
     .replace(/([+-]?\d+(\.\d+)?%|[+-]\/[+-]?\d+(\.\d+)?%)/g, `<span class="buff">$1</span>`)
-    .replace(/([+-]?\d+(\.\d+)?s)/g, `<span class="spa">$1</span>`);
+    .replace(/([+-]?\d+(\.\d+)?s)/g, `<span class="spa">$1</span>`)
+    .replace(/(\d+(?:\.\d+)?x)/g, `<span class="buff">$1</span>`);
 }
 
 function statToBuffVector(stat) {

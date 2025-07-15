@@ -6,7 +6,6 @@ let finalStats = {
   range: 0,
   crit: 0,
   critDmg: 0,
-  summon: 0,
 }
 
 const finalDamageValue = document.getElementById("unit-final-damage-value");
@@ -96,6 +95,13 @@ function updateAttacks() {
       attackMultiplier = attack.multiplier
     }
 
+    const matchBurn = str => /\bburn\b/.test(str.toLowerCase())
+    const matchBleed = str => /\bbleed\b/.test(str.toLowerCase())
+
+    const dotMult = (matchBleed(attackID) ? otherStats.bleed : 1) * (matchBurn(attackID) ? otherStats.burn : 1)
+
+    attackMultiplier *= (attack.type == "Summon" ? otherStats.summon : 1) * dotMult
+
     const normalAttackDamage = finalStats.damage * attackMultiplier
     statLabels.normal[0].textContent = formatDamage(normalAttackDamage)
     statLabels.normal[1].textContent = formatBuff(attackMultiplier)
@@ -134,6 +140,10 @@ function updateAttacks() {
         const damageLabels = attack.damageLabels
 
         damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
+      } else if (attack.type == "Summon") {
+        const damageLabels = attack.damageLabels
+
+        damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
       }
     }
   }
@@ -151,6 +161,17 @@ baseStats = new Proxy(baseStats, {
 });
 
 statAddBuffs = new Proxy(statAddBuffs, {
+  set(target, prop, value) {
+    if (target[prop] !== value) {
+      target[prop] = value;
+
+      updateAttacks();
+    }
+    return true;
+  }
+});
+
+otherStats = new Proxy(otherStats, {
   set(target, prop, value) {
     if (target[prop] !== value) {
       target[prop] = value;

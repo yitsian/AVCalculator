@@ -105,6 +105,7 @@ function createAttack(attack = {}) {
   switch (attack.type) {
     case "Nuke":
     case "Condition-Followup":
+    case "Summon":
       [avgDps, avgDpsLabel] = createTextStat("Average Damage");
       attackLayout.appendChild(avgDps);
 

@@ -68,10 +68,6 @@ const familiarsData = {
     multiplicative: false
   },
 
-  Bodibi: {
-
-  },
-
   Pachiru: {
     image: "Images/Familiars/Pachiru.webp",
     elements: ["Cosmic", "Fire", "Unbound"],

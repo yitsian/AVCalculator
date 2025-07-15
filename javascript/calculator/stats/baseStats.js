@@ -4,7 +4,6 @@ let baseStats = {
   range: 0,
   crit: 0,
   critDmg: 0,
-  summon: 0,
 }
 
 let statMultBuffs = {
@@ -13,7 +12,6 @@ let statMultBuffs = {
   range: 1,
   crit: 1,
   critDmg: 1,
-  summon: 1
 }
 
 let statAddBuffs = {
@@ -22,7 +20,12 @@ let statAddBuffs = {
   range: 0,
   crit: 0,
   critDmg: 0,
-  summon: 0
+}
+
+let otherStats = {
+  summon: 0,
+  burn: 0,
+  bleed: 0,
 }
 
 function updateBaseStats() {

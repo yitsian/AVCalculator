@@ -254,5 +254,55 @@ const buffData = {
         multiplicative: false, type: "Static", statement: "Fate allies", buffs: [12, 0, 0, 0, 0, 0]
       },
     ]
+  },
+
+  Hebano: {
+    name: "Hebano", description: "Enemies take 20% more Dmg from Fire allies",
+    background: "exclusive", image: "Images/Units/Hebano.webp", multiplicative: true,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "Fire allies", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  Renguko: {
+    name: "Renguko", description: "Enemies inflicted with Purgatory Flames receive 25% more Burn Dmg.",
+    background: "exclusive", image: "Images/Units/Renguko.webp", multiplicative: true,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "Burn Buff", buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [0, 25, 0]
+      },
+    ]
+  },
+
+  Sukono: {
+    name: "Sukono", description: "Enemies inflicted with Cleave receive 20% more Bleed Dmg.",
+    background: "secret", image: "Images/Units/Sukono.webp", multiplicative: true,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "Bleed Buff", buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [0, 0, 20]
+      },
+    ]
+  },
+
+  DarkMage: {
+    name: "Dark Mage", description: "Enemies inflicted with Diseased receive 50% more DoT Dmg.",
+    background: "exclusive", image: "Images/Units/DarkMage.webp", multiplicative: true,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "DoT Buff", buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [0, 50, 50]
+      },
+    ]
+  },
+
+  Gazelle: {
+    name: "Gazelle", description: "Buffs any summons max HP by 1% for every summon on track. (up to 50%)",
+    background: "mythic", image: "Images/Units/Gazelle.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 50, step: 1, buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [1, 0, 0]
+      },
+    ]
   }
 }

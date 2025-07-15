@@ -54,7 +54,7 @@ let unitPassives = {
       conditions: [
         {
           description: "This unit's summons gain additional health based on the % of current mana remaining at the time of their summoning.",
-          multiplicative: false, type: "Slider", min: 0, max: 100, step: 1, buffs: [0, 0, 0, 0, 0, 1]
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 1, buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [1, 0, 0]
         }
       ]
     },
@@ -215,7 +215,7 @@ let unitPassives = {
       name: "Tethered", upgrade: 0,
       conditions: [
         {
-          description: "Enemies that are affected by Tethered share 0.1% of the Dmg taken. (Not implemented)", type: "None"
+          description: "Enemies that are affected by Tethered share 0.1% of the Dmg taken. (Not yet implemented)", type: "None"
         }
       ]
     },
@@ -598,8 +598,8 @@ let unitPassives = {
       name: "Release", upgrade: 0,
       conditions: [
         {
-          description: "Increases the Dmg of burn applied to the same enemy by this unit by 1% everytime it is applied to the same enemy. (Not implemented)",
-          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 0, 0, 0, 0, 0]
+          description: "Increases the Dmg of burn applied to the same enemy by this unit by 1% everytime it is applied to the same enemy.",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [1, 1, 0]
         }
       ]
     },
@@ -610,7 +610,7 @@ let unitPassives = {
       name: "King's Curse", upgrade: 0,
       conditions: [
         {
-          description: "Attacks inflict Cleave, making enemies take +20% more Dmg from Bleed. (Not implemented yet)", type: "None"
+          description: "Attacks inflict Cleave, making enemies take +20% more Dmg from Bleed. (Use buffs tab)", type: "None"
         },
       ]
     },
@@ -956,7 +956,7 @@ let unitPassives = {
       name: "All That is Good", upgrade: 8,
       conditions: [
         {
-          description: "When meter fills, applies diseased to enemies making them take 50% more DOT Dmg. (Not yet implemented)", type: "None"
+          description: "When meter fills, applies diseased to enemies making them take 50% more DOT Dmg. (Use buffs tab)", type: "None"
         }
       ]
     },
@@ -1116,7 +1116,7 @@ let unitPassives = {
       name: "Purgatory Unleashed", upgrade: 8,
       conditions: [
         {
-          description: "Enemies hit by attacks are inflicted with Purgatory Flames, making them receive +25% Burn DMG. (Not yet implemented)", type: "None"
+          description: "Enemies hit by attacks are inflicted with Purgatory Flames, making them receive +25% Burn DMG. (Use buffs tab)", type: "None"
         }
       ]
     },

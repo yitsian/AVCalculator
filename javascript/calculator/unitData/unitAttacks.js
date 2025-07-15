@@ -22,6 +22,18 @@ const unitAttacks = {
 
     {name: "Duo Nuke", aoe: "Full", hits: 5, type: "Nuke", description: "Deals 1000% of this unit's Dmg in a full AoE.", 
     multiplier: 10, image: "Images/Abilities/Duo_Ability.webp", gradient: "vsjw"},
+
+    {name: "Bear", aoe: "Single", hits: 1, type: "Summon", description: "Basic summon that spawns with 2x this unit's Dmg.", 
+    multiplier: 2, image: "Images/Abilities/Bear.png", gradient: "vsjw"},
+
+    {name: "Steel", aoe: "Single", hits: 1, type: "Summon", description: "Unmoving summon that spawns with 2x this unit's Dmg and gains 2% max health over time up to 8x this unit's Dmg.", 
+    multiplier: 2, image: "Images/Abilities/Steel.png", gradient: "vsjw"},
+
+    {name: "Healer", aoe: "Single", hits: 1, type: "Summon", description: "Healing summon that spawns with 0.5x this unit's Dmg and heals all summons on the map for 5% their hp every 5s.", 
+    multiplier: 0.5, image: "Images/Abilities/Healer.png", gradient: "vsjw"},
+
+    {name: "Belu", aoe: "Single", hits: 1, type: "Summon", description: "Final summon that spawns with 1.5x this unit's Dmg and that gains 5% hp every subsequent summon up to 4.5x this unit's Dmg.", 
+    multiplier: 1.5, image: "Images/Abilities/Belu.png", gradient: "vsjw"},
   ],
 
   Divalo: [
@@ -98,6 +110,9 @@ const unitAttacks = {
   Boohon: [
     {name: "Egg Stomper", aoe: "8 Circle", hits: 1, type: "Condition-Followup", description: "When a candy enemy is defeated by this unit, the enemy explodes dealing 50% Dmg (Cannot hit same enemy twice)", 
     multiplier: 0.5, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+
+    {name: "Summons", aoe: "Single", hits: 1, type: "Summon", description: "Every 10 enemies killed by this unit summons in a basic summon for 70% of this units Attack stat. (Works with Bodibi)", 
+    multiplier: 0.7, image: "Images/Abilities/Boohon.png", gradient: "mythic"},
   ],
 
   ChoyJongEn: [
@@ -122,6 +137,9 @@ const unitAttacks = {
   Yomomata: [
     {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict burn for 25% Dmg. (Wiki doesn't say so I used 6s duration)", 
     multiplier: 0.25, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Summons", aoe: "Single", hits: 1, type: "Summon", description: "Every enemy this unit kills gets revived as a skeleton with its health being 40% of this units Dmg (Counts as burn Dmg, works with Bodibi)", 
+    multiplier: 0.4, image: "Images/Units/Yomomata.webp", gradient: "secret"},
   ],
 
   Sukono: [
@@ -131,7 +149,10 @@ const unitAttacks = {
 
   Alocard: [
     {name: "Bleed", aoe: "Single", hits: 8, type: "Dot", description: "Deals 25% of this units Dmg over 8s per attack", 
-    multiplier: 0.25, image: "Images/Abilities/Bleed.webp", gradient: "secret"}
+    multiplier: 0.25, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+    
+    {name: "Summons", aoe: "Single", hits: 1, type: "Summon", description: "Summons 10 ghouls when activating Restraint Level 0 each having 0.5x this unit's Dmg as hp", 
+    multiplier: 0.5, image: "Images/Abilities/Restraint_Level_0_Ability.webp", gradient: "secret"},
   ],
 
   Salter: [
@@ -266,6 +287,11 @@ const unitAttacks = {
     multiplier: 0.25, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
   ],
 
+  Lilia: [
+    {name: "Berserker Summon", aoe: "Single", hits: 1, type: "Summon", description: "Summons a Berserker summon that has 2x this units Dmg as hp, gaining 5% per summon up to 4x", 
+    multiplier: 2, image: "Images/Units/Lilia.webp", gradient: "mythic"},
+  ],
+
   Medusa: [
     {name: "Bleed", aoe: "Single", hits: 4, type: "Dot", description: "Attacks inflict bleed equal to 30% of this units damage over 4s per attack", 
     multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
@@ -295,5 +321,10 @@ const unitAttacks = {
   Obita: [
     {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 30% of this unit's DMG over 6s", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
-  ]
+  ],
+
+  SongJinwu: [
+    {name: "Arise", aoe: "Single", hits: 1, type: "Summon", description: "Summons 5 Statues when activating Arise each having 1x this unit's Dmg as hp", 
+    multiplier: 1, image: "Images/Abilities/Arise_Ability.webp", gradient: "mythic"},
+  ] 
 }

@@ -72,6 +72,13 @@ function renderButtons() {
     }
     unitContainer.appendChild(btn);
 
+    btn.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+
+      localStorage.setItem("selectedUnit", JSON.stringify(unit.name));
+      window.open("calculator.html")
+    });
+
     // Outer gradient border frame
     const btnGradient = document.createElement("div");
     btnGradient.className = "unit-gradient " + rarityTag;
