@@ -46,7 +46,7 @@ function updateAllMultipliers() {
     for (const key in appliedMultBuffs[stat]) {
       const value = appliedMultBuffs[stat][key];
       if (value) {
-        statMultBuffs[stat] *= (1 + value);
+        statMultBuffs[stat] += value;
       }
     }
   }
@@ -73,7 +73,7 @@ function updateAllMultipliers() {
 function addBuffs(conditionId, condition, isActive, value) {
   if (isActive) {
     const buffs = typeof condition.getBuffs === "function"
-      ? condition.getBuffs(value, conditionMetaMap)
+      ? condition.getBuffs(value, conditionMetaMap, statAddBuffs)
       : condition.buffs;
 
     const sliderMult = condition.type === "Slider" ? parseFloat(value) : 1;

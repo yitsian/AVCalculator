@@ -1,13 +1,7 @@
 const passiveContainer = document.getElementById("passive-container")
 
-function createPassives() {
-  const passives = unitPassives[selectedUnit];
-  passiveContainer.innerHTML = "";
-
-  if (!passives) return;
-  
-  passives.forEach((passive, pIndex) => {
-    // Outer layout
+function loadPassive(passive, pIndex) {
+  // Outer layout
     const passiveLayout = document.createElement("div");
     passiveLayout.className = "passive-layout";
     passiveContainer.appendChild(passiveLayout);
@@ -60,6 +54,21 @@ function createPassives() {
         buffUpdate(checkbox, slider, valueDisplay, conditionId, condition)
       }
     });
+}
+
+function createPassives() {
+  const passives = unitPassives[selectedUnit];
+  passiveContainer.innerHTML = "";
+
+  if (elementBuffs[unitTagData[selectedUnit].elements[0]]) {
+    console.log(elementBuffs[unitTagData[selectedUnit].elements[0]])
+    loadPassive(elementBuffs[unitTagData[selectedUnit].elements[0]], "element")
+  }
+
+  if (!passives) return;
+  
+  passives.forEach((passive, pIndex) => {
+    loadPassive(passive, pIndex)
   });
 }
 

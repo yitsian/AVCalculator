@@ -304,5 +304,39 @@ const buffData = {
         multiplicative: false, type: "Slider", minRange: 0, maxRange: 50, step: 1, buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [1, 0, 0]
       },
     ]
+  },
+
+  GiantQueen: {
+    name: "Giant Queen", description: "Buffs all Giant category allies on the field by 40% Dmg. 2nd passive buffs by 100% Dmg and 30% Rng for 40s when sold",
+    background: "secret", image: "Images/Units/GiantQueen.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Giant Ally", buffs: [40, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "When Sold", buffs: [100, 0, 30, 0, 0, 0]
+      },
+    ]
+  },
+
+  Arin: {
+    name: "Arin", description: "Buffs all Giant category allies (excluding this unit) in range by 30% Dmg and 20% Rng for 120s.",
+    background: "secret", image: "Images/Units/Arin.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Giant Ally", buffs: [30, 0, 20, 0, 0, 0]
+      },
+    ]
+  },
+
+  Zak: {
+    name: "Zak", description: "For the first 3 times this unit is placed, buff all giant category allies by +60% Dmg for 120s.",
+    background: "mythic", image: "Images/Units/Zak.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Giant Ally", buffs: [60, 0, 0, 0, 0, 0]
+      },
+    ]
   }
 }

@@ -124,13 +124,54 @@ let unitPassives = {
     },
   ],
 
+  GiantQueen: [
+    {
+      name: "Originator", upgrade: 0,
+      conditions: [
+        {
+          description: 'Buffs all Giant category allies on the field by 40% Dmg. (Use buffs tab)', type: 'None'
+        },
+
+        {
+          description: "For every ally that is a turned giant or giant category ally, this unit gains 5% Dmg and 2% Rng.",
+          multiplicative: false, type: "Slider", min: 1, max: 20, step: 1, buffs: [5, 0, 2, 0, 0, 0], suffix: " Allies"
+        }
+      ]
+    },
+
+    {
+      name: "Flesh of the Queen", upgrade: 0,
+      conditions: [
+        {
+          description: 'When sold, lose a placement and buff all giant catagory units by 100% Dmg and 30% Rng. (Use buffs tab)', type: 'None'
+        }
+      ]
+    },
+  ],
+
+  Arin: [
+    {
+      name: "Bringer of Peace", upgrade: 0,
+      conditions: [
+        {
+          description: "After 120s buffs own placements of self by +100% Dmg and 20% Rng and stop buffing allies.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [100, 0, 20, 0, 0, 0]
+        },
+
+        {
+          description: 'Buffs all Giant category allies (excluding this unit) in range by 30% Dmg and 20% Rng for 120s.', type: 'None'
+        },
+      ]
+    },
+  ],
+
   Conqueror: [
     {
       name: "Collateral Damage", upgrade: 0,
       conditions: [
         {
           description: "every 2 attacks this unit will do a random attack and that attack will deal 120% more Dmg. Goes down by 1 every life lost. (Avg is done by average damage between attacks)",
-          multiplicative: true, type: "Slider", min: 1, max: 3, step: 1, getBuffs: (value) => [((((2.2 + (value - 1)) / value) - 1) / value) * 100, 0, 0, 0, 0, 0],
+          multiplicative: true, type: "Slider", min: 1, max: 3, step: 1, getBuffs: (value, conditionMetaMap, statAddBuffs) => [((((2.2 + (value - 1)) / value) - 1) / value) * 100, 0, 0, 0, 0, 0],
           suffix: " Stocks Left"
         }
       ]
@@ -762,8 +803,8 @@ let unitPassives = {
       name: "Ts guy pmo", upgrade: 0,
       conditions: [
         {
-          description: "I'm gonna have go through so much work just to get this guys passives to work. (Basically means yet to be implemented)",
-          multiplicative: false, type: "Slider", min: 0, max: 30, step: 1, buffs: [0, 0, 0, 0, 0, 0], suffix: " Pmos"
+          description: "(yet to be implemented)",
+          multiplicative: false, type: "Statement", statement: "test.", getBuffs: (value, conditionMetaMap, statAddBuffs) => {return [statAddBuffs * 50, 0, 0, 0, 0, 0]}
         }
       ]
     },
@@ -1375,6 +1416,101 @@ let unitPassives = {
     },
   ],
 
+  Ken: [
+    {
+      name: "Tricky Demon", upgrade: 0,
+      conditions: [
+        {
+          description: "Damage is increased by 80%, losing 30% damage for each addition placement of this unit placed.",
+          multiplicative: false, type: "Slider", min: 1, max: 3, step: 1, getBuffs: (value, conditionMetaMap, statAddBuffs) => [(20 + (30 * (value - 1))) / value, 0, 0, 0, 0, 0],
+          suffix: " Placements Left"
+        }
+      ]
+    },
+  ],
+
+  Makoso: [
+    {
+      name: "Fated Lover", upgrade: 0,
+      conditions: [
+        {
+          description: "For every enemy in range decreases Spa by 1%. (Up to 20%)",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 1, 0, 0, 0, 0],
+        }
+      ]
+    },
+
+    {
+      name: "Warrior's Blood", upgrade: 0,
+      conditions: [
+        {
+          description: "Every upgrade on the previous placements of this unit gives the next placement a 5% Dmg buff per upgrade.",
+          multiplicative: false, type: "Slider", min: 0, max: 8, step: 1, buffs: [5, 0, 0, 0, 0, 0], suffix: " Upgrades"
+        }
+      ]
+    },
+  ],
+
+  Levy: [
+    {
+      name: "Growing Boy", upgrade: 0,
+      conditions: [
+        {
+          description: "When attacking a boss gains 40% Dmg.",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [40, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Warrior's Blood", upgrade: 0,
+      conditions: [
+        {
+          description: "Every upgrade on the previous placements of this unit gives the next placement a 5% Dmg buff per upgrade.",
+          multiplicative: false, type: "Slider", min: 0, max: 16, step: 1, buffs: [5, 0, 0, 0, 0, 0], suffix: " Upgrades"
+        }
+      ]
+    },
+  ],
+
+  Riner: [
+    {
+      name: "Marching On", upgrade: 0,
+      conditions: [
+        {
+          description: "Anytime a Giant category unit is sold or deleted, gains +40% Dmg and 20% Rng for 30s.",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [40, 0, 20, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Zak: [
+    {
+      name: "Gigantification Yell", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 10% Dmg and 5% Rng per ally converted during active.",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [10, 0, 5, 0, 0, 0], suffix: " Allies"
+        },
+
+        {
+          description: "For the first 3 times this unit is placed, buff all giant category allies by +60% Dmg for 120s. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+
+    {
+      name: "Curse of the Shifter", upgrade: 12,
+      conditions: [
+        {
+          description: "After using gigantification gains 50% Dmg and 20% Rng.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 20, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
   Brisket: [
     {
       name: "Town Inside Me", upgrade: 0,
@@ -1431,7 +1567,7 @@ let unitPassives = {
         {
           description: "Toggle for if attacking bubbled in Necro form to do 160% Dmg",
           multiplicative: true, type: "Statement", statement: "When attacking bubbled enemy", 
-          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["0-1"].active == true ? 60 : 0, 0, 0, 0, 0, 0],
+          getBuffs: (value, conditionMetaMap, statAddBuffs) => [conditionMetaMap["0-1"].active == true ? 60 : 0, 0, 0, 0, 0, 0],
         },
 
         {
@@ -1472,7 +1608,7 @@ let unitPassives = {
         {
           description: "Whenever this unit attacks, has a 30% chance to do 0% Dmg. (No longer applies when Mr Boo Arrives is unlocked)",
           multiplicative: true, type: "Statement", statement: "Toggle Passive Debuff", 
-          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["1-0"] ? (conditionMetaMap["1-0"].value == true ? 0 : -30) : -30, 0, 0, 0, 0, 0]
+          getBuffs: (value, conditionMetaMap, statAddBuffs) => [conditionMetaMap["1-0"] ? (conditionMetaMap["1-0"].value == true ? 0 : -30) : -30, 0, 0, 0, 0, 0]
         },
       ]
     },
@@ -1525,7 +1661,7 @@ let unitPassives = {
       conditions: [
         {
           description: "Increases Dmg and Rng buffs from Number 1 by 5% and 2.5% respectively.", multiplicative: false, type: "Slider", min: 0, max: 10, step: 1, suffix: " Upgs",
-          getBuffs: (value, conditionMetaMap) => [conditionMetaMap["0-0"].value * 5, 0, conditionMetaMap["0-0"].value * 2.5, 0, 0, 0],
+          getBuffs: (value, conditionMetaMap, statAddBuffs) => [conditionMetaMap["0-0"].value * 5, 0, conditionMetaMap["0-0"].value * 2.5, 0, 0, 0],
         }
       ]
     },
@@ -1570,11 +1706,12 @@ let unitPassives = {
       conditions: [
         {
           description: "-5% Spa each attack, resetting every 3rd attack (Avg of 10%)",
-          multiplicative: true, type: "Slider", min: 0, max: 15, step: 5, buffs: [0, 1, 0, 0, 0, 0],
+          multiplicative: false, type: "Slider", min: 0, max: 15, step: 5, buffs: [0, 1, 0, 0, 0, 0],
         },
 
         {
-          description: "All Spa buffs/debuffs will apply to the Dmg stat. (Not yet implemented just use buffs tab)", type: "None"
+          description: "All Spa buffs/debuffs will apply to the Dmg stat.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", getBuffs: (value, conditionMetaMap, statAddBuffs) => {return [statAddBuffs.spa * 100, 0, 0, 0, 0, 0]}
         },
       ],
     },

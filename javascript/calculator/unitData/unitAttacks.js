@@ -46,6 +46,14 @@ const unitAttacks = {
     multiplier: 1, image: "Images/Abilities/Clone_Followup.webp", gradient: "rogita"},
   ],
 
+  Arin: [
+    {name: "Placement Nuke", aoe: "Full", hits: 1, type: "Nuke", description: "Whenever this unit is placed, does damage in its area equal to 500% of its Dmg stat.", 
+    multiplier: 5, image: "Images/Unit/Arin.webp", gradient: "secret"},
+
+    {name: "Rumbling", aoe: "Mapwide", hits: 1, type: "Nuke", description: "Does 20 million Dmg and does 35% max hp damage to all enemies it crosses. (Cannot be buffed, ignore shown damage)", 
+    multiplier: 1, image: "Images/Abilities/Rumbling_Ability.webp", gradient: "secret"},
+  ],
+
   Conqueror: [
     {name: "Followup", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Follows up every attack for 100% Dmg for every boss in range (Bugged to not got the 120% buff atm)", 
     multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
@@ -242,6 +250,17 @@ const unitAttacks = {
   Sosora: [
     {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 50% of this unit's DMG over 6s.", 
     multiplier: 0.5, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Ken: [
+    {name: "Bleed", aoe: "Single", hits: 10, type: "Dot", description: "Attacks inflict bleed equal to 10% of this units damage over 10s per attack", 
+    multiplier: 0.1, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+  ],
+
+  Makoso: [
+    {name: "Fated Lover", aoe: "22 Circle", hits: 1, type: "Spa-Followup", 
+    description: "If Arin is on the field, this unit follows up for 100% Dmg attacking the same target he does.", 
+    multiplier: 1, image: "Images/Units/Arin.webp", gradient: "mythic"},
   ],
 
   Brisket: [

@@ -4,6 +4,8 @@ const unitStats = {
   Divalo: { displayName: "Divalo (Requiem)", placementCount: 2, placementCost: 5000, maxCost: 115000, damage: 12000, spa: 6.5, range: 38, aoe: "8 Line", hits: 4 },
   Rogita: { displayName: "Rogita (Super 4)", placementCount: 1, placementCost: 1200, maxCost: 184100, damage: 10000, spa: 9, range: 50, aoe: "50° Cone", hits: 6 },
 
+  GiantQueen: { displayName: "Giant Queen (Founder)", placementCount: 3, placementCost: 2400, maxCost: 121800, damage: 10000, spa: 10, range: 42, aoe: "Full", hits: 1},
+  Arin: { displayName: "Arin (Rumbling)", placementCount: 3, placementCost: 3200, maxCost: 193300, damage: 7000, spa: 8, range: 44, aoe: "Full", hits: 1},
   Conqueror: { displayName: "Conqueror vs Invulnerable", placementCount: 3, placementCost: 1400, maxCost: 90000, damage: 5800, spa: 6, range: 47, aoe: "110° Cone", hits: 1 },
   Slime: { displayName: "Slime (King)", placementCount: 4, placementCost: 1200, maxCost: 78100, damage: 5200, spa: 8, range: 40, aoe: "Full", hits: 6 },
   Astolfo: { displayName: "Astolfo (Rider of Black)", placementCount: 1, placementCost: 2500, maxCost: 94000, damage: 3500, spa: 10, range: 36, aoe: "Full", hits: 8 },
@@ -71,6 +73,11 @@ const unitStats = {
   Seban: { displayName: "Seban", placementCount: 3, placementCost: 1400, maxCost: 26000, damage: 2200, spa: 7, range: 35, aoe: "14 Circle", hits: 5 },
   Brolzi: { displayName: "Legendary Super Brolzi", placementCount: 3, placementCost: 1700, maxCost: 81600, damage: 2466, spa: 6.6, range: 40, aoe: "16 Circle", hits: 1 },
 
+  Ken: {displayName: "Ackers (Ken)", placementCount: 1, placementCost: 1000, maxCost: 73500, damage: 6800, spa: 7, range: 42, aoe: "16 Circle", hits: 1},
+  Makoso: {displayName: "Ackers (Makoso)", placementCount: 1, placementCost: 1000, maxCost: 73500, damage: 6800, spa: 7, range: 42, aoe: "22 Circle", hits: 3},
+  Levy: {displayName: "Ackers (Levy)", placementCount: 1, placementCost: 1000, maxCost: 73500, damage: 6800, spa: 7, range: 42, aoe: "20 Circle", hits: 7},
+  Riner: {displayName: "Riner (Reinforced Giant)", placementCount: 4, placementCost: 2000, maxCost: 63800, damage: 5200, spa: 6, range: 40, aoe: "16 Line", hits: 6},
+  Zak: {displayName: "Zak (Ape Giant)", placementCount: 3, placementCost: 1300, maxCost: 140300, damage: 6400, spa: 5, range: 50, aoe: "90° Cone", hits: 4},
   Brisket: { displayName: "Brisket (Yo-Yo)", placementCount: 3, placementCost: 1400, maxCost: 72100, damage: 5200, spa: 5, range: 35, aoe: "18 Circle", hits: 5 },
   GearBoy: { displayName: "Gear Boy (Hungry)", placementCount: 4, placementCost: 1200, maxCost: 50700, damage: 4400, spa: 6, range: 40, aoe: "18 Circle", hits: 2 },
   Kazzy: { displayName: "Kazzy (Queen)", placementCount: 3, placementCost: 1200, maxCost: 63000, damage: 6400, spa: 10, range: 45, aoe: "90° Cone", hits: 7 },
