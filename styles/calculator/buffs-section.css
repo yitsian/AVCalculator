@@ -17,6 +17,10 @@
 
 .search-wrapper {
   position: relative;
+
+  flex-wrap: wrap;
+
+  row-gap: 8px;
 }
 
 .buff-search {
@@ -117,4 +121,8 @@
 
   flex-direction: column;
   gap: 6px;
+}
+
+.familiar-passive {
+  text-align: end;
 }

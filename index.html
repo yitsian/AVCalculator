@@ -11,10 +11,11 @@
 
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/header.css">
-  <link rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" href="styles/search-tab.css">
-  <link rel="stylesheet" href="styles/unit-icons.css">
   <link rel="stylesheet" href="styles/link-buttons.css">
+  <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/tags.css">
+  <link rel="stylesheet" href="styles/home.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
@@ -23,21 +24,15 @@
 </head>
 
 <body>
-  <!-- <div class="title">
-    <div class="text-gradient mythic">
-      Anime Vanguards DPS Calculator
-    </div>
-  </div> -->
-
   <div class="header">
     <div class="icons-section">
-      <button class="tags general-text round-form font-size-36 selected-tag"
+      <button class="tags general-text round-form selected-tag navigate-button"
         onclick="navigateTo('index.html')">Home</button>
 
-      <button class="tags general-text round-form font-size-36 button-hover"
+      <button class="tags general-text round-form button-hover navigate-button"
         onclick="navigateTo('units.html')">Units</button>
 
-      <button class="tags general-text round-form button-hover font-size-36"
+      <button class="tags general-text round-form button-hover navigate-button"
         onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
@@ -62,7 +57,7 @@
     <div class="general-text home-subheader">An <span class="spark">unofficial</span> online utility for the <span
         class="debuff">Roblox</span> game, <span class="text-gradient vsjw">Anime Vanguards</span> owned by the group
       Kitawari. <br>
-      This tool is currently under <span class="buff">development</span> with many features yet to be implemented.
+      This tool is currently under <span class="buff">development</span> with bugs to be expected and many features yet to be implemented.
     </div>
 
     <div class="home-logs">
@@ -70,6 +65,8 @@
         <div class="general-text log-title">Update Log</div>
 
         <div class="update-container">
+          <div class="general-text update"><span class="buff">v0.31</span> - Fixed Ui for other screen sizes, and put in <span class="spark">bp units</span>.</div>
+
           <div class="general-text update"><span class="buff">v0.3</span> - Added <span class="range">upd 7.0</span> units (except bp) and <span class="text-gradient mythic">elemental</span> buffs.</div>
 
           <div class="general-text update"><span class="buff">v0.2</span> - Added in <span class="buff">summon hp</span> damages and <span class="debuff">DoT</span> buffs. Also added <span class="spark">right clicking</span>
@@ -89,7 +86,6 @@
             <li>Dps <span class="unbound">Lists</span></li>
             <li>Map <span class="range">Range</span> Visualization</li>
             <li>Add in  <span class="cosmic">Remaining Unit</span> mechanics</li>
-            <li><span class="passion">Scaling</span> for other screen sizes</li>
           </ul>
         </div>
       </div>

@@ -12,8 +12,9 @@
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/search-tab.css">
-  <link rel="stylesheet" href="styles/unit-icons.css">
   <link rel="stylesheet" href="styles/link-buttons.css">
+  <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/tags.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
@@ -30,11 +31,14 @@
 
   <div class="header header-margin">
     <div class="icons-section">
-      <button class="tags general-text round-form button-hover font-size-36" onclick="navigateTo('index.html')">Home</button>
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('index.html')">Home</button>
 
-      <button class="tags general-text round-form font-size-36 selected-tag" onclick="navigateTo('units.html')">Units</button>
+      <button class="tags general-text round-form selected-tag navigate-button"
+        onclick="navigateTo('units.html')">Units</button>
 
-      <button class="tags general-text round-form button-hover font-size-36" onclick="navigateTo('calculator.html')">Calculator</button>
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
     <div class="links-section">
@@ -54,17 +58,19 @@
       <div class="search-index">
         <input id="search-input" class="sort-search general-text round-form" type="text" placeholder="Search Unit">
 
-        <select id="sort-type" class="sort-type general-text round-form">
-          <option value="rarity">Rarity</option>
-          <option value="cost">Cost</option>
-          <option value="name">Name</option>
-          <option value="element">Element</option>
-        </select>
+        <div class="sort-indexes">
+          <select id="sort-type" class="sort-type general-text round-form">
+            <option value="rarity">Rarity</option>
+            <option value="cost">Cost</option>
+            <option value="name">Name</option>
+            <option value="element">Element</option>
+          </select>
 
-        <select id="sort-order" class="sort-order general-text round-form">
-          <option value="descending">Descending</option>
-          <option value="ascending">Ascending</option>
-        </select>
+          <select id="sort-order" class="sort-order general-text round-form">
+            <option value="descending">Desc.</option>
+            <option value="ascending">Asc.</option>
+          </select>
+        </div>
       </div>
 
       <p class="catagories general-text">
@@ -280,7 +286,8 @@
   <script src="javascript/icons.js"></script>
   <script src="javascript/main.js"></script>
 
-  <script src="javascript/pageHandler.js"></script></script>
+  <script src="javascript/pageHandler.js"></script>
+  </script>
 </body>
 
 </html>

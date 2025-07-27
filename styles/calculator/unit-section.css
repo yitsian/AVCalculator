@@ -11,11 +11,15 @@
 
   border-radius: 20px;
 
-  padding: 12px;
+  padding: 12px;;
   background-color: rgba(60, 60, 60, 0.3);
 }
 
 .align-left {
+  flex-wrap: wrap;
+
+  row-gap: 6px;
+
   justify-content: flex-start !important;
 }
 
@@ -30,8 +34,16 @@
   border-radius: 20px;
 }
 
+.percent-symbol {
+  font-size: 18px;
+}
+
 .aoe-info {
   display: flex;
+
+  flex-wrap: wrap;
+
+  row-gap: 6px;
 
   flex-direction: row;
   column-gap: 6px;
@@ -47,7 +59,7 @@
   gap: 16px;
 
   border-radius: 16px;
-  padding: 12px 12px;
+  padding: 12px;
 
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -67,6 +79,8 @@
   display: flex;
 
   gap: 6px;
+
+  font-size: 20px !important;
 
   align-items: center;
   justify-self: flex-start;

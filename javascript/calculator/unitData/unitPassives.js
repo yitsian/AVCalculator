@@ -800,7 +800,7 @@ let unitPassives = {
 
   Regnaw: [
     {
-      name: "Ts guy pmo", upgrade: 0,
+      name: "This guys kinda breaks my code", upgrade: 0,
       conditions: [
         {
           description: "(yet to be implemented)",
@@ -917,6 +917,30 @@ let unitPassives = {
       conditions: [
         { description: "Every 5 attacks attacks using Dark Excalibur and gains 100% Dmg, 20% Spa, and 20% Rng", 
           multiplicative: false, type: "Statement", statement: "(Average this with 4 normal attacks to get avg dps)", buffs: [100, -20, 20, 0, 0, 0] }
+      ]
+    },
+  ],
+
+  Reimu: [
+    {
+      name: "Bullet-Hell Shrine Maiden", upgrade: 0,
+      conditions: [
+        { description: "Sets Spa to 0.2 and gains a layer every 20 attacks", 
+          multiplicative: false, type: "Statement", statement: "Idk why you would toggle off", buffs: [0, 0, 0, 0, 0, 0],  
+          extra: (finalStats) => { finalStats.spa = 0.2 }
+        }
+      ]
+    },
+  ],
+
+  Sakuya: [
+    {
+      name: "Bullet-Hell Maid", upgrade: 0,
+      conditions: [
+        { description: "Sets Spa to 2 (Animation capping it) and gains a layer every 4 attacks", 
+          multiplicative: false, type: "Statement", statement: "Idk why you would toggle off", buffs: [0, 0, 0, 0, 0, 0],  
+          extra: (finalStats) => { finalStats.spa = 2 }
+        }
       ]
     },
   ],

@@ -1,9 +1,17 @@
+.navigate-button {
+  font-size: 24px !important; 
+}
+
 .link-button {
   display: inline-flex;
   align-items: center;
+
   padding: 6px 12px;
   border-radius: 99px;
-  font-weight: bold;
+
+  font-size: 18px !important; 
+
+  font-weight: 550;
   text-decoration: none;
   color: #000;
   font-family: sans-serif;
@@ -11,6 +19,7 @@
 
 .link-button img {
   height: 24px;
+
   margin-right: 8px;
 }
 
@@ -43,6 +52,7 @@
 
 .settings-button img {
   height: 28px;
+
   margin: 0;
   filter: invert(1);
 }

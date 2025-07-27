@@ -171,6 +171,16 @@ const unitAttacks = {
     multiplier: (finalStats, conditions) => {return conditions["2-0"].active == true ? 0.35 : 0}, image: "Images/Abilities/Burn.png", gradient: "secret"},
   ],
 
+  Reimu: [
+    {name: "Layers", aoe: "Line", hits: 1, type: "Spa-Followup", description: "Ignore Basic Attacks. <br> Each layer sends out additional talismans (1 - 1, 2 - 2, 3 - 4, 4 - 8) and each talisman is a small line so the closer/bigger the enemy is, the more talismans that will be hitting at once", 
+    multiplier: 1, image: "Images/Abilities/Evil_Sealing_Circle_Ability.webp", gradient: "exclusive"},
+  ],
+
+  Sakuya: [
+    {name: "Layers", aoe: "Line", hits: 1, type: "Spa-Followup", description: "Ignore Basic Attacks. <br> Each layer sends out an additional knife (1 - 1, 2 - 2, 3 - 3) and each knife is a small line so the closer/bigger the enemy is, the more knives that will be hitting at once", 
+    multiplier: 1, image: "Images/Abilities/Time_Stop_Ability.webp", gradient: "exclusive"},
+  ],
+
   Arc: [
     {name: "Bleed", aoe: "Single", hits: 6, type: "Dot", description: "Deals 30% of this units Dmg over 6s per attack", 
     multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
@@ -345,5 +355,5 @@ const unitAttacks = {
   SongJinwu: [
     {name: "Arise", aoe: "Single", hits: 1, type: "Summon", description: "Summons 5 Statues when activating Arise each having 1x this unit's Dmg as hp", 
     multiplier: 1, image: "Images/Abilities/Arise_Ability.webp", gradient: "mythic"},
-  ] 
+  ],
 }

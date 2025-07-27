@@ -338,5 +338,15 @@ const buffData = {
         multiplicative: false, type: "Static", statement: "Giant Ally", buffs: [60, 0, 0, 0, 0, 0]
       },
     ]
+  },
+
+  Aurin: {
+    name: "Aurin", description: "Buffs by reducing upgrade costs by 10% and Dmg by 20%",
+    background: "mythic", image: "Images/Units/Aurin.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "When Place on Marks", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
   }
 }

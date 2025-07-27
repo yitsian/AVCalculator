@@ -30,11 +30,16 @@ function loadElements() {
 
 buffUpdate(null, elementSlider, elementSliderText, "element-buff", { multiplicative: true, buffs: [1, 0, 0, 0, 0, 0], type: "Slider" })
 
+function clearFamiliarUI() {
+  familiarPassiveContainer.innerHTML = "";
+  Object.keys(familiarPassiveSliders).forEach(id => delete familiarPassiveSliders[id]);
+}
+
 function loadFamiliar() {
   familiarImage.src = familiarsData[selectedFamiliar].image
   familiarName.textContent = selectedFamiliar
 
-  familiarPassiveContainer.innerHTML = ""
+  clearFamiliarUI()
 
   const passiveLayout = createElement("div", "passive-layout", familiarPassiveContainer);
 
@@ -43,7 +48,7 @@ function loadFamiliar() {
   const passiveName = createElement("div", "passive-name general-text text-gradient passive", passiveTop)
   passiveName.textContent = familiarsData[selectedFamiliar].passiveName;
 
-  const passiveSubtext = createElement("div", "general-text font-size-20", passiveTop)
+  const passiveSubtext = createElement("div", "general-text font-size-20 familiar-passive", passiveTop)
   passiveSubtext.innerHTML = "Familiar Passive";
 
   const passiveDesc = createElement("div", "passive-description general-text font-size-20", passiveLayout)
@@ -156,6 +161,8 @@ function createFamiliarButton(familiar) {
 
   layout.addEventListener("click", () => {
     hidePopup();
+
+    clearFamiliarUI()
 
     clearBuffActive("Familiar-Passive")
 

@@ -22,8 +22,8 @@
 
   background-color: #212529;
 
-  width: 35%;
-  max-height: 600px;
+  width: max(35%, 400px);
+  max-height: 800px;
 
   padding: 12px;
   border-radius: 24px;

@@ -17,7 +17,7 @@ function loadPassive(passive, pIndex) {
     passiveTop.appendChild(passiveName);
 
     const passiveUpgrade = document.createElement("div");
-    passiveUpgrade.className = "general-text font-size-20";
+    passiveUpgrade.className = "general-text font-size-20 no-wrap";
     passiveUpgrade.innerHTML = `Upgrade ${passive.upgrade}`;
     passiveTop.appendChild(passiveUpgrade);
 

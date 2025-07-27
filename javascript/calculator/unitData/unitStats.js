@@ -37,6 +37,8 @@ const unitStats = {
 
   Xoni: { displayName: "Xoni", placementCount: 100, placementCost: 100, maxCost: 100, damage: 9999, spa: 1, range: 99, aoe: "50° Cone", hits: 200 },
 
+  Reimu: { displayName: "Reimu (Shrine Maiden)", placementCount: 3, placementCost: 1600, maxCost: 57300, damage: 335, spa: 1, range: 40, aoe: "Full", hits: 1 },
+  Sakuya: { displayName: "Sakuya (Time Maid)", placementCount: 3, placementCost: 2000, maxCost: 79750, damage: 2300, spa: 1, range: 38, aoe: "Full", hits: 1 },
   Arc: { displayName: "Arc (True Ancestor)", placementCount: 3, placementCost: 1900, maxCost: 95000, damage: 5000, spa: 8, range: 48, aoe: "50° Cone", hits: 1 },
   Hebano: { displayName: "Hebano (Clematis)", placementCount: 3, placementCost: 1400, maxCost: 63100, damage: 4500, spa: 7, range: 38, aoe: "16 Circle", hits: 1 },
   Marlin: { displayName: "Marlin (Gluttony)", placementCount: 4, placementCost: 2000, maxCost: 36000, damage: 4850, spa: 8, range: 45, aoe: "24 Circle", hits: 1 },

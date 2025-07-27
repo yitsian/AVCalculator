@@ -27,6 +27,8 @@ const aoeShape = document.getElementById("unit-aoe").children[0]
 const aoeSize = document.getElementById("unit-aoe").children[1]
 const aoeHits = document.getElementById("unit-aoe-hits")
 
+const maxCost = document.getElementById("unit-max-cost").firstElementChild
+
 const baseDamage = document.getElementById("unit-base-damage")
 const baseSpa = document.getElementById("unit-base-spa")
 const baseRange = document.getElementById("unit-base-range")
@@ -55,6 +57,8 @@ placementCount.textContent = unitStats[selectedUnit].placementCount + " Placemen
 aoeShape.src = "Images/Aoes/" + unitTagData[selectedUnit].aoes[0] + ".png"
 aoeSize.textContent = unitStats[selectedUnit].aoe
 aoeHits.textContent = unitStats[selectedUnit].hits + " Hits"
+
+maxCost.textContent = unitStats[selectedUnit].maxCost + " ¥"
 
 function updateLevel() {
   levelDisplay.innerText = "Lv." + levelSlider.value

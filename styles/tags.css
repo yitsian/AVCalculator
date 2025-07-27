@@ -1,0 +1,32 @@
+.tags {
+  white-space: nowrap;
+  
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  font-size: 20px;
+
+  transition: 0.2s;
+}
+
+.image-tag {
+  display: flex;
+  
+  padding-right: 12px;
+
+  column-gap: 5px;
+  
+  flex-direction: row;
+  justify-content: center;
+
+  align-items: center;
+}
+
+.selected-tag {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: rgb(14, 14, 14);
+  
+  cursor: pointer;
+}

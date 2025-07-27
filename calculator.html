@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="styles/general.css">
   <link rel="stylesheet" href="styles/header.css">
   <link rel="stylesheet" href="styles/search-tab.css">
-  <link rel="stylesheet" href="styles/unit-icons.css">
   <link rel="stylesheet" href="styles/link-buttons.css">
+  <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/tags.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
@@ -37,11 +38,14 @@
 
   <div class="header header-margin">
     <div class="icons-section">
-      <button class="tags general-text round-form button-hover font-size-36" onclick="navigateTo('index.html')">Home</button>
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('index.html')">Home</button>
 
-      <button class="tags general-text round-form font-size-36 button-hover" onclick="navigateTo('units.html')">Units</button>
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('units.html')">Units</button>
 
-      <button class="tags general-text round-form font-size-36 selected-tag" onclick="navigateTo('calculator.html')">Calculator</button>
+      <button class="tags general-text round-form selected-tag navigate-button"
+        onclick="navigateTo('calculator.html')">Calculator</button>
     </div>
 
     <div class="links-section">
@@ -149,8 +153,14 @@
             </div>
           </div>
 
-          <div class="general-text round-form tags">
-            Max Upgrade
+          <div class="aoe-info align-left">
+            <div id="unit-max-cost" class="round-form tags">
+              <p class="general-text money text-gradient"></p>
+            </div>
+
+            <div class="general-text round-form tags">
+              Max Upgrade
+            </div>
           </div>
         </div>
 
@@ -213,7 +223,7 @@
             <p id="familiar-name" class="section-subtitle general-text passive text-gradient"></p>
           </div>
 
-          <div id="familiar-elements" class="tab-structure"></div>
+          <div id="familiar-elements" class="tab-structure align-left"></div>
         </div>
       </div>
 
@@ -229,7 +239,7 @@
         <div id="familiar-passive" class="passive-layout"></div>
 
         <div id="corruption-input" class="tab-structure">
-          <button class="round-form tags image-tag general-text unknown dropdown-button"
+          <button class="round-form tags image-tag general-text unknown dropdown-button clickable-label"
             onclick="updateCorruption(true)">
             <img class="element" src="Images/Familiars/Familiar.webp">
             <p class="general-text secret text-gradient"></p>
@@ -245,11 +255,11 @@
         <div class="tab-structure search-wrapper">
           <input id="search-input" class="buff-search general-text round-form" type="text" placeholder="Search Buff">
 
-          <button id="clear-buffs" class="round-form tags general-text button-hover">
+          <button id="clear-buffs" class="round-form tags general-text clickable-label">
             Clear All
           </button>
 
-          <button id="max-buffs" class="round-form tags general-text button-hover">
+          <button id="max-buffs" class="round-form tags general-text clickable-label">
             Max All
           </button>
 
