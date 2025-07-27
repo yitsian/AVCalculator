@@ -22,22 +22,22 @@
 
   background-color: #212529;
 
-  width: max(35%, 400px);
-  max-height: 800px;
+  width: max(40%, min(400px, calc(400 * 0.1667vh)));
+  max-height: min(800px, calc(550 * 0.1667vh));
 
-  padding: 12px;
-  border-radius: 24px;
+  padding: min(12px, calc(12 * 0.1667vh));
+  border-radius: min(24px, calc(24 * 0.1667vh));
   position: relative;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 min(20px, calc(20 * 0.1667vh)) rgba(0,0,0,0.3);
   
-  border: 3px solid #111;
+  border: min(3px, calc(3 * 0.1667vh)) solid #111;
 }
 
 .familiars-catalog {
   display: flex;
   flex-direction: column;
   
-  gap: 8px;
+  gap: min(8px, calc(8 * 0.1667vh));
   
   overflow-y: auto;
 }
@@ -53,8 +53,8 @@
 /* Close button (top-right corner) */
 .close-btn {
   position: absolute;
-  top: -6px;
-  right: 12px;
-  font-size: 36px;
+  top: -min(6px, calc(6 * 0.1667vh));
+  right: min(12px, calc(12 * 0.1667vh));
+  font-size: min(36px, calc(36 * 0.1667vh));
   cursor: pointer;
 }

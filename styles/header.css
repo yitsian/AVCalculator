@@ -2,7 +2,7 @@
   display: flex;
 
   height: 15vh;
-  max-height: 60px;
+  max-height: min(60px, calc(60 * 0.1667vh));
 
   background-color: rgba(60, 60, 60, 0.6);
 
@@ -12,7 +12,7 @@
 }
 
 .header-margin {
-  margin-bottom: 12px;
+  margin-bottom: min(12px, calc(12 * 0.1667vh));
 }
 
 .icons-section {
@@ -20,10 +20,10 @@
 
   height: 100%;
 
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: min(12px, calc(12 * 0.1667vh));
+  padding-right: min(12px, calc(12 * 0.1667vh));
 
-  gap: 12px;
+  gap: min(12px, calc(12 * 0.1667vh));
 
   flex-direction: row;
   align-items: center;
@@ -34,10 +34,10 @@
 
   height: 100%;
 
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: min(12px, calc(12 * 0.1667vh));
+  padding-right: min(12px, calc(12 * 0.1667vh));
 
-  gap: 12px;
+  gap: min(12px, calc(12 * 0.1667vh));
 
   flex-direction: row;
   align-items: center;

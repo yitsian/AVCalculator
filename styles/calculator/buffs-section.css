@@ -7,11 +7,11 @@
   flex: 1;
 
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: min(10px, calc(10 * 0.1667vh));
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
-  padding: 12px;
+  padding: min(12px, calc(12 * 0.1667vh));
   background-color: rgba(60, 60, 60, 0.3);
 }
 
@@ -20,16 +20,16 @@
 
   flex-wrap: wrap;
 
-  row-gap: 8px;
+  row-gap: min(8px, calc(8 * 0.1667vh));
 }
 
 .buff-search {
   flex: 1.5;
 
-  padding: 4px 12px;
+  padding: min(4px, calc(4 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
   flex-shrink: 0;
 
-  font-size: 18px;
+  font-size: min(18px, calc(18 * 0.1667vh));
 }
 
 .suggestion-box {
@@ -49,10 +49,10 @@
   width: calc(100% + 24px);
 
   background: #212529;
-  border: 3px solid #111;
-  border-radius: 20px;
+  border: min(3px, calc(3 * 0.1667vh)) solid #111;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
-  max-height: 500px;
+  max-height: min(500px, calc(500 * 0.1667vh));
   z-index: 10;
 }
 
@@ -60,7 +60,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 8px;
+  gap: min(8px, calc(8 * 0.1667vh));
   
   overflow-y: auto;
 }
@@ -83,18 +83,18 @@
   display: flex;
 
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: min(12px, calc(12 * 0.1667vh));
 }
 
 .buff-layout {
   display: flex;
 
   flex-direction: column;
-  gap: 10px;
+  gap: min(10px, calc(10 * 0.1667vh));
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
-  padding: 12px;
+  padding: min(12px, calc(12 * 0.1667vh));
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -102,25 +102,25 @@
   display: flex;
 
   flex-direction: row;
-  gap: 12px;
+  gap: min(12px, calc(12 * 0.1667vh));
 }
 
 .buff-image {
-  height: 90px;
-  width: 90px;
+  height: min(90px, calc(90 * 0.1667vh));
+  width: min(90px, calc(90 * 0.1667vh));
 
-  min-width: 90px;
+  min-width: min(90px, calc(90 * 0.1667vh));
 }
 
 .buff-image .unit-gradient {
-  padding: 4px;
+  padding: min(4px, calc(4 * 0.1667vh));
 }
 
 .buff-description {
   display: flex;
 
   flex-direction: column;
-  gap: 6px;
+  gap: min(6px, calc(6 * 0.1667vh));
 }
 
 .familiar-passive {

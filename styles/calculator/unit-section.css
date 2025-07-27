@@ -7,18 +7,18 @@
   flex: 1;
 
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: min(10px, calc(10 * 0.1667vh));
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
-  padding: 12px;;
+  padding: min(12px, calc(12 * 0.1667vh));;
   background-color: rgba(60, 60, 60, 0.3);
 }
 
 .align-left {
   flex-wrap: wrap;
 
-  row-gap: 6px;
+  row-gap: min(6px, calc(6 * 0.1667vh));
 
   justify-content: flex-start !important;
 }
@@ -27,15 +27,15 @@
   display: flex;
 
   flex-direction: row;
-  column-gap: 6px;
+  column-gap: min(6px, calc(6 * 0.1667vh));
 
-  padding: 0px;
+  padding: min(0px, calc(0 * 0.1667vh));
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 }
 
 .percent-symbol {
-  font-size: 18px;
+  font-size: min(18px, calc(18 * 0.1667vh));
 }
 
 .aoe-info {
@@ -43,10 +43,10 @@
 
   flex-wrap: wrap;
 
-  row-gap: 6px;
+  row-gap: min(6px, calc(6 * 0.1667vh));
 
   flex-direction: row;
-  column-gap: 6px;
+  column-gap: min(6px, calc(6 * 0.1667vh));
 
   align-items: center;
 }
@@ -56,10 +56,10 @@
 
   grid-template-columns: 1fr 1fr;
 
-  gap: 16px;
+  gap: min(16px, calc(16 * 0.1667vh));
 
-  border-radius: 16px;
-  padding: 12px;
+  border-radius: min(16px, calc(16 * 0.1667vh));
+  padding: min(12px, calc(12 * 0.1667vh));
 
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -78,9 +78,9 @@
 .stat-label {
   display: flex;
 
-  gap: 6px;
+  gap: min(6px, calc(6 * 0.1667vh));
 
-  font-size: 20px !important;
+  font-size: min(20px, calc(20 * 0.1667vh)) !important;
 
   align-items: center;
   justify-self: flex-start;

@@ -4,18 +4,18 @@
   overflow: scroll;
   overflow-x: hidden;
   
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-auto-rows: 120px; /* fix row height */
+  grid-template-columns: repeat(auto-fill, minmax(min(120px, calc(120 * 0.1667vh)), 1fr));
+  grid-auto-rows: min(120px, calc(120 * 0.1667vh)); /* fix row height */
   justify-content: flex-start;
   justify-items: center;
   align-items: center;
 
-  gap: 24px;
+  gap: min(24px, calc(24 * 0.1667vh));
 
   flex: 1;
 
-  padding: 12px;
-  border-radius: 20px;
+  padding: min(12px, calc(12 * 0.1667vh));
+  border-radius: min(20px, calc(20 * 0.1667vh));
   background-color: rgba(60, 60, 60, 0.3);
 }
 
@@ -24,19 +24,19 @@
   flex-direction: column;
   justify-content: flex-start;
 
-  width: 130px;
-  max-height: 130px;
-  min-width: 130px;
+  width: min(130px, calc(130 * 0.1667vh));
+  max-height: min(130px, calc(130 * 0.1667vh));
+  min-width: min(130px, calc(130 * 0.1667vh));
   aspect-ratio: 1 / 1; 
   padding: 0;
 
   position: relative;
   overflow: hidden;
 
-  border-radius: 18px;
+  border-radius: min(18px, calc(18 * 0.1667vh));
   background: none;
   border: none;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: min(5px, calc(5 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) min(10px, calc(10 * 0.1667vh)) rgba(0, 0, 0, 0.5);
 
   cursor: pointer;
 
@@ -58,8 +58,8 @@
 
   display: flex;
   flex-direction: column;
-  padding: 5px;
-  border-radius: 16px;
+  padding: min(5px, calc(5 * 0.1667vh));
+  border-radius: min(16px, calc(16 * 0.1667vh));
   z-index: 1;
 
   pointer-events: none;
@@ -67,7 +67,7 @@
 
 .unit-gradient-texture {
   position: absolute;
-  top: 5px; left: 5px;
+  top: min(5px, calc(5 * 0.1667vh)); left: min(5px, calc(5 * 0.1667vh));
 
   width: 90%;
   height: 90%;
@@ -87,8 +87,8 @@
   z-index: 3;
   position: relative;
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 16px;
-  padding: 4px;
+  border-radius: min(16px, calc(16 * 0.1667vh));
+  padding: min(4px, calc(4 * 0.1667vh));
 }
 
 .unit-picture {
@@ -97,7 +97,7 @@
   object-fit: cover;
   align-self: center;
   justify-self: center;
-  border-radius: 16px;
+  border-radius: min(16px, calc(16 * 0.1667vh));
   z-index: 4;
 
   transition: 0.15s;
@@ -105,9 +105,9 @@
 
 .unit-element {
   position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 25px !important;
+  top: min(4px, calc(4 * 0.1667vh));
+  left: min(4px, calc(4 * 0.1667vh));
+  width: min(25px, calc(25 * 0.1667vh)) !important;
   z-index: 5;
 }
 
@@ -116,13 +116,13 @@
 
   bottom: 0;
   width: 100%;
-  padding: 2px 0;
+  padding: min(2px, calc(2 * 0.1667vh)) 0;
 
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
-  font-size: 18px !important;
+  font-size: min(18px, calc(18 * 0.1667vh)) !important;
   font-weight: 500;
 
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 min(16px, calc(16 * 0.1667vh)) min(16px, calc(16 * 0.1667vh));
   z-index: 5;
 }

@@ -36,7 +36,7 @@
 
 .money {
   background-image: linear-gradient(180deg, #f2c930 30%, #fa9e10 70%);
-  font-size: 20px !important;
+  font-size: min(20px, calc(20 * 0.1667vh)) !important;
   text-shadow: none !important;
 }
 

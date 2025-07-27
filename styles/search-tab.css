@@ -6,34 +6,34 @@
   
   height: 100%;
   width: 35%;
-  max-width: 500px;
+  max-width: min(500px, calc(500 * 0.1667vh));
 
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: min(10px, calc(10 * 0.1667vh));
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
-  padding: 12px;
+  padding: min(12px, calc(12 * 0.1667vh));
   background-color: rgba(60, 60, 60, 0.3);
 }
 
 .search-index {
   display: flex;
   width: 100%;
-  gap: 6px;
+  gap: min(6px, calc(6 * 0.1667vh));
 
   align-items: stretch;
   flex-wrap: wrap;
 
-  margin-bottom: 8px;
+  margin-bottom: min(8px, calc(8 * 0.1667vh));
 }
 
 .sort-search {
-  flex: 1 1 200px;
+  flex: 1 1 min(200px, calc(200 * 0.1667vh));
 
-  padding: 4px 12px;
+  padding: min(4px, calc(4 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
 
-  font-size: 18px !important;
+  font-size: min(18px, calc(18 * 0.1667vh)) !important;
   min-width: 0;
 }
 
@@ -41,7 +41,7 @@
   display: flex;
   flex: 0 0 auto;
 
-  gap: 6px;
+  gap: min(6px, calc(6 * 0.1667vh));
 
   flex-wrap: nowrap;
 }
@@ -57,24 +57,24 @@
   background-color: rgb(10, 10, 10);
   color: white;
 
-  padding: 2px 40px 2px 12px; /* leave space for arrow */
+  padding: min(2px, calc(2 * 0.1667vh)) min(40px, calc(40 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) min(12px, calc(12 * 0.1667vh)); /* leave space for arrow */
   border: none;
-  border-radius: 99px;
+  border-radius: min(99px, calc(99 * 0.1667vh));
 
-  max-width: 150px;
+  max-width: min(150px, calc(150 * 0.1667vh));
   min-width: 0;
 
-  font-size: 18px !important;
+  font-size: min(18px, calc(18 * 0.1667vh)) !important;
   cursor: pointer;
 
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='white' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 12px center;
-  background-size: 12px;
+  background-position: right min(12px, calc(12 * 0.1667vh)) center;
+  background-size: min(12px, calc(12 * 0.1667vh));
 }
 
 .catagories {
-  font-size: 24px !important;
+  font-size: min(24px, calc(24 * 0.1667vh)) !important;
 }
 
 .sort-options {
@@ -84,6 +84,6 @@
   flex-wrap: wrap;
   align-content: start;
 
-  column-gap: 5px;
-  row-gap: 5px;
+  column-gap: min(5px, calc(5 * 0.1667vh));
+  row-gap: min(5px, calc(5 * 0.1667vh));
 }

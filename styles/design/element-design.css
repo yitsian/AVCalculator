@@ -43,7 +43,7 @@
 }
 
 .element {
-  width: 24px !important;
+  width: min(24px, calc(24 * 0.1667vh)) !important;
 
   object-fit: contain;
   display: inline-block;

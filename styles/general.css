@@ -23,20 +23,20 @@ body {
 }
 
 .title {
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin-top: min(0px, calc(0 * 0.1667vh));
+  margin-bottom: min(10px, calc(10 * 0.1667vh));
 
-  padding: 6px;
+  padding: min(6px, calc(6 * 0.1667vh));
 
   background-color: rgba(0, 0, 0, .75);
 
-  font-size: 36px !important;
+  font-size: min(36px, calc(36 * 0.1667vh)) !important;
   font-weight: bold;
   text-align: center;
 }
 
 .header-margin {
-  margin-bottom: 12px;
+  margin-bottom: min(12px, calc(12 * 0.1667vh));
 }
 
 .main {
@@ -44,9 +44,9 @@ body {
 
   overflow: hidden;
 
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-bottom: 12px;
+  padding-left: min(12px, calc(12 * 0.1667vh));
+  padding-right: min(12px, calc(12 * 0.1667vh));
+  padding-bottom: min(12px, calc(12 * 0.1667vh));
 
   height: 100%;
 
@@ -56,28 +56,27 @@ body {
 }
 
 .round-form {
-  border-radius: 999px;
+  border-radius: min(999px, calc(999 * 0.1667vh));
   border: none;
 
   outline: 0;
 
   background-color: rgba(0, 0, 0, 0.5);
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(min(2px, calc(2 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) min(3px, calc(3 * 0.1667vh)) rgba(0, 0, 0, 0.8));
   color: white;
 }
 
 .general-text {
-  margin: 0px;
+  margin: min(0px, calc(0 * 0.1667vh));
 
   color: white;
   font-weight: 550;
-  font-size: 20px;
 
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: min(2px, calc(2 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) rgba(0, 0, 0, 0.2);
 }
 
 .font-size-20 {
-  font-size: 20px !important;
+  font-size: min(20px, calc(18 * 0.1667vh)) !important;
 }
 
 .no-wrap {

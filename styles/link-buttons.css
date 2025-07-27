@@ -1,15 +1,15 @@
 .navigate-button {
-  font-size: 24px !important; 
+  font-size: min(24px, calc(24 * 0.1667vh)) !important; 
 }
 
 .link-button {
   display: inline-flex;
   align-items: center;
 
-  padding: 6px 12px;
-  border-radius: 99px;
+  padding: min(6px, calc(6 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
+  border-radius: min(99px, calc(99 * 0.1667vh));
 
-  font-size: 18px !important; 
+  font-size: min(18px, calc(18 * 0.1667vh)) !important; 
 
   font-weight: 550;
   text-decoration: none;
@@ -18,9 +18,9 @@
 }
 
 .link-button img {
-  height: 24px;
+  height: min(24px, calc(24 * 0.1667vh));
 
-  margin-right: 8px;
+  margin-right: min(8px, calc(8 * 0.1667vh));
 }
 
 .github-button {
@@ -46,12 +46,12 @@
 }
 
 .settings-button {
-  padding: 6px 6px;
+  padding: min(6px, calc(6 * 0.1667vh)) min(6px, calc(6 * 0.1667vh));
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .settings-button img {
-  height: 28px;
+  height: min(28px, calc(28 * 0.1667vh));
 
   margin: 0;
   filter: invert(1);

@@ -2,52 +2,52 @@
   display: flex;
 
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: min(10px, calc(10 * 0.1667vh));
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
-  padding: 12px;
+  padding: min(12px, calc(12 * 0.1667vh));
   background-color: rgba(100, 100, 100, 0.15);
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: min(36px, calc(36 * 0.1667vh));
   font-weight: 600;
 
-  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2) !important;
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
+  text-shadow: min(5px, calc(5 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) rgba(0, 0, 0, 0.2) !important;
+  filter: drop-shadow(min(2px, calc(2 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) min(3px, calc(3 * 0.1667vh)) rgba(0, 0, 0, 0.8));
 }
 
 .section-subtitle {
-  font-size: 24px;
+  font-size: min(24px, calc(24 * 0.1667vh));
 
-  filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.8));
+  filter: drop-shadow(min(2px, calc(2 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) min(3px, calc(3 * 0.1667vh)) rgba(0, 0, 0, 0.8));
 }
 
 .subsection-layout {
   display: flex;
   flex-direction: column;
-  row-gap: 10px;
+  row-gap: min(10px, calc(10 * 0.1667vh));
 
-  padding-left: 12px;
-  border-radius: 20px;
+  padding-left: min(12px, calc(12 * 0.1667vh));
+  border-radius: min(20px, calc(20 * 0.1667vh));
 }
 
 .subsection-divider {
-  padding-left: 6px;
+  padding-left: min(6px, calc(6 * 0.1667vh));
 
-  font-size: 24px;
+  font-size: min(24px, calc(24 * 0.1667vh));
 }
 
 .subsection {
   display: flex;
 
   flex-direction: column;
-  row-gap: 14px;
+  row-gap: min(14px, calc(14 * 0.1667vh));
 
-  padding: 12px;;
+  padding: min(12px, calc(12 * 0.1667vh));;
 
-  border-radius: 20px;
+  border-radius: min(20px, calc(20 * 0.1667vh));
 
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -58,7 +58,7 @@
   width: 100%;
 
   flex-direction: row;
-  column-gap: 6px;
+  column-gap: min(6px, calc(6 * 0.1667vh));
 
   align-items: center;
   justify-content: space-between;
@@ -70,14 +70,14 @@
   width: 100%;
 
   flex-direction: row;
-  column-gap: 6px;
+  column-gap: min(6px, calc(6 * 0.1667vh));
 
   align-items: center;
   justify-content: flex-start;
 }
 
 .dropdown-button {
-  font-size: 20px !important;
+  font-size: min(20px, calc(20 * 0.1667vh)) !important;
 
   cursor: pointer;
 }
@@ -86,11 +86,11 @@
   display: flex;
 
   flex-direction: column;
-  row-gap: 18px;
+  row-gap: min(18px, calc(18 * 0.1667vh));
 
-  padding: 12px;
+  padding: min(12px, calc(12 * 0.1667vh));
 
-  border-radius: 16px;
+  border-radius: min(16px, calc(16 * 0.1667vh));
 
   background-color: rgba(0, 0, 0, 0.3);
 
@@ -104,13 +104,13 @@
   justify-content: space-between;
   align-items: center;
 
-  column-gap: 12px;
+  column-gap: min(12px, calc(12 * 0.1667vh));
   
-  border-radius: 12px;
+  border-radius: min(12px, calc(12 * 0.1667vh));
 }
 
 .passive-name {
-  font-size: 28px;
+  font-size: min(28px, calc(28 * 0.1667vh));
 }
 
 .passive-bottom {
@@ -122,22 +122,22 @@
   justify-content: space-between;
   align-items: center;
 
-  gap: 8px;
+  gap: min(8px, calc(8 * 0.1667vh));
   
-  border-radius: 12px;
+  border-radius: min(12px, calc(12 * 0.1667vh));
 
   transition: 0.3s;
 }
 
 .passive-number-padding {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: min(16px, calc(16 * 0.1667vh));
+  padding-right: min(16px, calc(16 * 0.1667vh));
 }
 
 .passive-condition {
   flex: 1;
 
-  font-size: 18px !important;
+  font-size: min(18px, calc(18 * 0.1667vh)) !important;
 }
 
 .faded-passive {
