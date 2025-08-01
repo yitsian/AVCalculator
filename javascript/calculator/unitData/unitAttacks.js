@@ -68,6 +68,9 @@ const unitAttacks = {
 
     {name: "Counter", aoe: "Single", hits: 1, type: "Condition-Followup", description: "Counters for 20% of Dmg every time she is attacked", 
     multiplier: 0.2, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter (2% due to followup)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   Lfelt: [
@@ -76,6 +79,9 @@ const unitAttacks = {
 
     {name: "Followup", aoe: "4 Line", hits: 1, type: "Nuke", description: "After consuming meter, follows up with attack 1 for 100% Dmg (5s cd)", 
     multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter for both abilities <br> (Filled by followups after shotgun loop. Refer to <a class='spark' href='https://docs.google.com/document/d/1pTkNHVGgDmNIppvcbA2ZZSSS4rLohFrErBEoHhTws_Y'>here</a> for more info)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   SmithJohn: [
@@ -84,6 +90,9 @@ const unitAttacks = {
 
     {name: "Assassination", aoe: "Single", hits: 1, type: "Nuke", description: "Deals 700% damage to the highest hp target in range", 
     multiplier: 7, image: "Images/Abilities/Assassination_Ability.webp", gradient: "secret"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter (Immediately attacks upon swapping)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   LordofShadows: [
@@ -93,6 +102,9 @@ const unitAttacks = {
     {name: "All Range Atomic", aoe: "Mapwide", hits: 1, type: "Nuke", description: "Does 50% Dmg x the amount of swaps this unit has done, to all enemies on the map. Increase by 25% per swap; up to 600%.", 
     multiplier: (finalStats, conditions) => {return conditions["3-0"].active == true ? (conditions["3-0"].value * (0.5 + Math.min((conditions["3-0"].value - 1) * 0.25, 6))) : 0}, 
     image: "Images/Abilities/All_Range_Atomic_Ability.webp", gradient: "secret"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter (Immediately attacks upon swapping)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   Clatakiri: [
@@ -108,6 +120,14 @@ const unitAttacks = {
   Roku: [
     {name: "Super Soul Bomb", aoe: "Mapwide", hits: 1, type: "Nuke", description: "Charges a nuke that deals up to 1000% damage to every enemy on the map", 
     multiplier: 7, image: "Images/Abilities/Super_Soul_Bomb_Ability.webp", gradient: "secret"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
+  ],
+
+  Vogita: [
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   KidBoo: [
@@ -194,6 +214,11 @@ const unitAttacks = {
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
   ],
 
+  Rudie: [
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter (Does not count passive 1% per second)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
+  ],
+
   DarkMage: [
     {name: "Bleed", aoe: "Single", hits: 6, type: "Dot", description: "Deals 25% of this units Dmg over 6s per attack. Does 50% more when a bleeding enemy dies in range (10s cd)", 
     multiplier: 0.25, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
@@ -216,6 +241,9 @@ const unitAttacks = {
     description: "Follows up each for 50% Dmg up to 4 times as long as this unit lands a crit per followup (Deactivated during DT)", 
     multiplier: (finalStats, conditions) => {const crit = finalStats.crit / 100; return conditions["1-0"].active == true ? 0 : (crit + crit ** 2 + crit ** 3 + crit ** 4)}, 
     image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter for Devil Trigger that lasts 30s <br> (Toggle DT off for accurate numbers. Refer to <a class='spark' href='https://docs.google.com/document/d/1EGty6VmAu1NWHLF7ClPgo8wV4OOMkfyNE7u0eTC3VJk'>here</a> for more info)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   Vigil: [
@@ -225,6 +253,9 @@ const unitAttacks = {
     {name: "You Shall Die!", aoe: "5 Circle", hits: 3, type: "Spa-Followup", 
     description: "When attacking a Frozen enemy, 100% chance of immediately following up with Move 1, with additional followups having diminishing 15% chance. (Average of 2.94 followups, double this to account for the doppelganger)", 
     multiplier: 2.94, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter for Devil Trigger that lasts 30s <br> (Filled by followups, average of 2.94 followups per attack. Refer to <a class='spark' href='https://docs.google.com/document/d/1La1aTug410auAXXGcgms7KJ33vuYHSphL_nmHJSXz40'>here</a> for more info)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   Luce: [
@@ -277,6 +308,14 @@ const unitAttacks = {
     {name: "Yo-Yo Follow Up!", aoe: "Not Sure", hits: 1, type: "Nuke", 
     description: "Use 50% meter to do attack 4 for 200% Dmg. (Best use is to use off cd for avg of 5/2.5 attacks to charge with/out Spirit)", 
     multiplier: 2, image: "Images/Abilities/Yo-Yo_Follow_Up_Ability.webp", gradient: "mythic"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
+  ],
+
+  GearBoy: [
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   Kazzy: [
@@ -286,6 +325,9 @@ const unitAttacks = {
     {name: "I Use This to Go Fishing", aoe: "Single", hits: 1, type: "Nuke", 
     description: "When in Undine form, spawns up to 3 bubbles per Kazzy that does 100% Dmg and applies bubbled", 
     multiplier: (finalStats, conditions) => {return conditions["0-1"].active == true ? 0 : 1}, image: "Images/Abilities/Queen_of_Man_Ability.webp", gradient: "mythic"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   NotGoodGuy: [
@@ -295,8 +337,11 @@ const unitAttacks = {
     {name: "Followup", aoe: "35° Cone", hits: 1, type: "Spa-Followup", description: "Anytime this unit attacks a burning enemy, Follow Up with attack 1 for 100% Dmg (4s cd).", 
     multiplier: 1, image: "Images/Abilities/Hell_Ability.webp", gradient: "mythic"},
 
-    {name: "On Kill Burn", aoe: "Single", hits: 4, type: "Condition-Dot", description: "During Dragon Install, Kills inflict Burn equal to 30% of this unit's (4s cd)", 
+    {name: "On Kill Burn", aoe: "Single", hits: 4, type: "Conditional-Dot", description: "During Dragon Install, Kills inflict Burn equal to 30% of this unit's (4s cd)", 
     multiplier: (finalStats, conditions) => {return conditions["0-0"].active == true ? 0.3 : 0}, image: "Images/Abilities/Dragon_Install_Ability.webp", gradient: "secret"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter for Dragon Install that takes 25s to drain 100% (Toggle off DI for accurate numbers)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
   ],
 
   Rohan: [

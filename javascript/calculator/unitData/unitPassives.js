@@ -990,7 +990,7 @@ let unitPassives = {
       name: "A Rank Staff", upgrade: 0,
       conditions: [
         {
-          description: "Regerates 1% mana every second and attacks restore 5%. This unit uses between 1 through 100 and for every mana used, gains 4% more Dmg for next attack. (Avg Dps uses (5 * Spirit bonus + Spa) mana)",
+          description: "This unit uses between 1 through 100 mana and for every mana used, gains 4% more Dmg for next attack. (Avg Dps uses (5 * Spirit bonus + Spa) mana)",
           multiplicative: true, type: "Slider", min: 0, max: 100, step: 1, buffs: [4, 0, 0, 0, 0, 0],
         }
       ]
@@ -1557,7 +1557,7 @@ let unitPassives = {
         },
 
         {
-          description: "Anytime a food stock is consumed, gains 1% Dmg. (Up to 30%)",
+          description: "Anytime a food stock is consumed, gains 1% Dmg. (Up to 30%) (100% to fill food)",
           multiplicative: false, type: "Slider", min: 0, max: 30, step: 1, buffs: [1, 0, 0, 0, 0, 0],
         }
       ]
@@ -1567,7 +1567,7 @@ let unitPassives = {
       name: "Greek Cancel", upgrade: 0,
       conditions: [
         {
-          description: "This unit gains +80% Dmg and -10% spa for 30 seconds. (Cannot stack) (100% uptime with spirit)",
+          description: "This unit gains +80% Dmg and -10% spa for 30 seconds. (Cannot stack) (consumes 50% meter per use, 100% uptime with spirit)",
           multiplicative: false, type: "Statement", statement: "After activating Greek cancel", buffs: [80, 10, 0, 0, 0, 0]
         },
       ]
@@ -1734,7 +1734,7 @@ let unitPassives = {
         },
 
         {
-          description: "All Spa buffs/debuffs will apply to the Dmg stat.",
+          description: "All Spa buffs/debuffs will apply to the Dmg stat. (Bugged for now, retoggle after every buff application for now)",
           multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", getBuffs: (value, conditionMetaMap, statAddBuffs) => {return [statAddBuffs.spa * 100, 0, 0, 0, 0, 0]}
         },
       ],

@@ -73,34 +73,56 @@ function createAttack(attack = {}) {
   // === Stat Breakdown ===
   const statBreakdown = createElement("div", "stat-breakdown", attackLayout);
 
-  const [normalHit, normalHitDamageTag, normalHitPercentageTag] = createFinalStatLabel("Damage", "Images/Icons/Dmg_Icon.webp", "damage")
+  if (attack.type == "Meter") {
 
-  statBreakdown.appendChild(normalHit);
+  }
 
+  let normalHitDamageTag, normalHitPercentageTag
   let critHitDamageTag, critHitPercentageTag
   let tickHitDamageTag, tickHitPercentageTag
+  let meterPerAttackTag, meterPerAttackPercentageTag
+  let meterToFillTag, meterToFillPercentageTag
 
-  if (attack.type == "Dot" || attack.type == "Conditional-Dot") {
-    const [tickHit, tickHitDamage, tickHitPercentage] = createFinalStatLabel("Damage per tick", "Images/Icons/Dot_Icon.webp", "debuff")
+  if (attack.type == "Meter") {
+    const [meterPerHit, meterPerAttack, meterPerAttackPercentage] = createFinalStatLabel("Meter per Attack", "Images/Icons/Spa_Icon.webp", "spark")
 
-    tickHitDamageTag = tickHitDamage
-    tickHitPercentageTag = tickHitPercentage
+    meterPerAttackTag = meterPerAttack
+    meterPerAttackPercentageTag = meterPerAttackPercentage
 
-    statBreakdown.appendChild(tickHit);
+    statBreakdown.appendChild(meterPerHit);
+
+    const [meterTotal, meterToFill, meterToFillPercentage] = createFinalStatLabel("Attacks to Fill 100%", "Images/Icons/Dmg_Icon.webp", "damage")
+
+    meterToFillTag = meterToFill
+    meterToFillPercentageTag = meterToFillPercentage
+
+    statBreakdown.appendChild(meterTotal);
   } else {
-    const [critHit, critHitDamage, critHitPercentage] = createFinalStatLabel("Critical Hit", "Images/Icons/Crit_Dmg_Icon.png", "critDmg")
+    const [normalHit, normalHitDamage, normalHitPercentage] = createFinalStatLabel("Damage", "Images/Icons/Dmg_Icon.webp", "damage")
 
-    critHitDamageTag = critHitDamage
-    critHitPercentageTag = critHitPercentage
+    normalHitDamageTag = normalHitDamage
+    normalHitPercentageTag = normalHitPercentage
 
-    statBreakdown.appendChild(critHit);
+    statBreakdown.appendChild(normalHit);
+
+    if (attack.type == "Dot" || attack.type == "Conditional-Dot") {
+      const [tickHit, tickHitDamage, tickHitPercentage] = createFinalStatLabel("Damage per tick", "Images/Icons/Dot_Icon.webp", "debuff")
+
+      tickHitDamageTag = tickHitDamage
+      tickHitPercentageTag = tickHitPercentage
+
+      statBreakdown.appendChild(tickHit);
+    } else {
+      const [critHit, critHitDamage, critHitPercentage] = createFinalStatLabel("Critical Hit", "Images/Icons/Crit_Dmg_Icon.png", "critDmg")
+
+      critHitDamageTag = critHitDamage
+      critHitPercentageTag = critHitPercentage
+
+      statBreakdown.appendChild(critHit);
+    }
   }
 
   attackLayout.appendChild(statBreakdown);
-
-  // === DPS Sections ===
-
-  let avgDps, avgDpsLabel, teamDps, teamDpsLabel;
 
   switch (attack.type) {
     case "Nuke":
@@ -117,7 +139,84 @@ function createAttack(attack = {}) {
         aoe: attack.aoe,
       };
       break;
-    
+    case "Conditional-Dot":
+      [avgDps, avgDpsLabel] = createTextStat("Average Damage");
+      attackLayout.appendChild(avgDps);
+
+      attacksMetaMap[attack.name] = {
+        type: attack.type,
+        multiplier: attack.multiplier || 1,
+        statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], tick: [tickHitDamageTag, tickHitPercentageTag] },
+        damageLabels: { average: avgDpsLabel },
+        aoe: attack.aoe,
+        hits: attack.hits
+      };
+      break;
+    case "Dot":
+      [avgDps, avgDpsLabel] = createTextStat("Average Dps");
+      [teamDps, teamDpsLabel] = createTextStat("Team Dps");
+
+      attackLayout.appendChild(avgDps);
+      attackLayout.appendChild(teamDps);
+
+      attacksMetaMap[attack.name || "basic"] = {
+        type: "Dot",
+        multiplier: attack.multiplier || 1,
+        statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], tick: [tickHitDamageTag, tickHitPercentageTag] },
+        damageLabels: { average: avgDpsLabel, team: teamDpsLabel },
+        aoe: attack.aoe,
+        hits: attack.hits
+      };
+      break;
+    case "Meter":
+      [TimeToFill, TTFLabel] = createTextStat("Time to Fill");
+
+      attackLayout.appendChild(TimeToFill);
+
+      attacksMetaMap[attack.name] = {
+        type: "Meter",
+        multiplier: attack.multiplier || 1,
+        statLabels: { meterPerAttack: [meterPerAttackTag, meterPerAttackPercentageTag], meterToFill: [meterToFillTag, meterToFillPercentageTag] },
+        damageLabels: { TTF: TTFLabel },
+        aoe: attack.aoe,
+        hits: attack.hits
+      };
+      break;
+    default:
+      [avgDps, avgDpsLabel] = createTextStat("Average Dps");
+      [teamDps, teamDpsLabel] = createTextStat("Team Dps");
+
+      attackLayout.appendChild(avgDps);
+      attackLayout.appendChild(teamDps);
+
+      attacksMetaMap[attack.name || "basic"] = {
+        type: attack.type || "Spa-Interval",
+        multiplier: attack.multiplier || 1,
+        statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], crit: [critHitDamageTag, critHitPercentageTag] },
+        damageLabels: { average: avgDpsLabel, team: teamDpsLabel },
+        aoe: attack.aoe,
+      };
+      break;
+  }
+}
+
+function createLabels(attack, attackLayout) {
+  switch (attack.type) {
+    case "Nuke":
+    case "Condition-Followup":
+    case "Summon":
+      [avgDps, avgDpsLabel] = createTextStat("Average Damage");
+      attackLayout.appendChild(avgDps);
+
+      attacksMetaMap[attack.name || "basic"] = {
+        type: attack.type,
+        multiplier: attack.multiplier || 1,
+        statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], crit: [critHitDamageTag, critHitPercentageTag] },
+        damageLabels: { average: avgDpsLabel },
+        aoe: attack.aoe,
+      };
+      break;
+
     case "Conditional-Dot":
       [avgDps, avgDpsLabel] = createTextStat("Average Damage");
       attackLayout.appendChild(avgDps);
@@ -141,6 +240,20 @@ function createAttack(attack = {}) {
 
       attacksMetaMap[attack.name || "basic"] = {
         type: "Dot",
+        multiplier: attack.multiplier || 1,
+        statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], tick: [tickHitDamageTag, tickHitPercentageTag] },
+        damageLabels: { average: avgDpsLabel, team: teamDpsLabel },
+        aoe: attack.aoe,
+        hits: attack.hits
+      };
+      break;
+    case "Meter":
+      [attacksToFill, aTFLabel] = createTextStat("Attacks to Fill");
+
+      attackLayout.appendChild(attacksToFill);
+
+      attacksMetaMap[attack.name] = {
+        type: "Meter",
         multiplier: attack.multiplier || 1,
         statLabels: { normal: [normalHitDamageTag, normalHitPercentageTag], tick: [tickHitDamageTag, tickHitPercentageTag] },
         damageLabels: { average: avgDpsLabel, team: teamDpsLabel },

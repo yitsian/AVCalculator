@@ -1,0 +1,22 @@
+.tooltip {
+  text-decoration: underline;
+  text-decoration-style: solid; /* optional: dashed or solid */
+  cursor: help; /* nice hover cursor for hints */
+}
+
+.tooltip-popup {
+  position: absolute;
+  background: #212529;
+  padding: 6px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  font-size: 18px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+}
+
+.tooltip-popup.show {
+  opacity: 1;
+}

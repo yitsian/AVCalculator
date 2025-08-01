@@ -61,10 +61,14 @@ const familiarsData = {
   BlackSpirit: {
     image: "Images/Familiars/BlackSPirit.webp",
     elements: ["Blast", "Spark", "Nature"],
-    type: "Statement",
+    type: "Slider",
     passiveName: "Dark Spirit",
-    passiveDescription: "Yet to be implemented",
+    passiveDescription: "Any attack that would generate meter generates +0.1%-100% more meter.",
+    minRanges: { meter: 0 },
+    maxRanges: { meter: 100 },
+    step: 1,
     buffs: [0, 0, 0, 0, 0, 0],
+    otherBuffs: [0, 0, 0, 1],
     multiplicative: false
   },
 

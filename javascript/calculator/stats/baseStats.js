@@ -26,7 +26,14 @@ let otherStats = {
   summon: 0,
   burn: 0,
   bleed: 0,
+  meter: 0
 }
+
+const baseDamage = document.getElementById("unit-base-damage")
+const baseSpa = document.getElementById("unit-base-spa")
+const baseRange = document.getElementById("unit-base-range")
+const baseCrit = document.getElementById("unit-base-crit")
+const baseCritDmg = document.getElementById("unit-base-crit-dmg")
 
 function updateBaseStats() {
   const [traitDamage, traitSpa, traitRange, traitCrit, traitCritDmg] = getTraitBonus(trait)
@@ -57,9 +64,11 @@ function updateBaseStats() {
 
   baseStats.critDmg = Math.max((critDmg + traitCritDmg * 100) + ((statMultBuffs.critDmg - 1) * 100), critDmg)
 
-  baseDamage.textContent = formatDamage(baseStats.damage)
-  baseSpa.textContent = formatSpa(baseStats.spa)
-  baseRange.textContent = formatRange(baseStats.range)
-  baseCrit.textContent = formatCrit(baseStats.crit)
-  baseCritDmg.textContent = formatCrit(baseStats.critDmg)
+  baseDamage.innerHTML = createToolTip(formatDamage(baseStats.damage), formatMultBuff(statMultBuffs.damage))
+  baseSpa.innerHTML = createToolTip(formatSpa(baseStats.spa), formatMultBuff(statMultBuffs.spa))
+  baseRange.innerHTML = createToolTip(formatRange(baseStats.range), formatMultBuff(statMultBuffs.range))
+  baseCrit.innerHTML = formatCrit(baseStats.crit)
+  baseCritDmg.innerHTML = formatCrit(baseStats.critDmg)
+
+  loadTooltips()
 }

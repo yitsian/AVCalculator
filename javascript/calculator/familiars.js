@@ -61,7 +61,7 @@ function loadFamiliar() {
       const sliderMinRange = familiarsData[selectedFamiliar].minRanges[stat];
       const sliderMaxRange = familiarsData[selectedFamiliar].maxRanges[stat];
 
-      const sliderConfig = { type: "Slider", multiplicative: familiarsData[selectedFamiliar].multiplicative, buffs: statToBuffVector(stat) }
+      const sliderConfig = { type: "Slider", multiplicative: familiarsData[selectedFamiliar].multiplicative, buffs: statToBuffVector(stat), otherBuffs: statToOtherBuffVector(stat) }
 
       const [checkbox, slider, valueDisplay] = createPassiveBottom(passiveLayout, familiarsData[selectedFamiliar].type, sliderMinRange, sliderMaxRange, familiarsData[selectedFamiliar].step, conditionId)
 

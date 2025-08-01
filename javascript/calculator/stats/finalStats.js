@@ -56,7 +56,7 @@ function updateFinalStats() {
         finalStats[key] = baseStats[key] * (1 + (statAddBuffs[key]))
     }
   }
-  
+
   checkExtraConditions()
 
   finalDamageValue.textContent = formatDamage(finalStats.damage);
@@ -86,64 +86,67 @@ function updateAttacks() {
     const attack = attacksMetaMap[attackID]
 
     const statLabels = attack.statLabels
+    const damageLabels = attack.damageLabels
 
-    let attackMultiplier = 1;
+    if (attack.type == "Meter") {
+      let meterPerAttack = unitStats[selectedUnit].meter * otherStats.meter
 
-    if (typeof attack.multiplier == "function") {
-      attackMultiplier = attack.multiplier(finalStats, conditionMetaMap)
+      statLabels.meterPerAttack[0].textContent = formatMeter(meterPerAttack)
+      statLabels.meterPerAttack[1].textContent = formatBuff(otherStats.meter - 1)
+
+      statLabels.meterToFill[0].textContent = Math.ceil(100 / meterPerAttack.toFixed(0))
+      statLabels.meterToFill[1].textContent = formatBuff(0)
+
+      damageLabels.TTF.textContent = formatSpa(Math.ceil(100 / meterPerAttack.toFixed(0)) * finalStats.spa)
     } else {
-      attackMultiplier = attack.multiplier
-    }
+      let attackMultiplier = 1;
 
-    const matchBurn = str => /\bburn\b/.test(str.toLowerCase())
-    const matchBleed = str => /\bbleed\b/.test(str.toLowerCase())
+      if (typeof attack.multiplier == "function") {
+        attackMultiplier = attack.multiplier(finalStats, conditionMetaMap)
+      } else {
+        attackMultiplier = attack.multiplier
+      }
 
-    const dotMult = (matchBleed(attackID) ? otherStats.bleed : 1) * (matchBurn(attackID) ? otherStats.burn : 1)
+      const matchBurn = str => /\bburn\b/.test(str.toLowerCase())
+      const matchBleed = str => /\bbleed\b/.test(str.toLowerCase())
 
-    attackMultiplier *= (attack.type == "Summon" ? otherStats.summon : 1) * dotMult
+      const dotMult = (matchBleed(attackID) ? otherStats.bleed : 1) * (matchBurn(attackID) ? otherStats.burn : 1)
 
-    const normalAttackDamage = finalStats.damage * attackMultiplier
-    statLabels.normal[0].textContent = formatDamage(normalAttackDamage)
-    statLabels.normal[1].textContent = formatBuff(attackMultiplier)
+      attackMultiplier *= (attack.type == "Summon" ? otherStats.summon : 1) * dotMult
 
-    if (attack.type == "Dot") {
-      const tickAttackDamage = normalAttackDamage / attack.hits
+      const normalAttackDamage = finalStats.damage * attackMultiplier
+      statLabels.normal[0].textContent = formatDamage(normalAttackDamage)
+      statLabels.normal[1].textContent = formatBuff(attackMultiplier)
 
-      statLabels.tick[0].textContent = formatDamage(tickAttackDamage)
-      statLabels.tick[1].textContent = formatBuff(attackMultiplier / attack.hits)
+      if (attack.type == "Dot") {
+        const tickAttackDamage = normalAttackDamage / attack.hits
 
-      const damageLabels = attack.damageLabels
-
-      damageLabels.average.textContent = formatDps(normalAttackDamage * critAvg / finalStats.spa)
-      damageLabels.team.textContent = formatDps(normalAttackDamage * critAvg * (trait == "Monarch" ? 1 : unitStats[selectedUnit].placementCount) / finalStats.spa)
-    } else if (attack.type == "Conditional-Dot") {
-      const tickAttackDamage = normalAttackDamage / attack.hits
-
-      statLabels.tick[0].textContent = formatDamage(tickAttackDamage)
-      statLabels.tick[1].textContent = formatBuff(attackMultiplier / attack.hits)
-
-      const damageLabels = attack.damageLabels
-
-      damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
-    } else {
-      const critAttackDamage = normalAttackDamage * finalStats.critDmg / 100
-
-      statLabels.crit[0].textContent = formatDamage(critAttackDamage)
-      statLabels.crit[1].textContent = formatBuff(attackMultiplier * finalStats.critDmg / 100)
-
-      if (attack.type == "Spa-Interval" || attack.type == "Spa-Followup") {
-        const damageLabels = attack.damageLabels
+        statLabels.tick[0].textContent = formatDamage(tickAttackDamage)
+        statLabels.tick[1].textContent = formatBuff(attackMultiplier / attack.hits)
 
         damageLabels.average.textContent = formatDps(normalAttackDamage * critAvg / finalStats.spa)
         damageLabels.team.textContent = formatDps(normalAttackDamage * critAvg * (trait == "Monarch" ? 1 : unitStats[selectedUnit].placementCount) / finalStats.spa)
-      } else if (attack.type == "Nuke" || attack.type == "Condition-Followup") {
-        const damageLabels = attack.damageLabels
+      } else if (attack.type == "Conditional-Dot") {
+        const tickAttackDamage = normalAttackDamage / attack.hits
+
+        statLabels.tick[0].textContent = formatDamage(tickAttackDamage)
+        statLabels.tick[1].textContent = formatBuff(attackMultiplier / attack.hits)
 
         damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
-      } else if (attack.type == "Summon") {
-        const damageLabels = attack.damageLabels
+      } else {
+        const critAttackDamage = normalAttackDamage * finalStats.critDmg / 100
 
-        damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
+        statLabels.crit[0].textContent = formatDamage(critAttackDamage)
+        statLabels.crit[1].textContent = formatBuff(attackMultiplier * finalStats.critDmg / 100)
+
+        if (attack.type == "Spa-Interval" || attack.type == "Spa-Followup") {
+          damageLabels.average.textContent = formatDps(normalAttackDamage * critAvg / finalStats.spa)
+          damageLabels.team.textContent = formatDps(normalAttackDamage * critAvg * (trait == "Monarch" ? 1 : unitStats[selectedUnit].placementCount) / finalStats.spa)
+        } else if (attack.type == "Nuke" || attack.type == "Condition-Followup") {
+          damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
+        } else if (attack.type == "Summon") {
+          damageLabels.average.textContent = formatNuke(normalAttackDamage * critAvg)
+        }
       }
     }
   }

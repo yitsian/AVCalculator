@@ -29,12 +29,6 @@ const aoeHits = document.getElementById("unit-aoe-hits")
 
 const maxCost = document.getElementById("unit-max-cost").firstElementChild
 
-const baseDamage = document.getElementById("unit-base-damage")
-const baseSpa = document.getElementById("unit-base-spa")
-const baseRange = document.getElementById("unit-base-range")
-const baseCrit = document.getElementById("unit-base-crit")
-const baseCritDmg = document.getElementById("unit-base-crit-dmg")
-
 const unitRarities = unitTagData[selectedUnit].rarities
 const unitElements = unitTagData[selectedUnit].elements
 

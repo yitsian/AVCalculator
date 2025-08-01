@@ -22,7 +22,8 @@ let appliedAddBuffs = {
 let otherBuffs = {
   summon: {},
   burn: {},
-  bleed: {}
+  bleed: {},
+  meter: {}
 }
 
 function resetBuffs() {
@@ -93,6 +94,7 @@ function addBuffs(conditionId, condition, isActive, value) {
       otherBuffs.summon[conditionId] = other[0] * totalMult
       otherBuffs.burn[conditionId] = other[1] * totalMult
       otherBuffs.bleed[conditionId] = other[2] * totalMult
+      otherBuffs.meter[conditionId] = other[3] * totalMult
     }
   }
 }

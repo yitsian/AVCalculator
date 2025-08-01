@@ -22,8 +22,16 @@ function formatCrit(value) {
   return value.toFixed(0) + "%"
 }
 
+function formatMeter(value) {
+  return Math.ceil(value) + "%"
+}
+
 function formatBuff(value) {
   return (value * 100).toFixed(1) + "%"
+}
+
+function formatMultBuff(value) {
+  return (value).toFixed(2) + "x"
 }
 
 function formatDps(value) {
@@ -84,6 +92,21 @@ function statToBuffVector(stat) {
       return [0, 0, 0, 1, 0, 0]
     case "critDmg":
       return [0, 0, 0, 0, 1, 0]
+    default: 
+      return [0, 0, 0, 0, 0, 0]
+  }
+}
+
+function statToOtherBuffVector(stat) {
+  switch (stat) {
+    case "summon":
+      return [1, 0, 0, 0]
+    case "burn":
+      return [0, 1, 0, 0]
+    case "bleed":
+      return [0, 0, 1, 0]
+    case "meter":
+      return [0, 0, 0, 1]
   }
 }
 
