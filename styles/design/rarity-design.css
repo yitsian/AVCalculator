@@ -1,6 +1,9 @@
+.iscanur {
+  background-image: linear-gradient(150deg,#ff2a00 0%,#ffda98 51%,#ff2a00 99%);
+}
+
 .koguro {
   background-image: linear-gradient(150deg, #8369c5 10%, #999999 40%, #ffffff 50%, #999999 60%, #8369c5 90%)
-  /* background-image: linear-gradient(150deg, #8369c5 10%, #ffdd55 20%, #999999 27%, #ffffff 50%, #999999 72%, #ffdd55 80%, #8369c5 90%) */
 }
 
 .vsjw {

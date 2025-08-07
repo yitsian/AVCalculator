@@ -39,6 +39,7 @@ function loadFamiliar() {
   familiarImage.src = familiarsData[selectedFamiliar].image
   familiarName.textContent = selectedFamiliar
 
+  loadElements()
   clearFamiliarUI()
 
   const passiveLayout = createElement("div", "passive-layout", familiarPassiveContainer);
@@ -98,7 +99,6 @@ function updatePassive(passiveLayout, checkbox, condition, conditionId, slider) 
 
 elementSliderText.textContent = elementSlider.value + "%"
 
-loadElements()
 loadFamiliar()
 
 const popup = document.getElementById("familiar-popup");

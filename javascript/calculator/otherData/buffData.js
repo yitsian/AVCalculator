@@ -348,5 +348,15 @@ const buffData = {
         multiplicative: false, type: "Static", statement: "When Place on Marks", buffs: [20, 0, 0, 0, 0, 0]
       },
     ]
+  },
+
+  Quetzalcoatl: {
+    name: "Quetzalcoatl", description: "Buffs all fire allies in range by 20% Dmg.",
+    background: "exclusive", image: "Images/Units/Quetzalcoatl.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Fire Allies", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
   }
 }

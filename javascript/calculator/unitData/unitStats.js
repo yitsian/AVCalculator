@@ -1,9 +1,12 @@
 const unitStats = {
+  Iscanur: { displayName: "Iscanur (Pride)", placementCount: 1, placementCost: 7500, maxCost: 170520, damage: 16000, spa: 9, range: 50, aoe: "28 Circle", hits: 1 },
   Koguro: { displayName: "Koguro (Unsealed)", placementCount: 1, placementCost: 3500, maxCost: 151000, damage: 11000, spa: 8, range: 45, aoe: "24 Circle", hits: 5 },
   Vsjw: { displayName: "Song Jinwu and Igros", placementCount: 3, placementCost: 1700, maxCost: 105700, damage: 8200, spa: 8, range: 46, aoe: "25 Circle", hits: 6 },
   Divalo: { displayName: "Divalo (Requiem)", placementCount: 2, placementCost: 5000, maxCost: 115000, damage: 12000, spa: 6.5, range: 38, aoe: "8 Line", hits: 4 },
   Rogita: { displayName: "Rogita (Super 4)", placementCount: 1, placementCost: 1200, maxCost: 184100, damage: 10000, spa: 9, range: 50, aoe: "50° Cone", hits: 6 },
 
+  MonkeyKing: { displayName: "Monkey King (Awakened)", placementCount: 1, placementCost: 2200, maxCost: 107900, damage: 11500, spa: 6, range: 44, aoe: "22 Circle", hits: 1 },
+  Leo: { displayName: "Leo (Fangs)", placementCount: 3, placementCost: 1200, maxCost: 109100, damage: 10000, spa: 10, range: 42, aoe: "Full", hits: 1 },
   GiantQueen: { displayName: "Giant Queen (Founder)", placementCount: 3, placementCost: 2400, maxCost: 121800, damage: 10000, spa: 10, range: 42, aoe: "Full", hits: 1},
   Arin: { displayName: "Arin (Rumbling)", placementCount: 3, placementCost: 3200, maxCost: 193300, damage: 7000, spa: 8, range: 44, aoe: "Full", hits: 1},
   Conqueror: { displayName: "Conqueror vs Invulnerable", placementCount: 3, placementCost: 1400, maxCost: 90000, damage: 5800, spa: 6, range: 47, aoe: "110° Cone", hits: 1 },
@@ -37,6 +40,10 @@ const unitStats = {
 
   Xoni: { displayName: "Xoni", placementCount: 100, placementCost: 100, maxCost: 100, damage: 9999, spa: 1, range: 99, aoe: "50° Cone", hits: 200 },
 
+  Ali: { displayName: "Ali (Djinn)", placementCount: 3, placementCost: 1600, maxCost: 95800, damage: 15000, spa: 8, range: 44, aoe: "100° Cone", hits: 1 },
+  Hei: { displayName: "Hei (Black Dragon)", placementCount: 4, placementCost: 1200, maxCost: 60400, damage: 9800, spa: 12, range: 40, aoe: "Full", hits: 1 },
+  Newsman: { displayName: "Newsman (Forecast)", placementCount: 4, placementCost: 800, maxCost: 61100, damage: 7200, spa: 7, range: 40, aoe: "100° Cone", hits: 1 },
+  Quetzalcoatl: { displayName: "Quetzalcoatl (Sun God)", placementCount: 3, placementCost: 1600, maxCost: 107700, damage: 12500, spa: 7.5, range: 42, aoe: "Full", hits: 1 },
   Reimu: { displayName: "Reimu (Shrine Maiden)", placementCount: 3, placementCost: 1600, maxCost: 57300, damage: 335, spa: 1, range: 40, aoe: "Full", hits: 1 },
   Sakuya: { displayName: "Sakuya (Time Maid)", placementCount: 3, placementCost: 2000, maxCost: 79750, damage: 2300, spa: 1, range: 38, aoe: "Full", hits: 1 },
   Arc: { displayName: "Arc (True Ancestor)", placementCount: 3, placementCost: 1900, maxCost: 95000, damage: 5000, spa: 8, range: 48, aoe: "50° Cone", hits: 1 },

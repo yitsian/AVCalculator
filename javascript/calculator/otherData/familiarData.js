@@ -59,7 +59,7 @@ const familiarsData = {
   },
 
   BlackSpirit: {
-    image: "Images/Familiars/BlackSPirit.webp",
+    image: "Images/Familiars/BlackSpirit.webp",
     elements: ["Blast", "Spark", "Nature"],
     type: "Slider",
     passiveName: "Dark Spirit",
@@ -87,5 +87,32 @@ const familiarsData = {
 
   Turbo: {
 
+  },
+
+  SummerHam: {
+    image: "Images/Familiars/SummerHam.webp",
+    elements: ["Fire", "Water", "Holy"],
+    type: "Slider",
+    passiveName: "Durable Pig",
+    passiveDescription: "Increases Dmg dealt and damage dealt by DoTs by +1.0%-10.0% per life stock missing.",
+    minRanges: { damage: 0, dot: 0 },
+    maxRanges: { damage: 20, dot: 20 },
+    step: 1,
+    buffs: [1, 0, 0, 0, 0, 0],
+    otherBuffs: [0, 1, 1, 0],
+    multiplicative: false
+  },
+
+  SpiritDispenser: {
+    image: "Images/Familiars/SpiritDispenser.webp",
+    elements: ["Cosmic", "Unknown", "Blast"],
+    type: "Slider",
+    passiveName: "Spirit Boost",
+    passiveDescription: "Anytime this unit activates an active, buffs damage by +5.0%-25.0% for 40s.",
+    minRanges: { damage: 0 },
+    maxRanges: { damage: 25 },
+    step: 1,
+    buffs: [1, 0, 0, 0, 0, 0],
+    multiplicative: false
   }
 }

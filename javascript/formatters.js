@@ -105,6 +105,8 @@ function statToOtherBuffVector(stat) {
       return [0, 1, 0, 0]
     case "bleed":
       return [0, 0, 1, 0]
+    case "dot":
+      return [0, 1, 1, 0]
     case "meter":
       return [0, 0, 0, 1]
   }

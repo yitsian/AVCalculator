@@ -53,7 +53,7 @@ function showSuggestions() {
     const top = createElement("div", "buff-top", layout);
 
     const button = createElement("button", "unit-button buff-image", top);
-    const gradient = createElement("div", "unit-gradient exclusive", button);
+    const gradient = createElement("div", "unit-gradient " + buffData.background, button);
     const texture = createElement("img", "unit-gradient-texture", gradient);
     texture.src = "Images/Icons/Dots.webp";
 
@@ -126,7 +126,10 @@ function createBuff(buffData) {
   buffData.conditions.forEach((condition, index) => {
     const conditionId = `${buffData.name}-${index}`;
 
-    const label = createElement("label", "round-form tags image-tag general-text clickable-label no-select", bottom);
+    // Create a group container for each condition
+    const conditionGroup = createElement("div", "passive-condition-group", bottom);
+
+    const label = createElement("label", "round-form tags image-tag general-text clickable-label no-select", conditionGroup);
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -140,7 +143,7 @@ function createBuff(buffData) {
     let valueDisplay = null;
 
     if (condition.type === "Slider") {
-      slider = createElement("input", "slider", bottom);
+      slider = createElement("input", "slider", conditionGroup);
       slider.type = "range";
       slider.min = condition.minRange;
       slider.max = condition.maxRange;
@@ -148,7 +151,7 @@ function createBuff(buffData) {
       slider.value = condition.maxRange / 2;
       slider.id = conditionId;
 
-      valueDisplay = createElement("div", "general-text round-form tags passive-number-padding", bottom);
+      valueDisplay = createElement("div", "general-text round-form tags passive-number-padding slider-value", conditionGroup);
       valueDisplay.textContent = `+${slider.value}%`;
 
       const maxHandler = () => {
@@ -159,7 +162,7 @@ function createBuff(buffData) {
       eventHandlers.push(() => maxBuffs.removeEventListener("click", maxHandler));
 
     } else if (condition.type === "Static") {
-      const statement = createElement("div", "general-text round-form tags passive-number-padding passive-condition", bottom);
+      const statement = createElement("div", "general-text round-form tags passive-number-padding passive-condition", conditionGroup);
       statement.textContent = condition.statement;
     }
 

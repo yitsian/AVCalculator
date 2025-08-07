@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Anime Vanguards DPS Calculator Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/search-tab.css">
+  <link rel="stylesheet" href="styles/link-buttons.css">
+  <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/tags.css">
+  <link rel="stylesheet" href="styles/shared.css">
+
+  <link rel="stylesheet" href="styles/rerolling/trait-section.css">
+  <link rel="stylesheet" href="styles/rerolling/stat-section.css">
+
+  <link rel="stylesheet" href="styles/design/stat-design.css">
+  <link rel="stylesheet" href="styles/design/element-design.css">
+  <link rel="stylesheet" href="styles/design/rarity-design.css">
+  <link rel="stylesheet" href="styles/design/interactable-design.css">
+</head>
+
+<body>
+  <div class="title">
+    <div class="text-gradient mythic">
+      Anime Vanguards DPS Calculator
+    </div>
+  </div>
+
+  <div class="header header-margin">
+    <div class="icons-section">
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('index.html')">Home</button>
+
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('units.html')">Units</button>
+
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('calculator.html')">Calculator</button>
+
+      <button class="tags general-text round-form selected-tag navigate-button"
+        onclick="navigateTo('reroll.html')">Rerolling</button>
+    </div>
+
+    <div class="links-section">
+      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
+        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
+        <span>Buy me a reroll</span>
+      </a>
+
+      <a class="settings-button link-button button-hover">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg" />
+      </a>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="trait-section">
+      <div class="section-title general-text">
+        Reroll Simulator (WIP)
+      </div>
+
+      <div class="subsection">
+        <div class="reroll-screen">
+          <button class="unit-button reroll-image">
+            <div class="unit-gradient iscanur">
+              <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+              <div class="unit-content">
+                <img class="unit-picture" src="Images/Units/Iscanur.webp">
+              </div>
+            </div>
+          </button>
+        </div>
+
+        <div class="stat-screen">
+          <button class="unit-button reroll-image">
+            <div class="unit-gradient secret">
+              <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+              <div class="unit-content">
+                <img class="unit-picture" src="Images/Units/MonkeyKing.webp">
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-section">
+
+    </div>
+  </div>
+
+  <script src="javascript/icons.js"></script>
+  <script src="javascript/main.js"></script>
+
+  <script src="javascript/pageHandler.js"></script>
+</body>
+
+</html>

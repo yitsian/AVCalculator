@@ -1,0 +1,17 @@
+.stat-section {
+  display: flex;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  flex: 1;
+
+  flex-direction: column;
+  row-gap: min(10px, calc(10 * 0.1667vh));
+
+  border-radius: min(20px, calc(20 * 0.1667vh));
+
+  padding: min(12px, calc(12 * 0.1667vh));
+  background-color: rgba(60, 60, 60, 0.3);
+}
+

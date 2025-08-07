@@ -1,4 +1,31 @@
 let unitPassives = {
+  Iscanur: [
+    {
+      name: "High Noon", upgrade: 0,
+      conditions: [
+        {
+          description: "Every hour stack grants 15% Dmg and 1.5% Rng.", type: "Slider", min: 0, max: 12, step: 1,
+          multiplicative: false, buffs: [15, 0, 1.5, 0, 0, 0], suffix: " Hour Stacks"
+        },
+
+        {
+          description: "Gain +50% Dmg when at 12 hour stacks.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Ultimate", upgrade: 0,
+      conditions: [
+        {
+          description: "Gains 12 hour stacks and +50% Dmg for 5 waves", type: "Statement", statement: "Toggle Active Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
   Koguro: [
     {
       name: "Master of Dimensions", upgrade: 0,
@@ -124,6 +151,80 @@ let unitPassives = {
     },
   ],
 
+  Leo: [
+    {
+      name: "Grand Fire Mage", upgrade: 0,
+      conditions: [
+        {
+          description: "Use this slider for burn applications on the same enemy. (Use half of max times you expect to attack for avg dps)",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 0, 0, 0, 0, 0], suffix: " Attacks"
+        },
+      ]
+    },
+
+    {
+      name: "Show Me Your Full Power!", upgrade: 0,
+      conditions: [
+        {
+          description: "For every burning enemy in range increases range by 0.5%",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 0.5, buffs: [0, 0, 1, 0, 0, 0]
+        },
+        
+        {
+          description: 'Deals 20% more Dmg to burning enemies',
+          multiplicative: true, type: 'Statement', statement: "Toggle Passive Buff.", buffs: [20, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Hellfire Incarnate", upgrade: 0,
+      conditions: [
+        {
+          description: "Increases Dmg by 1% per second while enemies are in range",
+          multiplicative: false, type: "Slider", min: 0, max: 400, step: 5, buffs: [1, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Loses 2% Rng per enemy attack while this is active",
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 2, buffs: [0, 0, -1, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  MonkeyKing: [
+    {
+      name: "The Power of All Races", upgrade: 0,
+      conditions: [
+        {
+          description: 'Gains buffs from all catagory buffs, for each group gains 10% more Dmg.',
+          multiplicative: false, type: 'Slider', min: 0, max: 5, step: 1, buffs: [10, 0, 0, 0, 0, 0], suffix: " Groups"
+        }
+      ]
+    },
+
+    {
+      name: "Monkey Clones", upgrade: 0,
+      conditions: [
+        {
+          description: 'For every clone, gains 50% Dmg and 5% Rng. When sold, gives all clones this units buffs for 342s.',
+          multiplicative: false, type: 'Slider', min: 0, max: 3, step: 1, buffs: [50, 0, 5, 0, 0, 0], suffix: " Clones"
+        }
+      ]
+    },
+
+    {
+      name: "Soul Strike", upgrade: 0,
+      conditions: [
+        {
+          description: 'Ignores 30% of damage reduction. For every % of damage reduction, amplifies Dmg by that amount.',
+          multiplicative: true, type: 'Slider', min: 0, max: 100, step: 1, buffs: [1, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+  ],
+
   GiantQueen: [
     {
       name: "Originator", upgrade: 0,
@@ -159,7 +260,7 @@ let unitPassives = {
         },
 
         {
-          description: 'Buffs all Giant category allies (excluding this unit) in range by 30% Dmg and 20% Rng for 120s.', type: 'None'
+          description: 'Buffs all Giant category allies (excluding this unit) in range by 30% Dmg and 20% Rng for 120s. (Use buffs tab)', type: 'None'
         },
       ]
     },
@@ -917,6 +1018,57 @@ let unitPassives = {
       conditions: [
         { description: "Every 5 attacks attacks using Dark Excalibur and gains 100% Dmg, 20% Spa, and 20% Rng", 
           multiplicative: false, type: "Statement", statement: "(Average this with 4 normal attacks to get avg dps)", buffs: [100, -20, 20, 0, 0, 0] }
+      ]
+    },
+  ],
+
+  Ali: [
+    {
+      name: "Fire Absorption", upgrade: 0,
+      conditions: [
+        { description: "On a 15s cd, removes burn from and enemy and gains a 50% Dmg and 15% Rng buff. (Also detonates burn)", 
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 15, 0, 0, 0] }
+      ]
+    },
+  ],
+
+  Hei: [
+    {
+      name: "Dragon Flame Abosrption", upgrade: 0,
+      conditions: [
+        { description: "On attack, remove burn and gain 5% Dmg for 30s (Up to 100%).", 
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 5, buffs: [1, 0, 0, 0, 0, 0]}
+      ]
+    },
+  ],
+
+  Newsman: [
+    {
+      name: "The Snails", upgrade: 0,
+      conditions: [
+        {
+          description: "Inflicts Bubbled that increases next attack Dmg by 30%. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  Quetzalcoatl: [
+    {
+      name: "Lover of Humanity", upgrade: 0,
+      conditions: [
+        { description: "Buff Fire allies in range by 20% Dmg (Use buffs tab)", type: "None" }
+      ]
+    },
+
+    {
+      name: "The Sun God", upgrade: 4,
+      conditions: [
+        {
+          description: "Cycles between Attack 2, 3 and 4 (Circle, Full, Full) and gains 50% more Dmg per attack. Resets back at attack 2 after 4.",
+          multiplicative: false, type: "Slider", min: 2, max: 4, step: 1, getBuffs: (value, conditionMetaMap, statAddBuffs) => [((value - 2) / value) * 50, 0, 0, 0, 0, 0],
+          suffix: " Attack No."
+        }
       ]
     },
   ],

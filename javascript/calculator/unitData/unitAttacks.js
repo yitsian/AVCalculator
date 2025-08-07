@@ -1,4 +1,15 @@
 const unitAttacks = {
+  Iscanur: [
+    {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Sunshine", aoe: "Single", hits: 5, type: "Conditional-Dot", description: "When an enemy leaves this unit's range, inflicts burn for 100% of this units Dmg over 5s.", 
+    multiplier: 1, image: "Images/Abilities/Ultimate_Ability.webp", gradient: "iscanur"},
+
+    {name: "Lion's Sin", aoe: "Full", hits: 1, type: "Nuke", description: "Deals 400% Dmg to every enemy in range.", 
+    multiplier: 10, image: "Images/Abilities/Lions_Sin_Ability.webp", gradient: "iscanur"},
+  ],
+
   Koguro: [
     {name: "Beast Explosion", aoe: "Mapwide", hits: 1, type: "Nuke", description: "Deals 1000% Dmg to every enemy on the map.", 
     multiplier: 10, image: "Images/Abilities/Beast_Explosion_Ability.webp", gradient: "koguro"},
@@ -44,6 +55,16 @@ const unitAttacks = {
   Rogita: [
     {name: "Clone Followup", aoe: "50° Cone", hits: 6, type: "Spa-Followup", description: "Summons a clone that follows up every attack for 100% Dmg", 
     multiplier: 1, image: "Images/Abilities/Clone_Followup.webp", gradient: "rogita"},
+  ],
+
+  Leo: [
+    {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 20% Dmg over 5 seconds. Increases depending on applications on same enemy.", 
+    multiplier: (finalStats, conditions) => {return (conditions["0-0"].active == true ? (conditions["0-0"].value * 0.05) : 0) + 0.2}, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  MonkeyKing: [
+    {name: "Clones", aoe: "22 Circle", hits: 1, type: "Spa-Followup", description: "Can place up to 3 clones that cost 50% less than the previous and do 0.65x this units Dmg. (Toggle off Monkey Clones buff to see clone damage before selling original)", 
+    multiplier: 0.65, image: "Images/Abilities/Monkey_Kings_Fur_Ability.webp", gradient: "secret"},
   ],
 
   Arin: [
@@ -189,6 +210,29 @@ const unitAttacks = {
 
     {name: "Dark Excalibur Burn", aoe: "Single", hits: 6, type: "Conditional-Dot", description: "When Dark Excalibur hits, deals 35% of this units Dmg over 6s to every enemy in range", 
     multiplier: (finalStats, conditions) => {return conditions["2-0"].active == true ? 0.35 : 0}, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Ali: [
+    {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5s per attack", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Hei: [
+    {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5s per attack (Not really counted since he removes burn)", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Black Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict black burn for 80% Dmg over 6s per attack", 
+    multiplier: 0.8, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Newsman: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Conditional-Dot", description: "Units that pass through this unit's clouds are inflicted with burn for 40% Dmg over 6s.", 
+    multiplier: 0.4, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Quetzalcoatl: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 6s per attack", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
   ],
 
   Reimu: [

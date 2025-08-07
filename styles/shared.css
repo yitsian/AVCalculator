@@ -116,7 +116,7 @@
 .passive-bottom {
   display: flex;
 
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
 
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -136,8 +136,35 @@
 
 .passive-condition {
   flex: 1;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
   font-size: min(18px, calc(18 * 0.1667vh)) !important;
+  border-radius: 20px;
+}
+
+.passive-condition-group {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: min(8px, calc(8 * 0.1667vh));
+  flex-wrap: nowrap;
+  flex: 1 1 min(200px, calc(200 * 0.1667vh));
+  min-width: min(150px, calc(150 * 0.1667vh));
+
+  transition: 0.3s;
+}
+
+.passive-condition-group .slider {
+  flex: 1 1 auto;
+  min-width: min(60px, calc(60 * 0.1667vh));
+}
+
+.passive-condition-group .slider-value {
+  flex: 0 0 min(80px, calc(80 * 0.1667vh));
+  width: min(80px, calc(80 * 0.1667vh));
+  text-align: center;
 }
 
 .faded-passive {

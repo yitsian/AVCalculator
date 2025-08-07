@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="styles/link-buttons.css">
   <link rel="stylesheet" href="styles/unit-icons.css">
   <link rel="stylesheet" href="styles/tags.css">
+  <link rel="stylesheet" href="styles/shared.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
@@ -23,7 +24,6 @@
   <link rel="stylesheet" href="styles/design/interactable-design.css">
   <link rel="stylesheet" href="styles/design/tooltips.css">
 
-  <link rel="stylesheet" href="styles/calculator/shared.css">
   <link rel="stylesheet" href="styles/calculator/unit-section.css">
   <link rel="stylesheet" href="styles/calculator/buffs-section.css">
   <link rel="stylesheet" href="styles/calculator/stats-section.css">
@@ -47,6 +47,9 @@
 
       <button class="tags general-text round-form selected-tag navigate-button"
         onclick="navigateTo('calculator.html')">Calculator</button>
+        
+      <button class="tags general-text round-form button-hover navigate-button"
+        onclick="navigateTo('reroll.html')">Rerolling</button>
     </div>
 
     <div class="links-section">
@@ -164,23 +167,6 @@
             </div>
           </div>
         </div>
-
-        <!-- <div class="tab-structure align-left">
-          <div class="round-form tags image-tag general-text">
-            <img class="element" src="Images/Icons/Dmg_Icon.webp">
-            <p class="general-text spark">1.00x</p>
-          </div>
-
-          <div class="round-form tags image-tag general-text">
-            <img class="element" src="Images/Icons/Spa_icon.webp">
-            <p class="general-text spark">1.00x</p>
-          </div>
-
-          <div class="round-form tags image-tag general-text">
-            <img class="element" src="Images/Icons/Rng_icon.webp">
-            <p class="general-text spark">1.00x</p>
-          </div>
-        </div> -->
 
         <div class="base-stats">
           <div class="base-stat">
@@ -388,7 +374,6 @@
 
   <div id="familiar-popup" class="popup hidden">
     <div class="popup-content">
-      <!-- <span id="closePopup" class="close-btn">&times;</span> -->
       <div id="familiars-catalog" class="familiars-catalog"></div>
     </div>
   </div>
@@ -396,31 +381,33 @@
   <script src="javascript/icons.js"></script>
   <script src="javascript/constructors.js"></script>
   <script src="javascript/tooltips.js"></script>
+  <script src="javascript/formatters.js"></script>
 
   <script src="javascript/calculator/unitData/unitTagData.js"></script>
   <script src="javascript/calculator/unitData/unitStats.js"></script>
-  <script src="javascript/calculator/unitData/unitSorting.js"></script>
   <script src="javascript/calculator/unitData/unitPassives.js"></script>
   <script src="javascript/calculator/unitData/unitAttacks.js"></script>
-  <script src="javascript/calculator/unitData/familiarData.js"></script>
-  <script src="javascript/calculator/unitData/buffData.js"></script>
-  <script src="javascript/calculator/unitData/elementBuffs.js"></script>
 
-  <script src="javascript/calculator/stats/baseStats.js"></script>
-  <script src="javascript/calculator/stats/finalStats.js"></script>
+  <script src="javascript/calculator/otherData/familiarData.js"></script>
+  <script src="javascript/calculator/otherData/buffData.js"></script>
+  <script src="javascript/calculator/otherData/elementBuffs.js"></script>
+  <script src="javascript/calculator/otherData/unitSorting.js"></script>
 
-  <script src="javascript/calculator/formatters.js"></script>
-  <script src="javascript/calculator/units.js"></script>
-  <script src="javascript/calculator/units-inputs.js"></script>
-  <script src="javascript/calculator/buffsHandler.js"></script>
-  <script src="javascript/calculator/passives.js"></script>
-  <script src="javascript/calculator/createBuffs.js"></script>
-  <script src="javascript/calculator/familiars.js"></script>
-  <script src="javascript/calculator/corruptions.js"></script>
-  <script src="javascript/calculator/attacks.js"></script>
+  <script src="javascript/calculator/dependancies/baseStats.js"></script>
+  <script src="javascript/calculator/dependancies/finalStats.js"></script>
+  <script src="javascript/calculator/dependancies/buffsHandler.js"></script>
+
+  <script src="javascript/calculator/units/modifiers.js"></script>
+  <script src="javascript/calculator/units/inputs.js"></script>
+  <script src="javascript/calculator/units/passives.js"></script>
+
+  <script src="javascript/calculator/buffs/createBuffs.js"></script>
+  <script src="javascript/calculator/buffs/familiars.js"></script>
+  <script src="javascript/calculator/buffs/corruptions.js"></script>
+
+  <script src="javascript/calculator/attacks/attacks.js"></script>
 
   <script src="javascript/pageHandler.js"></script>
-  </script>
 </body>
 
 </html>
