@@ -5,10 +5,13 @@ function createToolTip(text, tooltipText) {
 function loadTooltips() {
   const tooltips = document.querySelectorAll(".tooltip");
 
-  // Create a single popup element for reuse
-  const popup = document.createElement("div");
-  popup.className = "tooltip-popup general-text spark";
-  document.body.appendChild(popup);
+  // Check if popup already exists, if not create it
+  let popup = document.querySelector(".tooltip-popup");
+  if (!popup) {
+    popup = document.createElement("div");
+    popup.className = "tooltip-popup general-text spark";
+    document.body.appendChild(popup);
+  }
 
   tooltips.forEach(element => {
     element.addEventListener("mouseenter", () => {
@@ -29,5 +32,3 @@ function loadTooltips() {
     });
   });
 }
-
-loadTooltips();

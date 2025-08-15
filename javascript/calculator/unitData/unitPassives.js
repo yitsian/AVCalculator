@@ -9,8 +9,8 @@ let unitPassives = {
         },
 
         {
-          description: "Gain +50% Dmg when at 12 hour stacks.", type: "Statement", statement: "Toggle Passive Buff.",
-          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+          description: "Gain +30% Dmg when at 12 hour stacks.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [30, 0, 0, 0, 0, 0]
         },
       ]
     },

@@ -1,0 +1,109 @@
+.reroll-history {
+  display: flex;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  flex: 1;
+  
+
+  flex-direction: column;
+  row-gap: min(10px, calc(10 * 0.1667vh));
+
+  border-radius: min(20px, calc(20 * 0.1667vh));
+
+  padding: min(12px, calc(12 * 0.1667vh));
+  background-color: rgba(60, 60, 60, 0.3);
+}
+
+.trait-history-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: min(12px, calc(12 * 0.1667vh));
+  padding: min(12px, calc(12 * 0.1667vh));
+  margin-bottom: min(10px, calc(10 * 0.1667vh));
+  max-height: min(200px, calc(200 * 0.1667vh));
+  min-height: min(120px, calc(120 * 0.1667vh));
+}
+
+.history-label {
+  font-size: min(20px, calc(20 * 0.1667vh));
+  font-weight: 600;
+  margin-bottom: min(10px, calc(10 * 0.1667vh));
+  text-align: center;
+}
+
+.trait-history-display {
+  display: flex;
+  flex-wrap: wrap;
+
+  overflow-x: hidden;
+
+  gap: min(4px, calc(4 * 0.1667vh));
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  overflow-y: auto;
+  max-height: min(140px, calc(140 * 0.1667vh));
+  min-height: min(60px, calc(60 * 0.1667vh));
+}
+
+.history-icon-wrapper {
+  position: relative;
+  width: min(36px, calc(36 * 0.1667vh));
+  height: min(36px, calc(36 * 0.1667vh));
+  border-radius: min(8px, calc(8 * 0.1667vh));
+  padding: min(2px, calc(2 * 0.1667vh));
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.history-icon-wrapper:hover {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.history-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: min(6px, calc(6 * 0.1667vh));
+}
+
+.no-history {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+  text-align: center;
+  padding: min(20px, calc(20 * 0.1667vh));
+}
+
+@media (max-width: 1500px) {
+  .main {
+    flex-direction: column;
+    row-gap: min(12px, calc(12 * 0.1667vh));
+    column-gap: 0;
+    overflow-y: auto;
+  }
+
+  .reroll-history {
+    flex: none;
+    min-height: fit-content;
+    overflow: visible;
+  }
+
+  .trait-history-container {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: min(350px, calc(350 * 0.1667vh));
+    height: 100%;
+    max-height: none;
+    min-height: 0;
+  }
+  
+  .trait-history-display {
+    flex: 1;
+    max-height: none;
+  }
+}

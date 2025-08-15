@@ -1,0 +1,195 @@
+.trait-section {
+  display: flex;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  flex: 1;
+
+  flex-direction: column;
+  row-gap: min(10px, calc(10 * 0.1667vh));
+
+  border-radius: min(20px, calc(20 * 0.1667vh));
+
+  padding: min(12px, calc(12 * 0.1667vh));
+  background-color: rgba(60, 60, 60, 0.3);
+}
+
+@media (max-width: 1500px) {
+  .trait-section {
+    flex: none;
+    min-height: fit-content;
+    overflow: visible;
+  }
+}
+
+.reroll-screen {
+  display: flex;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: min(10px, calc(10 * 0.1667vh));
+
+  border-radius: min(20px, calc(20 * 0.1667vh));
+
+  padding: min(12px, calc(12 * 0.1667vh));  
+  background-color: rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.reroll-image {
+  height: min(120px, calc(150 * 0.1667vh));
+  width: min(120px, calc(150 * 0.1667vh));
+
+  min-width: min(120px, calc(150 * 0.1667vh));
+  max-height: min(120px, calc(150 * 0.1667vh));
+
+  border-radius: min(24px, calc(24 * 0.1667vh));
+}
+
+.reroll-image .unit-gradient {
+  padding: min(6px, calc(6 * 0.1667vh));
+}
+
+.reroll-unit-image {
+  height: min(160px, calc(180 * 0.1667vh));
+  width: min(160px, calc(180 * 0.1667vh));
+
+  min-width: min(160px, calc(180 * 0.1667vh));
+  max-height: min(160px, calc(180 * 0.1667vh));
+
+  border-radius: min(24px, calc(24 * 0.1667vh));
+}
+
+.reroll-unit-image .unit-gradient {
+  padding: min(6px, calc(6 * 0.1667vh));
+}
+
+.stat-screen {
+  display: flex;
+
+  overflow: scroll;
+  overflow-x: hidden;
+
+  flex: 1;
+
+  flex-direction: row;
+  column-gap: min(10px, calc(10 * 0.1667vh));
+
+  border-radius: min(20px, calc(20 * 0.1667vh));
+
+  padding: min(12px, calc(12 * 0.1667vh));  
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.trait-middle-section {
+  display: flex;
+
+  flex: 0.5;
+  min-width: min(350px, calc(350 * 0.1667vh));
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: min(16px, calc(16 * 0.1667vh));
+
+  border-radius: min(20px, calc(20 * 0.1667vh));
+
+  padding: min(12px, calc(12 * 0.1667vh));  
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#trait-reroll-button {
+  font-size: min(24px, calc(24 * 0.1667vh));
+  height: min(50px, calc(50 * 0.1667vh));
+  width: min(200px, calc(200 * 0.1667vh));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: min(10px, calc(10 * 0.1667vh));
+  background: linear-gradient(180deg, #07f223, #05aa18);
+  border: 2px solid #0fef2b;
+  transition: background 0.2s, transform 0.2s;
+  transform-origin: center center;
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+
+#trait-reroll-button:hover {
+  background: linear-gradient(180deg, #17ff33, #15ba28);
+  transform: scale(1.05);
+}
+
+#trait-reroll-button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+.trait-result-wrapper {
+  display: inline-block;
+  padding: 2px;
+  border-radius: min(12px, calc(12 * 0.1667vh));
+  background: #7f6641;
+  transition: background 0.3s;
+  position: relative;
+  min-width: min(200px, calc(200 * 0.1667vh));
+  height: min(60px, calc(60 * 0.1667vh));
+}
+
+#trait-result {
+  font-size: min(28px, calc(28 * 0.1667vh));
+  font-weight: 600;
+  text-align: center;
+  width: min(270px, calc(270 * 0.1667vh));
+  max-height: 100%;
+  position: relative;
+  padding: min(10px, calc(10 * 0.1667vh));
+  background-color: #090909;
+  border: 2px solid #7f6641;
+  border-radius: min(10px, calc(10 * 0.1667vh));
+  transition: border-color 0.3s, color 0.3s;
+}
+
+#reroll-count {
+  position: absolute;
+  bottom: min(5px, calc(5 * 0.1667vh));
+  right: min(5px, calc(5 * 0.1667vh));
+  font-size: min(24px, calc(24 * 0.1667vh));
+  font-weight: 600;
+  text-shadow: 
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+  z-index: 10;
+}
+
+#reroll-trait-icon {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Trait label styling */
+.trait-label {
+  font-size: min(24px, calc(24 * 0.1667vh));
+  margin-bottom: max(-8px, calc(-8 * 0.1667vh));
+  text-align: center;
+}
+
+/* Trait description styling */
+.trait-description {
+  font-size: min(18px, calc(18 * 0.1667vh));
+  margin-top: max(-8px, calc(-8 * 0.1667vh));
+  text-align: center;
+  min-height: 20px;
+}

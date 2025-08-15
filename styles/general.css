@@ -79,6 +79,10 @@ body {
   font-size: min(20px, calc(18 * 0.1667vh)) !important;
 }
 
+.font-size-48 {
+  font-size: min(48px, calc(48 * 0.1667vh)) !important;
+}
+
 .no-wrap {
   text-wrap: nowrap;
 }

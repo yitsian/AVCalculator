@@ -1,6 +1,6 @@
 const passiveContainer = document.getElementById("passive-container")
 
-function loadPassive(passive, pIndex) {
+function loadPassive(passive, pIndex, enabled) {
   // Outer layout
     const passiveLayout = document.createElement("div");
     passiveLayout.className = "passive-layout";
@@ -43,6 +43,8 @@ function loadPassive(passive, pIndex) {
           [checkbox, statement] = createPassiveBottom(passiveLayout, condition.type, condition.statement)
         }
 
+        checkbox.checked = enabled
+
         conditionMetaMap[conditionId] = condition;
 
         if (condition.dependancy) {
@@ -61,14 +63,13 @@ function createPassives() {
   passiveContainer.innerHTML = "";
 
   if (elementBuffs[unitTagData[selectedUnit].elements[0]]) {
-    console.log(elementBuffs[unitTagData[selectedUnit].elements[0]])
-    loadPassive(elementBuffs[unitTagData[selectedUnit].elements[0]], "element")
+    loadPassive(elementBuffs[unitTagData[selectedUnit].elements[0]], "element", false)
   }
 
   if (!passives) return;
   
   passives.forEach((passive, pIndex) => {
-    loadPassive(passive, pIndex)
+    loadPassive(passive, pIndex, true)
   });
 }
 

@@ -17,13 +17,16 @@
   <link rel="stylesheet" href="styles/tags.css">
   <link rel="stylesheet" href="styles/shared.css">
 
-  <link rel="stylesheet" href="styles/rerolling/trait-section.css">
-  <link rel="stylesheet" href="styles/rerolling/stat-section.css">
+  <link rel="stylesheet" href="styles/rerolling/traits/rerolling.css">
+  <link rel="stylesheet" href="styles/rerolling/traits/trait-reroll-display.css">
+  <link rel="stylesheet" href="styles/rerolling/traits/info.css">
+  <link rel="stylesheet" href="styles/rerolling/traits/history.css">
 
   <link rel="stylesheet" href="styles/design/stat-design.css">
   <link rel="stylesheet" href="styles/design/element-design.css">
   <link rel="stylesheet" href="styles/design/rarity-design.css">
   <link rel="stylesheet" href="styles/design/interactable-design.css">
+  <link rel="stylesheet" href="styles/design/tooltips.css">
 </head>
 
 <body>
@@ -63,12 +66,12 @@
   <div class="main">
     <div class="trait-section">
       <div class="section-title general-text">
-        Reroll Simulator (WIP)
+        Trait Rerolling
       </div>
 
       <div class="subsection">
         <div class="reroll-screen">
-          <button class="unit-button reroll-image">
+          <button class="unit-button reroll-unit-image">
             <div class="unit-gradient iscanur">
               <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
 
@@ -77,29 +80,70 @@
               </div>
             </div>
           </button>
-        </div>
 
-        <div class="stat-screen">
+          <div class="trait-middle-section">
+            <div class="trait-label general-text">Trait</div>
+            <div id="trait-result-wrapper" class="trait-result-wrapper">
+              <div class="trait-mask"></div>
+              <div id="trait-result" class="general-text">None</div>
+            </div>
+            <div id="trait-description" class="trait-description general-text"></div>
+
+            <button id="trait-reroll-button" class="general-text">Reroll</button>
+          </div>
+
           <button class="unit-button reroll-image">
-            <div class="unit-gradient secret">
+            <div class="unit-gradient mythic">
               <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
 
               <div class="unit-content">
-                <img class="unit-picture" src="Images/Units/MonkeyKing.webp">
+                <img id="reroll-trait-icon" class="unit-picture" src="Images/Icons/Trait_Reroll.webp">
+
+                <div id="reroll-count" class="general-text">0/1</div>
               </div>
             </div>
           </button>
         </div>
+
+        <div class="trait-info">
+          <div id="pity-display" class="pity-display general-text"></div>
+          <div id="trait-count-display" class="trait-count-display general-text"></div>
+        </div>
+
+        <div id="trait-history-container" class="trait-history-container">
+          <div class="history-label general-text">Recent Traits</div>
+          <div id="trait-history-display" class="trait-history-display"></div>
+        </div>
       </div>
     </div>
 
-    <div class="stat-section">
+    <div class="reroll-history">
+      <div class="section-title general-text">
+        Stat Rerolling (TBA)
+      </div>
 
+      <div class="stat-screen">
+        <button class="unit-button reroll-unit-image">
+          <div class="unit-gradient secret">
+            <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+            <div class="unit-content">
+              <img class="unit-picture" src="Images/Units/MonkeyKing.webp">
+            </div>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 
   <script src="javascript/icons.js"></script>
-  <script src="javascript/main.js"></script>
+
+  <script src="javascript/reroll/odds.js"></script>
+  <script src="javascript/reroll/shared.js"></script>
+  <script src="javascript/reroll/traitsRolling.js"></script>
+  
+  <script src="javascript/tooltips.js"></script>
+
 
   <script src="javascript/pageHandler.js"></script>
 </body>

@@ -1,0 +1,122 @@
+@keyframes textBounce {
+  0% { transform: scale(0.3); }
+  60% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+#trait-result .bounce-text {
+  display: inline-block;
+  animation: textBounce 0.4s ease-out;
+  transform-origin: center center;
+}
+
+/* Text colors for normal traits */
+.trait-result-wrapper.unbound #trait-result span {
+  color: #c00012;
+}
+
+.trait-result-wrapper.water #trait-result span {
+  color: #1e56fa;
+}
+
+.trait-result-wrapper.cosmic #trait-result span {
+  color: #a072fd;
+}
+
+/* Mask to cover gradient except border */
+.trait-mask {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #090909;
+  border-radius: min(10px, calc(10 * 0.1667vh));
+  z-index: 1;
+}
+
+/* Color wrappers for normal traits */
+.trait-result-wrapper.unbound {
+  background: #c00012;
+}
+
+.trait-result-wrapper.water {
+  background: #1e56fa;
+}
+
+.trait-result-wrapper.cosmic {
+  background: #a072fd;
+}
+
+/* Gradient wrappers */
+.trait-result-wrapper.legendary {
+  background: linear-gradient(150deg, #f1ff00 10%, #ff6f00 45%, #ffff00 80%);
+}
+
+.trait-result-wrapper.mythic {
+  background: linear-gradient(-125deg, #33ffcc 15%, #45ff41, #d6ff33, #fdd233, #ff7c33, #ff3346, #ff33b7 85%);
+}
+
+/* Inner trait-result with text on top */
+.trait-result-wrapper #trait-result {
+  border: none;
+  margin: 0;
+  background: transparent;
+  border-radius: min(10px, calc(10 * 0.1667vh));
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 0 10px;
+}
+
+#trait-result.legendary span,
+#trait-result.mythic span {
+  position: relative;
+  z-index: 1;
+}
+
+#trait-result.legendary span.bounce-text {
+  background: linear-gradient(150deg, #f1ff00 10%, #ff6f00 45%, #ffff00 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+#trait-result.mythic span.bounce-text {
+  background: linear-gradient(-125deg, #33ffcc 15%, #45ff41, #d6ff33, #fdd233, #ff7c33, #ff3346, #ff33b7 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Trait icon styling */
+.trait-icon {
+  width: min(45px, calc(45 * 0.1667vh));
+  height: min(45px, calc(45 * 0.1667vh));
+  object-fit: contain;
+  position: absolute;
+  left: min(10px, calc(10 * 0.1667vh));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* Trait label styling */
+.trait-label {
+  font-size: min(24px, calc(24 * 0.1667vh));
+  margin-bottom: max(-8px, calc(-8 * 0.1667vh));
+  text-align: center;
+}
+
+/* Trait description styling */
+.trait-description {
+  font-size: min(18px, calc(18 * 0.1667vh));
+  margin-top: max(-8px, calc(-8 * 0.1667vh));
+  text-align: center;
+  min-height: 20px;
+}

@@ -1,0 +1,72 @@
+.trait-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: stretch;
+  flex-wrap: wrap;
+
+  gap: min(12px, calc(12 * 0.1667vh));
+  padding: min(12px, calc(12 * 0.1667vh));
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: min(10px, calc(10 * 0.1667vh));
+}
+
+.pity-display {
+  display: flex;
+  justify-content: center;
+  gap: min(8px, calc(8 * 0.1667vh));
+  padding: min(10px, calc(10 * 0.1667vh));
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: min(10px, calc(10 * 0.1667vh));
+}
+
+.trait-count-display {
+  display: flex;
+  justify-content: center;
+  padding: min(10px, calc(10 * 0.1667vh));
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: min(10px, calc(10 * 0.1667vh));
+}
+
+.pity-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: min(6px, calc(6 * 0.1667vh));
+  margin-bottom: min(6px, calc(6 * 0.1667vh));
+}
+
+.pity-item.tooltip {
+  text-decoration: none;
+  cursor: help;
+}
+
+.trait-small-icon {
+  width: min(16px, calc(16 * 0.1667vh));
+  height: min(16px, calc(16 * 0.1667vh));
+  object-fit: contain;
+}
+
+.trait-count-grid {
+  display: flex;
+  flex-direction: row;
+  gap: min(10px, calc(10 * 0.1667vh));
+  justify-content: center;
+}
+
+.trait-count-column {
+  display: flex;
+  flex-direction: column;
+  gap: min(4px, calc(4 * 0.1667vh));
+  min-width: min(100px, calc(100 * 0.1667vh));
+}
+
+.trait-count-display .trait-count-grid {
+  width: 100%;
+}
+
+.pity-item img {
+  width: min(24px, calc(24 * 0.1667vh));
+  height: min(24px, calc(24 * 0.1667vh));
+  object-fit: contain;
+}
