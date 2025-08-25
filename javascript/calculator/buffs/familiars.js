@@ -108,6 +108,26 @@ const openBtn = document.getElementById("openPopup");
 const familiarCatalog = document.getElementById("familiars-catalog")
 
 function showPopup() {
+  // Check if the selected unit has familiar: false
+  if (unitStats[selectedUnit] && unitStats[selectedUnit].familiar === false) {
+    // Lock familiar to None and don't open popup
+    if (selectedFamiliar !== "None") {
+      clearFamiliarUI()
+      clearBuffActive("Familiar-Passive")
+      
+      for (stat in familiarsData[selectedFamiliar].minRanges) {
+        clearBuffActive("Familiar-Slider-" + stat)
+      }
+      
+      clearBuffActive("corruption-slider")
+      
+      selectedFamiliar = "None"
+      loadFamiliar()
+      updateCorruption()
+    }
+    return; // Don't open the popup
+  }
+  
   popup.classList.remove("hidden");
 }
 
@@ -194,5 +214,23 @@ popup.addEventListener("click", (e) => {
 for (familiar in familiarsData) {
   if (familiarsData[familiar].image) {
     createFamiliarButton(familiar)
+  }
+}
+
+// Check if the selected unit has familiar: false and lock it to None
+if (unitStats[selectedUnit] && unitStats[selectedUnit].familiar === false) {
+  if (selectedFamiliar !== "None") {
+    clearFamiliarUI()
+    clearBuffActive("Familiar-Passive")
+    
+    for (stat in familiarsData[selectedFamiliar].minRanges) {
+      clearBuffActive("Familiar-Slider-" + stat)
+    }
+    
+    clearBuffActive("corruption-slider")
+    
+    selectedFamiliar = "None"
+    loadFamiliar()
+    updateCorruption()
   }
 }

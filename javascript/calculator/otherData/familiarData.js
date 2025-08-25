@@ -1,4 +1,14 @@
 const familiarsData = {
+  None: {
+    image: "Images/Familiars/Familiar.webp",
+    elements: [],
+    type: "Statement",
+    passiveName: "N/a",
+    passiveDescription: "N/a",
+    buffs: [0, 0, 0, 0, 0, 0],
+    multiplicative: false
+  },
+
   Birb: {
     image: "Images/Familiars/Birb.webp",
     elements: ["Water", "Spark", "Blast"],
@@ -85,10 +95,6 @@ const familiarsData = {
     multiplicative: false
   },
 
-  Turbo: {
-
-  },
-
   SummerHam: {
     image: "Images/Familiars/SummerHam.webp",
     elements: ["Fire", "Water", "Holy"],
@@ -100,7 +106,7 @@ const familiarsData = {
     step: 1,
     buffs: [1, 0, 0, 0, 0, 0],
     otherBuffs: [0, 1, 1, 0],
-    multiplicative: false
+    multiplicative: true
   },
 
   SpiritDispenser: {
@@ -108,9 +114,22 @@ const familiarsData = {
     elements: ["Cosmic", "Unknown", "Blast"],
     type: "Slider",
     passiveName: "Spirit Boost",
-    passiveDescription: "Anytime this unit activates an active, buffs damage by +5.0%-25.0% for 40s.",
+    passiveDescription: "Anytime this unit activates an active, buffs Dmg by +5.0%-25.0% for 40s.",
     minRanges: { damage: 0 },
     maxRanges: { damage: 25 },
+    step: 1,
+    buffs: [1, 0, 0, 0, 0, 0],
+    multiplicative: true
+  },
+
+  Nose: {
+    image: "Images/Familiars/Nose.webp",
+    elements: ["Cosmic", "Unbound", "Nature"],
+    type: "Slider",
+    passiveName: "Nose Thingie",
+    passiveDescription: "Anytime this unit attacks stun them for 2s. When stunned, buffs Dmg by +5.0%-35.0% for stun duration + 5s.",
+    minRanges: { damage: 0 },
+    maxRanges: { damage: 35 },
     step: 1,
     buffs: [1, 0, 0, 0, 0, 0],
     multiplicative: false

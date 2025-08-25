@@ -1,4 +1,120 @@
 let unitPassives = {
+  TheStruggler: [
+    {
+      name: "The Struggler", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 5% Dmg per injury stack (Loses all injury stacks after unstunned after BA)", type: "Slider", min: 0, max: 20, step: 1,
+          multiplicative: false, buffs: [5, 0, 0, 0, 0, 0], suffix: " Injury Stacks"
+        },
+      ]
+    },
+
+    {
+      name: "Berserker Armor", upgrade: 0,
+      conditions: [
+        {
+          description: "If at 0 injury stacks, starts attacking non-stop (<a class='spark' href='https://docs.google.com/document/d/1DRMqdBgI11GRPaxs92tofWyonV4voGPvsv8ze9BYUk0'>Here</a> for more details) and gains 1 injury stack per wave, then stuns when at 20 stacks or ability toggled for 3s per stack", 
+          type: "None"
+        },
+      ]
+    }
+  ],
+
+  TheFalcon: [
+    {
+      name: "Aspect of Reality", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit does 30% more Dmg if the enemy is in Repulse lockout", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: true, buffs: [30, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Despicable Evil", upgrade: 0,
+      conditions: [
+        {
+          description: "For every ally tower Branded and survives I, Sacrifice, increases Dmg by 5% and Rng by 1%", type: "Slider", min: 0, max: 30, step: 1,
+          multiplicative: false, buffs: [5, 0, 1, 0, 0, 0], suffix: " Units Branded"
+        },
+      ]
+    },
+
+    {
+      name: "Commander", upgrade: 0,
+      conditions: [
+        {
+          description: "Every attack is a random attack of 1-3 (120 Cone / 120 Cone / Full).", type: "None"
+        },
+
+        {
+          description: "This unit gains 2% Dmg for every Unit/Enemy sacrificed.", type: "Slider", min: 0, max: 100, step: 2,
+          multiplicative: false, buffs: [1, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  TheKing: [
+    {
+      name: "Demonic Body", upgrade: 0,
+      conditions: [
+        {
+          description: "Debuffs buff this unit isntead for the same amount.", type: "None"
+        },
+
+        {
+          description: "Maxed energy drain (70% Dmg Buff)", type: "Statement", statement: "Toggle Buff.",
+          multiplicative: false, buffs: [70, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Maxed blinded (50% Rng Buff)", type: "Statement", statement: "Toggle Buff.",
+          multiplicative: false, buffs: [0, 0, 50, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  GujoFamiliar: [
+    {
+      name: "Strongest Sorcerer", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +20% and Spa -10%.",
+          multiplicative: false, type: 'Statement', statement: 'It is just always on', buffs: [20, 10, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Limitless", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +0.1% with each wave passed.",
+          multiplicative: false, type: "Slider", min: 0, max: 300, step: 1, buffs: [0.1, 0, 0, 0, 0, 0], suffix: " Waves Passed"
+        }
+      ]
+    },
+
+    {
+      name: "Unlimited Expansion", upgrade: 8,
+      conditions: [
+        {
+          description: "Spa -2% for each kill during Void (down to -10%).",
+          multiplicative: false, type: "Slider", min: 0, max: 10, step: 2, buffs: [0, 1, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Dmg +50% for 40s after activating Void",
+          multiplicative: false, type: 'Statement', statement: 'Toggle Active Buff', buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
   Iscanur: [
     {
       name: "High Noon", upgrade: 0,
@@ -235,7 +351,7 @@ let unitPassives = {
 
         {
           description: "For every ally that is a turned giant or giant category ally, this unit gains 5% Dmg and 2% Rng.",
-          multiplicative: false, type: "Slider", min: 1, max: 20, step: 1, buffs: [5, 0, 2, 0, 0, 0], suffix: " Allies"
+          multiplicative: false, type: "Slider", min: 1, max: 50, step: 1, buffs: [5, 0, 2, 0, 0, 0], suffix: " Allies"
         }
       ]
     },
@@ -784,7 +900,7 @@ let unitPassives = {
       conditions: [
         {
           description: "Dmg +20% and Spa -10%.",
-          multiplicative: false, type: 'Statement', statement: 'It is just always on', buffs: [20, 10, 0, 0, 0, 0]
+          multiplicative: false, type: 'Statement', statement: 'It just always on', buffs: [20, 10, 0, 0, 0, 0]
         },
       ]
     },
@@ -805,7 +921,12 @@ let unitPassives = {
         {
           description: "Spa -2% for each kill during Void (down to -10%).",
           multiplicative: false, type: "Slider", min: 0, max: 10, step: 2, buffs: [0, 1, 0, 0, 0, 0]
-        }
+        },
+
+        {
+          description: "Dmg +50% for the duration of Void",
+          multiplicative: false, type: 'Statement', statement: 'Toggle Active Buff', buffs: [50, 0, 0, 0, 0, 0]
+        },
       ]
     },
   ],

@@ -1,4 +1,16 @@
 const unitStats = {
+  TheStruggler: { displayName: "The Struggler (Rampage)", placementCount: 3, placementCost: 0, maxCost: 137800, damage: 16500, spa: 9, range: 50, aoe: "Full", hits: 1 },
+  TheFalcon: { displayName: "The Falcon (of Light)", placementCount: 1, placementCost: 1000, maxCost: 1000, damage: 12300, spa: 7, range: 52, aoe: "120° Cone", hits: 1 },
+  TheKing: { displayName: "The King (Apostle)", placementCount: 3, placementCost: 1600, maxCost: 78700, damage: 17500, spa: 8, range: 48, aoe: "Full", hits: 1 },
+  TheWitch: { displayName: "The Witch (Disciple)", placementCount: 4, placementCost: 1000, maxCost: 72200, damage: 5500, spa: 10, range: 40, aoe: "Full", hits: 1 },
+
+  GG: { displayName: "GG (Possessed)", placementCount: 3, placementCost: 1100, maxCost: 132100, damage: 12700, spa: 7, range: 50, aoe: "90° Cone", hits: 1},
+
+  GoblinKiller: { displayName: "Goblin Killer (Disciple)", placementCount: 4, placementCost: 1400, maxCost: 60000, damage: 30000, spa: 15, range: 20, aoe: "Full", hits: 1 },
+  Priestess: { displayName: "Priestess (Holy)", placementCount: 4, placementCost: 1400, maxCost: 34200, damage: 4900, spa: 5, range: 36, aoe: "12 Line", hits: 1 },
+
+  GujoFamiliar: { displayName: "Gujo (Infinity) Familiar", placementCount: 3, placementCost: 1800, maxCost: 90200, damage: 24346, spa: 14, range: 41, aoe: "Full", hits: 1, familiar: false },
+
   Iscanur: { displayName: "Iscanur (Pride)", placementCount: 1, placementCost: 7500, maxCost: 170520, damage: 16000, spa: 9, range: 50, aoe: "28 Circle", hits: 1 },
   Koguro: { displayName: "Koguro (Unsealed)", placementCount: 1, placementCost: 3500, maxCost: 151000, damage: 11000, spa: 8, range: 45, aoe: "24 Circle", hits: 5 },
   Vsjw: { displayName: "Song Jinwu and Igros", placementCount: 3, placementCost: 1700, maxCost: 105700, damage: 8200, spa: 8, range: 46, aoe: "25 Circle", hits: 6 },
@@ -37,8 +49,6 @@ const unitStats = {
   Isdead: { displayName: "Isdead (Romantic)", placementCount: 3, placementCost: 3200, maxCost: 103000, damage: 5800, spa: 7, range: 37, aoe: "24 Circle", hits: 1 },
   Sokora: { displayName: "Sokora (Angra Mainyu)", placementCount: 3, placementCost: 2700, maxCost: 80300, damage: 1080, spa: 10, range: 25, aoe: "Full", hits: 1 },
   Salter: { displayName: "Saber (Black Tyrant)", placementCount: 3, placementCost: 2000, maxCost: 133000, damage: 6500, spa: 8, range: 40, aoe: "22 Circle", hits: 4 },
-
-  Xoni: { displayName: "Xoni", placementCount: 100, placementCost: 100, maxCost: 100, damage: 9999, spa: 1, range: 99, aoe: "50° Cone", hits: 200 },
 
   Ali: { displayName: "Ali (Djinn)", placementCount: 3, placementCost: 1600, maxCost: 95800, damage: 15000, spa: 8, range: 44, aoe: "100° Cone", hits: 1 },
   Hei: { displayName: "Hei (Black Dragon)", placementCount: 4, placementCost: 1200, maxCost: 60400, damage: 9800, spa: 12, range: 40, aoe: "Full", hits: 1 },

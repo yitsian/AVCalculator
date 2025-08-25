@@ -1,4 +1,16 @@
 const unitTagData = {
+  TheStruggler: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "CC", "DOT"] },
+  TheFalcon: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["OCone"], mechanics: ["Debuffer", "CC", "Buffer"] },
+  TheKing: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Curse"], aoes: ["Full"], mechanics: [] },
+  TheWitch: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Debuffer", "Buffer"] },
+
+  GoblinKiller: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Debuffer"] },
+  Priestess: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["Line"], mechanics: ["CC"] },
+
+  GG: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse"], aoes: ["OCone"], mechanics: [] },
+  
+  GujoFamiliar: { availability: ["Permanent"], rarities: ["Vanguard", "Gujo"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
+
   Iscanur: { availability: ["Limited"], rarities: ["Vanguard", "Iscanur"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Nuke"] },
   Koguro: { availability: ["Limited"], rarities: ["Vanguard", "Koguro"], elements: ["Nature"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Buffer", "DOT", "Domain", "Nuke"] },
   Vsjw: { availability: ["Permanent"], rarities: ["Vanguard", "Vsjw"], elements: ["Unknown"], aoes: ["Circle"], mechanics: ["Ability", "Summoner", "Nuke", "Immune"] },
@@ -41,8 +53,8 @@ const unitTagData = {
   Hei: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["Full"], mechanics: ["DOT"] },
   Newsman: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Water"], aoes: ["OCone"], mechanics: ["CC", "Debuffer", "DOT"] },
   Quetzalcoatl: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "Buffer"] },
-  Reimu: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["Full"], mechanics: ["Ability"] },
-  Sakuya: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Ability", "Domain", "CC"] },
+  Reimu: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["Full"], mechanics: ["Ability"] },
+  Sakuya: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Ability", "Domain", "CC"] },
   Arc: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["ACone"], mechanics: ["Ability", "CC", "Summoner", "DOT"] },
   Hebano: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["DOT", "Buffer", "Debuffer"] },
   Marlin: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Circle"], mechanics: ["Ability", "Buffer", "Debuffer"] },

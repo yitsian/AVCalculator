@@ -1,9 +1,41 @@
 const unitAttacks = {
+  TheStruggler: [
+    {name: "Bleed", aoe: "Single", hits: 10, type: "Conditional-Dot", description: "When stunned if the enemy has no bleed, deals 20% of this units Dmg over 10s", 
+    multiplier: 0.2, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+
+    {name: "Bleed Followup", aoe: "10 Line", hits: 1, type: "Condition-Followup", description: "Follows up every 10s with attack 1/3 for 100% Dmg if there is a bleeding enemy in range (10 Line / 12 Line)", 
+    multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Beast of Darkness", aoe: "90° Cone", hits: 1, type: "Condition-Followup", description: "Follows up with attack 2 for 50% Dmg when attacking a bleeding enemy (2s cd)", 
+    multiplier: 0.5, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+  ],
+
+  GoblinKiller: [
+    {name: "Traps", aoe: "Single", hits: 1, type: "Condition-Followup", description: "Lays down up to 5 traps that do up to 400% of this units damage starting from 20% growing 5% per second", 
+    multiplier: 4, image: "Images/Units/GoblinKiller.webp", gradient: "exclusive"},
+
+    {name: "Trap Followup", aoe: "Single", hits: 1, type: "Condition-Followup", description: "This unit doesn't attack normally. <br> Instead when an enemy hits a trap, this unit attacks them for 100% Dmg", 
+    multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+  ],
+
+  GG: [
+    {name: "New Challenger", aoe: "10 Circle", hits: 1, type: "Condition-Followup", description: "Whenever an enemy enters this unit's range, follows up with attack 1 for 100% Dmg (8s cd).", 
+    multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+
+    {name: "Curse Ball", aoe: "4 Circle", hits: 1, type: "Condition-Followup", description: "Anytime this unit attacks, leaves a ball for each enemy hit that explodes after 5s for 40% Dmg (Max 10 per player).", 
+    multiplier: 0.4, image: "Images/Units/GG.webp", gradient: "exclusive"},
+  ],
+
+  GujoFamiliar: [
+    {name: "Split Second Decision", aoe: "12 Line", hits: 1, type: "Condition-Followup", description: "Anytime an enemy leaves range, stuns all enemies and follows up with attack 3 for 100% Dmg (20s cd).", 
+    multiplier: 1, image: "Images/Units/GujoFamiliar.webp", gradient: "gujo"},
+  ],
+
   Iscanur: [
     {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
 
-    {name: "Sunshine", aoe: "Single", hits: 5, type: "Conditional-Dot", description: "When an enemy leaves this unit's range, inflicts burn for 100% of this units Dmg over 5s.", 
+    {name: "Sunshine Burn", aoe: "Single", hits: 5, type: "Conditional-Dot", description: "When an enemy leaves this unit's range, inflicts burn for 100% of this units Dmg over 5s.", 
     multiplier: 1, image: "Images/Abilities/Ultimate_Ability.webp", gradient: "iscanur"},
 
     {name: "Lion's Sin", aoe: "Full", hits: 1, type: "Nuke", description: "Deals 400% Dmg to every enemy in range.", 

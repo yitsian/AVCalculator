@@ -358,5 +358,81 @@ const buffData = {
         multiplicative: false, type: "Static", statement: "Fire Allies", buffs: [20, 0, 0, 0, 0, 0]
       },
     ]
-  }
+  },
+
+  TheFalcon: {
+    name: "The Falcon (Of Sacrifice)", description: "Buffs all allies in range by 40% Dmg. Debuffs Branded allies by 20%",
+    background: "secret", image: "Images/Units/TheFalcon.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Allies in Range", buffs: [40, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Branded Allies", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  TheWitch: {
+    name: "The Witch", description: "Buffs allies by 50% Dmg when stunned for the duration of said stun",
+    background: "mythic", image: "Images/Units/TheWitch.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "When Stunned", buffs: [50, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  TheSmithForge: {
+    name: "The Smith Basic Weapons", description: "Each weapon buffs allies by 25% Dmg / 20% Rng / 10% Spa (Only 1 can be equipped at a time)",
+    background: "mythic", image: "Images/Units/TheSmith.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Sword (Dmg)", buffs: [25, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Spear (Rng)", buffs: [0, 0, 20, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Dagger (Spa)", buffs: [0, 10, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  TheSmithDragonslayer: {
+    name: "Dragonslayer", description: "Buffs Dmg by 40% and buffs DoTs by 20% (Only 1 can exist and can't be equiped with basic weapons)",
+    background: "rogita", image: "Images/Units/TheSmith.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Toggle Buff", buffs: [40, 0, 0, 0, 0, 0], otherBuffs: [20, 0, 0]
+      },
+    ]
+  },
+
+  TheSmithSalamanderDagger: {
+    name: "Salamander Dagger", description: "Buffs Rng by 20% and buffs Dmg to burning enemies by 20% (Only 1 can exist and can't be equiped with basic weapons)",
+    background: "divalo", image: "Images/Units/TheSmith.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Toggle Buff", buffs: [0, 0, 20, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Enemy is burning", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  TheSmithSOA: {
+    name: "Sword of Actuation", description: "Buffs Spa by 10% and buffs Dmg by 20% (Only 1 can exist and can't be equiped with basic weapons)",
+    background: "gujo", image: "Images/Units/TheSmith.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Toggle Buff", buffs: [40, 0, 0, 0, 0, 0], otherBuffs: [20, 0, 0]
+      },
+    ]
+  },
 }
