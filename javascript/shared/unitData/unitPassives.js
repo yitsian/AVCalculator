@@ -11,8 +11,17 @@ let unitPassives = {
         {
           description: "Any Crit over 100% gets converted to CritDmg.", type: "Statement", statement: "Toggle Passive Buff.",
           multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => {
-            // Calculate total crit including base stats (which includes traits)
-            const totalCrit = finalStats.crit;
+            // Manually calculate what baseStats.crit should be with current buffs
+            // baseStats.crit = (baseCrit + traitCrit * 100) + ((statMultBuffs.crit - 1) * 100)
+            // We need to get the raw base crit before any multipliers
+            const rawBaseCrit = 0; // Units start with 0% crit
+            const [traitDamage, traitSpa, traitRange, traitCrit, traitCritDmg] = getTraitBonus(trait)
+            const currentBaseCrit = (rawBaseCrit + traitCrit * 100) + ((statMultBuffs.crit - 1) * 100);
+
+            console.log(traitCrit, statMultBuffs.crit)
+
+            // Now calculate total crit with current additive buffs
+            const totalCrit = Math.max(currentBaseCrit + statAddBuffs.crit * 100, 0);
             return [0, 0, 0, 0, Math.max(totalCrit - 100, 0), 0];
           },
         },
