@@ -152,6 +152,7 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
 
   // Update multipliers so dynamic buffs can see the current state
   updateAllMultipliers();
+  updateBaseStats(); // Update base stats before dynamic buffs so they can access current values
 
   // Then apply conditions with getBuffs (dynamic buffs) that may depend on other buffs
   for (const conditionId in conditionMetaMap) {
@@ -164,7 +165,7 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
   }
 
   updateAllMultipliers();
-  updateBaseStats();
+  updateBaseStats(); // Final update after all buffs are applied
 }
 
 function buffUpdate(checkbox, slider, valueDisplay, conditionId, condition) {

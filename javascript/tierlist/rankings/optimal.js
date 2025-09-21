@@ -29,8 +29,8 @@ const optimalRankings = {
       utility: [
         { id: "Iscanur", trait: "Monarch", description: "Auto-Unit / Nuke / Self-Cleanse" },
         { id: "Vsjw", trait: "Deadeye", description: "Scaling Summons" },
+        { id: "BrolziSuper", trait: "Monarch", description: "Unbound Crit Buffer / Full aoe Rupture" },
         { id: "GoblinKiller", trait: "Deadeye", description: "Rupture / Traps" },
-        { id: "Astolfo", trait: "Marksman", description: "Spellbook / Spear / Repulse" },
         { id: "TheSmith", trait: "Fortune", description: "Masterworks" },
       ]
     }
@@ -60,11 +60,11 @@ const optimalRankings = {
       ],
 
       utility: [
+        { id: "Astolfo", trait: "Marksman", description: "Spellbook / Spear / Repulse" },
         { id: "Roku", trait: "Ethereal", description: "Slow / Stun / Rupture" },
         { id: "Rohan", trait: "Monarch", description: "Free Placement" },
         { id: "TheWitch", trait: "Marksman", description: "Nullify" },
         { id: "Al", trait: "Marksman", description: "Cleanse / Buffer" },
-        { id: "Hebano", trait: "Marksman", description: "Burn Reapply / Scorched" },
       ]
     }
   },
@@ -103,12 +103,12 @@ const optimalRankings = {
       ],
 
       utility: [
+        { id: "Boohon", trait: "Fortune", description: "Summons / Crit Buffer" },
+        { id: "Hercool", trait: "Fortune", description: "CritDmg Buffer" },
+        { id: "Hebano", trait: "Marksman", description: "Burn Reapply / Scorched" },
         { id: "DarkMage", trait: "Solar", description: "Slow / Bleed / Diseased" },
-        { id: "CuChulainn", trait: "Ethereal", description: "Rupture" },
         { id: "GiantQueen", trait: "Fortune", description: "Rumbling / Group Buffer" },
         { id: "Luce", trait: "Marksman", description: "Nullify" },
-        { id: "Ken", trait: "Marksman", description: "Bleed / Slow" },
-        { id: "Sokora", trait: "Blitz", description: "Spa Averaging" },
       ]
     }
   },
@@ -139,11 +139,11 @@ const optimalRankings = {
       ],
 
       utility: [
+        { id: "Ken", trait: "Marksman", description: "Bleed / Slow" },
+        { id: "Sokora", trait: "Blitz", description: "Spa Averaging" },
         { id: "Riner", trait: "Ethereal", description: "Free Placements / Shield Stocks" },
         { id: "Rudie", trait: "Marksman", description: "Buffer" },
         { id: "Soburo", trait: "Marksman", description: "Buffer / Ability Buff" },
-        { id: "HarukaRin", trait: "Marksman", description: "Buffer" },
-        { id: "Todu", trait: "Marksman", description: "Teleport" },
       ]
     }
   },
@@ -172,11 +172,12 @@ const optimalRankings = {
       ],
 
       utility: [
+        { id: "HarukaRin", trait: "Marksman", description: "Buffer" },
+        { id: "Todu", trait: "Marksman", description: "Teleport" },
         { id: "Orehimi", trait: "Fortune", description: "Buffer / Cleanser" },
         { id: "Gazelle", trait: "Fortune", description: "Summon Buffer" },
         { id: "Archer", trait: "Marksman", description: "Blast Domain Buff" },
-        { id: "Oryo", trait: "Monarch", description: "Infinite Range" },
-        { id: "Boohon", trait: "Fortune", description: "Summons / Crit Buffer" },
+        { id: "CuChulainn", trait: "Ethereal", description: "Rupture" },
       ]
     }
   },
@@ -202,10 +203,10 @@ const optimalRankings = {
       ],
 
       utility: [
+        { id: "Oryo", trait: "Monarch", description: "Infinite Range" },
         { id: "Renguko", trait: "Blitz", description: "Purgatory Flames" },
         { id: "Medea", trait: "Fortune", description: "Oathbreaker" },
         { id: "Tuji", trait: "Marksman", description: "Shield Breaker" },
-        { id: "Hercool", trait: "Fortune", description: "CritDmg Buffer" },
       ]
     }
   },
