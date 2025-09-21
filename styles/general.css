@@ -86,3 +86,9 @@ body {
 .no-wrap {
   text-wrap: nowrap;
 }
+
+.hidden {
+  opacity: 0;
+  display: none !important;
+  transition: opacity 0.3s ease;
+}

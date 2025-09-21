@@ -10,7 +10,7 @@ const buffData = {
   },
 
   HarukaRin: {
-    name: "Haruka Rin", description: "+3% Dmg per wave, up to +18%. After 6 waves +10% Rng.", image: "Images/Units/Haruka Rin.webp", background: "exclusive",
+    name: "Haruka Rin", description: "+3% Dmg per wave, up to +18%. After 6 waves +10% Rng.", image: "Images/Units/HarukaRin.webp", background: "exclusive",
     multiplicative: false,
     conditions: [
       {
@@ -369,7 +369,7 @@ const buffData = {
       },
 
       {
-        multiplicative: false, type: "Static", statement: "Branded Allies", buffs: [20, 0, 0, 0, 0, 0]
+        multiplicative: false, type: "Static", statement: "Branded Allies", buffs: [-20, 0, 0, 0, 0, 0]
       },
     ]
   },
@@ -431,8 +431,42 @@ const buffData = {
     background: "gujo", image: "Images/Units/TheSmith.webp", multiplicative: false,
     conditions: [
       {
-        multiplicative: false, type: "Static", statement: "Toggle Buff", buffs: [40, 0, 0, 0, 0, 0], otherBuffs: [20, 0, 0]
+        multiplicative: false, type: "Static", statement: "Toggle Buff", buffs: [20, 10, 0, 0, 0, 0]
       },
     ]
   },
+
+  SukonoFamiliar: {
+    name: "Sukono Familiar", description: "Buffs all curse allies in range by 30% Dmg.",
+    background: "sukono", image: "Images/Units/Sukono.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Curse Allies", buffs: [30, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  BrolziSuper: {
+    name: "Brolzi Super", description: "Buffs all unbound allies by 20% Crit per wave up to 100% and CritDmg by 10% after 7 waves up to 80%.",
+    background: "brolzisuper", image: "Images/Units/BrolziSuper.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 100, step: 10, buffs: [0, 0, 0, 1, 0, 0],
+      },
+
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 80, step: 10, buffs: [0, 0, 0, 0, 1, 0],
+      },
+    ]
+  },
+
+  RogitaSuper: {
+    name: "Fused Reborn", description: "Anytime Rogita crits, buffs all Fused units' Crit by 50%",
+    background: "secret", image: "Images/Units/RogitaSuper.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Fused Allies", buffs: [0, 0, 0, 50, 0, 0]
+      },
+    ]
+  }
 }

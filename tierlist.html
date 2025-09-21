@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Anime Vanguards DPS Calculator</title>
+  <link rel="icon" type="image/x-icon" href="Images/Icons/Trait_Reroll.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/search-tab.css">
+  <link rel="stylesheet" href="styles/link-buttons.css">
+  <link rel="stylesheet" href="styles/unit-icons.css">
+  <link rel="stylesheet" href="styles/tags.css">
+  <link rel="stylesheet" href="styles/shared.css">
+
+  <link rel="stylesheet" href="styles/design/stat-design.css">
+  <link rel="stylesheet" href="styles/design/element-design.css">
+  <link rel="stylesheet" href="styles/design/rarity-design.css">
+  <link rel="stylesheet" href="styles/design/interactable-design.css">
+  <link rel="stylesheet" href="styles/design/tooltips.css">
+  <link rel="stylesheet" href="styles/design/flavor-text.css">
+
+  <link rel="stylesheet" href="styles/tierlist/structure.css">
+  <link rel="stylesheet" href="styles/tierlist/items.css">
+  <link rel="stylesheet" href="styles/tierlist/unit-display.css">
+  <link rel="stylesheet" href="styles/tierlist/tiers.css">
+  <link rel="stylesheet" href="styles/tierlist/filters.css">
+  <link rel="stylesheet" href="styles/tierlist/popup.css">
+  <link rel="stylesheet" href="styles/tierlist/backgrounds.css">
+  <link rel="stylesheet" href="styles/tierlist/ScreenSizeStyles.css">
+</head>
+
+<body>
+  <div class="title">
+    <div class="text-gradient mythic">
+      Anime Vanguards DPS Calculator
+    </div>
+  </div>
+
+  <div class="header header-margin">
+    <div class="icons-section"></div>
+
+    <div class="links-section">
+      <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
+        <img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee" />
+        <span>Buy me a reroll</span>
+      </a>
+
+      <a class="settings-button link-button button-hover">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg" />
+      </a>
+    </div>
+  </div>
+
+  <div class="tierlist-main">
+    <div class="tierlist-categories">
+      <button id="Optimal" class="tierlist-category-button selected-category"
+        onclick="selectButton('Optimal')">Optimal</button>
+      <button id="Sub-Optimal" class="tierlist-category-button"
+        onclick="selectButton('Sub-Optimal')">Traitless (TBA)</button>
+      <button id="Infinite" class="tierlist-category-button" onclick="selectButton('Infinite')">Infinite (TBA)</button>
+      <button id="Pvp" class="tierlist-category-button" onclick="selectButton('Pvp')">Pvp (TBA)</button>
+      <button id="Tournaments" class="tierlist-category-button"
+        onclick="selectButton('Tournaments')">Tourneys (TBA)</button>
+    </div>
+
+    <div class="tierlist-filters">
+      <input type="text" id="tierlist-search" placeholder="Search units">
+
+      <div id="tierlist-obtainability-filter">
+        <button id="tl-filter-obtainability-permanent" class="filter-button">Permanent</button>
+        <button id="tl-filter-obtainability-limited" class="filter-button">Limited</button>
+        <button id="tl-filter-obtainability-unobtainable" class="filter-button">Unobtainable</button>
+      </div>
+
+      <div id="tierlist-aoe-filter">
+        <button id="tl-filter-aoe-all" class="filter-button selected-filter">All</button>
+        <button id="tl-filter-aoe-single" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/Single.png"></button>
+        <button id="tl-filter-aoe-circle" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/Circle.png"></button>
+        <button id="tl-filter-aoe-line" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/Line.png"></button>
+        <button id="tl-filter-aoe-stadium" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/Stadium.png"></button>
+        <button id="tl-filter-aoe-acone" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/ACone.png"></button>
+        <button id="tl-filter-aoe-ocone" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/OCone.png"></button>
+        <button id="tl-filter-aoe-splash" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/Splash.png"></button>
+        <button id="tl-filter-aoe-full" class="filter-button"><img class="filter-image"
+            src="Images/Aoes/Full.png"></button>
+      </div>
+
+      <div id="tierlist-element-filter">
+        <button id="tl-filter-element-all" class="filter-button selected-filter">All</button>
+        <button id="tl-filter-element-spark" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Spark.webp"></button>
+        <button id="tl-filter-element-nature" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Nature.webp"></button>
+        <button id="tl-filter-element-water" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Water.webp"></button>
+        <button id="tl-filter-element-fire" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Fire.webp"></button>
+        <button id="tl-filter-element-holy" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Holy.webp"></button>
+        <button id="tl-filter-element-passion" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Passion.webp"></button>
+        <button id="tl-filter-element-curse" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Curse.webp"></button>
+        <button id="tl-filter-element-blast" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Blast.webp"></button>
+        <button id="tl-filter-element-cosmic" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Cosmic.webp"></button>
+        <button id="tl-filter-element-unbound" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Unbound.webp"></button>
+        <button id="tl-filter-element-unknown" class="filter-button"><img class="filter-image"
+            src="Images/Elements/Unknown.webp"></button>
+      </div>
+    </div>
+
+    <div class="tierlist-container">
+      <div id="tl-unit-classes"></div>
+
+      <div id="tl-meta-divider" class="tl-tier-divider"></div>
+
+      <div id="tl-t0" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-t0p5" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-sub-meta-divider" class="tl-tier-divider"></div>
+
+      <div id="tl-t1" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-t1p5" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-usable-divider" class="tl-tier-divider"></div>
+
+      <div id="tl-t2" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-t3" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-outdated-divider" class="tl-tier-divider"></div>
+
+      <div id="tl-t4" class="tl-tier-row-wrapper"></div>
+
+      <div id="tl-t5" class="tl-tier-row-wrapper"></div>
+    </div>
+  </div>
+
+  <div id="tl-popup" class="hidden">
+    <div id="tl-popup-content" class="">
+      <div id="tl-popup-top-wrapper">
+        <button id="tl-popup-image" class="unit-button">
+          <div id="tl-unit-gradient" class="unit-gradient">
+            <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+            <div class="unit-content">
+              <img id="tl-unit-image" class="unit-picture">
+              <img id="tl-unit-element" class="unit-element">
+            </div>
+          </div>
+        </button>
+
+        <div id="tl-popup-info-wrapper">
+          <div id="tl-popup-name"></div>
+
+          <div id="tl-popup-info-cost-wrapper" class="tab-structure">
+            <div id="tl-popup-intitial-cost" class="tags round-form general-text"></div>
+
+            <div class="tags round-form general-text">
+              <span class="text-gradient money">-></span>
+            </div>
+
+            <div id="tl-popup-final-cost" class="tags round-form general-text"></div>
+          </div>
+
+          <div id="tl-popup-info-aoe-wrapper" class="tab-structure">
+            <div id="tl-popup-intitial-aoe" class="tags image-tag round-form general-text"><img class="element"
+                src="Images/Aoes/Full.png">TBD</div>
+            <div class="tags round-form general-text">-></div>
+            <div id="tl-popup-final-aoe" class="tags image-tag round-form general-text"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tl-popup-description"></div>
+
+      <div id="tl-popup-middle-wrapper">
+        <div id="tl-popup-pros-cons-wrapper">
+          <div id="tl-popup-pros"></div>
+
+          <div id="tl-popup-cons"></div>
+        </div>
+
+        <div id="tl-popup-familiars-container">
+          <div class="tl-familiar-ranking">
+            1st Best
+          </div>
+
+          <div class="tl-popup-familiar-tab">
+            <button class="unit-button tl-familiar-image">
+              <div class="unit-gradient sukono">
+                <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                <div class="unit-content">
+                  <img class="unit-picture" src="Images/Units/SukonoFamiliar.webp">
+                </div>
+              </div>
+            </button>
+
+            <div class="tl-familiar-info-wrapper">
+              <div class="tl-familiar-name passive text-gradient">
+                Sukono's Finger
+              </div>
+
+              <div class="tl-familiar-description">
+                Vanguard Familiar specific to Sukono
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-familiar-ranking">
+            2nd Best
+          </div>
+
+          <div class="tl-popup-familiar-tab">
+            <button class="unit-button tl-familiar-image">
+              <div class="unit-gradient secret">
+                <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                <div class="unit-content">
+                  <img class="unit-picture" src="Images/Familiars/Familiar.webp">
+                </div>
+              </div>
+            </button>
+
+            <div class="tl-familiar-info-wrapper">
+              <div class="tl-familiar-name passive text-gradient">
+                None
+              </div>
+
+              <div class="tl-familiar-description">
+                N/a
+              </div>
+            </div>
+          </div>
+
+          <div class="tl-familiar-ranking">
+            3rd Best
+          </div>
+
+          <div class="tl-popup-familiar-tab">
+            <button class="unit-button tl-familiar-image">
+              <div class="unit-gradient secret">
+                <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                <div class="unit-content">
+                  <img class="unit-picture" src="Images/Familiars/Familiar.webp">
+                </div>
+              </div>
+            </button>
+
+            <div class="tl-familiar-info-wrapper">
+              <div class="tl-familiar-name passive text-gradient">
+                None
+              </div>
+
+              <div class="tl-familiar-description">
+                N/a
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="tl-popup-teams-container">
+          <div id="tl-popup-teams-title">
+            Synergies
+          </div>
+
+          <div class="tl-popup-team-tab">
+            <div class="tl-popup-team-info">
+              <div class="tl-popup-team-name text-gradient passive">
+                Cleave and Dismantle
+              </div>
+              <div class="tl-popup-team-description">
+                Constant Bleed application along with DoT buffs from Dark Mage. The Struggler also provides demons to proc followups.
+              </div>
+            </div>
+
+            <div class="tl-popup-team-units">
+              <button class="unit-button tl-familiar-image">
+                <div class="unit-gradient sukono">
+                  <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                  <div class="unit-content">
+                    <img class="unit-picture" src="Images/Units/Sukono.webp">
+                  </div>
+                </div>
+              </button>
+
+              <button class="unit-button tl-familiar-image">
+                <div class="unit-gradient secret">
+                  <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                  <div class="unit-content">
+                    <img class="unit-picture" src="Images/Units/TheStruggler.webp">
+                  </div>
+                </div>
+              </button>
+
+              <button class="unit-button tl-familiar-image">
+                <div class="unit-gradient exclusive">
+                  <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                  <div class="unit-content">
+                    <img class="unit-picture" src="Images/Units/DarkMage.webp">
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="tl-popup-team-tab">
+            <div class="tl-popup-team-info">
+              <div class="tl-popup-team-name text-gradient passive">
+                Cursed to Rule
+              </div>
+              <div class="tl-popup-team-description">
+                Incredibly strong curse team comp making use of Sukono's curse buff.
+              </div>
+            </div>
+
+            <div class="tl-popup-team-units">
+              <button class="unit-button tl-familiar-image">
+                <div class="unit-gradient sukono">
+                  <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                  <div class="unit-content">
+                    <img class="unit-picture" src="Images/Units/Sukono.webp">
+                  </div>
+                </div>
+              </button>
+
+              <button class="unit-button tl-familiar-image">
+                <div class="unit-gradient koguro">
+                  <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                  <div class="unit-content">
+                    <img class="unit-picture" src="Images/Units/Koguro.webp">
+                  </div>
+                </div>
+              </button>
+
+              <button class="unit-button tl-familiar-image">
+                <div class="unit-gradient mythic">
+                  <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+                  <div class="unit-content">
+                    <img class="unit-picture" src="Images/Units/TheKing.webp">
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="javascript/shared/constructors.js"></script>
+  <script src="javascript/shared/formatters.js"></script>
+  <script src="javascript/shared/header.js"></script>
+  <script src="javascript/shared/icons.js"></script>
+  <script src="javascript/shared/pageHandler.js"></script>
+  <script src="javascript/shared/tooltips.js"></script>
+
+  <script src="javascript/shared/unitData/unitAttacks.js"></script>
+  <script src="javascript/shared/unitData/unitPassives.js"></script>
+  <script src="javascript/shared/unitData/unitStats.js"></script>
+  <script src="javascript/shared/unitData/unitTagData.js"></script>
+
+  <script src="javascript/shared/otherData/buffData.js"></script>
+  <script src="javascript/shared/otherData/elementBuffs.js"></script>
+  <script src="javascript/shared/otherData/familiarData.js"></script>
+  <script src="javascript/shared/otherData/unitSorting.js"></script>
+
+  <script src="javascript/tierlist/rankings/optimal.js"></script>
+
+  <script src="javascript/tierlist/unitDescriptionData/unitDescriptions.js"></script>
+  <script src="javascript/tierlist/unitDescriptionData/unitFamiliars.js"></script>
+  <script src="javascript/tierlist/unitDescriptionData/FamiliarDescriptions.js"></script>
+  <script src="javascript/tierlist/unitDescriptionData/unitSynergies.js"></script>
+
+  <script src="javascript/tierlist/categories.js"></script>
+  <script src="javascript/tierlist/tierlistFilter.js"></script>
+  <script src="javascript/tierlist/tierlistPopup.js"></script>
+  <script src="javascript/tierlist/tierlistLoader.js"></script>
+  <script src="javascript/tierlist/screenSizeHandler.js"></script>
+
+</body>
+
+</html>

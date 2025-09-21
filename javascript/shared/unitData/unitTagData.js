@@ -1,15 +1,25 @@
 const unitTagData = {
+  GujoFamiliar: { availability: ["Permanent"], rarities: ["Vanguard", "Gujo"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
+  SukonoFamiliar: { availability: ["Permanent"], rarities: ["Vanguard", "Sukono"], elements: ["Curse", "Fire"], aoes: ["ACone"], mechanics: ["DOT", "Ability", "Immune", "Domain", "Debuffer", "Nuke"] },
+
+  BrolziSuper: { availability: ["Permanent"], rarities: ["Vanguard", "BrolziSuper"], elements: ["Unbound"], aoes: ["OCone"], mechanics: ["Debuffer", "Buffer", "Ability", "Domain"] },
+  RogitaSuper: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Blast"], aoes: ["Splash"], mechanics: ["Buffer", "Immune"] },
+  LordFriezo: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Cosmic"], aoes: ["Circle"], mechanics: ["Summoner", "Immune"] },
+  Wolf: { availability: ["Limited"], rarities: ["Secret"], elements: ["Spark"], aoes: ["OCone"], mechanics: ["CC"] },
+
   TheStruggler: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "CC", "DOT"] },
   TheFalcon: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["OCone"], mechanics: ["Debuffer", "CC", "Buffer"] },
   TheKing: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Curse"], aoes: ["Full"], mechanics: [] },
   TheWitch: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Debuffer", "Buffer"] },
+  TheSmith: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Fire"], aoes: ["Single"], mechanics: ["Buffer"] },
+  
+  Aurin: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Blast"], aoes: ["Single"], mechanics: ["Buffer"] },
+  Orehimi: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Passion"], aoes: ["Single"], mechanics: ["Buffer"] },
 
   GoblinKiller: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Debuffer"] },
   Priestess: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["Line"], mechanics: ["CC"] },
 
   GG: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse"], aoes: ["OCone"], mechanics: [] },
-  
-  GujoFamiliar: { availability: ["Permanent"], rarities: ["Vanguard", "Gujo"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
 
   Iscanur: { availability: ["Limited"], rarities: ["Vanguard", "Iscanur"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Nuke"] },
   Koguro: { availability: ["Limited"], rarities: ["Vanguard", "Koguro"], elements: ["Nature"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Buffer", "DOT", "Domain", "Nuke"] },
@@ -18,7 +28,7 @@ const unitTagData = {
   Rogita: { availability: ["Unobtainable"], rarities: ["Vanguard", "Rogita"], elements: ["Blast"], aoes: ["ACone"], mechanics: ["Ability", "CC"] },
 
   Leo: { availability: ["Limited"], rarities: ["Secret"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT"] },
-  MonkeyKing: { availability: ["Limited"], rarities: ["Secret"], elements: ["Holy"], aoes: ["Circle"], mechanics: ["Ability", "Buffer"] },
+  MonkeyKing: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Holy"], aoes: ["Circle"], mechanics: ["Ability", "Buffer"] },
   GiantQueen: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Buffer"] },
   Arin: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Ability", "Buffer", "Nuke"] },
   Conqueror: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Blast"], aoes: ["OCone"], mechanics: ["Ability", "CC"] },
@@ -37,8 +47,9 @@ const unitTagData = {
   ChoyJongEn: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Fire"], aoes: ["Line"], mechanics: ["Nuke", "DOT"] },
   Friran: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Nature"], aoes: ["ACone"], mechanics: ["Ability", "Summoner", "Immune"] },
   Eizan: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "Immune", "CC", "Debuffer"] },
-  Yehowach: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Ability", "Buffer", "Debuffer", "Immune"] },
+  Yehowach: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Ability", "Buffer", "Immune"] },
   Yomomata: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "Ability", "Summoner"] },
+  Valentine: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Circle"], mechanics: [""] },
   Sukono: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse", "Fire"], aoes: ["ACone"], mechanics: ["DOT", "Ability", "Immune", "Domain", "Debuffer", "Nuke"] },
   Gujo: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
   Alocard: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "Summoner", "Debuffer", "DOT"] },
@@ -65,6 +76,8 @@ const unitTagData = {
   Vigil: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Spark"], aoes: ["OCone", "Full"], mechanics: ["Meter"] },
   Dave: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Spark"], aoes: ["OCone"], mechanics: [] },
   Luce: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Spark"], aoes: ["Full"], mechanics: ["Debuffer"] },
+  Sosora: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Passion"], aoes: ["OCone"], mechanics: ["DOT"] },
+  Dodara: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Blast"], aoes: ["Circle"], mechanics: ["CC", "Nuke"] },
   Zion: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["DOT"] },
   Julias: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Water"], aoes: ["Circle"], mechanics: ["CC"] },
   Tuji: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Unbound"], aoes: ["ACone"], mechanics: ["Ability"] },
@@ -78,6 +91,8 @@ const unitTagData = {
   Emmie: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Water"], aoes: ["Line"], mechanics: ["CC"] },
   Foboko: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Circle"], mechanics: ["CC", "Buffer"] },
   Karem: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "CC"] },
+  RomandRan: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["Circle"], mechanics: ["Ability"] },
+  HarukaRin: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Passion"], aoes: ["Full"], mechanics: ["Buffer"] },
 
   Ken: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Blast"], aoes: ["Circle"], mechanics: ["CC", "DOT"] },
   Makoso: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Blast"], aoes: ["Circle"], mechanics: [] },

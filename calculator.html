@@ -4,6 +4,7 @@
 
 <head>
   <title>Anime Vanguards DPS Calculator</title>
+  <link rel="icon" type="image/x-icon" href="Images/Icons/Trait_Reroll.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,19 +39,7 @@
   </div>
 
   <div class="header header-margin">
-    <div class="icons-section">
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('index.html')">Home</button>
-
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('units.html')">Units</button>
-
-      <button class="tags general-text round-form selected-tag navigate-button"
-        onclick="navigateTo('calculator.html')">Calculator</button>
-        
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('reroll.html')">Rerolling</button>
-    </div>
+    <div class="icons-section"></div>
 
     <div class="links-section">
       <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
@@ -378,36 +367,36 @@
     </div>
   </div>
 
-  <script src="javascript/icons.js"></script>
-  <script src="javascript/constructors.js"></script>
-  <script src="javascript/tooltips.js"></script>
-  <script src="javascript/formatters.js"></script>
+  <script src="javascript/shared/constructors.js"></script>
+  <script src="javascript/shared/formatters.js"></script>
+  <script src="javascript/shared/header.js"></script>
+  <script src="javascript/shared/icons.js"></script>
+  <script src="javascript/shared/pageHandler.js"></script>
+  <script src="javascript/shared/tooltips.js"></script>
 
-  <script src="javascript/calculator/unitData/unitTagData.js"></script>
-  <script src="javascript/calculator/unitData/unitStats.js"></script>
-  <script src="javascript/calculator/unitData/unitPassives.js"></script>
-  <script src="javascript/calculator/unitData/unitAttacks.js"></script>
-
-  <script src="javascript/calculator/otherData/familiarData.js"></script>
-  <script src="javascript/calculator/otherData/buffData.js"></script>
-  <script src="javascript/calculator/otherData/elementBuffs.js"></script>
-  <script src="javascript/calculator/otherData/unitSorting.js"></script>
-
+  <script src="javascript/shared/unitData/unitAttacks.js"></script>
+  <script src="javascript/shared/unitData/unitPassives.js"></script>
+  <script src="javascript/shared/unitData/unitStats.js"></script>
+  <script src="javascript/shared/unitData/unitTagData.js"></script>
+  
+  <script src="javascript/shared/otherData/buffData.js"></script>
+  <script src="javascript/shared/otherData/elementBuffs.js"></script>
+  <script src="javascript/shared/otherData/familiarData.js"></script>
+  <script src="javascript/shared/otherData/unitSorting.js"></script>
+  
   <script src="javascript/calculator/dependancies/baseStats.js"></script>
-  <script src="javascript/calculator/dependancies/finalStats.js"></script>
   <script src="javascript/calculator/dependancies/buffsHandler.js"></script>
+  <script src="javascript/calculator/dependancies/finalStats.js"></script>
 
   <script src="javascript/calculator/units/modifiers.js"></script>
   <script src="javascript/calculator/units/inputs.js"></script>
   <script src="javascript/calculator/units/passives.js"></script>
-
+  
   <script src="javascript/calculator/buffs/createBuffs.js"></script>
   <script src="javascript/calculator/buffs/familiars.js"></script>
   <script src="javascript/calculator/buffs/corruptions.js"></script>
-
+  
   <script src="javascript/calculator/attacks/attacks.js"></script>
-
-  <script src="javascript/pageHandler.js"></script>
 </body>
 
 </html>

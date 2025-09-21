@@ -4,6 +4,31 @@
   100% { transform: scale(1); }
 }
 
+.trait-result-wrapper {
+  display: inline-block;
+  padding: 2px;
+  border-radius: min(12px, calc(12 * 0.1667vh));
+  background: #7f6641;
+  transition: background 0.3s;
+  position: relative;
+  min-width: min(200px, calc(200vh/6));
+  height: min(50px, calc(50vh/6));
+}
+
+#trait-result {
+  font-size: min(20px, calc(20vh/6));
+  font-weight: 600;
+  text-align: center;
+  width: min(200px, calc(200vh/6));
+  max-height: 100%;
+  position: relative;
+  padding: min(10px, calc(10 * 0.1667vh));
+  background-color: #090909;
+  border: 2px solid #7f6641;
+  border-radius: min(10px, calc(10 * 0.1667vh));
+  transition: border-color 0.3s, color 0.3s;
+}
+
 #trait-result .bounce-text {
   display: inline-block;
   animation: textBounce 0.4s ease-out;
@@ -96,8 +121,8 @@
 
 /* Trait icon styling */
 .trait-icon {
-  width: min(45px, calc(45 * 0.1667vh));
-  height: min(45px, calc(45 * 0.1667vh));
+  width: min(36px, calc(36vh/6));
+  height: min(36px, calc(36vh/6));
   object-fit: contain;
   position: absolute;
   left: min(10px, calc(10 * 0.1667vh));
@@ -108,9 +133,12 @@
 
 /* Trait label styling */
 .trait-label {
-  font-size: min(24px, calc(24 * 0.1667vh));
-  margin-bottom: max(-8px, calc(-8 * 0.1667vh));
+  font-size: min(18px, calc(18vh/6));
+  margin-bottom: max(-6px, calc(-6vh/6));
   text-align: center;
+
+  color: white;
+  font-weight: 550;
 }
 
 /* Trait description styling */

@@ -261,7 +261,7 @@ rerollButton.addEventListener("click", () => {
 function handleResponsiveLayout() {
   const subsection = document.querySelector(".subsection");
   
-  if (window.innerWidth <= 1500) {
+  if (window.innerWidth <= 100000) {
     // Move trait history into trait info section
     if (traitHistoryContainer && !traitInfoSection.contains(traitHistoryContainer)) {
       traitInfoSection.appendChild(traitHistoryContainer);

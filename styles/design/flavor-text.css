@@ -1,0 +1,25 @@
+.cleave {
+  color: rgb(165, 66, 67);
+}
+
+.bleed {
+  color: rgb(212, 13, 17);
+}
+
+.flavor-icon {
+  width: min(18px, calc(18 * 0.1667vh)) !important;
+  height: min(18px, calc(18 * 0.1667vh)) !important;
+
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: min(4px, calc(4 * 0.1667vh));
+
+  z-index: 2;
+}
+
+.flavor-text-keyword {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}

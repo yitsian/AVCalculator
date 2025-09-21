@@ -82,6 +82,58 @@ function formatPassiveDescription(text) {
     .replace(/(\d+(?:\.\d+)?x)/g, `<span class="buff">$1</span>`);
 }
 
+function formatFlavorText(text) {
+  // Define keywords with their corresponding image and color class
+  const flavorKeywords = {
+    'bleed': { image: 'Bleed.webp', class: 'bleed' },
+    'bleeding': { image: 'Bleed.webp', class: 'bleed' },
+    'bubble': { image: 'Bubbled.webp', class: 'water' },
+    'bubbled': { image: 'Bubbled.webp', class: 'water' },
+    'burn': { image: 'Burn.webp', class: 'fire' },
+    'burning': { image: 'Burn.webp', class: 'fire' },
+    'burned': { image: 'Burn.webp', class: 'fire' },
+    'cleave': { image: 'Cleave.webp', class: 'cleave' },
+    'cleaved': { image: 'Cleave.webp', class: 'cleave' },
+    'freeze': { image: 'Freeze.webp', class: 'water' },
+    'frozen': { image: 'Freeze.webp', class: 'water' },
+    'freezing': { image: 'Freeze.webp', class: 'water' },
+    'nullify': { image: 'Nullify.webp', class: 'cosmic' },
+    'nullified': { image: 'Nullify.webp', class: 'cosmic' },
+    'repulse': { image: 'Repulse.webp', class: 'blast' },
+    'repulsed': { image: 'Repulse.webp', class: 'blast' },
+    'rupture': { image: 'Rupture.webp', class: 'curse' },
+    'ruptured': { image: 'Rupture.webp', class: 'curse' },
+    'slow': { image: 'Slow.webp', class: 'nature' },
+    'slowed': { image: 'Slow.webp', class: 'nature' },
+    'stun': { image: 'Stun.webp', class: 'spark' },
+    'stunned': { image: 'Stun.webp', class: 'spark' },
+    'timestop': { image: 'Timestop.webp', class: 'cosmic' },
+    'time stop': { image: 'Timestop.webp', class: 'cosmic' },
+    'time-stop': { image: 'Timestop.webp', class: 'cosmic' },
+    'wound': { image: 'Wounded.webp', class: 'damage' },
+    'wounded': { image: 'Wounded.webp', class: 'damage' },
+    'wounding': { image: 'Wounded.webp', class: 'damage' }
+  };
+
+  let formattedText = text;
+
+  // Replace each keyword with styled HTML including image
+  for (const [keyword, data] of Object.entries(flavorKeywords)) {
+    const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
+    formattedText = formattedText.replace(regex, (match) => {
+      return `<span class="${data.class} flavor-text-keyword"><img src="Images/FlavorText/${data.image}" class="flavor-icon" alt="${match}">${match}</span>`;
+    });
+  }
+
+  // Apply existing number formatting
+  formattedText = formattedText
+    .replace(/([+-]?\d+(\.\d+)?%|[+-]\/[+-]?\d+(\.\d+)?%)/g, `<span class="buff">$1</span>`)
+    .replace(/([+-]?\d+(\.\d+)?s)/g, `<span class="spa">$1</span>`)
+    .replace(/(\d+(?:\.\d+)?x)/g, `<span class="buff">$1</span>`);
+
+  return formattedText;
+}
+
 function statToBuffVector(stat) {
   switch (stat) {
     case "damage":
@@ -143,6 +195,18 @@ function getAttackType(attackString) {
   const shapeMatch = attackString.match(/^\d+\s*(Circle|Line)/i);
   if (shapeMatch) {
     return shapeMatch[1].charAt(0).toUpperCase() + shapeMatch[1].slice(1).toLowerCase();
+  }
+
+  // Handle Splash
+  const splashMatch = attackString.match("Splash")
+  if (splashMatch) {
+    return "Splash"
+  }
+
+  // Handle Handle Dogshit Aoe
+  const StadiumMatch = attackString.match("Stadium")
+  if (StadiumMatch) {
+    return "Stadium"
   }
 
   // If format doesn't match known patterns, return as-is

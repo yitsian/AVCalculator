@@ -1,0 +1,79 @@
+.tierlist-main {
+  display: flex;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  padding-left: min(12px, calc(12 * 0.1667vh));
+  padding-right: min(12px, calc(12 * 0.1667vh));
+  padding-bottom: min(12px, calc(12 * 0.1667vh));
+
+  flex-direction: column;
+  align-items: center;
+  gap: 6px
+}
+
+.tierlist-categories {
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: min(12px, calc(12 * 0.1667vh));
+
+  justify-content: center;
+
+  gap: min(24px, calc(24vh/6));
+
+  padding: 12px;
+}
+
+.tierlist-filters {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  gap: min(12px, calc(12vh/6));
+
+  background-color: rgba(40, 40, 40, 0.5);
+  border-radius: min(12px, calc(12 * 0.1667vh));
+
+  max-width: min(1680px, 95vw);
+
+  align-items: stretch;
+  justify-content: center;
+
+  padding: min(12px, calc(12vh/6)) min(24px, calc(24vh/6));
+
+  flex: 1;
+}
+
+.tierlist-container {
+  display: flex;
+
+  flex-direction: column;
+
+  border-radius: min(12px, calc(12 * 0.1667vh));
+
+  flex: 1;
+
+  gap: 12px;
+}
+
+#tl-unit-classes {
+  display: flex;
+
+  justify-content: center;
+
+  flex-direction: row;
+}
+
+.tl-tier-row-wrapper {
+  display: flex;
+
+  justify-content: center;
+
+  flex-direction: row;
+}

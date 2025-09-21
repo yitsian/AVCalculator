@@ -1,5 +1,142 @@
 let unitPassives = {
+  BrolziSuper: [
+    {
+      name: "Quick Learner", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gainz 5% Crit per wave (up to 95%)", type: "Slider", min: 0, max: 95, step: 5,
+          multiplicative: false, buffs: [0, 0, 0, 1, 0, 0]
+        },
+
+        {
+          description: "Any Crit over 100% gets converted to CritDmg.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => [0, 0, 0, 0, Math.max((statAddBuffs.crit + statMultBuffs.crit) - 2, 0) * 100, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Unrestrained Power", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit crits, followup and buff Dmg by 50% for 60s", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Innocent Rage", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit doesn't crit, followup and buff Dmg by 50% for 60s", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Wrathful Clash", upgrade: 0,
+      conditions: [
+        {
+          description: "Buffs Crit of Unbound units by 20% per wave up to 100% and CritDmg by 10% after 7 waves up to 80%. (Use buffs tab for crit buffs)",
+          type: "None"
+        },
+
+        {
+          description: "Brolzi gain's 50% Dmg during the domain", type: "Statement", statement: "Toggle Active Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    }
+  ],
+
+  RogitaSuper: [
+    {
+      name: "Super Effective", upgrade: 0,
+      conditions: [
+        {
+          description: "This gains 100% Crit and loses 25% CritDmg.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [0, 0, 0, 100, -25, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Fused Reborn", upgrade: 0,
+      conditions: [
+        {
+          description: "Anytime this unit crits, gain half of every Fused ally placed's CritDmg. (Max 50% CritDmg per unit)", type: "Slider", min: 0, max: 10, step: 1,
+          multiplicative: false, buffs: [0, 0, 0, 0, 50, 0], suffix: " Fused Units"
+        },
+      ]
+    },
+
+    {
+      name: "Tag, You're It!", upgrade: 0,
+      conditions: [
+        {
+          description: "Anytime your units or this unit crits, gain 5% CritDmg (Up to 75%)", type: "Slider", min: 0, max: 75, step: 5,
+          multiplicative: false, buffs: [0, 0, 0, 0, 1, 0]
+        },
+      ]
+    },
+  ],
+
+  Wolf: [
+    {
+      name: "Primero", upgrade: 0,
+      conditions: [
+        {
+          description: "Hitting marked enemies gaurentees crit", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [0, 0, 0, 100, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  LordFriezo: [
+    {
+      name: "Lord Friezo", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gainz different buffs based on the minions placed.", type: "None"
+        },
+
+        {
+          description: "Alien Cadets give 15% Dmg each", type: "Slider", min: 0, max: 3, step: 1,
+          multiplicative: false, buffs: [15, 0, 0, 0, 0, 0], suffix: " placed"
+        },
+
+        {
+          description: "Alien Soldiers give 10% Rng each", type: "Slider", min: 0, max: 3, step: 1,
+          multiplicative: false, buffs: [0, 0, 10, 0, 0, 0], suffix: " placed"
+        },
+
+        {
+          description: "Alien Elites give 5% Dmg each", type: "Slider", min: 0, max: 3, step: 1,
+          multiplicative: false, buffs: [5, 0, 0, 0, 0, 0], suffix: " placed"
+        },
+
+        {
+          description: "3 placed Alien Elites give 40% Dmg and 20% Rng", type: "Statement", statement: "Toggle Passive Buff",
+          multiplicative: false, buffs: [40, 0, 20, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
   TheStruggler: [
+    {
+      name: "Branded One", upgrade: 0,
+      conditions: [
+        {
+          description: "Anytime a demon this unit spawns is killed, buffs this unit's Dmg by 40% for 10s", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [40, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
     {
       name: "The Struggler", upgrade: 0,
       conditions: [
@@ -14,7 +151,7 @@ let unitPassives = {
       name: "Berserker Armor", upgrade: 0,
       conditions: [
         {
-          description: "If at 0 injury stacks, starts attacking non-stop (<a class='spark' href='https://docs.google.com/document/d/1DRMqdBgI11GRPaxs92tofWyonV4voGPvsv8ze9BYUk0'>Here</a> for more details) and gains 1 injury stack per wave, then stuns when at 20 stacks or ability toggled for 3s per stack", 
+          description: "If at 0 injury stacks, starts attacking non-stop (<a class='spark' href='https://docs.google.com/document/d/1DRMqdBgI11GRPaxs92tofWyonV4voGPvsv8ze9BYUk0'>Here</a> for more details) and gains 1 injury stack per wave, then stuns when at 20 stacks or ability toggled for 3s per stack",
           type: "None"
         },
       ]
@@ -113,6 +250,51 @@ let unitPassives = {
         },
       ]
     },
+  ],
+
+  SukonoFamiliar: [
+    {
+      name: "King's Curse", upgrade: 0,
+      conditions: [
+        {
+          description: "Attacks inflict Cleave, making enemies take +20% more Dmg from Bleed. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+
+    {
+      name: "The King of Curses", upgrade: 0,
+      conditions: [
+        {
+          description: "Buffs all Curse units by 30%. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+
+    {
+      name: "Sinister Sanctum", upgrade: 8,
+      conditions: [
+        {
+          description: "This unit gains +300% Dmg for the duration of the ability.",
+          multiplicative: false, type: 'Statement', statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "DMG +1% for each kill during Sinister Sanctum (up to +30%).",
+          multiplicative: false, type: "Slider", min: 0, max: 30, step: 1, buffs: [1, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+
+    {
+      name: "Divine Flames", upgrade: 9,
+      conditions: [
+        {
+          description: "This unit gains +40% Dmg.",
+          multiplicative: false, type: 'Statement', statement: 'Has to be upg 9+', buffs: [40, 0, 0, 0, 0, 0]
+        },
+      ]
+    }
   ],
 
   Iscanur: [
@@ -285,7 +467,7 @@ let unitPassives = {
           description: "For every burning enemy in range increases range by 0.5%",
           multiplicative: false, type: "Slider", min: 0, max: 20, step: 0.5, buffs: [0, 0, 1, 0, 0, 0]
         },
-        
+
         {
           description: 'Deals 20% more Dmg to burning enemies',
           multiplicative: true, type: 'Statement', statement: "Toggle Passive Buff.", buffs: [20, 0, 0, 0, 0, 0]
@@ -877,6 +1059,11 @@ let unitPassives = {
       name: "Sinister Sanctum", upgrade: 8,
       conditions: [
         {
+          description: "This unit gains +300% Dmg for the duration of the ability.",
+          multiplicative: false, type: 'Statement', statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0]
+        },
+
+        {
           description: "DMG +1% for each kill during Sinister Sanctum (up to +30%).",
           multiplicative: false, type: "Slider", min: 0, max: 30, step: 1, buffs: [1, 0, 0, 0, 0, 0]
         }
@@ -884,7 +1071,7 @@ let unitPassives = {
     },
 
     {
-      name: "Divine Flames", upgrade: 0,
+      name: "Divine Flames", upgrade: 9,
       conditions: [
         {
           description: "This unit gains +40% Dmg.",
@@ -1022,11 +1209,54 @@ let unitPassives = {
 
   Regnaw: [
     {
-      name: "This guys kinda breaks my code", upgrade: 0,
+      name: "Silverite Rage", upgrade: 0,
       conditions: [
         {
-          description: "(yet to be implemented)",
-          multiplicative: false, type: "Statement", statement: "test.", getBuffs: (value, conditionMetaMap, statAddBuffs) => {return [statAddBuffs * 50, 0, 0, 0, 0, 0]}
+          description: "Dmg +10% after each attack. (Up to 40%)",
+          multiplicative: false, type: "Slider", min: 0, max: 40, step: 10, buffs: [1, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+
+    {
+      name: "Generational Knowledge", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit receives the buffs from the previous placement. (Only goes up to 1 for Monarch)",
+          multiplicative: false, type: "Slider", min: 1, max: 4, step: 1, suffix: " placements",
+          getBuffs: (value, conditionMetaMap, statAddBuffs) => {
+            // Silverite Rage already provides the base 1.4x (40%) buff
+            // Each placement after the first multiplies the total buff by 1.4
+            // placements = 1: No additional multiplier (Silverite Rage handles base)
+            // placements = 2: Multiply existing buffs by 1.4
+            // placements = 3: Multiply by 1.4^2
+            // placements = 4: Multiply by 1.4^3
+
+            if (value === 1) {
+              return [0, 0, 0, 0, 0, 0]; // First placement, no additional buff
+            }
+
+            // Get current damage buff from Silverite Rage and other sources
+            const currentDamageBuff = (statAddBuffs.damage + 1) * 100;
+
+            // Apply the multiplier for subsequent placements
+            const multiplier = Math.pow(1 + conditionMetaMap["0-0"].value / 100, value - 1);
+            const additionalDmgIncrease = (currentDamageBuff * (multiplier - 1)) / value;
+
+            console.log(statAddBuffs.spa, conditionMetaMap["2-0"].value / 100)
+
+            return [additionalDmgIncrease, ((statAddBuffs.spa * 100 + conditionMetaMap["2-0"].value * 5) * (value - 1)) / value, (statAddBuffs.range * 100)  * (value - 1) / value, 0, 0, 0];
+          }
+        }
+      ]
+    },
+
+    {
+      name: "Liftime of Experience", upgrade: 0,
+      conditions: [
+        {
+          description: "For every placement, if one of this unit already exists, delete it and gain -5% Spa",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 0, 0, 0, 0, 0]
         }
       ]
     },
@@ -1137,8 +1367,10 @@ let unitPassives = {
     {
       name: "Dark Excalibur", upgrade: 10,
       conditions: [
-        { description: "Every 5 attacks attacks using Dark Excalibur and gains 100% Dmg, 20% Spa, and 20% Rng", 
-          multiplicative: false, type: "Statement", statement: "(Average this with 4 normal attacks to get avg dps)", buffs: [100, -20, 20, 0, 0, 0] }
+        {
+          description: "Every 5 attacks attacks using Dark Excalibur and gains 100% Dmg, 20% Spa, and 20% Rng",
+          multiplicative: false, type: "Statement", statement: "(Average this with 4 normal attacks to get avg dps)", buffs: [100, -20, 20, 0, 0, 0]
+        }
       ]
     },
   ],
@@ -1147,8 +1379,10 @@ let unitPassives = {
     {
       name: "Fire Absorption", upgrade: 0,
       conditions: [
-        { description: "On a 15s cd, removes burn from and enemy and gains a 50% Dmg and 15% Rng buff. (Also detonates burn)", 
-          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 15, 0, 0, 0] }
+        {
+          description: "On a 15s cd, removes burn from and enemy and gains a 50% Dmg and 15% Rng buff. (Also detonates burn)",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 15, 0, 0, 0]
+        }
       ]
     },
   ],
@@ -1157,8 +1391,10 @@ let unitPassives = {
     {
       name: "Dragon Flame Abosrption", upgrade: 0,
       conditions: [
-        { description: "On attack, remove burn and gain 5% Dmg for 30s (Up to 100%).", 
-          multiplicative: false, type: "Slider", min: 0, max: 100, step: 5, buffs: [1, 0, 0, 0, 0, 0]}
+        {
+          description: "On attack, remove burn and gain 5% Dmg for 30s (Up to 100%).",
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 5, buffs: [1, 0, 0, 0, 0, 0]
+        }
       ]
     },
   ],
@@ -1187,7 +1423,7 @@ let unitPassives = {
       conditions: [
         {
           description: "Cycles between Attack 2, 3 and 4 (Circle, Full, Full) and gains 50% more Dmg per attack. Resets back at attack 2 after 4.",
-          multiplicative: false, type: "Slider", min: 2, max: 4, step: 1, getBuffs: (value, conditionMetaMap, statAddBuffs) => [((value - 2) / value) * 50, 0, 0, 0, 0, 0],
+          multiplicative: false, type: "Slider", min: 2, max: 4, step: 1, getBuffs: (value, conditionMetaMap, statAddBuffs) => [((value - 1) / value) * 50, 0, 0, 0, 0, 0],
           suffix: " Attack No."
         }
       ]
@@ -1198,8 +1434,9 @@ let unitPassives = {
     {
       name: "Bullet-Hell Shrine Maiden", upgrade: 0,
       conditions: [
-        { description: "Sets Spa to 0.2 and gains a layer every 20 attacks", 
-          multiplicative: false, type: "Statement", statement: "Idk why you would toggle off", buffs: [0, 0, 0, 0, 0, 0],  
+        {
+          description: "Sets Spa to 0.2 and gains a layer every 20 attacks",
+          multiplicative: false, type: "Statement", statement: "Idk why you would toggle off", buffs: [0, 0, 0, 0, 0, 0],
           extra: (finalStats) => { finalStats.spa = 0.2 }
         }
       ]
@@ -1210,8 +1447,9 @@ let unitPassives = {
     {
       name: "Bullet-Hell Maid", upgrade: 0,
       conditions: [
-        { description: "Sets Spa to 2 (Animation capping it) and gains a layer every 4 attacks", 
-          multiplicative: false, type: "Statement", statement: "Idk why you would toggle off", buffs: [0, 0, 0, 0, 0, 0],  
+        {
+          description: "Sets Spa to 2 (Animation capping it) and gains a layer every 4 attacks",
+          multiplicative: false, type: "Statement", statement: "Idk why you would toggle off", buffs: [0, 0, 0, 0, 0, 0],
           extra: (finalStats) => { finalStats.spa = 2 }
         }
       ]
@@ -1222,8 +1460,10 @@ let unitPassives = {
     {
       name: "Type Earth", upgrade: 0,
       conditions: [
-        { description: "During Type Earth Form this unit gains +100% Dmg and +20% Rng", 
-          multiplicative: false, type: "Statement", statement: "Can transform using Bloodthirst 400 stacks.", buffs: [100, 0, 20, 0, 0, 0] }
+        {
+          description: "During Type Earth Form this unit gains +100% Dmg and +20% Rng",
+          multiplicative: false, type: "Statement", statement: "Can transform using Bloodthirst 400 stacks.", buffs: [100, 0, 20, 0, 0, 0]
+        }
       ]
     },
   ],
@@ -1252,8 +1492,10 @@ let unitPassives = {
     {
       name: "Absolute Negation", upgrade: 0,
       conditions: [
-        { description: "This unit gains +40% Dmg and +10% Rng.", 
-          multiplicative: false, type: "Statement", statement: "Only after Absolute Negation is activated", buffs: [40, 0, 10, 0, 0, 0] }
+        {
+          description: "This unit gains +40% Dmg and +10% Rng.",
+          multiplicative: false, type: "Statement", statement: "Only after Absolute Negation is activated", buffs: [40, 0, 10, 0, 0, 0]
+        }
       ]
     },
   ],
@@ -1272,8 +1514,10 @@ let unitPassives = {
     {
       name: "Family Man", upgrade: 0,
       conditions: [
-        { description: "When mana falls below 10% buff all allies in range by +15% Dmg and 10% Rng for 30 seconds (Use buffs tab), Also buffs self by 40% Dmg for 1 attack.", 
-          multiplicative: false, type: "Statement", statement: "After using mana", buffs: [40, 0, 0, 0, 0, 0] }
+        {
+          description: "When mana falls below 10% buff all allies in range by +15% Dmg and 10% Rng for 30 seconds (Use buffs tab), Also buffs self by 40% Dmg for 1 attack.",
+          multiplicative: false, type: "Statement", statement: "After using mana", buffs: [40, 0, 0, 0, 0, 0]
+        }
       ]
     },
   ],
@@ -1304,7 +1548,7 @@ let unitPassives = {
     {
       name: "Jackpot!", upgrade: 2,
       conditions: [
-        {description: "Gains 25% Crit. (Followups are in attacks)", multiplicative: false, type: "Statement", statement: "Unlocks after upg 2", buffs: [0, 0, 0, 25, 0, 0]}
+        { description: "Gains 25% Crit. (Followups are in attacks)", multiplicative: false, type: "Statement", statement: "Unlocks after upg 2", buffs: [0, 0, 0, 25, 0, 0] }
       ]
     },
 
@@ -1863,7 +2107,7 @@ let unitPassives = {
 
         {
           description: "Toggle for if attacking bubbled in Necro form to do 160% Dmg",
-          multiplicative: true, type: "Statement", statement: "When attacking bubbled enemy", 
+          multiplicative: true, type: "Statement", statement: "When attacking bubbled enemy",
           getBuffs: (value, conditionMetaMap, statAddBuffs) => [conditionMetaMap["0-1"].active == true ? 60 : 0, 0, 0, 0, 0, 0],
         },
 
@@ -1904,7 +2148,7 @@ let unitPassives = {
       conditions: [
         {
           description: "Whenever this unit attacks, has a 30% chance to do 0% Dmg. (No longer applies when Mr Boo Arrives is unlocked)",
-          multiplicative: true, type: "Statement", statement: "Toggle Passive Debuff", 
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Debuff",
           getBuffs: (value, conditionMetaMap, statAddBuffs) => [conditionMetaMap["1-0"] ? (conditionMetaMap["1-0"].value == true ? 0 : -30) : -30, 0, 0, 0, 0, 0]
         },
       ]
@@ -1942,7 +2186,7 @@ let unitPassives = {
       name: "Number 1", upgrade: 0,
       conditions: [
         {
-          description: "+20% Dmg and +10% Rng for every missing life stock.", multiplicative: false, type: "Slider", min: 0, max: 2, step: 1, 
+          description: "+20% Dmg and +10% Rng for every missing life stock.", multiplicative: false, type: "Slider", min: 0, max: 2, step: 1,
           buffs: [20, 0, 10, 0, 0, 0], suffix: " Stocks",
         },
 
@@ -2007,8 +2251,8 @@ let unitPassives = {
         },
 
         {
-          description: "All Spa buffs/debuffs will apply to the Dmg stat. (Bugged for now, retoggle after every buff application for now)",
-          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", getBuffs: (value, conditionMetaMap, statAddBuffs) => {return [statAddBuffs.spa * 100, 0, 0, 0, 0, 0]}
+          description: "All Spa buffs/debuffs will apply to the Dmg stat.",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", getBuffs: (value, conditionMetaMap, statAddBuffs) => { return [statAddBuffs.spa * 100, 0, 0, 0, 0, 0] }
         },
       ],
     },
@@ -2395,7 +2639,7 @@ let unitPassives = {
       ]
     },
   ],
-  
+
   SongJinwu: [
     {
       name: "Job Request", upgrade: 0,

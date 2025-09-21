@@ -126,12 +126,25 @@ const familiarsData = {
     image: "Images/Familiars/Nose.webp",
     elements: ["Cosmic", "Unbound", "Nature"],
     type: "Slider",
-    passiveName: "Nose Thingie",
+    passiveName: "Light in the Dark",
     passiveDescription: "Anytime this unit attacks stun them for 2s. When stunned, buffs Dmg by +5.0%-35.0% for stun duration + 5s.",
     minRanges: { damage: 0 },
     maxRanges: { damage: 35 },
     step: 1,
     buffs: [1, 0, 0, 0, 0, 0],
+    multiplicative: false
+  },
+
+  Chili: {
+    image: "Images/Familiars/Chili.webp",
+    elements: ["Unbound", "Spark", "Blast"],
+    type: "Slider",
+    passiveName: "Reliable Friend",
+    passiveDescription: "Anytime this unit crits, gain 40% CritDmg.",
+    minRanges: { critDmg: 0 },
+    maxRanges: { critDmg: 40 },
+    step: 1,
+    buffs: [0, 0, 0, 0, 1, 0],
     multiplicative: false
   }
 }

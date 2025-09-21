@@ -1,0 +1,64 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.tl-brolzisuper {
+  background-image: linear-gradient(var(--gradient-angle), #155c0d 0%, #1f850b 50%, #549400 100%, #1f850b 50%, #155c0d 0%);
+}
+
+.tl-gujo {
+  /*background-image: linear-gradient(var(--gradient-angle), #2b0d3a 10%, #116e83 25%, #8a8a8a 50%, #116e83 75%, #2b0d3a 90%);*/
+  background-image: linear-gradient(var(--gradient-angle), #2b0d3a 10%, #116e83 50%, #8a8a8a 90%);
+}
+
+.tl-sukono {
+  /* background-image: linear-gradient(var(--gradient-angle), #af3128 10%, #942754 30%, #6e1c7a 50%, #942754 70%, #af3128 90%); */
+  background-image: linear-gradient(var(--gradient-angle), #af3128 10%, #942754 50%, #6e1c7a 90%);
+}
+
+.tl-iscanur {
+  /* background-image: linear-gradient(var(--gradient-angle), #a51b00 0%, #a18b63 51%, #a51b00 99%); */
+  background-image: linear-gradient(var(--gradient-angle), #a51b00 0%, #a18b63 100%);
+}
+
+.tl-koguro {
+  /* background-image: linear-gradient(var(--gradient-angle), #5f4c91 10%, #636363 40%, #838383 50%, #636363 60%, #5f4c91 90%); */
+  background-image: linear-gradient(var(--gradient-angle), #5f4c91 10%, #636363 50%, #838383 90%);
+}
+
+.tl-vsjw {
+  /* background-image: linear-gradient(var(--gradient-angle), #270074 0%, #27267a 30%, #160023 48%, #160023 52%, #27267a 70%, #270074 100%); */
+  background-image: linear-gradient(var(--gradient-angle), #270074 10%, #27267a 50%, #160023 90%);
+}
+
+.tl-divalo {
+  background-image: linear-gradient(var(--gradient-angle), #96014b 10%, #57016e 40%, #9c7120 80%)
+}
+
+.tl-rogita {
+  background-image: linear-gradient(var(--gradient-angle), #a83a4e 10%, #b30958 30%, #b3173b 60%, #af3509 90%)
+}
+
+.tl-secret {
+  background-image: linear-gradient(var(--gradient-angle), #500000 10%, #300000 50%, #520000 90%);
+}
+
+.tl-exclusive {
+  background-image: linear-gradient(var(--gradient-angle), #810002 10%, #87508f 90%);
+}
+
+.tl-mythic {
+  background-image: linear-gradient(var(--gradient-angle), #188167 15%, #248323, #7a911f, #9e831f, #92461c, #991f2b, #991d6e 85%);
+}
+
+@keyframes spinGradient {
+  0% {
+    --gradient-angle: 0deg;
+  }
+
+  100% {
+    --gradient-angle: 360deg;
+  }
+}

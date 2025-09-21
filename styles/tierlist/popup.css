@@ -1,0 +1,367 @@
+/* Popup overlay */
+#tl-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Popup box */
+#tl-popup-content {
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+  gap: min(18px, calc(18vh/6));
+
+  width: min(90%, min(1200px, calc(1200vh/6)));
+  min-height: min(500px, calc(300 * 0.1667vh));
+  max-height: 90vh;
+
+  padding: min(24px, calc(24vh/6));
+  border-radius: min(24px, calc(24 * 0.1667vh));
+  position: relative;
+  box-shadow: 0 0 min(48px, calc(48 * 0.1667vh)) #500000;
+
+  animation: spinGradient 15s linear infinite;
+}
+
+/* Top Section */
+
+#tl-popup-top-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: min(18px, calc(18vh/6));
+
+  align-items: center;
+}
+
+/* Unit Frame */
+
+#tl-popup-image {
+  height: min(150px, calc(150vh/6));
+  width: min(150px, calc(150vh/6));
+
+  min-width: min(150px, calc(150vh/6));
+  max-height: min(150px, calc(150vh/6));
+
+  border-radius: min(24px, calc(24 * 0.1667vh));
+}
+
+#tl-popup-image .unit-gradient {
+  padding: min(6px, calc(6 * 0.1667vh));
+}
+
+#tl-unit-element {
+  width: min(28px, calc(28vh/6)) !important;
+  height: min(28px, calc(28vh/6)) !important;
+}
+
+/* Unit Stats */
+
+#tl-popup-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: min(12px, calc(12vh/6));
+}
+
+#tl-popup-name {
+  color: white;
+  font-size: min(36px, calc(36vh/6));
+  font-weight: 600;
+}
+
+#tl-popup-info-aoe-wrapper {
+  flex-wrap: wrap;
+
+  row-gap: min(6px, calc(6 * 0.1667vh));
+
+  justify-content: flex-start !important;
+}
+
+#tl-popup-info-cost-wrapper {
+  flex-wrap: wrap;
+
+  row-gap: min(6px, calc(6 * 0.1667vh));
+
+  justify-content: flex-start !important;
+}
+
+/* Description */
+
+#tl-popup-description {
+  padding: min(12px, calc(12vh/6)) min(18px, calc(18vh/6));
+  border-radius: min(18px, calc(18vh/6));
+
+  font-size: min(16px, calc(16vh/6));
+  font-weight: 500;
+
+  line-height: min(32px, calc(32vh/6));
+
+  color: white;
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Middle Section */
+
+#tl-popup-middle-wrapper {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: stretch;
+
+  gap: min(18px, calc(18vh/6));
+
+  min-height: min(400px, calc(400 * 0.1667vh));
+}
+
+/* Pros and Cons */
+
+#tl-popup-pros-cons-wrapper {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: stretch;
+
+  gap: min(12px, calc(12vh/6));
+
+  flex: 1;
+  min-height: 0;
+}
+
+#tl-popup-pros {
+  display: flex;
+
+  background: conic-gradient(from var(--gradient-angle), #05883e, rgb(97, 214, 122), #05883e);
+
+  border-radius: min(18px, calc(18vh/6));
+
+  padding: min(6px, calc(6vh/6));
+
+  flex: 1;
+
+  animation: spinGradient 2s linear infinite;
+
+  box-shadow: 0 0 min(12px, calc(12vh/6)) rgb(97, 214, 122);
+}
+
+#tl-popup-pros ul {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  color: #3eff92;
+
+  font-size: min(18px, calc(18vh/6));
+  font-weight: 500;
+
+  margin: 0;
+  padding-top: min(12px, calc(12vh/6));
+  padding-bottom: min(12px, calc(12vh/6));
+  padding-right: min(18px, calc(18vh/6));
+
+  border-radius: min(16px, calc(16vh/6));
+
+  background-image: linear-gradient(30deg, #012910, #0d4d25, #012910);
+
+  gap: min(6px, calc(6vh/6));
+}
+
+#tl-popup-cons {
+  display: flex;
+
+  background: conic-gradient(from var(--gradient-angle), #a50000, #eb6464, #a50000);
+
+  border-radius: min(18px, calc(18vh/6));
+
+  padding: min(6px, calc(6vh/6));
+
+  flex: 1;
+
+  animation: spinGradient 2s linear infinite;
+
+  box-shadow: 0 0 min(12px, calc(12vh/6)) #eb6464;
+}
+
+#tl-popup-cons ul {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  color: #ff2b2b;
+
+  font-size: min(18px, calc(18vh/6));
+  font-weight: 500;
+
+  margin: 0;
+  padding-top: min(12px, calc(12vh/6));
+  padding-bottom: min(12px, calc(12vh/6));
+  padding-right: min(18px, calc(18vh/6));
+
+  border-radius: min(16px, calc(16vh/6));
+
+  background-image: linear-gradient(150deg, #2e0a04, #4e1207, #2e0a04);
+
+  gap: min(6px, calc(6vh/6));
+}
+
+/* Familiars */
+
+#tl-popup-familiars-container {
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+  gap: min(12px, calc(12vh/6));
+
+  padding: min(12px, calc(12vh/6));
+
+  border-radius: min(18px, calc(18vh/6));
+
+  background-color: rgba(0, 0, 0, 0.3);
+
+  flex: 1;
+  min-height: 0;
+}
+
+.tl-familiar-ranking {
+  text-align: center;
+
+  background-image: linear-gradient(0deg, rgb(0, 139, 139), rgb(56, 211, 211));
+
+  padding: min(3px, calc(3vh/6)) min(6px, calc(6vh/6));
+  border-radius: min(12px, calc(12vh/6));
+
+  box-shadow: 0 0 min(6px, calc(6vh/6)) rgb(56, 211, 211);
+
+  font-size: min(24px, calc(24vh/6));
+
+  color: white;
+  font-weight: 500;
+}
+
+.tl-popup-familiar-tab {
+  display: flex;
+  flex-direction: row;
+
+  gap: min(12px, calc(12vh/6));
+
+  flex: 1;
+}
+
+.tl-familiar-image {
+  height: min(80px, calc(80vh/6));
+  width: min(80px, calc(80vh/6));
+
+  min-width: min(80px, calc(80vh/6));
+  max-height: min(80px, calc(80vh/6));
+
+  border-radius: min(12px, calc(12 * 0.1667vh));
+}
+
+.tl-familiar-image .unit-gradient {
+  padding: min(4px, calc(4 * 0.1667vh));
+}
+
+.tl-familiar-info-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  gap: min(6px, calc(6vh/6));
+}
+
+.tl-familiar-name {
+  font-size: min(18px, calc(18vh/6));
+  font-weight: 600;
+}
+
+.tl-familiar-description {
+  color: white;
+
+  font-size: min(14px, calc(14vh/6));
+  font-weight: 500;
+}
+
+/* Team Synergies */
+
+#tl-popup-teams-container {
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+  min-height: 0;
+  align-self: stretch;
+
+  gap: min(12px, calc(12vh/6));
+
+  padding: min(12px, calc(12vh/6)) min(18px, calc(18vh/6));
+
+  border-radius: min(18px, calc(18vh/6));
+
+  background-color: rgba(0, 0, 0, 0.3);
+
+  flex: 1;
+}
+
+#tl-popup-teams-title {
+  text-align: center;
+
+  background-image: linear-gradient(0deg, rgb(107, 0, 139), rgb(162, 56, 211));
+
+  padding: min(3px, calc(3vh/6)) min(6px, calc(6vh/6));
+  border-radius: min(12px, calc(12vh/6));
+
+  box-shadow: 0 0 min(6px, calc(6vh/6)) rgb(162, 56, 211);
+
+  font-size: min(24px, calc(24vh/6));
+  font-weight: 500;
+
+  color: white;
+}
+
+.tl-popup-team-tab {
+  display: flex;
+  flex-direction: column;
+
+  gap: min(12px, calc(12vh/6));
+}
+
+.tl-popup-team-info {
+  display: flex;
+  flex-direction: column;
+  gap: min(6px, calc(6vh/6));
+}
+
+.tl-popup-team-name {
+  font-size: min(20px, calc(18vh/6));
+  font-weight: 600;
+}
+
+.tl-popup-team-description {
+  font-size: min(16px, calc(16vh/6));
+  font-weight: 500;
+
+  color: white;
+}
+
+.tl-popup-team-units {
+  display: flex;
+  flex-direction: row;
+
+  flex-wrap: wrap;
+
+  gap: min(12px, calc(12vh/6));
+}

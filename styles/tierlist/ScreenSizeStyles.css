@@ -1,0 +1,48 @@
+@media (max-width: 1000px) {
+  /* Tier Label*/
+
+  .tl-tier-row-wrapper {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .tl-tier-label {
+    width: 100%;
+    min-height: 0;
+
+    padding: min(6px, calc(6vh/6));
+  }
+
+  /* Unit Display */
+
+  .tl-tier-row {
+    flex-direction: column;
+  }
+
+  .tl-tier-unit-container1,
+  .tl-tier-unit-container2 {
+    display: grid;
+
+    grid-template-columns: repeat(8, 11vw);
+
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .tl-small-unit-class {
+    font-size: min(24px, calc(28vh/6));
+    font-weight: 550;
+
+    text-align: center;
+    padding: min(8px, calc(8vh/6));
+
+    background-color: rgba(53, 49, 94, 0.8);
+  }
+  
+  .tooltip-popup {
+    max-width: 100vw;
+
+    text-wrap: nowrap;
+  }
+}

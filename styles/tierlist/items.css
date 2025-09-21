@@ -1,0 +1,110 @@
+.tierlist-category-button {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 1px solid white;
+
+  padding: 12px;
+
+  width: min(300px, 30vw);
+  height: min(80px, 8vw);
+
+  text-align: center;
+
+  text-wrap: nowrap;
+
+  font-size: min(36px, 3vw);
+  font-weight: bold;
+
+  color: white;
+
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.tierlist-category-button:hover {
+  opacity: 0.9;
+
+  cursor: pointer;
+}
+
+.tierlist-category-button.selected-category {
+  border: 2px solid plum;
+  opacity: 1;
+}
+
+.tl-classes-divider {
+  width: 80px;
+  height: 100%;
+}
+
+.tl-unit-class-name1, .tl-unit-class-name2 {
+  font-size: min(24px, calc(32vh/6));
+  font-weight: 500;
+
+  padding: 12px;
+
+  width: min(400px, 23vw);
+
+  text-align: center;
+  align-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tl-unit-class-name1 { 
+  background-color: rgba(60, 60, 60, 0.5);
+}
+
+.tl-unit-class-name2 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tl-unit-class-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+.tl-tier-divider {
+  display: flex;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.tl-tier-divider-line {
+  flex: 1;
+  height: 2px;
+}
+
+.tl-tier-divider-text {
+  font-size: min(28px, calc(32vh/6));
+
+  font-weight: 600;
+
+  padding: 0 20px;
+
+  text-align: center;
+}
+
+.tl-tier-label {
+  width: 80px;
+  min-height: min(180px, calc(180vh/6));
+
+  font-size: min(24px, calc(32vh/6));
+  font-weight: 600;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

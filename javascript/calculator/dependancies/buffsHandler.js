@@ -74,7 +74,7 @@ function updateAllMultipliers() {
 function addBuffs(conditionId, condition, isActive, value) {
   if (isActive) {
     const buffs = typeof condition.getBuffs === "function"
-      ? condition.getBuffs(value, conditionMetaMap, statAddBuffs)
+      ? condition.getBuffs(value, conditionMetaMap, statAddBuffs, statMultBuffs)
       : condition.buffs;
 
     const sliderMult = condition.type === "Slider" ? parseFloat(value) : 1;
@@ -140,12 +140,27 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
     }
   }
 
+  // First apply conditions with regular buffs
   for (const conditionId in conditionMetaMap) {
     const condition = conditionMetaMap[conditionId];
-    const isActive = condition.active;
-    const value = condition.value ?? 1;
+    if (!condition.getBuffs) {
+      const isActive = condition.active;
+      const value = condition.value ?? 1;
+      addBuffs(conditionId, condition, isActive, value)
+    }
+  }
 
-    addBuffs(conditionId, condition, isActive, value)
+  // Update multipliers so dynamic buffs can see the current state
+  updateAllMultipliers();
+
+  // Then apply conditions with getBuffs (dynamic buffs) that may depend on other buffs
+  for (const conditionId in conditionMetaMap) {
+    const condition = conditionMetaMap[conditionId];
+    if (condition.getBuffs) {
+      const isActive = condition.active;
+      const value = condition.value ?? 1;
+      addBuffs(conditionId, condition, isActive, value)
+    }
   }
 
   updateAllMultipliers();

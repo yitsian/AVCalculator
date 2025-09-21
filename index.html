@@ -3,7 +3,8 @@
 <html>
 
 <head>
-  <title>Anime Vanguards DPS Calculator Home</title>
+  <title>Anime Vanguards DPS Calculator</title>
+  <link rel="icon" type="image/x-icon" href="Images/Icons/Trait_Reroll.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,19 +26,7 @@
 
 <body>
   <div class="header">
-    <div class="icons-section">
-      <button class="tags general-text round-form selected-tag navigate-button"
-        onclick="navigateTo('index.html')">Home</button>
-
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('units.html')">Units</button>
-
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('calculator.html')">Calculator</button>
-
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('reroll.html')">Rerolling</button>
-    </div>
+    <div class="icons-section"></div>
 
     <div class="links-section">
       <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
@@ -68,22 +57,24 @@
         <div class="general-text log-title">Update Log</div>
 
         <div class="update-container">
-          <div class="general-text update"><span class="buff">v0.52</span> - Added Update <span class="text-gradient gujo">8.0 units/familiars</span>, gonna probably shorten some stuff and add more <span class="text-gradient mythic">flavor</span> text next.</div>
+          <div class="general-text update"><span class="buff">9/21/25</span> - <span class="text-gradient sukono">Tierlist</span> alternative now available (Still a WIP). Added <span class="text-gradient brolzisuper">8.5 units/familiars</span>.</div>
 
-          <div class="general-text update"><span class="buff">v0.51</span> - Started working on <span class="cosmic">reroll simulators</span>. Only finished <span class="text-gradient mythic">traits</span> so far.</div>
+          <div class="general-text update"><span class="buff">8/25/25</span> - Added Update <span class="text-gradient gujo">8.0 units/familiars</span>, gonna probably shorten some stuff and add more <span class="text-gradient mythic">flavor</span> text next.</div>
 
-          <div class="general-text update"><span class="buff">v0.5</span> - Added Update <span class="text-gradient iscanur">7.5 units/familiars</span>, and started on <span class="text-gradient mythic">trait + stat reroll</span> simulator.</div>
+          <div class="general-text update"><span class="buff">8/14/25</span> - Started working on <span class="cosmic">reroll simulators</span>. Only finished <span class="text-gradient mythic">traits</span> so far.</div>
 
-          <div class="general-text update"><span class="buff">v0.4</span> - Trying out <span class="fire">tooltips</span> and put in basic <span class="curse">meter passives</span> with in depth documents.</div>
+          <div class="general-text update"><span class="buff">8/6/25</span> - Added Update <span class="text-gradient iscanur">7.5 units/familiars</span>, and started on <span class="text-gradient mythic">trait + stat reroll</span> simulator.</div>
 
-          <div class="general-text update"><span class="buff">v0.31</span> - Fixed Ui for other screen sizes, and put in <span class="spark">bp units</span>.</div>
+          <div class="general-text update"><span class="buff">8/1/25</span> - Trying out <span class="fire">tooltips</span> and put in basic <span class="curse">meter passives</span> with in depth documents.</div>
 
-          <div class="general-text update"><span class="buff">v0.3</span> - Added Update <span class="range">7.0 </span> and <span class="text-gradient mythic">elemental</span> buffs.</div>
+          <div class="general-text update"><span class="buff">7/26/25</span> - Fixed Ui for other screen sizes, and put in <span class="spark">bp units</span>.</div>
 
-          <div class="general-text update"><span class="buff">v0.2</span> - Added in <span class="buff">summon hp</span> damages and <span class="debuff">DoT</span> buffs. Also added <span class="spark">right clicking</span>
+          <div class="general-text update"><span class="buff">7/21/25</span> - Added Update <span class="range">7.0 </span> and <span class="text-gradient mythic">elemental</span> buffs.</div>
+
+          <div class="general-text update"><span class="buff">7/15/25</span> - Added in <span class="buff">summon hp</span> damages and <span class="debuff">DoT</span> buffs. Also added <span class="spark">right clicking</span>
             in the search page to open a unit in a new tab</div>
 
-          <div class="general-text update"><span class="buff">v0.1</span> - <span class="range">Concept phase</span>  with basic calculations of passive mechanics that are
+          <div class="general-text update"><span class="buff">7/12/25</span> - <span class="range">Concept phase</span>  with basic calculations of passive mechanics that are
             applicable across most units</div>
         </div>
 
@@ -104,11 +95,13 @@
 
         <div class="credits-list">
           <div class="general-text">Designed and developed by: <br> <span class="spark">Monsoon (@migdele) - (Discord: migomigy)</span></div>
+          
+          <div class="general-text">Tierlist ranked and written with: <br> <span class="holy">Figg (@Dev_Figg) - (Discord: figglad)</span></div>
 
           <div class="general-text">Special thanks for help with filling in unit data to: <br> <span class="cosmic">UnDestiEnd</span> | <span class="nature">Crest</span></div>
 
           <div class="general-text">Assets from Anime Vanguards wiki at <span class="text-gradient rogita">animevanguards.fandom.com</span>.</div>
-          <div class="general-text">Design heavily inspired by calculator for the game Blue Archive at <span class="text-gradient rare">schaledb.com</span>.</div>
+          <div class="general-text">Design heavily inspired by calculator for the game Blue Archive at <span class="text-gradient rare">schaledb.com</span> and tierlist style from <span class="text-gradient epic">prydwen.gg</span>.</div>
         </div>
 
         <div class="general-text log-title">Links</div>
@@ -138,10 +131,12 @@
     </div>
   </div>
 
-  <script src="javascript/icons.js"></script>
-  <script src="javascript/main.js"></script>
-
-  <script src="javascript/pageHandler.js"></script>
+  <script src="javascript/shared/constructors.js"></script>
+  <script src="javascript/shared/formatters.js"></script>
+  <script src="javascript/shared/header.js"></script>
+  <script src="javascript/shared/icons.js"></script>
+  <script src="javascript/shared/pageHandler.js"></script>
+  <script src="javascript/shared/tooltips.js"></script>
 </body>
 
 </html>

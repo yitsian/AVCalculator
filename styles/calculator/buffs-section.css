@@ -73,12 +73,6 @@
   background-color: gray;
 }
 
-.hidden {
-  opacity: 0;
-  display: none !important;
-  transition: opacity 0.3s ease;
-}
-
 .buffs-container {
   display: flex;
 

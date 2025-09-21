@@ -1,0 +1,69 @@
+.tl-tier-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.tl-tier-unit-container1,
+.tl-tier-unit-container2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(110px, calc(110 * 0.1667vh)), 1fr));
+
+  justify-content: center;
+
+  align-content: start;
+
+  flex: 1;
+
+  row-gap: 12px;
+  column-gap: 6px;
+
+  width: min(400px, 23vw);
+
+  padding: min(18px, calc(18vh/6));
+}
+
+.tl-tier-unit-container1 {
+  background-color: rgba(60, 60, 60, 0.5);
+}
+
+.tl-tier-unit-container2 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.unit-trait {
+  position: absolute;
+  top: min(4px, calc(4 * 0.1667vh));
+  right: min(4px, calc(4 * 0.1667vh));
+  width: min(25px, calc(32 * 0.1667vh)) !important;
+  z-index: 5;
+}
+
+.tl-unit-icon {
+  height: min(110px, calc(110 * 0.1667vh));
+  width: min(110px, calc(110 * 0.1667vh));
+
+  min-width: min(110px, calc(110 * 0.1667vh));
+  max-height: min(110px, calc(110 * 0.1667vh));
+
+  border-radius: min(18px, calc(18 * 0.1667vh));
+}
+
+.tl-unit-icon .unit-gradient {
+  padding: min(4px, calc(4 * 0.1667vh));
+}
+
+.tl-unit-display {
+  display: flex;
+
+  flex-direction: column;
+
+  color: white;
+
+  font-size: min(16px, calc(20vh/6));
+  font-weight: 500;
+  text-align: center;
+
+  align-items: center;
+
+  gap: 6px;
+}

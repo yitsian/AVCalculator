@@ -47,7 +47,7 @@ function updateFinalStats() {
         finalStats[key] = baseStats[key] * (1 - (statAddBuffs[key]))
         break;
       case "crit":
-        finalStats[key] = Math.min(Math.max(baseStats[key] + statAddBuffs[key] * 100, 0), 100)
+        finalStats[key] = Math.max(baseStats[key] + statAddBuffs[key] * 100, 0)
         break;
       case "critDmg":
         finalStats[key] = Math.max(baseStats[key] + statAddBuffs[key] * 100, 125)
@@ -74,7 +74,7 @@ function updateFinalStats() {
   finalCritDmgValue.textContent = formatCrit(finalStats.critDmg)
   finalCritDmgBuff.textContent = formatBuff(statAddBuffs.critDmg);
 
-  critAvg = 1 + ((finalStats.crit / 100) * ((finalStats.critDmg / 100) - 1));
+  critAvg = 1 + (Math.min((finalStats.crit / 100), 1) * ((finalStats.critDmg / 100) - 1));
   finalCritAvgValue.textContent = critAvg.toFixed(2) + "x";
   finalCritAvgBuff.textContent = formatBuff(0);
 }

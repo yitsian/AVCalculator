@@ -1,9 +1,9 @@
 .damage {
- color: #ff5d61;
+  color: #ff5d61;
 }
 
 .spa {
- color: #74bafa;
+  color: #74bafa;
 }
 
 .range {
@@ -42,4 +42,20 @@
 
 .passive {
   background-image: linear-gradient(#04dfff .25em, #0badff, #0e91ff calc(100% - .25em))
+}
+
+.carry {
+  color: #ff5d61
+}
+
+.subDamage {
+  color: #bf0fef
+}
+
+.support {
+  color: #00fe6c;
+}
+
+.utility {
+  color: #f8e160;
 }

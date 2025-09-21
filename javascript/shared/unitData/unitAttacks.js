@@ -1,4 +1,39 @@
 const unitAttacks = {
+  BrolziSuper: [
+    {name: "Unrestrained Power", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Follows up with attack 3 for 100% Dmg when this unit crits (5s local cd)", 
+    multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Innocent Rage", aoe: "12 Circle", hits: 1, type: "Spa-Followup", description: "Follows up with attack 1 for 100% Dmg when this unit doesn't crit (5s local cd)", 
+    multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+  ],
+
+  RogitaSuper: [
+    {name: "Tag, You're It!", aoe: "70° Cone", hits: 3, type: "Spa-Followup", description: "Follows up with attack 1 for 100% Dmg when this unit crits an enemy (5s local cd)", 
+    multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+  ],
+
+  LordFriezo: [
+    {name: "Alien Cadet", aoe: "5 Line", hits: 3, type: "Spa-Followup", description: "Place up to 3 aliens, Alien Cadets have 25% Base Dmg and Cost", 
+    multiplier: 0.25, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Alien Soldier", aoe: "5 Line", hits: 3, type: "Spa-Followup", description: "Place up to 3 aliens, Alien Soldiers have 40% Base Dmg and Cost", 
+    multiplier: 0.4, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Alien Elite", aoe: "5 Line", hits: 3, type: "Spa-Followup", description: "Place up to 3 aliens, Alien Elites have 70% Base Dmg and Cost", 
+    multiplier: 0.7, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Alien Cadet Summon", aoe: "Single", hits: 1, type: "Summon", description: "Basic summon that spawns with 1x this unit's Dmg.", 
+    multiplier: 1, image: "Images/Abilities/Friezo.png", gradient: "rare"},
+  ],
+
+  Wolf: [
+    {name: "The Coyote", aoe: "8 Circle", hits: 1, type: "Condition-Followup", description: "Every 10s spawns 2 wolves that attack the first marked enemy", 
+    multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Resurreccion", aoe: "12 Line", hits: 1, type: "Spa-Followup", description: "Follows up with attack 1 for 60% Dmg when this unit crits an enemy (5s local cd)", 
+    multiplier: 0.6, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+  ],
+
   TheStruggler: [
     {name: "Bleed", aoe: "Single", hits: 10, type: "Conditional-Dot", description: "When stunned if the enemy has no bleed, deals 20% of this units Dmg over 10s", 
     multiplier: 0.2, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
@@ -19,16 +54,27 @@ const unitAttacks = {
   ],
 
   GG: [
-    {name: "New Challenger", aoe: "10 Circle", hits: 1, type: "Condition-Followup", description: "Whenever an enemy enters this unit's range, follows up with attack 1 for 100% Dmg (8s cd).", 
+    {name: "New Challenger", aoe: "10 Circle", hits: 1, type: "Condition-Followup", description: "Whenever an enemy enters this unit's range, follows up for 100% Dmg (8s cd).", 
     multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
 
-    {name: "Curse Ball", aoe: "4 Circle", hits: 1, type: "Condition-Followup", description: "Anytime this unit attacks, leaves a ball for each enemy hit that explodes after 5s for 40% Dmg (Max 10 per player).", 
+    {name: "Curse Ball", aoe: "10 Circle", hits: 1, type: "Condition-Followup", description: "Anytime this unit attacks, leaves a ball for each enemy hit that explodes after 5s for 40% Dmg (Max 10 per player).", 
     multiplier: 0.4, image: "Images/Units/GG.webp", gradient: "exclusive"},
   ],
 
   GujoFamiliar: [
     {name: "Split Second Decision", aoe: "12 Line", hits: 1, type: "Condition-Followup", description: "Anytime an enemy leaves range, stuns all enemies and follows up with attack 3 for 100% Dmg (20s cd).", 
     multiplier: 1, image: "Images/Units/GujoFamiliar.webp", gradient: "gujo"},
+  ],
+
+  SukonoFamiliar: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict burn for 30% Dmg after upgrade 9.", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Chef's Preparations", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Anytime this unit first inflicts cleave on and enemy, followup with attack 2 (5s cd).", 
+    multiplier: 1, image: "Images/Units/SukonoFamiliar.webp", gradient: "sukono"},
+
+    {name: "Bleed", aoe: "Single", hits: 4, type: "Dot", description: "Followup attacks inflict bleed for 30% Dmg.", 
+    multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
   ],
 
   Iscanur: [
@@ -221,6 +267,11 @@ const unitAttacks = {
 
     {name: "Summons", aoe: "Single", hits: 1, type: "Summon", description: "Every enemy this unit kills gets revived as a skeleton with its health being 40% of this units Dmg (Counts as burn Dmg, works with Bodibi)", 
     multiplier: 0.4, image: "Images/Units/Yomomata.webp", gradient: "secret"},
+  ],
+
+  Valentine: [
+    {name: "This is Another Me...", aoe: "18 Circle", hits: 1, type: "Spa-Followup", description: "Up to 3 Valentine clones can be placed that each do 20% of this unit's Dmg.", 
+    multiplier: 0.2, image: "Images/Abilities/This_is_Another_Me..._Ability.webp", gradient: "secret"},
   ],
 
   Sukono: [

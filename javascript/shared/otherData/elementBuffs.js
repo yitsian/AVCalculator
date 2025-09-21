@@ -1,10 +1,10 @@
-elementBuffs = {
+const elementBuffs = {
   Unbound: {
     name: "Unbound Element Buff", upgrade: 0,
     conditions: [
       {
         description: "Unbound units gain 5% Crit",
-        multiplicative: true, type: "Statement", statement: "Toggle element buff", buffs: [0, 0, 0, 5, 0, 0]
+        multiplicative: false, type: "Statement", statement: "Toggle element buff", buffs: [0, 0, 0, 5, 0, 0]
       }
     ]
   },

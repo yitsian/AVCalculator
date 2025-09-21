@@ -5,7 +5,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   
-  <title>Anime Vanguards DPS Calculator Home</title>
+  <title>Anime Vanguards DPS Calculator</title>
+  <link rel="icon" type="image/x-icon" href="Images/Icons/Trait_Reroll.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,19 +40,7 @@
   </div>
 
   <div class="header header-margin">
-    <div class="icons-section">
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('index.html')">Home</button>
-
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('units.html')">Units</button>
-
-      <button class="tags general-text round-form button-hover navigate-button"
-        onclick="navigateTo('calculator.html')">Calculator</button>
-
-      <button class="tags general-text round-form selected-tag navigate-button"
-        onclick="navigateTo('reroll.html')">Rerolling</button>
-    </div>
+    <div class="icons-section"></div>
 
     <div class="links-section">
       <a href="https://www.buymeacoffee.com/Migomigy" target="_blank" class="bmc-button link-button">
@@ -74,17 +63,17 @@
       <div class="subsection">
         <div class="reroll-screen">
           <button class="unit-button reroll-unit-image">
-            <div class="unit-gradient iscanur">
+            <div class="unit-gradient brolzisuper">
               <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
 
               <div class="unit-content">
-                <img class="unit-picture" src="Images/Units/Iscanur.webp">
+                <img class="unit-picture" src="Images/Units/BrolziSuper.webp">
               </div>
             </div>
           </button>
 
           <div class="trait-middle-section">
-            <div class="trait-label general-text">Trait</div>
+            <div class="trait-label">Trait</div>
             <div id="trait-result-wrapper" class="trait-result-wrapper">
               <div class="trait-mask"></div>
               <div id="trait-result" class="general-text">None</div>
@@ -121,7 +110,7 @@
 
     <div class="reroll-history">
       <div class="section-title general-text">
-        Stat Rerolling (TBA)
+        Stat Rerolling
       </div>
 
       <div class="stat-screen">
@@ -136,18 +125,36 @@
         </button>
       </div>
     </div>
+
+    <!-- <div class="reroll-history">
+      <div class="section-title general-text">
+        Stat Rerolling
+      </div>
+
+      <div class="stat-screen">
+        <button class="unit-button reroll-unit-image">
+          <div class="unit-gradient secret">
+            <img class="unit-gradient-texture" src="Images/Icons/Dots.webp">
+
+            <div class="unit-content">
+              <img class="unit-picture" src="Images/Units/MonkeyKing.webp">
+            </div>
+          </div>
+        </button>
+      </div>
+    </div> -->
   </div>
 
-  <script src="javascript/icons.js"></script>
+  <script src="javascript/shared/constructors.js"></script>
+  <script src="javascript/shared/formatters.js"></script>
+  <script src="javascript/shared/header.js"></script>
+  <script src="javascript/shared/icons.js"></script>
+  <script src="javascript/shared/pageHandler.js"></script>
+  <script src="javascript/shared/tooltips.js"></script>
 
   <script src="javascript/reroll/odds.js"></script>
   <script src="javascript/reroll/shared.js"></script>
   <script src="javascript/reroll/traitsRolling.js"></script>
-  
-  <script src="javascript/tooltips.js"></script>
-
-
-  <script src="javascript/pageHandler.js"></script>
 </body>
 
 </html>

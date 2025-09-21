@@ -7,14 +7,20 @@
 .tooltip-popup {
   position: absolute;
   background: #212529;
+
   padding: 6px 10px;
   border-radius: 12px;
-  white-space: nowrap;
   pointer-events: none;
+
+  max-width: min(300px, calc(300vh/6));
+
   font-size: 18px;
   opacity: 0;
   transition: opacity 0.2s ease;
   z-index: 1000;
+
+  text-wrap: wrap;
+  text-align: center;
 }
 
 .tooltip-popup.show {

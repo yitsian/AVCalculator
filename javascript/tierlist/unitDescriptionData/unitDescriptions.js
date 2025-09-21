@@ -1,0 +1,337 @@
+const unitDescriptions = {
+  Al: {
+    pros: ["cleanses allies","buffs when cleanse","repulses","decently cheap to max"],
+    cons: ["useless before max upg","requires meter","2 placement"],
+    description: "Al is a support unit which requires heavy investment, costing 47k yen before he gains any support capability. Once fully upgraded, Al will repulse enemies on hit and gain a meter. Anytime a unit in Al’s range is debuffed, Al will gain 5% meter that when full, cleanse all allies in range and buffs them for 30s. Al is a highly conditional support only being usable in Martial stages and for certain tournaments.    "
+  },
+  Ali: {
+    pros: ["good burn dps","decent aoe","detonates burn early"],
+    cons: ["removes burn","better dps options","not great at anything"],
+    description: ""
+  },
+  Alocard: {
+    pros: ["bleed (8s)","applies wounded","early full aoe"],
+    cons: ["Needs to be upgraded for best use of utility"],
+    description: "Alocard is a timeless support having the best application of wounded. Wounded enemies take 20% increased dmg from all sources making him an invaluable support. Having an 8s bleed and early full aoe, you can slot Alocard into any team comp, especially against enemies with regen. Overall Alocard is an amazing support to default to, assisting you in almost any situation. "
+  },
+  Arc: {
+    pros: ["Jack of all trades with Slow, Repulse and Bleed","Decently high range and Good Aoe"],
+    cons: ["Takes a decent amount of time to setup","CC is outclassed by most other units","Loses out on dps by taking support"],
+    description: ""
+  },
+  Arin: {
+    pros: ["max 3 placements for the cost of 1","decent full aoe dps","rumbling"],
+    cons: ["expensive","giant team reliant","rumbling can only be used in longer content"],
+    description: ""
+  },
+  Astolfo: {
+    pros: ["full aoe repulse","spears enemies increasing the dmg they take","buffs allies","teleports"],
+    cons: ["expensive","buffs take a while to stack"],
+    description: "Astolfo is an amazing support with a full aoe repulse on placement. Although his buffs can be expensive to max out and are costly, he is one of the best options for long for content such as rifts and infinite. Astolfo has three different actives, hippogriff is an active that allows Astolfo to teleport to a point on the map repulsing enemies. Spellbook gives the unit protected status effect immunity while buffing his own buffs on that unit by 2x. The final spear ability separates enemies souls from their body, damaging the soul damages the enemy up to 15% of their max hp. Overall Astolfo is solid support for any gamemode and is a must have for infinite.  \r<br> "
+  },
+  Aurin: {
+    pros: ["reduces cost for units","buffs units dmg","tranformation ability"],
+    cons: ["cannot control where markers spawn","limited to 5 buffs"],
+    description: ""
+  },
+  Boo: {
+    pros: ["self cleanse","buffs dragon sphere units","stuns in base form"],
+    cons: ["requires kills for candy","requires upg 7 to transform","long time to setup without bodibi"],
+    description: "Boo (Evil) is a unit with 6 different transformations having the cosmic element (self-cleanse). In base form, Boo will stun enemies. Killing enemies gives candy needed for transformation (Alternatively, you can reduce the max summons cap for transformation). Every transformation of Boo makes the next form stronger (stacking) until you reach the final transformation; Boohan (Evil). Boohan will buff dragon sphere units in range (self-included) as well as spawn summons every 10 kills. Kills on enemies turn them into candy causing them to explode dealing aoe dmg. Selling any form of Boo will turn them into Kid Boo (Evil) who gains damage based on the number of transformations before getting sold. Kid Boo is an amazing boss killer doing increased dmg to the highest hp enemy (targeting is locked to the highest hp enemy). In addition to being immune to status effects, Kid Boo will follow-up whenever he kills an enemy (5s local cd). Overall Boo is a great unit that can provide utility and dps when needed."
+  },
+  Byeken: {
+    pros: ["pulls enemies","repulses","applies tether which slows enemies and causes them to share dmg"],
+    cons: ["takes a while to build bar","pull is limited to 3 times per game and cannot pull the same enemy twice"],
+    description: "Byeken (Ronin) is an amazing support unit with high dps capability making her an all around great unit. She repulses and tethers enemies linking them to her & causing them to take shared dmg. Anytime she would get debuffed or afflicted by an ailment, Byeken will follow up attack as well as on tethered enemies on attack and death. She can also pull all enemies to her location making her great at stalling."
+  },
+  ChoyJongEn: {
+    pros: ["thick line aoe","good burn dps","Only need to max 1 to get most out of nuke"],
+    cons: ["needs time and constant intense burn application to maximize dps"],
+    description: "Choy is a great option if you’re looking for a burn dps. His kit revolves around his intense burn passive. When intense burn expires, Choy will nuke enemies affected by the burn, based on how long the duration of intense burn was. Keeping that in mind, only the first/ strongest Choy needs to be maxxed while the other Choy are only needed to refresh and extend the burn duration. This ensures the burn stays on for longer, increasing the damage dealt by the nuke upon expiration. Ultimately Choy is an amazing burn dps dealing massive damage over time.<br>"
+  },
+  Clatakiri: {
+    pros: ["slows on hit","follows enemies","has stun"],
+    cons: ["stun is inconsistent","forcefully moves making him hard to manage"],
+    description: ""
+  },
+  Conqueror: {
+    pros: ["high constant dps","high range and wide cone aoe","full AOE when attacking bosses"],
+    cons: ["relies on life stock","no immunity"],
+    description: "Conqueror vs Invulnerable is a high dps unit attacking constantly even when no enemies are in range. This unit scales with lifestocks with each lost lifestock giving 20% range & reducing the number of attacks between enhanced attacks. With 2 lifestocks lost this unit will always deal 120% more damage! This damage buff scales with their other passive which deal 50% more damage when attacking a non-boss enemy. When attacking a boss this unit will lose the 50% damage buff however, their attacks will convert into full aoe. If you're in need of a dps, stand ready for their arrival."
+  },
+  CuChulainn: {
+    pros: ["rupture (upg 7)","ignores enemy dodge chance"],
+    cons: ["Better Rupture options","Circle aoe application"],
+    description: ""
+  },
+  DarkMage: {
+    pros: ["applies slow and bleed","good DOT dps","applies diseased buffing DOT including allies"],
+    cons: ["requires meter and final upgrade for diseased","2 placement and steals meter gain from self"],
+    description: "Dark Mage (Evil) is a solid DPS unit whose main strength is dealing DOT (damage over time). Dark Mage slows enemies on hit and applies bleed making him a great support option. In addition to Dealing more dmg to debuffed enemies, bleeding enemies that die will apply bleed to all enemies in Dark Mage's range (10s). On his final upgrade, Dark Mage will gain a bar when full, apply burn, bleed, and diseased (enemies take 50%+ dmg from DOT) , increasing his dmg and DOT dealt by other units. Overall Dark Mage is a solid dps unit that can provide exceptional support.\r"
+  },
+  Dawntay: {
+    pros: ["good dps","insane scaling with crit"],
+    cons: ["weak on placement","relies on meter","Gets spa capped during DT"],
+    description: "Dawntay (Jackpot) is an amazing dps unit who scales amazingly with crit. On placement his spa is only 1s which is great for corrupting with Sokora. Dawntay will enter his Devil Trigger form when meter if full, increasing dmg and range while converting attacks into full aoe. Overall he is a great dps who can be used in practically any situation."
+  },
+  Diogo: {
+    pros: ["Full map timestop","Cheapest timestop to unlock (37k)"],
+    cons: ["time stop has a longer cd compared to other units"],
+    description: ""
+  },
+  Divalo: {
+    pros: ["High placement damage","Time Erasure","Counters"],
+    cons: ["Expensive to place","Thin Line Aoe"],
+    description: "(Include 60k for time erasure)"
+  },
+  Eizan: {
+    pros: ["immune to status effects","aura ignores sheilds","stops enemies in their tracks with ability"],
+    cons: ["expensive","aura has relatively small range"],
+    description: "Eizan (Aura) is a unit which deals good damage while being immune to status effects. The closer enemies are, the more damage they take from the Aura passive which deals damage every second while also ignoring shields. Eizan is great for stalling, forcing enemies to walk back for 5s upon losing a life stock. Eizan's ability Dabo 81 will create a wall stopping all enemies in their tracks for 15s. Overall Eizan (Aura) is a great unit excelling in many situations."
+  },
+  Emmie: {
+    pros: ["Thick line aoe","freeze","Able to extend freeze"],
+    cons: ["short base freeze duration","Isn't line on placement"],
+    description: ""
+  },
+  Foboko: {
+    pros: ["Line aoe on placement and freezes","-5% spa for units in range","cleanses 1 unit in range (30s)"],
+    cons: ["Really short aoe on placement","Bad aoe when maxed","better freeze and cleanse options"],
+    description: ""
+  },
+  GearBoy: {
+    pros: ["Decent dps","self-buff ability which resets attack cd"],
+    cons: ["mid aoes","meter reliant","relatively low range"],
+    description: "Gear Boy (Hungry) is a great dps unit which has the spark element making him immune to dmg reduction debuffs eg: energy drain. With a decent black spirit (70%+) he can have full uptime on his growing boy passive and Greek Cancel, permanently buffing him. Being cheap to max and with 4 placements, Gear Boy is a solid dps option. \r<br>"
+  },
+  GG: {
+    pros: ["Insanely high potential dps from balls","Cleanses allies in range","Curse element to do even more to bosses"],
+    cons: ["Balls have a small aoe","Max of 10 balls across all placements per person","decently expensive"],
+    description: ""
+  },
+  GiantQueen: {
+    pros: ["Buffs Giant Category allies by up to 140% Dmg","Does more damage per giant unit placed"],
+    cons: ["Loses a placement when sold","Relatively expensive"],
+    description: ""
+  },
+  GoblinKiller: {
+    pros: ["places traps","rupture","Insanely high burst damage","Very cheap due to cost reduction"],
+    cons: ["traps are single hit","diminishing return due to last placements being cheaper"],
+    description: ""
+  },
+  GujoFamiliar: {
+    pros: ["does attack 3 and freezes when enemies leave range","immune to status effects","high dmg","time stop"],
+    cons: ["high spa and single hit","small range","better dps options"],
+    description: "With his familiar Gujo becomes a hard hitting dps with support capability. When an enemy leaves his range, Gujo will stun all enemies in range and will fire attack 3 at that enemy (20s) who escaped (this has infinite range). Along with having one of the best time stops in the game, Gujo is immune to status effects and gains 0.1% damage per wave. This seems like a small amount but it becomes a significant buff with the familiar equipped. Overall Gujo is a solid unit who is great even without monarch, his only real downside is his short range.    "
+  },
+  HarukaRin: {
+    pros: ["All around buffer","no yen required for buffs"],
+    cons: ["Only 2 placement","Small range","requires waves to max out buffs"],
+    description: "Haruka Rin is a unit which can provide support without you needing to upgrade her, just place her for 1.2k yen. Every wave she will buff units in range for 3% dmg up to 18%. After 6 waves she will grant units 10% range. Some of Haruka’s downsides are that she has small range, and is outdated and overshadowed by other support units."
+  },
+  Hebano: {
+    pros: ["reapplies burn","applies scorched"],
+    cons: ["decently niche usecases","tree has small range"],
+    description: ""
+  },
+  Hei: {
+    pros: ["great full aoe burn dps","relatively cheap"],
+    cons: ["removes burn","high spa and short range","steals burn from self and relies on other burn units"],
+    description: ""
+  },
+  Ichiga: {
+    pros: ["high range when lifestocks are lost","Able to nuke with Horn of Salvation","Cheap to max out","Counts for all groups"],
+    cons: ["Medicore Dps","Circle Aoe on last upgrade","Requires lifestocks"],
+    description: "Ichiga is a solid dps unit that relies on lifestocks for his full potential. He is able to remove lifestocks with his ability buffing his dmg. His range at max potential is insane. He has the cosmic element self cleansing him every 30s and counts as a unit from every group. This means he gets buffed in any stage where there are units who get buffed, such as the AOT ex stage and allows him to benefit from support units such as Giant Queen making  him a universal unit. "
+  },
+  Iscanur: {
+    pros: ["free placement and auto upgrade","Insane dps","self cleanse"],
+    cons: ["high spa and single hit","struggles with armored and high regen scaling"],
+    description: "Iscanur is a heavy hitting unit with one of the highest dps in the game. His unique mechanic allows you to burn up your teams giving him an hour stack per slot burned and free placement once everything is burned. With everything burned, Iscanor will upgrade himself every wave once placed making him auto clear any stage. At max upgrade Iscanor unlocks the ultimate ability keeping him at 12 stocks while also gaining a burn aura in range incinerating everything. After using ultimate Iscanur sells himself after 5 waves, so it's best to use it 4 waves before the final wave. Iscanur struggles against heavy shielded enemies, high regen scaling and armored."
+  },
+  Isdead: {
+    pros: ["Freeze","time stop","good dmg on placement","doubles marked units' damage during ability"],
+    cons: ["expensive to place (3.2k)","marks only 1 ally per placement and can be hard to manage"],
+    description: ""
+  },
+  Kazzy: {
+    pros: ["freeze","applies bubbled on hit","spawns bubbles on the track dealing dmg and applying bubbled","cleasnes all allies in range with heaven ability (10s local cd)"],
+    cons: ["relies on meter","requires constant swapping for optimal dps","single hit for bubbled"],
+    description: "Kazzy (Queen) is a unit which can provide excellent support as well as dish out incredible damage. In her Undine form, Kazzy will freeze enemies and apply bubbled (Units will deal 30% more damage on their next attack on a bubbled enemy). She will also spawn bubbles on the track dealing damage to enemies who touch them by applying bubbled. Kazzy's necro form will increase her damage and burn enemies, as well as dealing increased damage to bubbled enemies. Kazzy additionally has the Heaven ability which will cleanse all allies in range of debuffs and status effects (local 10s cd) making her an all around great unit"
+  },
+  Ken: {
+    pros: ["Applies bleed and slow on placement","Bleed lasts a long time","Relatively cheap and good w/o monarch"],
+    cons: ["Slow doesn't last very long","Need to be unevo to make most out of support"],
+    description: ""
+  },
+  Kiskae: {
+    pros: ["Inflicts wounded and bleeds","Stuns the first time a bleeding enemy is attacked"],
+    cons: ["wounded unlocks at upg 4","Bleed only lasts 3s"],
+    description: ""
+  },
+  Koguro: {
+    pros: ["3 unique domains each with their own support capability","follows enemies on attack (disabled during domain)","copies the elements of your team","buffs allies meter gain","10x mapwide nuke (1 time use)"],
+    cons: ["expensive to place (3.5k)and max (151k)","low dps without monarch"],
+    description: "Koguro (Unsealed) is a unit which can deal map-wide support while also dealing significant damage. When attacking, she will teleport and move with the enemy in her range unless a domain is open in which Koguro will teleport to the first enemy on the track. A major strength of Koguro is her ability to take the elements of all the units on your team, allowing her to buff herself from her domains and allows herself to gain buffs from element specific passives such as Quetzalcoatl and Sukono. Koguro’s domains include sand which has mapwide repulse, ice which has mapwide freeze, and fire which has mapwide burn. Along with her utility, Koguro has a 10x mapwide nuke making it the arguably the best nuke in the game. "
+  },
+  Leo: {
+    pros: ["infinite stacking burn","good full aoe dps","powerful active"],
+    cons: ["loses range rapidly when active is on","decently expensive with bad early defend"],
+    description: ""
+  },
+  Lfelt: {
+    pros: ["good dps with followups","good range and aoe","loveshot ability"],
+    cons: ["loveshot is limited to 20 enemies and 3 uses per game","reliant on meter"],
+    description: ""
+  },
+  Luce: {
+    pros: ["applies nullify on hit","full aoe at max"],
+    cons: ["Overshadowed by The Witch"],
+    description: ""
+  },
+  MonkeyKing: {
+    pros: ["very high dps","counts as any group","good against dmg reduction"],
+    cons: ["expensive","requires setup and supporting units"],
+    description: ""
+  },
+  Newsman: {
+    pros: ["slows","applies bubbled","cheap and 4 placement"],
+    cons: ["cannot slow bosses"],
+    description: "Newsman is an exceptional support being one of the best in the game. Costing only 800 yen to place with 4 placements, he is super affordable providing early support and dps. Enemies are slowed by 50% and are inflicted with bubbled. The next attack a unit does on a bubbled enemy does 30% increased dmg making newsman a great damage amplifier. Newsman’s only downside is his inability to slow bosses, despite this he is definitely worth bringing along. "
+  },
+  NotGoodGuy: {
+    pros: ["follows up on burning enemies","good dps and can pop burn","full immunity during dragon install"],
+    cons: ["spa capped at 6s during dragon install","followup is attack 1 (small cone)"],
+    description: "NotGoodGuy (Free) is an amazing burn dps unit. He will follow up (attack 1[small cone]) when hitting burning enemies. His first ability (Hell) will consume 2 bars to detonate the remaining dot on the enemies making him a great pair with Dark Mage. NotGoodGuy’s second ability dragon install consumes his meter (4%/s) buffing him. While in dragon install this unit will gain damage, range, and immunity to ailments and debuffs while also applying burn to all enemies in aoe when an enemies dies while mode is up making him a unit worthy of his position."
+  },
+  Priestess: {
+    pros: ["Stuns and slows","Full aoe on placement","little investment required"],
+    cons: ["Slow is only 30%","Low range on placement"],
+    description: ""
+  },
+  Quetzalcoatl: {
+    pros: ["Buffs fire allies by 20%","good dps","Medium investment until full aoe"],
+    cons: ["Circle aoe on placement","Not all attacks are full aoe","Fairly expensive to max"],
+    description: ""
+  },
+  Reimu: {
+    pros: ["good dps","dodges enemy attacks","gives luck boost in odessey"],
+    cons: ["spray aoe allows her to miss targets","requires positioning to make use of layers"],
+    description: "Reimu is a great unit having good dps and a crazy low SPA. She dodges all attacks and is an amazing shield breaker. Reimu gains layers when constantly attacking. Each layer will add another line to her AOE giving her aoe a spray shape at 3 stacks. Her ability will give her 4 layers basically making her full aoe for 10s. Overall Reimu is a great unit whose only real downside is her awkward aoe.   \r"
+  },
+  Riner: {
+    pros: ["Free placement after 3 units are placed","Gives 2 shield stocks to tank leaks"],
+    cons: ["Can't be placed wave 1 like Rohan","Single hit on placement"],
+    description: "Riner is a unit with free placements placing himself every 3rd placement on the map. On placement he has a thick line aoe with short range. When 2 stocks are lost, instead gain 2 shields stocks. This can be useful against leaks and for modes such as pvp. Riner can help skip early waves being free to place, making grinding gamemodes such as worldlines less of a drag.   \r<br>"
+  },
+  RogitaSuper4: {
+    pros: ["good placement","full map teleport","good dps"],
+    cons: ["expensive (184k)","monarch reliant"],
+    description: "Rogita (Super 4) is a great unit on placement costing only 1.2k yen and having a map wide teleport (20s cd). Everytime Rogita teleports he lowers his SPA by 20% for 20s. Rogita has a 10% chance to not attack, when he misses, slows all enemies in range and increases his dmg. Rogita has a clone that will mimic his attack. This means that Rogita is always doing 2x dps! Rogita’s downsides are his expensive cost (182k) and having no immunity.     \r"
+  },
+  Rohan: {
+    pros: ["first placement is free","follows up and gains status effect immunity on crit"],
+    cons: ["reliant on crit","needs to be upgraded before can followup"],
+    description: "Ultimate Rohan has a free placement being placed alongside the first placed unit (Excluding farms).This makes him an amazing early game choice allowing you to farm while Rohan defends increasing overall economy, enabling you to max farms and units more efficiently. When dealing crit, Rohan will gain status effect immunity and will follow up dealing damage. Overall ultimate Rohan is a great until to bring along supporting almost any team comp.\r"
+  },
+  Roku: {
+    pros: ["Stuns on swap from Vogita","Slows on swap from Roku","Vogito inflicts rupture, ignores dodge change and 50% of enemy defense"],
+    cons: ["reliant on meter and black spririt for optimal useage","Vogito is expensive to max"],
+    description: "Roku (Angel 3) is a great early game unit costing only 1k yen to place down. When Roku's bar is full, he will swap out with Vogita (Angel) slowing all enemies in range. When swapping back to Roku all enemies in range are slowed. Roku additionally has a map wide nuke that deals massive damage. After 15 swaps, Roku and Vogita are ready to fuse into Super Vogito. Super Vogito is a powerful unit who ignores 50% of enemy defense, ignores dodge chance, and inflicts rupture while also dealing decent damage. These factors make Roku (Super 3) a flexible unit usable in a wide variety of team comps.\r<br><br>\r<br>"
+  },
+  Rudie: {
+    pros: ["full aoe & dodges enemy attacks","Buffs units on placement"],
+    cons: ["Better buff options","reliant on meter"],
+    description: "Rudie is a unit which can provide decent dps and support. He gains a meter on placement and gains mana passively as well as on hit. Anytime you consume mana, Rudie will buff all allies in range and will also increase the dmg on his next attack based on the mana used. Rudie dodges all attacks and has full aoe on his final upgrade making him a solid unit overall. \r"
+  },
+  Salter: {
+    pros: ["full aoe slow","full status and debuff immunity","Early full aoe"],
+    cons: ["debuffs your team","reliant on Sokora for optimal usage","mediocore dps"],
+    description: "Saber (Black Tyrant) is a great DPS unit especially paired with Sokora (Angra Mainyu). When Sokora is placed anywhere on the map, Saber (Black Tyrant) will perform an extra attack based on Sokora's spa. Saber is immune to status effects and debuffs; additionally, she slows enemies with her Aura of Corruption passive. Every 5 attacks, Saber will attack with Dark Excalibur, dealing massive damage. Although Saber will debuff your units, for every unit she debuffs, her dmg will increase (corrupted units are immune to the debuff), making her an amazing carry option."
+  },
+  Slime: {
+    pros: ["f2p friendly & cost efficient","full aoe","great dps"],
+    cons: ["doesn't gain as much from extra buffs","relatively small range"],
+    description: "Slime (King) is a f2p friendly unit who excels even without a trait ( note that monarch is his worst trait). His passive increases the damage of each placement, & any buff applied to 1 placement applies to all other placements (only works for single targe buffs; ex: Orehimi). Every upgrade on 1 placement reduces the cost of the upgrades of other placements by 3% making him super easy to max out. Having high full aoe dps as well as an ability that identifies enemies makes him an excellent unit to bring along for almost any situation."
+  },
+  SmithJohn: {
+    pros: ["deal dmg in range on swap","2 active nuke abilities","all upgrades have high coverage Aoes","Able to stack damage on bosses during smith John"],
+    cons: ["high placement cost","takes time to build Lord of Shadows nuke"],
+    description: "Smith John is an amazing dps unit with the unknown element making him immune to everything. When unevo, Delusional boy is a support unit which can work as a replacement for limited supports such as Haruka (although weaker). Smith John has high dps, always doing +40% dmg against enemies he cannot 1 shot. His undercover agent passive gives Smith +5% dmg when attacking the same enemy infinitely stacking. Smith John's assassinate ability will nuke the highest hp enemy in range, which works with his passives making it great for bosses. When Smith's meter is full, he will nuke all enemies in range and Swap to Lord of Shadows.<br><br>Lord of Shadows has amazing aoe on all upgrades, having full aoe on max. when swapping back to smith Shadow will also nuke all enemies in range. Shadow's atomic nuke ability has full map range and is infinitely stacking based upon number of swaps (only counts swaps when atomic gets unlocked) making it great ability for longer modes."
+  },
+  Soburo: {
+    pros: ["All around buffer","Fast setup if you have the yen","Refunds most of money spent (after popping ability)"],
+    cons: ["Mediocore buff until you invest","better buff options for the cost"],
+    description: ""
+  },
+  Sokora: {
+    pros: ["Averages out Spa","Able to use ability on placement"],
+    cons: ["Uses lifestocks when corrupting","Corrupting isn't that useful on low spa units"],
+    description: ""
+  },
+  SukonoFamiliar: {
+    pros: ["applies cleave","does attack 2 (full aoe) when applying cleave to an enemy","burns and bleeds","extremely high dps and nuke"],
+    cons: ["no status effect immunity before upg 9","looses followup when there are no new enemies to apply cleave onto"],
+    description: "Sukono with his familiar becomes a new unit entirely, elevating him to be among the best units in the game. On placement he has good range and full aoe through his follow up along with having a super cheap early full aoe (14k) Sukono applies bleed and cleave (enemies take 20%+ dmg from bleed) making him a great pair with other bleed units. Sukono is curse and buffs curse units by 30% making him good for bosses and a great partner for Koguro. At upg 9 Sukono gains the fire element, burn, and status effect immunity while keeping his full aoe followup applying bleed. Sukono has one of the highest raw dps in the entire game while also being affordable and having a full range nuke. Overall this unit hardly has any weaknesses, any weaknesses this unit does have is overshadowed by his utility and can be made up for by pairing him with other units. "
+  },
+  TheFalcon: {
+    pros: ["1k to place & max","repulses enemies & slows","ignores dmg reduction & reduces dmg reduction in range","buffs allies"],
+    cons: ["not always full aoe","requires some setup"],
+    description: "The Falcon is a unit which does it all. While he does require some setup, the payoff is more than worth the effort. Place the Falcon for 1k and use the eclipse. While the eclipse is active you can use units such as Newsman, Sukono, Yehowach, The King, etc. to defend. Using the Eclipse again will give you the Falcon of Light who maxxes himself upon arrival. In this form The Falcon buffs allies, slows and repulses enemies, reduces the dmg reduction of enemies while ignoring it on his own and summons demons which give 100 yen on kill, all while having good dps on his own."
+  },
+  TheKing: {
+    pros: ["turns debuffs into buffs","insane full aoe dps","teleports and cleanses allies","cannot get branded"],
+    cons: ["can tp to allies even when u dont want him to","not immune to status effects","somewhat reliant on debuffs"],
+    description: ""
+  },
+  TheSmith: {
+    pros: ["crafts masterworks and weapons buffing units","can grant units immunity"],
+    cons: ["relies on takedowns for buffs","single unit buffs"],
+    description: "The Smith is an excellent addition to any team providing buffs through the weapons he crafts. Although requiring takedowns, silver weapons are good enough where it is worth using them even if you won't be able to get enough takedowns to afford a masterwork. Only one of each masterwork can be crafted in a single game. The Dragon Slayer buffs units dmg by 40% and DOT by 20% making it a great choice on units like Sukono and The Struggler. If you need support, The Smith is ready to equip your units for battle. "
+  },
+  TheStruggler: {
+    pros: ["insane dps","repulses and bleeds","full immunity in berserker armor"],
+    cons: ["inconsistent aoe and dps","small range and expensive","relatively small range"],
+    description: ""
+  },
+  TheWitch: {
+    pros: ["full aoe nullify","Perf spa on all upgrades","early full aoe","buffs units who are stunned (works with The Struggler)"],
+    cons: ["short range on placement"],
+    description: "The Witch is the best applicator of nullify in the game. With a D SPA stat, she will have perfect nullify on all upgrades (nullify lockout is not a problem with perfect spa). The Witch has an early full aoe and buffs units that are stunned by 50% dmg. This pairs well with units such as The Stuggler."
+  },
+  Todu: {
+    pros: ["Able to swap position with allies in range","Works on placement"],
+    cons: ["Low range on placement","Niche (normally not worth bringing)"],
+    description: ""
+  },
+  Vigil: {
+    pros: ["Good dps with High followup dps","devently high range during DT"],
+    cons: ["weak on placement (until upg 5)","requires cc to followup"],
+    description: "Vigil (Power) is a great dps unit who follows up every time a unit is crowd controlled (attack 1 [small circle]). Having the spark element, Vigil is immune to damage reduction debuffs making him great against energy drain. Vigil has a wide cone aoe at max and becomes full aoe in Devil Trigger, gaining dmg and rang plus doing 2x dmg due to the doppelganger clone.. While Vigil follow-up is only a small circle, the dps potential for the few enemies he hits makes him a meta dps worthy of this position."
+  },
+  Vsjw: {
+    pros: ["multple summons","3 nukes","Arise summons scale with enemy hp","Insane single target utility"],
+    cons: ["nukes are a 1 time use per game","utility comes from summons dps is medicore"],
+    description: "Song Jinwoo and Igros is an amazing all around unit who is immune to everything including weather interactions. On top of having great placement and all around dps, this unit has 4 different elite summons and the arise ability, resurrecting dead enemies which scale off max hp making him amazing for longer modes. Additionally he has 3 different nukes each doing massive dmg. This unit is a must have and fits into any team comp"
+  },
+  Yehowach: {
+    pros: ["cheap to max","great placement","high full aoe dps and insane range","support capability"],
+    cons: ["high spa","needs setup and a team for optimal usage"],
+    description: "Yehowach (Almighty) is an amazing full aoe dps unit. His passive allows him to do 2x dps on top of having crazy range. Additionally he can also be used as a support with a toggle of the ashfallen ability and is immune to status effect while also having a self cleanse. Yhwach and rare units alone is enough to solo most content in the game"
+  },
+  Yomomata: {
+    pros: ["Full AOE burn dps","constant summons","good synergy with other burn units"],
+    cons: ["high spa and single hit","no immunity"],
+    description: "Yomomata (Captain) is an amazing fire DPS unit offering relatively early full AOE as well as full AOE on his final upgrade. Every enemy Killed by Yomomata will turn into a skeleton, increasing his damage based on how many skeletons are on the track; his ability (North) will stop all skeletons, keeping them in place. Enemies entering Yomomata's range will burn, taking increased damage from burn the longer they stay in his AOE, making him a solid choice for your team."
+  },
+  Yuruicha: {
+    pros: ["Cheap","stuns and does more dmg to stunned units"],
+    cons: ["Relatively short range","removes own stun"],
+    description: "Yuruicha is a good dps unit with fast spa and multi hit, making her an excellent shield breaker. She stuns on attack, when attacking a stunned unit she will remove the stun and buff her dmg. Yuruicha is immune to status effects and debuffs, while also being cheap (47k yen) to max. Her main downside is her short range on all upgrades.    \r<br>\r"
+  },
+  Zak: {
+    pros: ["good dps and decent aoe","potential for huge burst dps","pairs with other giant units"],
+    cons: ["expensive","needs monarch and is team reliant"],
+    description: ""
+  },
+};

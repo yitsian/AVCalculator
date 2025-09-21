@@ -21,7 +21,7 @@ function loadTooltips() {
       // Position popup above element
       const rect = element.getBoundingClientRect();
       popup.style.left = rect.left + window.scrollX + rect.width / 2 + "px";
-      popup.style.top = rect.top + window.scrollY - 40 + "px"; // 35px above
+      popup.style.top = rect.top + window.scrollY - popup.clientHeight + "px"; // 35px above
       popup.style.transform = "translateX(-50%)";
 
       popup.classList.add("show");

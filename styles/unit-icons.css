@@ -63,6 +63,8 @@
   z-index: 1;
 
   pointer-events: none;
+
+  animation: spinUnitGradient 8s linear infinite;
 }
 
 .unit-gradient-texture {

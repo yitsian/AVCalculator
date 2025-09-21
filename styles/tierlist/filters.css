@@ -1,0 +1,64 @@
+#tierlist-search {
+  padding: min(6px, calc(8vh/6)) min(12px, calc(12 * 0.1667vh));
+
+  font-size: min(18px, calc(24vh/6)) !important;
+
+  flex: 1;
+  min-width: 10vw;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  border: 1px solid gray;
+  
+  color: white;
+  font-weight: 500;
+}
+
+#tierlist-obtainability-filter,
+#tierlist-aoe-filter,
+#tierlist-element-filter {
+  display: flex;
+
+  flex: 1;
+  
+  gap: 0;
+}
+
+.filter-button {
+  display: flex;
+
+  padding: min(4px, calc(4 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
+
+  font-size: min(18px, calc(24vh/6));
+  flex: 1;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid gray;
+
+  color: white;
+  font-weight: 500;
+
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.filter-button:hover {
+  cursor: pointer;
+
+  background-color: rgba(60, 60, 60, 0.8);
+}
+
+.filter-button.selected-filter {
+  background-color: rgba(80, 80, 80, 0.8);
+}
+
+.filter-button.selected-filter:hover {
+  background-color: rgba(60, 60, 60, 0.8);
+}
+
+.filter-image {
+  height: min(24px, calc(36vh/6));
+  width: min(24px, calc(36vh/6));
+}

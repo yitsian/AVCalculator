@@ -1,52 +1,92 @@
+@property --unit-gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.brolzisuper {
+  background-image: repeating-linear-gradient(150deg, #28ab19 0%, #38eb14 10%, #91ff00 20%, #38eb14 30%, #28ab19 50%);
+  background-size: 200% 200%;
+}
+
 .gujo {
-  background-image: linear-gradient(150deg, #2b0d3a 10%, #20d5ff 25%, #ffffff 50%, #20d5ff 75%, #2b0d3a 90%);
+  background-image: repeating-linear-gradient(150deg, #2b0d3a 0%, #20d5ff 10%, #ffffff 20%, #20d5ff 30%, #2b0d3a 50%);
+  background-size: 200% 200%;
+}
+
+.sukono {
+  background-image: repeating-linear-gradient(150deg, #F44336 0%, #C93572 10%, #721D7F 20%, #C93572 30%, #F44336 50%);
+  background-size: 200% 200%;
 }
 
 .iscanur {
-  background-image: linear-gradient(150deg,#ff2a00 0%,#ffda98 51%,#ff2a00 99%);
+  background-image: repeating-linear-gradient(150deg, #ff2a00 0%, #ffda98 15%, #ff2a00 50%);
+  background-size: 200% 200%;
 }
 
 .koguro {
-  background-image: linear-gradient(150deg, #8369c5 10%, #999999 40%, #ffffff 50%, #999999 60%, #8369c5 90%)
+  background-image: repeating-linear-gradient(150deg, #8369c5 0%, #999999 10%, #ffffff 20%, #999999 30%, #8369c5 50%);
+  background-size: 200% 200%;
 }
 
 .vsjw {
-  background-image: linear-gradient(150deg, #5502ff -15%, #5553ff 13%, #160023 29%, #160023 33%, #5553ff 49%, #5502ff 83%);
+  background-image: repeating-linear-gradient(150deg, #5502ff 0%, #5553ff 10%, #160023 20%, #5553ff 30%, #5502ff 50%);
+  background-size: 200% 200%;
 }
 
 .divalo {
-  background-image: linear-gradient(150deg, #c00060 10%, #700090 40%, #e0a02d 80%)
+  background-image: repeating-linear-gradient(150deg, #c00060 0%, #700090 20%, #e0a02d 30%, #c00060 50%);
+  background-size: 200% 200%;
 }
 
 .rogita {
-  background-image: linear-gradient(150deg, #e54e6a 10%, #ff0d7f 30%, #ff1e52 60%, #ff4d0b 90%)
+  background-image: repeating-linear-gradient(150deg, #e54e6a 0%, #ff0d7f 10%, #ff1e52 25%, #ff4d0b 40%, #e54e6a 50%);
+  background-size: 200% 200%;
 }
 
 .secret {
-  background-image: linear-gradient(150deg, #c60000 10%, #500000 45%, #f40000 80%);
+  background-image: repeating-linear-gradient(150deg, #c60000 0%, #500000 20%, #f40000 30%, #c60000 50%);
+  background-size: 200% 200%;
 }
 
 .exclusive {
-  background-image: linear-gradient(150deg, #ec0004 10%, #e385ef 90%);
+  background-image: repeating-linear-gradient(150deg, #ec0004 0%, #e385ef 25%, #ec0004 50%);
+  background-size: 200% 200%;
 }
 
 .mythic {
-  background-image: linear-gradient(-125deg, #33ffcc 15%, #45ff41, #d6ff33, #fdd233, #ff7c33, #ff3346, #ff33b7 85%);
+  background-image: repeating-linear-gradient(150deg, #33ffcc 0%, #45ff41 5%, #d6ff33 10%, #fdd233 15%, #ff7c33 20%, #ff3346 25%, #ff33b7 30%, #763ce2 40%, #33ffcc 50%);
+  background-size: 200% 200%;
 }
 
 .legendary {
-  background-image: linear-gradient(150deg, #f1ff00 10%, #ff6f00 45%, #ffff00 80%);
+  background-image: repeating-linear-gradient(135deg, #f1ff00 0%, #ff6f00 20%, #ffff00 30%, #f1ff00 50%);
+  background-size: 200% 200%;
 }
 
 .epic {
-  background-image: linear-gradient(150deg, #b20eff 10%, #3e00d4, #ae04ff 80%);
+  background-image: repeating-linear-gradient(150deg, #b20eff 0%, #3e00d4 25%, #b20eff 50%);
+  background-size: 200% 200%;
 }
 
 .rare {
-  background-image: linear-gradient(150deg, #08f3ff 10%, #2747d3, #03c6ff);
+  background-image: repeating-linear-gradient(150deg, #08f3ff 0%, #2747d3 25%, #08f3ff 50%);
+  background-size: 200% 200%;
 }
 
 .text-gradient {
   color: transparent;
   background-clip: text;
+  
+  animation: spinUnitGradient 8s linear infinite;
+}
+
+@keyframes spinUnitGradient {
+  0% {
+    background-position: 100% 100%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
 }
