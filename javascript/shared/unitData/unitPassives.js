@@ -10,7 +10,11 @@ let unitPassives = {
 
         {
           description: "Any Crit over 100% gets converted to CritDmg.", type: "Statement", statement: "Toggle Passive Buff.",
-          multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => [0, 0, 0, 0, Math.max((statAddBuffs.crit + statMultBuffs.crit) - 2, 0) * 100, 0],
+          multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => {
+            // Calculate total crit including base stats (which includes traits)
+            const totalCrit = finalStats.crit;
+            return [0, 0, 0, 0, Math.max(totalCrit - 100, 0), 0];
+          },
         },
       ]
     },
