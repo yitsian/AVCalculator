@@ -4,6 +4,11 @@
   inherits: false;
 }
 
+.tengon {
+  background-image: repeating-linear-gradient(150deg, #b4327b 0%, #2d311c 18%, #d1ab42 25%, #2d311c 32%, #b4327b 50%);
+  background-size: 200% 200%;
+}
+
 .brolzisuper {
   background-image: repeating-linear-gradient(150deg, #28ab19 0%, #38eb14 10%, #91ff00 20%, #38eb14 30%, #28ab19 50%);
   background-size: 200% 200%;

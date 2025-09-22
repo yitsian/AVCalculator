@@ -12,6 +12,7 @@ const optimalRankings = {
       ],
 
       subDamage: [
+        { id: "TengonFamiliar", trait: "Monarch", description: "Blast and Fire Buffer / Scorched" },
         { id: "Koguro", trait: "Monarch", description: "Domains / Nuke / Teleport" },
         { id: "GujoFamiliar", trait: "Monarch", description: "Timestop / Inf Range Attack 3" },
         { id: "TheStruggler", trait: "Monarch", description: "Berserker Armor" },
@@ -29,7 +30,7 @@ const optimalRankings = {
       utility: [
         { id: "Iscanur", trait: "Monarch", description: "Auto-Unit / Nuke / Self-Cleanse" },
         { id: "Vsjw", trait: "Deadeye", description: "Scaling Summons" },
-        { id: "BrolziSuper", trait: "Monarch", description: "Unbound Crit Buffer / Full aoe Rupture" },
+        { id: "BrolziSuper", trait: "Deadeye", description: "Unbound Crit Buffer / Full aoe Rupture" },
         { id: "GoblinKiller", trait: "Deadeye", description: "Rupture / Traps" },
         { id: "TheSmith", trait: "Fortune", description: "Masterworks" },
       ]
@@ -57,6 +58,7 @@ const optimalRankings = {
         { id: "Clatakiri", trait: "Ethereal", description: "Slow / Chase" },
         { id: "Wolf", trait: "Solar", description: "Long Line Slow / Wolves Chase out of Range" },
         { id: "Kazzy", trait: "Solar", description: "Bubbled / Freeze" },
+        { id: "Ken", trait: "Marksman", description: "Bleed / Slow" },
       ],
 
       utility: [
@@ -139,7 +141,6 @@ const optimalRankings = {
       ],
 
       utility: [
-        { id: "Ken", trait: "Marksman", description: "Bleed / Slow" },
         { id: "Sokora", trait: "Blitz", description: "Spa Averaging" },
         { id: "Riner", trait: "Ethereal", description: "Free Placements / Shield Stocks" },
         { id: "Rudie", trait: "Marksman", description: "Buffer" },

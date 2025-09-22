@@ -296,6 +296,56 @@ let unitPassives = {
     }
   ],
 
+  TengonFamiliar: [
+    {
+      name: "God of Flashiness", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 10% Dmg and Rng",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [10, 0, 10, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Rhythm of Battle", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg dealt +10% with each consecutive attack on the same enemy. (Up to 30%)",
+          multiplicative: true, type: "Slider", min: 0, max: 30, step: 10, buffs: [1, 0, 0, 0, 0, 0],
+        },
+
+        {
+          description: "Spa -2% with each attack performed. (Down to -30%)",
+          multiplicative: true, type: "Slider", min: 0, max: 30, step: 2, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Sound Blitz", upgrade: 0,
+      conditions: [
+        {
+          description: "Anytime this unit attacks a debuffed enemy, guarantees Crit and buffs CritDmg by 30% for 40s",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [0, 0, 0, 100, 30, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Fireworks Blast", upgrade: 0,
+      conditions: [
+        {
+          description: "Buffs all Blast and Fire units by 30%. (Use buffs tab)", type: "None"
+        },
+
+        {
+          description: "Applies Scorched to enemies. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
   Iscanur: [
     {
       name: "High Noon", upgrade: 0,
@@ -1244,7 +1294,7 @@ let unitPassives = {
 
             console.log(statAddBuffs.spa, conditionMetaMap["2-0"].value / 100)
 
-            return [additionalDmgIncrease, ((statAddBuffs.spa * 100 + conditionMetaMap["2-0"].value * 5) * (value - 1)) / value, (statAddBuffs.range * 100)  * (value - 1) / value, 0, 0, 0];
+            return [additionalDmgIncrease, ((statAddBuffs.spa * 100 + conditionMetaMap["2-0"].value * 5) * (value - 1)) / value, (statAddBuffs.range * 100) * (value - 1) / value, 0, 0, 0];
           }
         }
       ]

@@ -4,8 +4,12 @@
   inherits: false;
 }
 
+.tl-tengon {
+  background-image: linear-gradient(var(--gradient-angle), #7a1f53 0%, #14160d 50%, #917528 90%);
+}
+
 .tl-brolzisuper {
-  background-image: linear-gradient(var(--gradient-angle), #155c0d 0%, #1f850b 50%, #549400 100%, #1f850b 50%, #155c0d 0%);
+  background-image: linear-gradient(var(--gradient-angle), #155c0d 0%, #1f850b 50%, #549400 100%);
 }
 
 .tl-gujo {

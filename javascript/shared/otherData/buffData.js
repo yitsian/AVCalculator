@@ -437,7 +437,7 @@ const buffData = {
   },
 
   SukonoFamiliar: {
-    name: "Sukono Familiar", description: "Buffs all curse allies in range by 30% Dmg.",
+    name: "Sukono Familiar", description: "Buffs all Curse allies in range by 30% Dmg.",
     background: "sukono", image: "Images/Units/Sukono.webp", multiplicative: false,
     conditions: [
       {
@@ -447,7 +447,7 @@ const buffData = {
   },
 
   BrolziSuper: {
-    name: "Brolzi Super", description: "Buffs all unbound allies by 20% Crit per wave up to 100% and CritDmg by 10% after 7 waves up to 80%.",
+    name: "Brolzi Super", description: "Buffs all Unbound allies by 20% Crit per wave up to 100% and CritDmg by 10% after 7 waves up to 80%.",
     background: "brolzisuper", image: "Images/Units/BrolziSuper.webp", multiplicative: false,
     conditions: [
       {
@@ -468,5 +468,19 @@ const buffData = {
         multiplicative: false, type: "Static", statement: "Fused Allies", buffs: [0, 0, 0, 50, 0, 0]
       },
     ]
-  }
+  },
+
+  TengonFamiliar: {
+    name: "Tengon Familiar", description: "Buffs all Blast and Fire allies in range by 30% Dmg. Attacks also apply Scorched.",
+    background: "tengon", image: "Images/Units/Tengon.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Blast and Fire Allies", buffs: [30, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: true, type: "Static", statement: "Scorched Fire Buff", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
 }
