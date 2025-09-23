@@ -11,6 +11,12 @@ const FamiliarDescriptions = {
     image: "Images/Units/SukonoFamiliar.webp"
   },
 
+  "TengonFamiliar": {
+    rarity: "tengon",
+    description: "Starting Now, Things Are Gonna Get Real Flashy!",
+    image: "Images/Units/TengonFamiliar.webp"
+  },
+
   "ChasoFamiliar": {
 
   },
@@ -89,5 +95,11 @@ const FamiliarDescriptions = {
     rarity: "exclusive",
     description: "Filler familiar if you want some extra money or cost reduction or are missing a good silly fairy.",
     image: "Images/Familiars/Padoru.webp"
+  },
+
+  "Chili": {
+    rarity: "mythic",
+    description: "Good for units that have high base crit chances or on deadeye units.",
+    image: "Images/Familiars/Chili.webp"
   }
 }

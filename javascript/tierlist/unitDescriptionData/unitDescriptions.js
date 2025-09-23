@@ -7,7 +7,7 @@ const unitDescriptions = {
   Ali: {
     pros: ["good burn dps","decent aoe","detonates burn early"],
     cons: ["removes burn","better dps options","not great at anything"],
-    description: ""
+    description: "<br>Ali is a dps unit which has decent damage and aoe. When he attacks a burning enemy, he removes the burn and increases his damage and range. Ali is a simple and good starting unit for those who are new to the game and need a fire unit that's easy to obtain"
   },
   Alocard: {
     pros: ["bleed (8s)","applies wounded","early full aoe"],
@@ -22,7 +22,7 @@ const unitDescriptions = {
   Arin: {
     pros: ["max 3 placements for the cost of 1","decent full aoe dps","rumbling"],
     cons: ["expensive","giant team reliant","rumbling can only be used in longer content"],
-    description: ""
+    description: "Arin is a dps unit of the Giant category. He ends on a full aoe at max upg with good dps and range. Arin cannot be sold and buffs allies for 120s on placement; he will also nuke enemies in range after a short delay after placing. 120s after being placed, Arin will instead buff himself and remove his support buffs. Every placement will copy the upgrades of the highest upgraded placement, this means you can max all 3 placements for the cost of 1. The rumbling ability needs a maxxed out Zak, Arin, and Giant Queen. It will sell and remove a placement from all three of them activating the Rumbling dealing 20m damage + 35% max hp (this damage can crit). Although this ability is far too expensive for shorter modes, it is useful for longer content and tournaments. "
   },
   Astolfo: {
     pros: ["full aoe repulse","spears enemies increasing the dmg they take","buffs allies","teleports"],
@@ -121,7 +121,7 @@ const unitDescriptions = {
   },
   GujoFamiliar: {
     pros: ["does attack 3 and freezes when enemies leave range","immune to status effects","high dmg","time stop"],
-    cons: ["high spa and single hit","small range","better dps options"],
+    cons: ["Range is relatively low with the vanguard familiar","need enemies to leave range to be activate stun"],
     description: "With his familiar Gujo becomes a hard hitting dps with support capability. When an enemy leaves his range, Gujo will stun all enemies in range and will fire attack 3 at that enemy (20s) who escaped (this has infinite range). Along with having one of the best time stops in the game, Gujo is immune to status effects and gains 0.1% damage per wave. This seems like a small amount but it becomes a significant buff with the familiar equipped. Overall Gujo is a solid unit who is great even without monarch, his only real downside is his short range.    "
   },
   HarukaRin: {
@@ -212,7 +212,7 @@ const unitDescriptions = {
   Quetzalcoatl: {
     pros: ["Buffs fire allies by 20%","good dps","Medium investment until full aoe"],
     cons: ["Circle aoe on placement","Not all attacks are full aoe","Fairly expensive to max"],
-    description: ""
+    description: "Quetzalcoatl is a dps unit of the fire element. She buffs all fire allies in range by 20% making her a decent buffer. Quetz will swap her attack pattern/aoe, each time she swaps she buffs her damage. At max upg she will swap between circle and full aoes making her somewhat inconsistent. Overall there are better fire dps units to use such as Leo and Iscanur.  "
   },
   Reimu: {
     pros: ["good dps","dodges enemy attacks","gives luck boost in odessey"],
@@ -262,12 +262,12 @@ const unitDescriptions = {
   Soburo: {
     pros: ["All around buffer","Fast setup if you have the yen","Refunds most of money spent (after popping ability)"],
     cons: ["Mediocore buff until you invest","better buff options for the cost"],
-    description: ""
+    description: "Soburo is a support unit that buffs allies’ damage and range on placement. He will also buff allies' damage every time they use an ability. Soburo has good range and does low dps. His ability will refund most of his cost and increase the damage buff he gives by 2x. Overall Soburo is dated and there are better support options such as The Smith. <br>"
   },
   Sokora: {
     pros: ["Averages out Spa","Able to use ability on placement"],
     cons: ["Uses lifestocks when corrupting","Corrupting isn't that useful on low spa units"],
-    description: ""
+    description: "Sokora is a support unit that pairs well with Saber (Black Tyrant) allowing Salter to have an extra attack building her dark excalibur faster. Sokora’s main gimmick is her ability to average out units SPA. Sokora does this by corrupting units with her ability, consuming lifestocks in the process. Any unit she corrupts, she will take their SPA and average it with her own; corrupted units attack on her SPA instead. This means if you take a high SPA unit and a low SPA unit and corrupt them both, the overall SPA will be lower for the high SPA unit. An example is to corrupt a low SPA unit such as Reimu and a high SPA unit such as Gujo, this process will give Gujo a lower SPA making him attack quicker increasing his dps. <br>"
   },
   SukonoFamiliar: {
     pros: ["applies cleave","does attack 2 (full aoe) when applying cleave to an enemy","burns and bleeds","extremely high dps and nuke"],
@@ -277,7 +277,7 @@ const unitDescriptions = {
   TheFalcon: {
     pros: ["1k to place & max","repulses enemies & slows","ignores dmg reduction & reduces dmg reduction in range","buffs allies"],
     cons: ["not always full aoe","requires some setup"],
-    description: "The Falcon is a unit which does it all. While he does require some setup, the payoff is more than worth the effort. Place the Falcon for 1k and use the eclipse. While the eclipse is active you can use units such as Newsman, Sukono, Yehowach, The King, etc. to defend. Using the Eclipse again will give you the Falcon of Light who maxxes himself upon arrival. In this form The Falcon buffs allies, slows and repulses enemies, reduces the dmg reduction of enemies while ignoring it on his own and summons demons which give 100 yen on kill, all while having good dps on his own."
+    description: "The Falcon is a unit which does it all. While he does require some setup, the payoff is more than worth the effort. Place the Falcon for 1k and use the eclipse. While the eclipse is active you can use units such as Newsman, Sukono, Yehowach, The King, etc. to defend. Using the Eclipse again will give you the Falcon of Light who maxxes himself upon arrival. In this form The Falcon buffs allies, slows and repulses enemies, reduces the dmg reduction of enemies while ignoring it on his own and summons demons which give 100 yen on kill, all while having good dps on his own. <br>"
   },
   TheKing: {
     pros: ["turns debuffs into buffs","insane full aoe dps","teleports and cleanses allies","cannot get branded"],
@@ -302,7 +302,7 @@ const unitDescriptions = {
   Todu: {
     pros: ["Able to swap position with allies in range","Works on placement"],
     cons: ["Low range on placement","Niche (normally not worth bringing)"],
-    description: ""
+    description: "Todu is a support unit able to swap places with other units with his boogie ability. This can be useful if you need to catch leaks or move units to certain places such as the outer statues in the double dungeon stage. Besides his boogie ability, Todu has no use besides his boogie ability making him a niche support used only in specific situations. "
   },
   Vigil: {
     pros: ["Good dps with High followup dps","devently high range during DT"],
@@ -333,5 +333,30 @@ const unitDescriptions = {
     pros: ["good dps and decent aoe","potential for huge burst dps","pairs with other giant units"],
     cons: ["expensive","needs monarch and is team reliant"],
     description: ""
+  },
+  Wolf: {
+    pros: ["50% slow","wolves chase out of range","guaranteed crit"],
+    cons: ["slow is line aoe"],
+    description: "Wolf is a four placement dps unit with a 50% slow. This makes him a good support hybrid able to dish out damage. He is guaranteed to crit against units that are marked, so crit rate does not matter when building him. This means you can have a negative crit rate birb with only crit damage giving you more flexible options. Wolf will also spawn coyotes that hunt down marked enemies, even when the enemy leaves his range. Overall Wolf is a good damage dealer capable of support. "
+  },
+  BrolziSuper: {
+    pros: ["full aoe rupture on placement","heavy crit scaling","cleanses self of debuffs","buffs unbound"],
+    cons: ["cannot use other domains","loses buffs when domain expires","expensive overall"],
+    description: "Brolzi is a high dps unit that scales massively with crit. Any crit rate over 100% is turned into crit damage. This makes birb the ideal familiar for him as Brolzi gains crit rate from his passive and from domain. Brolzi will followup buffing his own damage. If he crits, followup with attack 3 (full aoe) and apply rupture. This makes him the best rupture unit, as it is consistent and on placement. Brolzi buffs the crit rate and crit damage of unbound units when the domain is active (this includes himself). You want to use the domain as soon as possible to stack the buffs. The downside to Brolzi domain is that you cannot use other domains while it's active, making him a bad pair with The Falcon and Koguro. Overall Brolzi has among the highest dps of any unit in the game, scaling massively with crit while having support capability, making him a top tier carry.    "
+  },
+  RogitaSuper: {
+    pros: ["reduces cost and swaps needed for fusion units and buffs their crit","scales with crit","dodges attacks"],
+    cons: ["short range on placement","requires heavy investment for max potential"],
+    description: ""
+  },
+  LordFriezo: {
+    pros: ["12 placements will all minions","minions are free to place","minions give different buffs depending on type"],
+    cons: ["expensive to max including minions","mediocre dps"],
+    description: ""
+  },
+  TengonFamiliar: {
+    pros: ["buffs fire and blast units","very high full aoe dps", "Applies debuffs for self", "Guaranteed Crit"],
+    cons: ["mediocre range", "Not great early defend"],
+    description: "Tengon with his familiar becomes a dps machine with support capability buffing fire and blast allies by 30%. He will also apply scorched to enemies buffing fire damage by an additional 20%. Tengon has a 60% chance to dodge attacks at max stacks and is guaranteed to crit on enemies that have been debuffed. Since he applies scorched he will always get this buff. His final upg gives him full aoe with a decent SPA and multi-hit. His only real downside is his mediocre range which can be supplemented by units such as The Smith. Overall Tengon is a great unit with high dps and great support.   \r"
   },
 };

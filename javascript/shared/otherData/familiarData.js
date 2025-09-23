@@ -17,7 +17,7 @@ const familiarsData = {
     passiveDescription: "Changes Dmg by -/+20.0%, Changes CritDmg by -/+30.0%, Changes Rng by -/+20.0%, Changes Changes Crit by -/+20.0%.",
     minRanges: { damage: -20, critDmg: -30, range: -20, crit: -20 },
     maxRanges: { damage: 20, critDmg: 30, range: 20, crit: 20 },
-    step: 0.1,
+    step: 0.5,
     buffs: [1, 0, 1, 1, 1, 0],
     multiplicative: true
   },

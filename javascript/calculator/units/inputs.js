@@ -30,6 +30,7 @@ function updateTrait(change) {
     traitText.classList.add("koguro")
   }
 
+  updateAllMultipliers();
   updateBaseStats()
 }
 

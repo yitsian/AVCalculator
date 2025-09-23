@@ -461,7 +461,7 @@ const buffData = {
   },
 
   RogitaSuper: {
-    name: "Fused Reborn", description: "Anytime Rogita crits, buffs all Fused units' Crit by 50%",
+    name: "Rogita Super", description: "Anytime Rogita crits, buffs all Fused units' Crit by 50%",
     background: "secret", image: "Images/Units/RogitaSuper.webp", multiplicative: false,
     conditions: [
       {

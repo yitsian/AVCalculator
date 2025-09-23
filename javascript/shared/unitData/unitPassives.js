@@ -172,7 +172,7 @@ let unitPassives = {
       name: "Despicable Evil", upgrade: 0,
       conditions: [
         {
-          description: "For every ally tower Branded and survives I, Sacrifice, increases Dmg by 5% and Rng by 1%", type: "Slider", min: 0, max: 30, step: 1,
+          description: "For every ally tower Branded and survives I, Sacrifice, increases Dmg by 5% and Rng by 1%", type: "Slider", min: 0, max: 39, step: 1,
           multiplicative: false, buffs: [5, 0, 1, 0, 0, 0], suffix: " Units Branded"
         },
       ]
@@ -1056,7 +1056,7 @@ let unitPassives = {
 
         {
           description: "Debuffs all allied units in range by 20% Dmg and 10% Rng and gain 10% Dmg and 6% Rng per allied unit debuffed by this ability.",
-          multiplicative: false, type: "Slider", min: 0, max: 33, step: 1, buffs: [10, 0, 6, 0, 0, 0], suffix: " Units",
+          multiplicative: false, type: "Slider", min: 0, max: 39, step: 1, buffs: [10, 0, 6, 0, 0, 0], suffix: " Units",
         },
       ]
     },

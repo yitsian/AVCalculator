@@ -49,14 +49,15 @@ const optimalRankings = {
 
       subDamage: [
         { id: "GG", trait: "Monarch", description: "High Burst / Cleanser" },
+        { id: "Wolf", trait: "Monarch", description: "Slow / Chases Leaks / Guaranteed Crit" },
         { id: "Conqueror", trait: "Monarch", description: "High Range / Multi Attack" },
         { id: "LordFriezo", trait: "Monarch", description: "Placeable Minions" },
         { id: "Leo", trait: "Monarch", description: "Scaling Burn / Hellfire Incarnate" },
       ],
 
       support: [
+        { id: "Wolf", trait: "Solar", description: "Long Slow / Chases Leaks" },
         { id: "Clatakiri", trait: "Ethereal", description: "Slow / Chase" },
-        { id: "Wolf", trait: "Solar", description: "Long Line Slow / Wolves Chase out of Range" },
         { id: "Kazzy", trait: "Solar", description: "Bubbled / Freeze" },
         { id: "Ken", trait: "Marksman", description: "Bleed / Slow" },
       ],
