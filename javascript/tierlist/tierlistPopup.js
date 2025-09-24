@@ -2,6 +2,8 @@ const popupElm = document.getElementById("tl-popup")
 
 const popupContentElm = document.getElementById("tl-popup-content")
 
+const popupUnitButtonElm = document.getElementById("tl-popup-image")
+
 /* Unit Image */
 const popupUnitImageElm = document.getElementById("tl-unit-image")
 const popupUnitGradientElm = document.getElementById("tl-unit-gradient")
@@ -33,6 +35,8 @@ const popupFamiliarsListElm = document.getElementById("tl-popup-familiars-contai
 const popupSynergiesListElm = document.getElementById("tl-popup-teams-container")
 
 function loadUnitInfo(unitID) {
+  popupUnitButtonElm.onclick = () => {selectUnit(unitID);};
+
   const unitRarity = unitTagData[unitID].rarities[unitTagData[unitID].rarities.length - 1].toLowerCase()
   const unitElement = unitTagData[unitID].elements[0]
 
@@ -43,6 +47,7 @@ function loadUnitInfo(unitID) {
   popupUnitGradientElm.classList.add(unitRarity)
 
   popupUnitImageElm.src = "Images/Units/" + unitID + ".webp"
+
   popupUnitElementElm.src = "Images/Elements/" + unitElement + ".webp"
 
   /* Unit Stats */
@@ -188,7 +193,6 @@ function loadUnitInfo(unitID) {
   if (unitSynergyList && unitSynergyList.length > 0) {
     for (const synergy of unitSynergyList) {
       if (Object.keys(synergy).length != 0) {
-        console.log(Object.keys(synergy).length)
         loadSynergy(synergy)
       }
     }
