@@ -344,4 +344,6 @@ const unitFamiliars = {
   },
   TengonFamiliar: {    
  fam1: "TengonFamiliar",          },
+  GilgameshFamiliar: {    
+ fam1: "GilgameshFamiliar",          },
 };

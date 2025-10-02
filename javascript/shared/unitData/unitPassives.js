@@ -275,7 +275,8 @@ let unitPassives = {
       conditions: [
         {
           description: "This unit gains +300% Dmg for the duration of the ability.",
-          multiplicative: false, type: 'Statement', statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0]
+          multiplicative: false, type: 'Statement', statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0],
+          default: false
         },
 
         {
@@ -341,6 +342,44 @@ let unitPassives = {
 
         {
           description: "Applies Scorched to enemies. (Use buffs tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  GilgameshFamiliar: [
+    {
+      name: "King of the World", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains Dmg +30% & Spa -10%",
+          multiplicative: false, type: "Statement", statement: "Toggle Passive Buff", buffs: [30, 10, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Dmg -6% for each unit within range (down to -30%).",
+          multiplicative: false, type: "Slider", min: 0, max: 30, step: 6, buffs: [-1, 0, 0, 0, 0, 0],
+        }
+      ]
+    },
+
+    {
+      name: "Myriad Treasures", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg and Rng +1% per attack. (Up to +35%).",
+          multiplicative: false, type: "Slider", min: 0, max: 35, step: 1, buffs: [1, 0, 1, 0, 0, 0],
+        }
+      ]
+    },
+
+    {
+      name: "Enuma Elish", upgrade: 10,
+      conditions: [
+        {
+          description: "Gains 350% Dmg and 10% Rng for the ability Enuma Elish which hits all enemies in range",
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [350, 0, 10, 0, 0, 0],
+          default: false
         },
       ]
     },
@@ -1109,7 +1148,8 @@ let unitPassives = {
       conditions: [
         {
           description: "This unit gains +300% Dmg for the duration of the ability.",
-          multiplicative: false, type: 'Statement', statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0]
+          multiplicative: false, type: 'Statement', statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0],
+          default: false
         },
 
         {
@@ -1904,7 +1944,8 @@ let unitPassives = {
       conditions: [
         {
           description: "Gains 350% Dmg and 10% Rng for the ability Enuma Elish which hits all enemies in range",
-          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [350, 0, 10, 0, 0, 0]
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [350, 0, 10, 0, 0, 0],
+          default: false
         },
       ]
     },
@@ -2359,7 +2400,8 @@ let unitPassives = {
 
         {
           description: "This unit gains +200% Dmg for the attack Angalta Kigalshe.",
-          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [200, 0, 0, 0, 0, 0]
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [200, 0, 0, 0, 0, 0],
+          default: false
         },
       ]
     },
@@ -2449,7 +2491,8 @@ let unitPassives = {
 
         {
           description: "This unit gains +300% Dmg for 3 attacks when activating Excalibur",
-          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0]
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [300, 0, 0, 0, 0, 0],
+          default: false
         },
       ]
     },

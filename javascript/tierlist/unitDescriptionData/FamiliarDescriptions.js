@@ -4,7 +4,7 @@ const FamiliarDescriptions = {
     description: "Throughout Heaven and Earth, I alone, am the Honored One.",
     image: "Images/Units/GujoFamiliar.webp"
   },
-  
+
   "SukonoFamiliar": {
     rarity: "sukono",
     description: "Stand Proud, You are Strong.",
@@ -15,6 +15,12 @@ const FamiliarDescriptions = {
     rarity: "tengon",
     description: "Starting Now, Things Are Gonna Get Real Flashy!",
     image: "Images/Units/TengonFamiliar.webp"
+  },
+
+  "GilgameshFamiliar": {
+    rarity: "gilgamesh",
+    description: "The path of devotion is a great labor. Do not ever mar it.",
+    image: "Images/Units/GilgameshFamiliar.webp"
   },
 
   "ChasoFamiliar": {

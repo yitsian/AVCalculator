@@ -1,7 +1,7 @@
 let selectedUnit = JSON.parse(localStorage.getItem("selectedUnit")) || "Vsjw";
 
 let trait = "Monarch"
-let ascensions = 0
+let ascensions = 3
 
 const picture = document.getElementById("unit-picture");
 const pictureGradient = document.getElementById("unit-picture-gradient");

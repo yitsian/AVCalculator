@@ -29,6 +29,7 @@ const optimalRankings = {
 
       utility: [
         { id: "Iscanur", trait: "Monarch", description: "Auto-Unit / Nuke / Self-Cleanse" },
+        { id: "GilgameshFamiliar", trait: "Monarch", description: "Execute / Nuke / CC" },
         { id: "Vsjw", trait: "Deadeye", description: "Scaling Summons" },
         { id: "BrolziSuper", trait: "Deadeye", description: "Unbound Crit Buffer / Full aoe Rupture" },
         { id: "GoblinKiller", trait: "Deadeye", description: "Rupture / Traps" },
@@ -44,6 +45,7 @@ const optimalRankings = {
       carry: [
         { id: "TheKing", trait: "Monarch", description: "Teleport / Flip Debuff " },
         { id: "SmithJohn", trait: "Monarch", description: "Nuke / Great Aoes" },
+        { id: "Dawntay", trait: "Monarch", description: "Devil Trigger / Crit" },
         { id: "Byeken", trait: "Monarch", description: "On-Kill Followup / CC" },
       ],
 
@@ -51,6 +53,7 @@ const optimalRankings = {
         { id: "GG", trait: "Monarch", description: "High Burst / Cleanser" },
         { id: "Wolf", trait: "Monarch", description: "Slow / Chases Leaks / Guaranteed Crit" },
         { id: "Conqueror", trait: "Monarch", description: "High Range / Multi Attack" },
+        { id: "Lfelt", trait: "Monarch", description: "Burst Dps / Love Shot" },
         { id: "LordFriezo", trait: "Monarch", description: "Placeable Minions" },
         { id: "Leo", trait: "Monarch", description: "Scaling Burn / Hellfire Incarnate" },
       ],
@@ -77,8 +80,8 @@ const optimalRankings = {
 
     categories: {
       carry: [
-        { id: "Dawntay", trait: "Monarch", description: "Devil Trigger / Crit" },
         { id: "Eizan", trait: "Monarch", description: "Aura / Wall" },
+        { id: "Yomomata", trait: "Monarch", description: "Insane Summoner / Early Full Aoe" },
         { id: "Rogita", trait: "Monarch", description: "Teleport" },
         { id: "DarkMage", trait: "Monarch", description: "High DoT Damage" },
         { id: "Reimu", trait: "Monarch", description: "Cheap / Luck Boost" },
@@ -87,12 +90,10 @@ const optimalRankings = {
 
       subDamage: [
         { id: "Quetzalcoatl", trait: "Monarch", description: "Buffer / Cycles Attacks" },
-        { id: "Lfelt", trait: "Monarch", description: "Burst Dps / Love Shot" },
         { id: "Hei", trait: "Monarch", description: "Black Flames" },
         { id: "Zak", trait: "Monarch", description: "Burst Damage / Rumbling" },
         { id: "Vigil", trait: "Monarch", description: "Devil Trigger / Follow-ups" },
         { id: "Ali", trait: "Monarch", description: "Burn Detonate" },
-        { id: "Yomomata", trait: "Monarch", description: "Insane Summoner / Early Full Aoe" },
         { id: "Arin", trait: "Monarch", description: "Rumbling / Buy 1 Get 2 Free" },
       ],
 

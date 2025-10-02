@@ -30,11 +30,7 @@ Byeken: [
  {}, 
 ],
 ChoyJongEn: [
- {
- name: "Build the Nuke ",
- desc: "Byeken and karem can stall enemies in Choy range allowing for a bigger nuke to build up ",
- units: ["Byeken","Karem"]
-}, 
+ {}, 
 ],
 Clatakiri: [
  {}, 
@@ -63,9 +59,9 @@ Divalo: [
 ],
 Eizan: [
  {
- name: "Death Zone ",
- desc: "Byeken will slow enemies and cause them to share dmg taken. Wounded from Alocard will additionally increase Eizans dmg output making for a solid team",
- units: ["Byeken","Alocard"]
+ name: "Wl Lb Stink Aura",
+ desc: "Using Byeken to pull enemies all into 1 spot for Dabo 81, and using Todu to make full use of Aura combine into an extremely deadly combo.",
+ units: ["Byeken","Todu"]
 }, 
 ],
 Emmie: [
@@ -78,13 +74,18 @@ GearBoy: [
  {}, 
 ],
 GG: [
- {}, 
+ {
+ name: "Potential Man Complete",
+ units: ["Byeken","Eizan"]
+}, 
 ],
 GiantQueen: [
  {}, 
 ],
 GoblinKiller: [
- {}, 
+ {
+ units: ["BrolziSuper"]
+}, 
 ],
 GujoFamiliar: [
  {}, 
@@ -104,7 +105,13 @@ Ichiga: [
 Iscanur: [
  {
  name: "The One ",
- desc: "place Iscanur and win ",}, 
+ desc: "Burn all slots, place Iscanur and win ",}, 
+
+ {
+ name: "Prideful Conflageration",
+ desc: "Due to Iscanur having the best burn damage in the game, it only makes sense to buff it and reapply it to a point where it does more than even his actual attacks",
+ units: ["Hebano"]
+}, 
 ],
 Isdead: [
  {}, 
@@ -138,7 +145,9 @@ Luce: [
  {}, 
 ],
 MonkeyKing: [
- {}, 
+ {
+ units: ["TheSmith","GiantQueen"]
+}, 
 ],
 Newsman: [
  {}, 
@@ -159,15 +168,21 @@ Riner: [
  {}, 
 ],
 Rogita: [
- {}, 
+ {
+ units: ["Boohon","RogitaSuper"]
+}, 
 ],
 RogitaSuper: [
- {}, 
+ {
+ name: "Crit Fusion",
+ desc: "When pairing Rogita with these 2 units, if built properly it easily gets his crit damage multiplier to at least 5x skyrocketing his dps to the highest in the game",
+ units: ["Roku","Ichiga"]
+}, 
 ],
 Rohan: [
  {
  name: "Budget Clears",
- desc: "Newsman is a super cheap unit easily enabling an early placement for Rohan and Riner ",
+ desc: "Newsman or any other cheap unit easily enables these 2 units to get their free placements allowing for easy early wave skips",
  units: ["Newsman","Riner"]
 }, 
 ],
@@ -185,10 +200,16 @@ Salter: [
 }, 
 ],
 Slime: [
- {}, 
+ {
+ units: ["TheSmith","Aurin"]
+}, 
 ],
 SmithJohn: [
- {}, 
+ {
+ name: "All Dimension Atomic",
+ desc: "Lining up Sand, Ice, Sand Domain with Koguro allows you to increase the damage deal by Lord of Shadow's nuke by an insane amount.",
+ units: ["Koguro"]
+}, 
 ],
 Soburo: [
  {}, 
@@ -204,13 +225,15 @@ SukonoFamiliar: [
 }, 
 ],
 TengonFamiliar: [
- {}, 
+ {
+ units: ["Koguro"]
+}, 
 ],
 TheFalcon: [
  {
  name: "Sacrificial Lambs",
- desc: "Both units benefit from multiple units and taking both makes the most out of mutliple placements while Yehowach defends form demons",
- units: ["Yehowach"]
+ desc: "Both units benefit from multiple units and taking both makes the most out of mutliple placements while Yehowach defends from demons",
+ units: ["Yehowach","LordFriezo"]
 }, 
 
  {
@@ -220,19 +243,34 @@ TheFalcon: [
 }, 
 ],
 TheKing: [
- {}, 
+ {
+ name: "Knight and Steed",
+ units: ["Clatakiri","Koguro"]
+}, 
+
+ {
+ units: ["Yehowach","Salter"]
+}, 
 ],
 TheSmith: [
- {}, 
+ {
+ name: "Absolute Protection",
+ units: ["Astolfo"]
+}, 
 ],
 TheStruggler: [
- {}, 
+ {
+ units: ["BrolziSuper"]
+}, 
 ],
 TheWitch: [
  {}, 
 ],
 Todu: [
- {}, 
+ {
+ name: "Taxi Service",
+ units: ["Rogita"]
+}, 
 ],
 Vigil: [
  {
@@ -242,7 +280,9 @@ Vigil: [
 }, 
 ],
 Vsjw: [
- {}, 
+ {
+ units: ["Gazelle"]
+}, 
 ],
 Wolf: [
  {}, 
@@ -265,6 +305,12 @@ Yuruicha: [
  {}, 
 ],
 Zak: [
+ {
+ name: "Rumbling",
+ desc: "Pretty self explanatory as its specifically made for them, but with cost reduction from Silly Fairy or Aurin, and whatever future cost reduction, will make this synergy a lot more viable",
+ units: ["Aurin","GiantQueen"]
+}, 
+
  {}, 
 ],
 };

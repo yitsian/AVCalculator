@@ -4,6 +4,10 @@
   inherits: false;
 }
 
+.tl-gilgamesh {
+  background-image: linear-gradient(var(--gradient-angle), #837c00 0%, #7c0200 50%, #300000 100%);
+}
+
 .tl-tengon {
   background-image: linear-gradient(var(--gradient-angle), #7a1f53 0%, #14160d 50%, #917528 90%);
 }

@@ -77,6 +77,11 @@ const unitAttacks = {
     multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
   ],
 
+  GilgameshFamiliar: [
+    {name: "Gates of Babylon", aoe: "Single", hits: 3, type: "Condition-Followup", description: "After this unit uses Enuma Elish, stops attacking and consumes up to 30 NP to do a followup for 100% Dmg every second until out of NP.", 
+    multiplier: 1, image: "Images/Units/GilgameshFamiliar.webp", gradient: "gilgamesh"},
+  ],
+
   Iscanur: [
     {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},

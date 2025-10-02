@@ -43,7 +43,7 @@ function loadPassive(passive, pIndex, enabled) {
           [checkbox, statement] = createPassiveBottom(passiveLayout, condition.type, condition.statement)
         }
 
-        checkbox.checked = enabled
+        checkbox.checked = condition.default !== undefined ? condition.default : enabled
 
         conditionMetaMap[conditionId] = condition;
 

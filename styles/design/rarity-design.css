@@ -4,6 +4,11 @@
   inherits: false;
 }
 
+.gilgamesh {
+  background-image: repeating-linear-gradient(150deg, #fef000 0%, #ff0300 12%, #5c0000 25%, #ff0300 38%, #fef000 50%);
+  background-size: 200% 200%;
+}
+
 .tengon {
   background-image: repeating-linear-gradient(150deg, #b4327b 0%, #2d311c 18%, #d1ab42 25%, #2d311c 32%, #b4327b 50%);
   background-size: 200% 200%;

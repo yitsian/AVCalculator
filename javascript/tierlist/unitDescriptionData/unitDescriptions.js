@@ -7,7 +7,7 @@ const unitDescriptions = {
   Ali: {
     pros: ["good burn dps","decent aoe","detonates burn early"],
     cons: ["removes burn","better dps options","not great at anything"],
-    description: "<br>Ali is a dps unit which has decent damage and aoe. When he attacks a burning enemy, he removes the burn and increases his damage and range. Ali is a simple and good starting unit for those who are new to the game and need a fire unit that's easy to obtain"
+    description: "Ali is a dps unit which has decent damage and aoe. When he attacks a burning enemy, he removes the burn and increases his damage and range. Ali is a simple and good starting unit for those who are new to the game and need a fire unit that's easy to obtain"
   },
   Alocard: {
     pros: ["bleed (8s)","applies wounded","early full aoe"],
@@ -39,6 +39,11 @@ const unitDescriptions = {
     cons: ["requires kills for candy","requires upg 7 to transform","long time to setup without bodibi"],
     description: "Boo (Evil) is a unit with 6 different transformations having the cosmic element (self-cleanse). In base form, Boo will stun enemies. Killing enemies gives candy needed for transformation (Alternatively, you can reduce the max summons cap for transformation). Every transformation of Boo makes the next form stronger (stacking) until you reach the final transformation; Boohan (Evil). Boohan will buff dragon sphere units in range (self-included) as well as spawn summons every 10 kills. Kills on enemies turn them into candy causing them to explode dealing aoe dmg. Selling any form of Boo will turn them into Kid Boo (Evil) who gains damage based on the number of transformations before getting sold. Kid Boo is an amazing boss killer doing increased dmg to the highest hp enemy (targeting is locked to the highest hp enemy). In addition to being immune to status effects, Kid Boo will follow-up whenever he kills an enemy (5s local cd). Overall Boo is a great unit that can provide utility and dps when needed."
   },
+  BrolziSuper: {
+    pros: ["full aoe rupture on placement","heavy crit scaling","cleanses self of debuffs","buffs unbound"],
+    cons: ["cannot use other domains","loses buffs when domain expires","expensive overall"],
+    description: "Brolzi is a high dps unit that scales massively with crit. Any crit rate over 100% is turned into crit damage. This makes birb the ideal familiar for him as Brolzi gains crit rate from his passive and from domain. Brolzi will followup buffing his own damage. If he crits, followup with attack 3 (full aoe) and apply rupture. This makes him the best rupture unit, as it is consistent and on placement. Brolzi buffs the crit rate and crit damage of unbound units when the domain is active (this includes himself). You want to use the domain as soon as possible to stack the buffs. The downside to Brolzi domain is that you cannot use other domains while it's active, making him a bad pair with The Falcon and Koguro. Overall Brolzi has among the highest dps of any unit in the game, scaling massively with crit while having support capability, making him a top tier carry.    "
+  },
   Byeken: {
     pros: ["pulls enemies","repulses","applies tether which slows enemies and causes them to share dmg"],
     cons: ["takes a while to build bar","pull is limited to 3 times per game and cannot pull the same enemy twice"],
@@ -52,17 +57,17 @@ const unitDescriptions = {
   Clatakiri: {
     pros: ["slows on hit","follows enemies","has stun"],
     cons: ["stun is inconsistent","forcefully moves making him hard to manage"],
-    description: ""
+    description: "Clatakiri (Mochi) is a very unique support in terms of his crowd-control capabilities. This is due to his ability to chase enemies along the track allowing him to excell in stalling leaks, but also very annoying to use for stalling larger groups. You'll mainly be using him for early defend while you farm and setup your units, then getting him to full aoe and set to closest for defending later on."
   },
   Conqueror: {
-    pros: ["high constant dps","high range and wide cone aoe","full AOE when attacking bosses"],
-    cons: ["relies on life stock","no immunity"],
+    pros: ["Mediocore dps","high range and wide cone aoe","full AOE when attacking bosses"],
+    cons: ["relies on life stock","no immunity","Needs bosses to be alive for full potential"],
     description: "Conqueror vs Invulnerable is a high dps unit attacking constantly even when no enemies are in range. This unit scales with lifestocks with each lost lifestock giving 20% range & reducing the number of attacks between enhanced attacks. With 2 lifestocks lost this unit will always deal 120% more damage! This damage buff scales with their other passive which deal 50% more damage when attacking a non-boss enemy. When attacking a boss this unit will lose the 50% damage buff however, their attacks will convert into full aoe. If you're in need of a dps, stand ready for their arrival."
   },
   CuChulainn: {
     pros: ["rupture (upg 7)","ignores enemy dodge chance"],
     cons: ["Better Rupture options","Circle aoe application"],
-    description: ""
+    description: "Cu Chulainn is one of the few rupture applicators in the game currently. While his conditions to apply rupture are pretty straight forward unlike Vogito or Goblin Killer, with the addition of Brolzi Super, its pretty hard to justify use cases for him anymore."
   },
   DarkMage: {
     pros: ["applies slow and bleed","good DOT dps","applies diseased buffing DOT including allies"],
@@ -184,6 +189,11 @@ const unitDescriptions = {
     cons: ["loveshot is limited to 20 enemies and 3 uses per game","reliant on meter"],
     description: ""
   },
+  LordFriezo: {
+    pros: ["12 placements will all minions","minions are free to place","minions give different buffs depending on type"],
+    cons: ["expensive to max including minions","mediocre dps"],
+    description: "Lord Friezo is a unit that has placeable minions which count as units. There 3 different categories of minions, each with their own group effect meaning its ideal to only place one category rather than mixing and matching. 3 alien cadets spawn summons; 3 alien soldiers make the minions status and debuff immune; 3 alien elites increase Friezo damage and range. This unit pairs really well with Yehowach and The Falcon. Overall this unit is decent in terms of dps, though he is very expensive when maxxing all placements and minions. <br>"
+  },
   Luce: {
     pros: ["applies nullify on hit","full aoe at max"],
     cons: ["Overshadowed by The Witch"],
@@ -223,6 +233,11 @@ const unitDescriptions = {
     pros: ["Free placement after 3 units are placed","Gives 2 shield stocks to tank leaks"],
     cons: ["Can't be placed wave 1 like Rohan","Single hit on placement"],
     description: "Riner is a unit with free placements placing himself every 3rd placement on the map. On placement he has a thick line aoe with short range. When 2 stocks are lost, instead gain 2 shields stocks. This can be useful against leaks and for modes such as pvp. Riner can help skip early waves being free to place, making grinding gamemodes such as worldlines less of a drag.   \r<br>"
+  },
+  RogitaSuper: {
+    pros: ["reduces cost and swaps needed for fusion units and buffs their crit","scales with crit","dodges attacks"],
+    cons: ["short range on placement","requires heavy investment for max potential"],
+    description: "Rogita is a support for fusion units (Ichiga and Monkey King included) while having a high dps ceiling. At maximum potential he has the highest dps out of any unit in the game. Rogita has 100% crit rate and dodge chance on placement, does followup whenever units crit; He will reduce the cost of fusion units by 25% and make swaps count as 2 for units such as Vogito. Whenever Rogeta crits, he will give fused units 50% crit rate and take half of their crit damage. The crit damage Rogeta gains this way has no cap, meaning you can stack deadeye fusion units with the chili familiar for crazy crit multipliers. Overall Rogita is great dps with high crit scaling who can support fusion units. "
   },
   RogitaSuper4: {
     pros: ["good placement","full map teleport","good dps"],
@@ -274,6 +289,11 @@ const unitDescriptions = {
     cons: ["no status effect immunity before upg 9","looses followup when there are no new enemies to apply cleave onto"],
     description: "Sukono with his familiar becomes a new unit entirely, elevating him to be among the best units in the game. On placement he has good range and full aoe through his follow up along with having a super cheap early full aoe (14k) Sukono applies bleed and cleave (enemies take 20%+ dmg from bleed) making him a great pair with other bleed units. Sukono is curse and buffs curse units by 30% making him good for bosses and a great partner for Koguro. At upg 9 Sukono gains the fire element, burn, and status effect immunity while keeping his full aoe followup applying bleed. Sukono has one of the highest raw dps in the entire game while also being affordable and having a full range nuke. Overall this unit hardly has any weaknesses, any weaknesses this unit does have is overshadowed by his utility and can be made up for by pairing him with other units. "
   },
+  TengonFamiliar: {
+    pros: ["buffs fire and blast units","very high full aoe dps"],
+    cons: ["mediocre range"],
+    description: "Tengon with his familiar becomes a dps machine with support capability buffing fire and blast allies by 30%. He will also apply scorched to enemies buffing fire damage by an additional 20%. Tengon has a 60% chance to dodge attacks at max stacks and is guaranteed to crit on enemies that have been debuffed. Since he applies scorched he will always get this buff. His final upg gives him full aoe with a decent SPA and multi-hit. His only real downside is his mediocre range which can be supplemented by units such as The Smith. Overall Tengon is a great unit with high dps and great support.   \r"
+  },
   TheFalcon: {
     pros: ["1k to place & max","repulses enemies & slows","ignores dmg reduction & reduces dmg reduction in range","buffs allies"],
     cons: ["not always full aoe","requires some setup"],
@@ -291,7 +311,7 @@ const unitDescriptions = {
   },
   TheStruggler: {
     pros: ["insane dps","repulses and bleeds","full immunity in berserker armor"],
-    cons: ["inconsistent aoe and dps","small range and expensive","relatively small range"],
+    cons: ["inconsistent aoe and dps","small range","expensive"],
     description: ""
   },
   TheWitch: {
@@ -314,6 +334,11 @@ const unitDescriptions = {
     cons: ["nukes are a 1 time use per game","utility comes from summons dps is medicore"],
     description: "Song Jinwoo and Igros is an amazing all around unit who is immune to everything including weather interactions. On top of having great placement and all around dps, this unit has 4 different elite summons and the arise ability, resurrecting dead enemies which scale off max hp making him amazing for longer modes. Additionally he has 3 different nukes each doing massive dmg. This unit is a must have and fits into any team comp"
   },
+  Wolf: {
+    pros: ["50% slow","wolves chase out of range","guaranteed crit"],
+    cons: ["slow is line aoe"],
+    description: "Wolf is a four placement dps unit with a 50% slow. This makes him a good support hybrid able to dish out damage. He is guaranteed to crit against units that are marked, so crit rate does not matter when building him. This means you can have a negative crit rate birb with only crit damage giving you more flexible options. Wolf will also spawn coyotes that hunt down marked enemies, even when the enemy leaves his range. Overall Wolf is a good damage dealer capable of support. "
+  },
   Yehowach: {
     pros: ["cheap to max","great placement","high full aoe dps and insane range","support capability"],
     cons: ["high spa","needs setup and a team for optimal usage"],
@@ -334,29 +359,9 @@ const unitDescriptions = {
     cons: ["expensive","needs monarch and is team reliant"],
     description: ""
   },
-  Wolf: {
-    pros: ["50% slow","wolves chase out of range","guaranteed crit"],
-    cons: ["slow is line aoe"],
-    description: "Wolf is a four placement dps unit with a 50% slow. This makes him a good support hybrid able to dish out damage. He is guaranteed to crit against units that are marked, so crit rate does not matter when building him. This means you can have a negative crit rate birb with only crit damage giving you more flexible options. Wolf will also spawn coyotes that hunt down marked enemies, even when the enemy leaves his range. Overall Wolf is a good damage dealer capable of support. "
-  },
-  BrolziSuper: {
-    pros: ["full aoe rupture on placement","heavy crit scaling","cleanses self of debuffs","buffs unbound"],
-    cons: ["cannot use other domains","loses buffs when domain expires","expensive overall"],
-    description: "Brolzi is a high dps unit that scales massively with crit. Any crit rate over 100% is turned into crit damage. This makes birb the ideal familiar for him as Brolzi gains crit rate from his passive and from domain. Brolzi will followup buffing his own damage. If he crits, followup with attack 3 (full aoe) and apply rupture. This makes him the best rupture unit, as it is consistent and on placement. Brolzi buffs the crit rate and crit damage of unbound units when the domain is active (this includes himself). You want to use the domain as soon as possible to stack the buffs. The downside to Brolzi domain is that you cannot use other domains while it's active, making him a bad pair with The Falcon and Koguro. Overall Brolzi has among the highest dps of any unit in the game, scaling massively with crit while having support capability, making him a top tier carry.    "
-  },
-  RogitaSuper: {
-    pros: ["reduces cost and swaps needed for fusion units and buffs their crit","scales with crit","dodges attacks"],
-    cons: ["short range on placement","requires heavy investment for max potential"],
-    description: ""
-  },
-  LordFriezo: {
-    pros: ["12 placements will all minions","minions are free to place","minions give different buffs depending on type"],
-    cons: ["expensive to max including minions","mediocre dps"],
-    description: ""
-  },
-  TengonFamiliar: {
-    pros: ["buffs fire and blast units","very high full aoe dps", "Applies debuffs for self", "Guaranteed Crit"],
-    cons: ["mediocre range", "Not great early defend"],
-    description: "Tengon with his familiar becomes a dps machine with support capability buffing fire and blast allies by 30%. He will also apply scorched to enemies buffing fire damage by an additional 20%. Tengon has a 60% chance to dodge attacks at max stacks and is guaranteed to crit on enemies that have been debuffed. Since he applies scorched he will always get this buff. His final upg gives him full aoe with a decent SPA and multi-hit. His only real downside is his mediocre range which can be supplemented by units such as The Smith. Overall Tengon is a great unit with high dps and great support.   \r"
+  GilgameshFamiliar: {
+    pros: ["Slows normal enemies and executes them below 10% hp","Stuns bosses","High burst potential"],
+    cons: ["Mediocre Base Dps","NP stack attack is single target","Relatively Expensive"],
+    description: "Gilgamesh with his familiar becomes a unit that provides utility and high burst potential against a single target. He gains a 30% slow against normal enemies (20s) and stuns bosses for 2s. Whenever Gilgamesh activates Enuma Elish, he will attack the first enemy he was targeting for 100% damage over 30s. This means in the span of 30s he will deal up to 3000% damage to a single enemy, making it great for melting bosses or finishing off normal enemies as it can proc his execute on enemies that get below 10% hp (note that bosses cannot get executed). His downsides are mediocre dps without NP stacks, self debuff when around other units and high cost. Overall the familiar makes Gilgamesh a great support unit with decent overall dps. <br>"
   },
 };
