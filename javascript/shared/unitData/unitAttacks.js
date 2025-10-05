@@ -391,7 +391,7 @@ const unitAttacks = {
   ],
 
   Luce: [
-    {name: "Kill Followup", aoe: "Full", hits: 5, type: "Condition-Followup", description: "Follows up every time a Dave in range attack for 100% Dmg (10s cd)", 
+    {name: "Followup", aoe: "Full", hits: 5, type: "Condition-Followup", description: "Follows up every time a Dave in range attack for 100% Dmg (10s cd)", 
     multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
   ],
 

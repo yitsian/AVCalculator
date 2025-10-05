@@ -136,7 +136,7 @@ const unitStats = {
   Tengon: { displayName: "Tengon (Flashiness)", placementCount: 3, placementCost: 1500, maxCost: 95750, damage: 3630, spa: 9.8, range: 36, aoe: "Full", hits: 4 },
   ChaIn: { displayName: "Cha-In (Blade Dancer)", placementCount: 5, placementCost: 1600, maxCost: 49250, damage: 1900, spa: 6.5, range: 42, aoe: "270° Cone", hits: 1 },
   Noruto: { displayName: "Noruto (Six Tails)", placementCount: 4, placementCost: 1300, maxCost: 69300, damage: 2500, spa: 7, range: 40, aoe: "12 Circle", hits: 1 },
-  Obita: { displayName: "Obita (Awakened)", placementCount: 3, placementCost: 2000, maxCost: 65000, damage: 3250, spa: 5, range: 32, aoe: "65° Cone", hits: 4 },
+  Obita: { displayName: "Obita (Awakened)", placementCount: 3, placementCost: 2000, maxCost: 90500, damage: 3250, spa: 6.5, range: 40, aoe: "65° Cone", hits: 4 },
   SongJinwu: { displayName: "Song Jinwu (Monarch)", placementCount: 3, placementCost: 1700, maxCost: 102000, damage: 2990, spa: 6, range: 44, aoe: "16 Circle", hits: 2 },
   Sosuke: { displayName: "Sosuke (Storm)", placementCount: 4, placementCost: 1100, maxCost: 59000, damage: 2563, spa: 8, range: 43, aoe: "16 Circle", hits: 1 },
   VogitaSuper: { displayName: "Vogita Super (Awakened)", placementCount: 4, placementCost: 1200, maxCost: 64250, damage: 2550, spa: 6, range: 40, aoe: "6 Line", hits: 5 },

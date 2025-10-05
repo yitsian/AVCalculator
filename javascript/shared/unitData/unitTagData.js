@@ -2,7 +2,7 @@ const unitTagData = {
   GujoFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Gujo"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
   SukonoFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Sukono"], elements: ["Curse", "Fire"], aoes: ["ACone"], mechanics: ["DOT", "Ability", "Immune", "Domain", "Debuffer", "Nuke"] },
   TengonFamiliar: { availability: ["Permanent"], rarities: ["Mythic", "Tengon"], elements: ["Blast", "Fire"], aoes: ["Full"], mechanics: ["Debuffer", "Buffer"] },
-  GilgameshFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Gilgamesh"], elements: ["Holy", "Unbound"], aoes: ["ACone"], mechanics: ["Nuke", "CC", "Immune", "Ability"] },
+  GilgameshFamiliar: { availability: ["Permanent"], rarities: ["Exclusive", "Gilgamesh"], elements: ["Holy", "Unbound"], aoes: ["ACone"], mechanics: ["Nuke", "CC", "Immune", "Ability"] },
 
   BrolziSuper: { availability: ["Permanent"], rarities: ["Vanguard", "BrolziSuper"], elements: ["Unbound"], aoes: ["OCone"], mechanics: ["Debuffer", "Buffer", "Ability", "Domain"] },
   RogitaSuper: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Blast"], aoes: ["Splash"], mechanics: ["Buffer", "Immune"] },

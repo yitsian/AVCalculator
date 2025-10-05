@@ -1,22 +1,24 @@
-# # Ignore JPEG and JPG
-# *.jpg
-# *.jpeg
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# # Ignore PNG
-# *.png
+node_modules
+dist
+dist-ssr
+*.local
 
-# # Ignore GIF
-# *.gif
-
-# # Ignore WebP
-# *.webp
-
-# # Ignore BMP
-# *.bmp
-
-# # Ignore TIFF
-# *.tiff
-# *.tif
-
-# # Ignore SVG
-# *.svg
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
