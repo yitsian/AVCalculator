@@ -92,3 +92,16 @@ body {
   display: none !important;
   transition: opacity 0.3s ease;
 }
+
+.line-divided-text {
+  display: flex;
+  align-items: center;
+  gap: min(6px, calc(6vh/6));
+  
+  font-size: min(24px, calc(24vh/6));
+}
+
+.text-divider-line {
+  flex: 1;
+  height: 2px;
+}

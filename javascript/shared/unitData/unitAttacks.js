@@ -82,6 +82,14 @@ const unitAttacks = {
     multiplier: 1, image: "Images/Units/GilgameshFamiliar.webp", gradient: "gilgamesh"},
   ],
 
+  ObitaFamiliar: [
+    {name: "Burn", aoe: "Single", hits: 6, type: "Dot", description: "Attacks inflict Burn equal to 30% of this unit's DMG over 6s", 
+    multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Placement Burn", aoe: "Single", hits: 8, type: "Conditional-Dot", description: "Anytime this unit is placed, inflicts all enemies in range with burn for 30% of this units Dmg over 8s.", 
+    multiplier: 0.3, image: "Images/Units/ObitaFamiliar.webp", gradient: "obita"},
+  ],
+
   Iscanur: [
     {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},

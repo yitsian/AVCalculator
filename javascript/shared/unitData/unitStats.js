@@ -19,6 +19,7 @@ const unitStats = {
   SukonoFamiliar: { displayName: "Sukono Familiar", placementCount: 3, placementCost: 2000, maxCost: 98200, damage: 11598, spa: 7, range: 50.7, aoe: "80° Cone", hits: 1, familiar: false },
   TengonFamiliar: { displayName: "Tengon (Flashiness) Familiar", placementCount: 3, placementCost: 1500, maxCost: 95750, damage: 13612.5, spa: 9.8, range: 36, aoe: "Full", hits: 4, familiar: false },
   GilgameshFamiliar: { displayName: "Gilgamesh (King of Heroes) Familiar", placementCount: 3, placementCost: 2000, maxCost: 117250, damage: 13500, spa: 8.5, range: 40, aoe: "80° Cone", hits: 6, familiar: false },
+  ObitaFamiliar: { displayName: "Obita (Awakened) Familiar", placementCount: 3, placementCost: 2000, maxCost: 90500, damage: 24375, spa: 6.5, range: 56, aoe: "65° Cone", hits: 4, familiar: false },
 
   Iscanur: { displayName: "Iscanur (Pride)", placementCount: 1, placementCost: 7500, maxCost: 170520, damage: 16000, spa: 9, range: 50, aoe: "28 Circle", hits: 1 },
   Koguro: { displayName: "Koguro (Unsealed)", placementCount: 1, placementCost: 3500, maxCost: 151000, damage: 11000, spa: 8, range: 45, aoe: "24 Circle", hits: 5 },

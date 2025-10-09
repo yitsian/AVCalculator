@@ -4,6 +4,10 @@
   inherits: false;
 }
 
+.tl-obita {
+  background-image: linear-gradient(var(--gradient-angle), #5f5f8d 0%, #06060a 50%, #5f5f8d 100%);;
+}
+
 .tl-gilgamesh {
   background-image: linear-gradient(var(--gradient-angle), #837c00 0%, #7c0200 50%, #300000 100%);
 }

@@ -23,6 +23,12 @@ const FamiliarDescriptions = {
     image: "Images/Units/GilgameshFamiliar.webp"
   },
 
+  "ObitaFamiliar": {
+    rarity: "obita",
+    description: "Wherever light strikes, there will always be shadows.",
+    image: "Images/Units/ObitaFamiliar.webp"
+  },
+
   "ChasoFamiliar": {
 
   },

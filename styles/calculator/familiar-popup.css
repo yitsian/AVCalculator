@@ -46,8 +46,10 @@
   cursor: pointer;
 }
 
-.familiars-catalog div:hover {
-  background-color: gray;
+.familiars-catalog .buff-layout:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+
+  transform: scale(0.95);
 }
 
 /* Close button (top-right corner) */

@@ -69,6 +69,17 @@
   border-radius: 50%; 
   background: #ffffff;
   cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: #ccccff;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:active {
+  transform: scale(0.9);
 }
 
 /* Buttons */
@@ -97,6 +108,12 @@
   cursor: pointer;
   
   outline: min(1px, calc(1 * 0.1667vh)) solid rgba(255, 255, 255, .3);
+  transition: 0.2s;
+}
+
+.clickable-label:hover {
+  transform: scale(1.1);
+  outline: min(1px, calc(1 * 0.1667vh)) solid rgba(255, 255, 255, 1);
 }
 
 /* Checkboxes */

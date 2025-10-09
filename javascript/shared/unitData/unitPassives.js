@@ -385,6 +385,18 @@ let unitPassives = {
     },
   ],
 
+  ObitaFamiliar: [
+    {
+      name: "Vanishing Step", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains -3% Spa per wave (down to -12%).",
+          multiplicative: false, type: "Slider", min: 0, max: 12, step: 3, buffs: [0, 1, 0, 0, 0, 0],
+        },
+      ]
+    },
+  ],
+
   Iscanur: [
     {
       name: "High Noon", upgrade: 0,

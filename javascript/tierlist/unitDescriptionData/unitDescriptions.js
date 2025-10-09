@@ -360,8 +360,13 @@ const unitDescriptions = {
     description: ""
   },
   GilgameshFamiliar: {
-    pros: ["Slows normal enemies and executes them below 10% hp","Stuns bosses","High burst potential"],
-    cons: ["Mediocre Base Dps","NP stack attack is single target","Relatively Expensive"],
+    pros: ["slows normal enemies and executes them below 10% hp","stuns bosses","high burst potential"],
+    cons: ["Mediocre dps","NP stack attack is single target","Relatively Expensive"],
     description: "Gilgamesh with his familiar becomes a unit that provides utility and high burst potential against a single target. He gains a 30% slow against normal enemies (20s) and stuns bosses for 2s. Whenever Gilgamesh activates Enuma Elish, he will attack the first enemy he was targeting for 100% damage over 30s. This means in the span of 30s he will deal up to 3000% damage to a single enemy, making it great for melting bosses or finishing off normal enemies as it can proc his execute on enemies that get below 10% hp (note that bosses cannot get executed). His downsides are mediocre dps without NP stacks, self debuff when around other units and high cost. Overall the familiar makes Gilgamesh a great support unit with decent overall dps. <br>"
+  },
+  ObitaFamiliar: {
+    pros: ["full aoe burn upon replace (10s)","great dps","teleport"],
+    cons: ["loses buffs when replacing","monarch reliant","bad aoes"],
+    description: "Obita with his familiar is reborn as a meta dps unit. His passive 'Transporting Shinobi' allows you to place and sell Obita keeping his upgrades (10s cd). This works as a teleport allowing you to move him anywhere on the map. Anytime he is placed all enemies in range will be burned by 30% for 8s. This means every time you 'teleport' Obita, he will do full aoe burn dps making him a better Rogita (Super 4). His downsides are that he will lose any buffs applied to him after replacing, and that he needs monarch to be viable."
   },
 };

@@ -162,7 +162,7 @@ function createFamiliarButton(familiar) {
   const name = createElement("div", "passive-name general-text text-gradient passive", descWrap);
   name.textContent = familiar;
 
-  const tags = createElement("div", "tab-structure-left", descWrap)
+  const tags = createElement("div", "tab-structure align-left", descWrap)
 
   for (elementIndex in familiarData.elements) {
     const element = familiarData.elements[elementIndex]

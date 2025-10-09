@@ -65,12 +65,8 @@
   overflow-y: auto;
 }
 
-.buffs-catalog div {
+.buffs-catalog .buff-layout {
   cursor: pointer;
-}
-
-.buffs-catalog div:hover {
-  background-color: gray;
 }
 
 .buffs-container {
@@ -90,6 +86,14 @@
 
   padding: min(12px, calc(12 * 0.1667vh));
   background-color: rgba(0, 0, 0, 0.3);
+
+  transition: 0.2s;
+}
+
+.buffs-catalog .buff-layout:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+
+  transform: scale(0.95);
 }
 
 .buff-top {
@@ -97,6 +101,8 @@
 
   flex-direction: row;
   gap: min(12px, calc(12 * 0.1667vh));
+  
+  border-radius: min(20px, calc(20 * 0.1667vh));
 }
 
 .buff-image {

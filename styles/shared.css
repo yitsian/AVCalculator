@@ -64,16 +64,20 @@
   justify-content: space-between;
 }
 
-.tab-structure-left {
-  display: flex;
+.align-left {
+  flex-wrap: wrap;
 
-  width: 100%;
+  row-gap: min(6px, calc(6 * 0.1667vh));
 
-  flex-direction: row;
-  column-gap: min(6px, calc(6 * 0.1667vh));
+  justify-content: flex-start !important;
+}
 
-  align-items: center;
-  justify-content: flex-start;
+.align-right {
+  flex-wrap: wrap;
+
+  row-gap: min(6px, calc(6 * 0.1667vh));
+
+  justify-content: flex-end !important;
 }
 
 .dropdown-button {

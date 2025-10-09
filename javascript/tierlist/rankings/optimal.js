@@ -9,6 +9,7 @@ const optimalRankings = {
         { id: "RogitaSuper", trait: "Monarch", description: "Crit Sharing / Highest Potential Dps" },
         { id: "TheFalcon", trait: "Monarch", description: "Self-Max / Jack of All Trades" },
         { id: "Yehowach", trait: "Monarch", description: "Cheap / Absurd Range" },
+        { id: "ObitaFamiliar", trait: "Monarch", description: "Free Replacement" },
       ],
 
       subDamage: [

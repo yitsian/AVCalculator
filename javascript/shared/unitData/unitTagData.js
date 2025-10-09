@@ -1,8 +1,9 @@
 const unitTagData = {
   GujoFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Gujo"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
   SukonoFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Sukono"], elements: ["Curse", "Fire"], aoes: ["ACone"], mechanics: ["DOT", "Ability", "Immune", "Domain", "Debuffer", "Nuke"] },
-  TengonFamiliar: { availability: ["Permanent"], rarities: ["Mythic", "Tengon"], elements: ["Blast", "Fire"], aoes: ["Full"], mechanics: ["Debuffer", "Buffer"] },
-  GilgameshFamiliar: { availability: ["Permanent"], rarities: ["Exclusive", "Gilgamesh"], elements: ["Holy", "Unbound"], aoes: ["ACone"], mechanics: ["Nuke", "CC", "Immune", "Ability"] },
+  TengonFamiliar: { availability: ["Limited"], rarities: ["Mythic", "Tengon"], elements: ["Blast", "Fire"], aoes: ["Full"], mechanics: ["Debuffer", "Buffer"] },
+  GilgameshFamiliar: { availability: ["Unobtainable"], rarities: ["Exclusive", "Gilgamesh"], elements: ["Holy", "Unbound"], aoes: ["ACone"], mechanics: ["Nuke", "CC", "Immune", "Ability"] },
+  ObitaFamiliar: { availability: ["Limited"], rarities: ["Mythic", "Obita"], elements: ["Fire"], aoes: ["OCone"], mechanics: ["DOT"] },
 
   BrolziSuper: { availability: ["Permanent"], rarities: ["Vanguard", "BrolziSuper"], elements: ["Unbound"], aoes: ["OCone"], mechanics: ["Debuffer", "Buffer", "Ability", "Domain"] },
   RogitaSuper: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Blast"], aoes: ["Splash"], mechanics: ["Buffer", "Immune"] },
@@ -130,7 +131,7 @@ const unitTagData = {
   Tengon: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Blast"], aoes: ["Full"], mechanics: ["Immune"] },
   ChaIn: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Holy"], aoes: ["OCone"], mechanics: ["Immune"] },
   Noruto: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Unbound"], aoes: ["Circle"], mechanics: [] },
-  Obita: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Nature"], aoes: ["OCone"], mechanics: ["DOT"] },
+  Obita: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Fire"], aoes: ["OCone"], mechanics: ["DOT"] },
   SongJinwu: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Curse"], aoes: ["Circle"], mechanics: ["Ability", "Summoner"] },
   Sosuke: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Spark"], aoes: ["Circle"], mechanics: ["CC"] },
   VogitaSuper: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Blast"], aoes: ["Circle"], mechanics: [] },

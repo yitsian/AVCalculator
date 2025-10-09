@@ -4,6 +4,11 @@
   inherits: false;
 }
 
+.obita {
+  background-image: repeating-linear-gradient(150deg, #9e9eed 0%, #06060a 25%, #9e9eed 50%);
+  background-size: 200% 200%;
+}
+
 .gilgamesh {
   background-image: repeating-linear-gradient(150deg, #fef000 0%, #ff0300 12%, #5c0000 25%, #ff0300 38%, #fef000 50%);
   background-size: 200% 200%;
