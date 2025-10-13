@@ -1,6 +1,6 @@
 const unitStats = {
-  BrolziSuper: { displayName: "Brolzi Super (Wrathful)", placementCount: 3, placementCost: 3000, maxCost: 152000, damage: 13000, spa: 10.5, range: 50, aoe: "90° Cone", hits: 3 },
-  RogitaSuper: { displayName: "Rogita (Super)", placementCount: 3, placementCost: 1200, maxCost: 116000, damage: 8000, spa: 6, range: 40, aoe: "70 (12 Radius) Splash", hits: 3 },
+  BrolziSuper: { displayName: "Brolzi Super (Wrathful)", placementCount: 3, placementCost: 3000, maxCost: 152000, damage: 13000, spa: 10.5, range: 50, aoe: "90° Cone", hits: 5 },
+  RogitaSuper: { displayName: "Rogita (Super)", placementCount: 3, placementCost: 1200, maxCost: 86925, damage: 8000, spa: 6, range: 40, aoe: "70 (12 Radius) Splash", hits: 3 },
   LordFriezo: { displayName: "Lord Friezo (Emperor)", placementCount: 3, placementCost: 2000, maxCost: 119400, damage: 10500, spa: 6, range: 40, aoe: "16 Circle", hits: 3 },
   Wolf: { displayName: "Wolf (Resurrection)", placementCount: 4, placementCost: 1800, maxCost: 99800, damage: 8850, spa: 8, range: 50, aoe: "180° Cone", hits: 3 },
 
@@ -8,9 +8,11 @@ const unitStats = {
   TheFalcon: { displayName: "The Falcon (of Light)", placementCount: 1, placementCost: 1000, maxCost: 1000, damage: 12300, spa: 7, range: 52, aoe: "120° Cone", hits: 8 },
   TheKing: { displayName: "The King (Apostle)", placementCount: 3, placementCost: 1600, maxCost: 78700, damage: 17500, spa: 8, range: 48, aoe: "Full", hits: 6 },
   TheWitch: { displayName: "The Witch (Disciple)", placementCount: 4, placementCost: 1000, maxCost: 72200, damage: 5500, spa: 10, range: 40, aoe: "Full", hits: 4 },
+
+  Aurin: { displayName: "Aurin (Nuclear Giant)", placementCount: 1, placementCost: 1000, maxCost: 80000, damage: 0, spa: 15, range: 0, aoe: "Full", hits: 1 },
   TheSmith: { displayName: "The Smith (Forged)", placementCount: 1, placementCost: 500, maxCost: 13500, damage: 1, spa: 12, range: 0, aoe: "Full", hits: 1 },
 
-  GG: { displayName: "GG (Possessed)", placementCount: 3, placementCost: 1100, maxCost: 132100, damage: 12700, spa: 7, range: 50, aoe: "90° Cone", hits: 1 },
+  GG: { displayName: "GG (Possessed)", placementCount: 3, placementCost: 1100, maxCost: 132100, damage: 12700, spa: 7, range: 50, aoe: "90° Cone", hits: 5 },
 
   GoblinKiller: { displayName: "Goblin Killer (Disciple)", placementCount: 4, placementCost: 1400, maxCost: 60000, damage: 30000, spa: 15, range: 20, aoe: "Full", hits: 1 },
   Priestess: { displayName: "Priestess (Holy)", placementCount: 4, placementCost: 1400, maxCost: 34200, damage: 4900, spa: 5, range: 36, aoe: "12 Line", hits: 1 },
@@ -22,19 +24,19 @@ const unitStats = {
   ObitaFamiliar: { displayName: "Obita (Awakened) Familiar", placementCount: 3, placementCost: 2000, maxCost: 90500, damage: 24375, spa: 6.5, range: 56, aoe: "65° Cone", hits: 4, familiar: false },
 
   Iscanur: { displayName: "Iscanur (Pride)", placementCount: 1, placementCost: 7500, maxCost: 170520, damage: 16000, spa: 9, range: 50, aoe: "28 Circle", hits: 1 },
-  Koguro: { displayName: "Koguro (Unsealed)", placementCount: 1, placementCost: 3500, maxCost: 151000, damage: 11000, spa: 8, range: 45, aoe: "24 Circle", hits: 5 },
+  Koguro: { displayName: "Koguro (Unsealed)", placementCount: 1, placementCost: 3500, maxCost: 151000, damage: 11000, spa: 8, range: 45, aoe: "24 Circle", hits: 9 },
   Vsjw: { displayName: "Song Jinwu and Igros", placementCount: 3, placementCost: 1700, maxCost: 105700, damage: 8200, spa: 8, range: 46, aoe: "25 Circle", hits: 6 },
   Divalo: { displayName: "Divalo (Requiem)", placementCount: 2, placementCost: 5000, maxCost: 115000, damage: 12000, spa: 6.5, range: 38, aoe: "8 Line", hits: 4 },
   Rogita: { displayName: "Rogita (Super 4)", placementCount: 1, placementCost: 1200, maxCost: 184100, damage: 10000, spa: 9, range: 50, aoe: "50° Cone", hits: 6 },
 
-  MonkeyKing: { displayName: "Monkey King (Awakened)", placementCount: 1, placementCost: 2200, maxCost: 107900, damage: 11500, spa: 6, range: 44, aoe: "22 Circle", hits: 1 },
-  Leo: { displayName: "Leo (Fangs)", placementCount: 3, placementCost: 1200, maxCost: 109100, damage: 10000, spa: 10, range: 42, aoe: "Full", hits: 1 },
+  MonkeyKing: { displayName: "Monkey King (Awakened)", placementCount: 1, placementCost: 2200, maxCost: 198187, damage: 11500, spa: 6, range: 44, aoe: "22 Circle", hits: 4 },
+  Leo: { displayName: "Leo (Fangs)", placementCount: 3, placementCost: 1200, maxCost: 109100, damage: 10000, spa: 10, range: 42, aoe: "Full", hits: 8 },
   GiantQueen: { displayName: "Giant Queen (Founder)", placementCount: 3, placementCost: 2400, maxCost: 121800, damage: 10000, spa: 10, range: 42, aoe: "Full", hits: 1 },
   Arin: { displayName: "Arin (Rumbling)", placementCount: 3, placementCost: 3200, maxCost: 193300, damage: 7000, spa: 8, range: 44, aoe: "Full", hits: 1 },
-  Conqueror: { displayName: "Conqueror vs Invulnerable", placementCount: 3, placementCost: 1400, maxCost: 90000, damage: 5800, spa: 6, range: 47, aoe: "110° Cone", hits: 1 },
+  Conqueror: { displayName: "Conqueror vs Invulnerable", placementCount: 3, placementCost: 1400, maxCost: 90000, damage: 5800, spa: 6, range: 47, aoe: "110° Cone", hits: 4 },
   Slime: { displayName: "Slime (King)", placementCount: 4, placementCost: 1200, maxCost: 78100, damage: 5200, spa: 8, range: 40, aoe: "Full", hits: 6 },
   Astolfo: { displayName: "Astolfo (Rider of Black)", placementCount: 1, placementCost: 2500, maxCost: 94000, damage: 3500, spa: 10, range: 36, aoe: "Full", hits: 8 },
-  Byeken: { displayName: "Byeken (Ronin)", placementCount: 3, placementCost: 2200, maxCost: 85800, damage: 5000, spa: 6, range: 50, aoe: "90° Cone", hits: 3, meter: 2 },
+  Byeken: { displayName: "Byeken (Ronin)", placementCount: 3, placementCost: 2200, maxCost: 85800, damage: 5000, spa: 6, range: 50, aoe: "90° Cone", hits: 1, meter: 2 },
   Lfelt: { displayName: "Lfelt (Love)", placementCount: 3, placementCost: 1000, maxCost: 106100, damage: 7000, spa: 7, range: 46, aoe: "200° Cone", hits: 1, meter: 5 },
   SmithJohn: { displayName: "Smith John", placementCount: 3, placementCost: 2500, maxCost: 101700, damage: 5000, spa: 5, range: 40, aoe: "90° Cone", hits: 6, meter: 12.5 },
   LordofShadows: { displayName: "Lord of Shadows", placementCount: 3, placementCost: 2500, maxCost: 101700, damage: 6000, spa: 8, range: 32, aoe: "Full", hits: 8, meter: 12.5 },
@@ -94,7 +96,7 @@ const unitStats = {
   Emmie: { displayName: "Emmie (Ice Witch)", placementCount: 3, placementCost: 1800, maxCost: 73000, damage: 4080, spa: 6, range: 40, aoe: "12 Line", hits: 1 },
   Foboko: { displayName: "Foboko (Hellish)", placementCount: 3, placementCost: 1200, maxCost: 57100, damage: 5000, spa: 12, range: 40, aoe: "22 Circle", hits: 6 },
   Karem: { displayName: "Karem (Chilled)", placementCount: 3, placementCost: 2000, maxCost: 88300, damage: 6520, spa: 10, range: 30, aoe: "Full", hits: 1 },
-  RomandRam: { displayName: "Rom and Ram (Fanatic)", placementCount: 4, placementCost: 1400, maxCost: 44800, damage: 2905, spa: 5.5, range: 36, aoe: "18 Circle", hits: 5 },
+  RomandRan: { displayName: "Rom and Ran (Fanatic)", placementCount: 4, placementCost: 1400, maxCost: 44800, damage: 2905, spa: 5.5, range: 36, aoe: "18 Circle", hits: 5 },
   Dodara: { displayName: "Dodara (Explosive)", placementCount: 3, placementCost: 2000, maxCost: 54200, damage: 4200, spa: 6.5, range: 40, aoe: "15 Circle", hits: 1 },
   Sosora: { displayName: "Sosora (Puppeteer)", placementCount: 3, placementCost: 1000, maxCost: 48250, damage: 4100, spa: 6.5, range: 40, aoe: "135° Cone", hits: 5 },
   Giyu: { displayName: "Rodock", placementCount: 3, placementCost: 1600, maxCost: 48250, damage: 2800, spa: 8, range: 30, aoe: "12 Circle", hits: 3 },

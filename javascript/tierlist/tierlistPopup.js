@@ -35,7 +35,7 @@ const popupFamiliarsListElm = document.getElementById("tl-popup-familiars-contai
 const popupSynergiesListElm = document.getElementById("tl-popup-teams-container")
 
 function loadUnitInfo(unitID) {
-  popupUnitButtonElm.onclick = () => {selectUnit(unitID);};
+  popupUnitButtonElm.onclick = () => { selectUnit(unitID); };
 
   const unitRarity = unitTagData[unitID].rarities[unitTagData[unitID].rarities.length - 1].toLowerCase()
   const unitElement = unitTagData[unitID].elements[0]
@@ -150,10 +150,10 @@ function loadUnitInfo(unitID) {
     const teamInfoElm = createElement("div", "tl-popup-team-info", teamTabElm)
 
     const teamNameElm = createElement("div", "tl-popup-team-name text-gradient passive", teamInfoElm)
-    teamNameElm.innerText = synergy.name
+    teamNameElm.innerText = synergy.name ? synergy.name : "[Insert Clever Name]"
 
     const teamDescElm = createElement("div", "tl-popup-team-description", teamInfoElm)
-    teamDescElm.innerText = synergy.desc
+    teamDescElm.innerText = synergy.desc ? synergy.desc : "Description TBA"
 
     const teamUnitsElm = createElement("div", "tl-popup-team-units", teamTabElm)
 
@@ -190,7 +190,17 @@ function loadUnitInfo(unitID) {
 
   const unitSynergyList = unitSynergies[unitID]
 
-  if (unitSynergyList && unitSynergyList.length > 0) {
+  if (!unitSynergyList) {
+    loadSynergy({
+      name: "Synergies TBA",
+      desc: "Feel free to dm/ping me @migomigy on discord for synergy ideas to include. You can also find me through the list of testers in the Av Server",
+      units: []
+    })
+
+    return;
+  }
+
+  if (unitSynergyList.length > 0) {
     for (const synergy of unitSynergyList) {
       if (Object.keys(synergy).length != 0) {
         loadSynergy(synergy)
@@ -198,12 +208,13 @@ function loadUnitInfo(unitID) {
     }
   }
 
-  loadSynergy({
-    name: "Synergies TBA",
-    desc: "Feel free to dm/ping me @migomigy on discord for synergy ideas to include. You can also find me through the list of testers in the Av Server",
-    units: []
+  if (unitSynergyList.length < 2) {
+    loadSynergy({
+      name: "Synergies TBA",
+      desc: "Feel free to dm/ping me @migomigy on discord for synergy ideas to include. You can also find me through the list of testers in the Av Server",
+      units: []
+    })
   }
-  )
 }
 
 function OpenTietlistPopup(unitID) {

@@ -1,11 +1,11 @@
 const rarityOrder = [
-  "vanguard",
-  "secret",
-  "exclusive",
-  "mythic",
-  "legendary",
+  "rare",
   "epic",
-  "rare"
+  "legendary",
+  "mythic",
+  "exclusive",
+  "secret",
+  "vanguard"
 ];
 
 const traitOrder = [

@@ -1,9 +1,9 @@
 const unitAttacks = {
   BrolziSuper: [
-    {name: "Unrestrained Power", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Follows up with attack 3 for 100% Dmg when this unit crits (5s local cd)", 
+    {name: "Unrestrained Power", aoe: "Full", hits: 5, type: "Spa-Followup", description: "Follows up with attack 3 for 100% Dmg when this unit crits (5s local cd)", 
     multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
 
-    {name: "Innocent Rage", aoe: "12 Circle", hits: 1, type: "Spa-Followup", description: "Follows up with attack 1 for 100% Dmg when this unit doesn't crit (5s local cd)", 
+    {name: "Innocent Rage", aoe: "12 Circle", hits: 3, type: "Spa-Followup", description: "Follows up with attack 1 for 100% Dmg when this unit doesn't crit (5s local cd)", 
     multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
   ],
 
@@ -54,7 +54,7 @@ const unitAttacks = {
   ],
 
   GG: [
-    {name: "New Challenger", aoe: "10 Circle", hits: 1, type: "Condition-Followup", description: "Whenever an enemy enters this unit's range, follows up for 100% Dmg (8s cd).", 
+    {name: "New Challenger", aoe: "10 Circle", hits: 5, type: "Condition-Followup", description: "Whenever an enemy enters this unit's range, follows up for 100% Dmg (8s cd).", 
     multiplier: 1, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
 
     {name: "Curse Ball", aoe: "10 Circle", hits: 1, type: "Condition-Followup", description: "Anytime this unit attacks, leaves a ball for each enemy hit that explodes after 5s for 40% Dmg (Max 10 per player).", 
@@ -93,6 +93,9 @@ const unitAttacks = {
   Iscanur: [
     {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
+    
+    {name: "High Noon Burn", aoe: "Single", hits: 5, type: "Conditional-Dot", description: "When at 12 hour stacks inflict burn for 10% Dmg over 5 seconds every second.", 
+    multiplier: 0.1, image: "Images/Abilities/Ultimate_Ability.webp", gradient: "secret"},
 
     {name: "Sunshine Burn", aoe: "Single", hits: 5, type: "Conditional-Dot", description: "When an enemy leaves this unit's range, inflicts burn for 100% of this units Dmg over 5s.", 
     multiplier: 1, image: "Images/Abilities/Ultimate_Ability.webp", gradient: "iscanur"},
@@ -154,7 +157,7 @@ const unitAttacks = {
   ],
 
   MonkeyKing: [
-    {name: "Clones", aoe: "22 Circle", hits: 1, type: "Spa-Followup", description: "Can place up to 3 clones that cost 50% less than the previous and do 0.65x this units Dmg. (Toggle off Monkey Clones buff to see clone damage before selling original)", 
+    {name: "Clones", aoe: "22 Circle", hits: 4, type: "Spa-Followup", description: "Can place up to 3 clones that cost 50% less than the previous and do 0.65x this units Dmg. (Toggle off Monkey Clones buff to see clone damage before selling original)", 
     multiplier: 0.65, image: "Images/Abilities/Monkey_Kings_Fur_Ability.webp", gradient: "secret"},
   ],
 
@@ -167,7 +170,7 @@ const unitAttacks = {
   ],
 
   Conqueror: [
-    {name: "Followup", aoe: "Full", hits: 1, type: "Spa-Followup", description: "Follows up every attack for 100% Dmg for every boss in range (Bugged to not got the 120% buff atm)", 
+    {name: "Followup", aoe: "Full", hits: 4, type: "Spa-Followup", description: "Follows up every attack for 100% Dmg for every boss in range.", 
     multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
   ],
 
@@ -379,7 +382,7 @@ const unitAttacks = {
 
     {name: "Normal Followups", aoe: "28 Circle", hits: 7, type: "Spa-Followup", 
     description: "Follows up each for 50% Dmg up to 4 times as long as this unit lands a crit per followup (Deactivated during DT)", 
-    multiplier: (finalStats, conditions) => {const crit = finalStats.crit / 100; return conditions["1-0"].active == true ? 0 : (crit + crit ** 2 + crit ** 3 + crit ** 4)}, 
+    multiplier: (finalStats, conditions) => {const crit = finalStats.crit / 100; return conditions["1-0"].active == true ? 0 : (crit + crit ** 2 + crit ** 3 + crit ** 4) / 2}, 
     image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
 
     {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter for Devil Trigger that lasts 30s <br> (Toggle DT off for accurate numbers. Refer to <a class='spark' href='https://docs.google.com/document/d/1EGty6VmAu1NWHLF7ClPgo8wV4OOMkfyNE7u0eTC3VJk'>here</a> for more info)", 

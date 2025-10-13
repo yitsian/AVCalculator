@@ -15,8 +15,8 @@ const optimalRankings = {
       subDamage: [
         { id: "TengonFamiliar", trait: "Monarch", description: "Blast and Fire Buffer / Scorched" },
         { id: "Koguro", trait: "Monarch", description: "Domains / Nuke / Teleport" },
-        { id: "GujoFamiliar", trait: "Monarch", description: "Timestop / Inf Range Attack 3" },
         { id: "TheStruggler", trait: "Monarch", description: "Berserker Armor" },
+        { id: "GujoFamiliar", trait: "Monarch", description: "Timestop / Inf Range Attack 3" },
         { id: "Vsjw", trait: "Monarch", description: "Summons / Nuke" },
         { id: "MonkeyKing", trait: "Monarch", description: "All Groups / Clones" },
       ],
@@ -46,6 +46,7 @@ const optimalRankings = {
       carry: [
         { id: "TheKing", trait: "Monarch", description: "Teleport / Flip Debuff " },
         { id: "SmithJohn", trait: "Monarch", description: "Nuke / Great Aoes" },
+        { id: "Eizan", trait: "Monarch", description: "Aura / Wall" },
         { id: "Dawntay", trait: "Monarch", description: "Devil Trigger / Crit" },
         { id: "Byeken", trait: "Monarch", description: "On-Kill Followup / CC" },
       ],
@@ -81,7 +82,6 @@ const optimalRankings = {
 
     categories: {
       carry: [
-        { id: "Eizan", trait: "Monarch", description: "Aura / Wall" },
         { id: "Yomomata", trait: "Monarch", description: "Insane Summoner / Early Full Aoe" },
         { id: "Rogita", trait: "Monarch", description: "Teleport" },
         { id: "DarkMage", trait: "Monarch", description: "High DoT Damage" },

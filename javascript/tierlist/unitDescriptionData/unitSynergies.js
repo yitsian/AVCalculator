@@ -18,13 +18,21 @@ const unitSynergies = {
     {},
   ],
   Aurin: [
-    {},
+    {
+      name: "At Your Finger (Toe) Tips",
+      desc: "(I couldn't think of a good name) But if you are somehow reading this, technically Aurin has the highest Dps in the game if you transform with High noon Iscanur.",
+      units: ["Iscanur"]
+    },
   ],
   Boo: [
     {},
   ],
   BrolziSuper: [
-    {},
+    {
+      name: "These Units are Finally Useful?",
+      desc: "Finally a unit to gain full benefit from Hercule and Boohon, simply taking one is enough to boost Brolzi's dps by 30% or 67% with both.",
+      units: ["Hercool", "Boohon"]
+    },
   ],
   Byeken: [
     {},
@@ -49,7 +57,11 @@ const unitSynergies = {
     },
   ],
   Dawntay: [
-    {},
+    {
+      name: "Brolzi-Chan, save me!!!!",
+      desc: "Insane power boost for most unbound units all because of this one unit. Alone just doubles the all unbound units when maxed out and shoots them back into the meta.",
+      units: ["BrolziSuper"]
+    },
   ],
   Diogo: [
     {},
@@ -62,6 +74,12 @@ const unitSynergies = {
       name: "Wl Lb Stink Aura",
       desc: "Using Byeken to pull enemies all into 1 spot for Dabo 81, and using Todu to make full use of Aura combine into an extremely deadly combo.",
       units: ["Byeken", "Todu"]
+    },
+
+    {
+      name: "Brolzi-Chan, save me!!!!",
+      desc: "Insane power boost for most unbound units all because of this one unit. Alone just doubles the all unbound units when maxed out and shoots them back into the meta.",
+      units: ["BrolziSuper"]
     },
   ],
   Emmie: [
@@ -105,7 +123,7 @@ const unitSynergies = {
   Iscanur: [
     {
       name: "The One ",
-      desc: "Burn all slots, place Iscanur and win ",
+      desc: "Burn all slots, place Iscanur and win bleh.",
     },
 
     {
@@ -121,7 +139,11 @@ const unitSynergies = {
     {},
   ],
   Ken: [
-    {},
+    {
+      name: "You Actually Evolved Him?",
+      desc: "I don't know why you would use this guy evolved, but if you're gonna use him, you might as well make use of Makoso's synergy with Arin since shes the strongest of the 3.",
+      units: ["Arin"]
+    },
   ],
   Kiskae: [
     {},
@@ -141,12 +163,21 @@ const unitSynergies = {
   ],
   LordFriezo: [
     {},
+
+    {
+      name: "Cosmic Terror",
+      desc: "pairs great with Yehowach providing him with 12 placements will little to no cost investment. Minions being free to place makes it easy to stack up The Falcon",
+      units: ["Yehowach", "TheFalcon"]
+    },
   ],
   Luce: [
-    {},
+    {
+      units: ["Dave"]
+    },
   ],
   MonkeyKing: [
     {
+      name: "Sandbox Warriors",
       units: ["TheSmith", "GiantQueen"]
     },
   ],
@@ -155,6 +186,13 @@ const unitSynergies = {
   ],
   NotGoodGuy: [
     {},
+  ],
+  ObitaFamiliar: [
+    {
+      name: "Smoke n' Dagger",
+      desc: "Providing over a 50% Dps increase for him, Tengon's Familiar amplifies him for both being Fire element and from applying Scorched. ",
+      units: ["TengonFamiliar"]
+    },
   ],
   Priestess: [
     {},
@@ -170,13 +208,14 @@ const unitSynergies = {
   ],
   Rogita: [
     {
-      units: ["Boohon", "RogitaSuper"]
+      name: "Second Wind",
+      units: ["RogitaSuper"]
     },
   ],
   RogitaSuper: [
     {
       name: "Crit Fusion",
-      desc: "When pairing Rogita with these 2 units, if built properly it easily gets his crit damage multiplier to at least 5x skyrocketing his dps to the highest in the game",
+      desc: "When pairing Rogita with these 2 units, if built properly it easily gets his crit damage multiplier to at least 5x skyrocketing his dps to the highest in the game. (Pickleo also works with this)",
       units: ["Roku", "Ichiga"]
     },
   ],
@@ -188,7 +227,9 @@ const unitSynergies = {
     },
   ],
   Roku: [
-    {},
+    {
+      units: ["RogitaSuper"]
+    },
   ],
   Rudie: [
     {},
@@ -227,6 +268,7 @@ const unitSynergies = {
   ],
   TengonFamiliar: [
     {
+      name: "Can You Hear the Music?",
       units: ["Koguro"]
     },
   ],
@@ -239,13 +281,14 @@ const unitSynergies = {
 
     {
       name: "Pure Evil",
-      desc: "being cheap as he is, you can easily afford to use Yehowach with The Falcon who is basically a free unit. With Sukono you have another great defense",
+      desc: "being cheap as he is, you can easily afford to use Yehowach with The Falcon who is basically a free unit. With Sukono you have another great defense.",
       units: ["Yehowach", "Sukono"]
     },
   ],
   TheKing: [
     {
       name: "Knight and Steed",
+      desc: "Using the Nose familiar on either of these 2 units enables The King to be able to also automatically chase enemies.",
       units: ["Clatakiri", "Koguro"]
     },
 
@@ -261,6 +304,8 @@ const unitSynergies = {
   ],
   TheStruggler: [
     {
+      name: "Brolzi-Chan, save me!!!!",
+      desc: "Insane power boost for most unbound units all because of this one unit. Alone just doubles the all unbound units when maxed out and shoots them back into the meta.",
       units: ["BrolziSuper"]
     },
   ],
@@ -270,7 +315,8 @@ const unitSynergies = {
   Todu: [
     {
       name: "Taxi Service",
-      units: ["Rogita"]
+      desc: "Todu is the metaphorical taxi driver transporting your units using either of the other 2 units as his cab.",
+      units: ["Rogita", "ObitaFamiliar"]
     },
   ],
   Vigil: [
@@ -282,6 +328,7 @@ const unitSynergies = {
   ],
   Vsjw: [
     {
+      name: "Shadows vs Zombies",
       units: ["Gazelle"]
     },
   ],
@@ -309,12 +356,9 @@ const unitSynergies = {
     {
       name: "Rumbling",
       desc: "Pretty self explanatory as its specifically made for them, but with cost reduction from Silly Fairy or Aurin, and whatever future cost reduction, will make this synergy a lot more viable",
-      units: ["Aurin", "GiantQueen"]
+      units: ["Arin", "GiantQueen"]
     },
 
-    {},
-  ],
-  ObitaFamiliar: [
     {},
   ],
 };

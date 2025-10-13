@@ -52,12 +52,16 @@ function renderButtons() {
         valA = a?.elements?.[0]?.toLowerCase() ?? "";
         valB = b?.elements?.[0]?.toLowerCase() ?? "";
         break;
+      case "cost":
+        valA = unitStats[a?.name]?.maxCost ?? "";
+        valB = unitStats[b?.name]?.maxCost ?? "";
+      break;
     }
 
     const ascending = sortOrder.toLowerCase() === "ascending";
 
-    if (valA < valB) return ascending ? 1 : -1;
-    if (valA > valB) return ascending ? -1 : 1;
+    if (valA < valB) return ascending ? -1 : 1;
+    if (valA > valB) return ascending ? 1 : -1;
     return 0;
   });
 
@@ -107,7 +111,12 @@ function renderButtons() {
 
     const unitName = document.createElement("div")
     unitName.className = "unit-name general-text"
-    unitName.textContent = unit.name
+
+    if (sortType == "cost") {
+      unitName.innerHTML = '<span class="text-gradient money">' + (unitStats[unit.name]?.maxCost ?? -1) + " ¥" + '</span>'
+    } else {
+      unitName.textContent = unit.name
+    }
     btnContent.appendChild(unitName)
   }
 }
