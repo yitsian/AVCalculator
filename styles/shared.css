@@ -11,7 +11,7 @@
 }
 
 .section-title {
-  font-size: min(36px, calc(36 * 0.1667vh));
+  font-size: max(36px, calc(36vh/12));
   font-weight: 600;
 
   text-shadow: min(5px, calc(5 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) rgba(0, 0, 0, 0.2) !important;
@@ -19,7 +19,7 @@
 }
 
 .section-subtitle {
-  font-size: min(24px, calc(24 * 0.1667vh));
+  font-size: max(24px, calc(24vh/12));
 
   filter: drop-shadow(min(2px, calc(2 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) min(3px, calc(3 * 0.1667vh)) rgba(0, 0, 0, 0.8));
 }
@@ -36,16 +36,16 @@
 .subsection-divider {
   padding-left: min(6px, calc(6 * 0.1667vh));
 
-  font-size: min(24px, calc(24 * 0.1667vh));
+  font-size: max(24px, calc(24vh/12))
 }
 
 .subsection {
   display: flex;
 
   flex-direction: column;
-  row-gap: min(14px, calc(14 * 0.1667vh));
+  row-gap: max(12px, calc(12vh/12));
 
-  padding: min(12px, calc(12 * 0.1667vh));;
+  padding: max(12px, calc(12vh/12));
 
   border-radius: min(20px, calc(20 * 0.1667vh));
 
@@ -58,7 +58,7 @@
   width: 100%;
 
   flex-direction: row;
-  column-gap: min(6px, calc(6 * 0.1667vh));
+  column-gap: max(6px, calc(6vh/12));
 
   align-items: center;
   justify-content: space-between;
@@ -81,7 +81,7 @@
 }
 
 .dropdown-button {
-  font-size: min(20px, calc(20 * 0.1667vh)) !important;
+  font-size: max(20px, calc(20vh/12)) !important;
 
   cursor: pointer;
 }
@@ -114,7 +114,7 @@
 }
 
 .passive-name {
-  font-size: min(28px, calc(28 * 0.1667vh));
+  font-size: max(28px, calc(28vh/12))
 }
 
 .passive-bottom {
@@ -134,8 +134,8 @@
 }
 
 .passive-number-padding {
-  padding-left: min(16px, calc(16 * 0.1667vh));
-  padding-right: min(16px, calc(16 * 0.1667vh));
+  padding-left: max(16px, calc(16vh/12));
+  padding-right: max(16px, calc(16vh/12));
 }
 
 .passive-condition {
@@ -144,7 +144,7 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
 
-  font-size: min(18px, calc(18 * 0.1667vh)) !important;
+  font-size: max(16px, calc(16vh/12)) !important;
   border-radius: 20px;
 }
 

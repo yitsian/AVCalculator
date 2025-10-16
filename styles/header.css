@@ -1,8 +1,11 @@
 .header {
   display: flex;
+  flex-wrap: wrap;
 
-  height: 15vh;
-  max-height: min(60px, calc(60 * 0.1667vh));
+  padding-top: max(12px, calc(12vh/16));
+  padding-bottom: max(12px, calc(12vh/16));
+
+  gap: max(12px, calc(12vh/16));
 
   background-color: rgba(60, 60, 60, 0.6);
 
@@ -18,7 +21,8 @@
 .icons-section {
   display: flex;
 
-  height: 100%;
+  flex: 1 1;
+  width: 100%;
 
   padding-left: min(12px, calc(12 * 0.1667vh));
   padding-right: min(12px, calc(12 * 0.1667vh));
@@ -32,7 +36,8 @@
 .links-section {
   display: flex;
 
-  height: 100%;
+  flex: 1 1;
+  width: 100%;
 
   padding-left: min(12px, calc(12 * 0.1667vh));
   padding-right: min(12px, calc(12 * 0.1667vh));
@@ -41,4 +46,5 @@
 
   flex-direction: row;
   align-items: center;
+  justify-content: end;
 }

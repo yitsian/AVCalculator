@@ -3,14 +3,14 @@
 
   overflow: scroll;
   overflow-x: hidden;
-  
-  grid-template-columns: repeat(auto-fill, minmax(min(120px, calc(120 * 0.1667vh)), 1fr));
-  grid-auto-rows: min(120px, calc(120 * 0.1667vh)); /* fix row height */
+
+  grid-template-columns: repeat(auto-fill, minmax(calc((1vw + 1vh) * 4.5), 1fr));
+  grid-auto-rows: calc((1vw + 1vh) * 4.5);
   justify-content: flex-start;
   justify-items: center;
   align-items: center;
 
-  gap: min(24px, calc(24 * 0.1667vh));
+  gap: max(24px, calc(24vh/12));
 
   flex: 1;
 
@@ -24,23 +24,53 @@
   flex-direction: column;
   justify-content: flex-start;
 
-  width: min(130px, calc(130 * 0.1667vh));
-  max-height: min(130px, calc(130 * 0.1667vh));
-  min-width: min(130px, calc(130 * 0.1667vh));
-  aspect-ratio: 1 / 1; 
+  width: calc((1vw + 1vh) * 4.5);
+  height: calc((1vw + 1vh) * 4.5);
+
+  min-width: calc((1vw + 1vh) * 4.5);
+
+  aspect-ratio: 1 / 1;
   padding: 0;
 
   position: relative;
   overflow: hidden;
 
-  border-radius: min(18px, calc(18 * 0.1667vh));
+  border-radius: clamp(12px, 2.5vw, 18px);
   background: none;
   border: none;
-  box-shadow: min(5px, calc(5 * 0.1667vh)) min(5px, calc(5 * 0.1667vh)) min(10px, calc(10 * 0.1667vh)) rgba(0, 0, 0, 0.5);
+  box-shadow: clamp(3px, 0.8vw, 5px) clamp(3px, 0.8vw, 5px) clamp(6px, 1.5vw, 10px) rgba(0, 0, 0, 0.5);
 
   cursor: pointer;
 
   transition: 0.15s;
+}
+
+@media (orientation: portrait) {
+  .units-catalog {
+    grid-template-columns: repeat(auto-fill, minmax(calc((1vw + 1vh) * 6), 1fr));
+    grid-auto-rows: calc((1vw + 1vh) * 6);
+  }
+
+  .unit-button {
+    width: calc((1vw + 1vh) * 6);
+    height: calc((1vw + 1vh) * 6);
+
+    min-width: calc((1vw + 1vh) * 6);
+  }
+}
+
+@media (max-width: 1280px) and (orientation: landscape) {
+  .units-catalog {
+    grid-template-columns: repeat(auto-fill, minmax(calc((1vw + 1vh) * 7), 1fr));
+    grid-auto-rows: calc((1vw + 1vh) * 7);
+  }
+
+  .unit-button {
+    width: calc((1vw + 1vh) * 7);
+    height: calc((1vw + 1vh) * 7);
+
+    min-width: calc((1vw + 1vh) * 7);
+  }
 }
 
 .unit-button:hover {
@@ -54,12 +84,15 @@
 
 .unit-gradient {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
   display: flex;
   flex-direction: column;
-  padding: min(5px, calc(5 * 0.1667vh));
-  border-radius: min(16px, calc(16 * 0.1667vh));
+  padding: max(4px, calc(4vh/12));
+  border-radius: max(16px, calc(16vh/12));
   z-index: 1;
 
   pointer-events: none;
@@ -69,7 +102,8 @@
 
 .unit-gradient-texture {
   position: absolute;
-  top: min(5px, calc(5 * 0.1667vh)); left: min(5px, calc(5 * 0.1667vh));
+  top: clamp(3px, 0.8vw, 5px);
+  left: clamp(3px, 0.8vw, 5px);
 
   width: 90%;
   height: 90%;
@@ -91,8 +125,8 @@
   z-index: 3;
   position: relative;
   background-color: rgba(0, 0, 0, 0.7);
-  border-radius: min(16px, calc(16 * 0.1667vh));
-  padding: min(4px, calc(4 * 0.1667vh));
+  border-radius: max(16px, calc(16vh/12));
+  padding: clamp(2px, 0.6vw, 4px);
 }
 
 .unit-picture {
@@ -102,7 +136,7 @@
   object-position: center;
   align-self: center;
   justify-self: center;
-  border-radius: min(16px, calc(16 * 0.1667vh));
+  border-radius: max(16px, calc(16vh/12));
   z-index: 4;
 
   transition: 0.15s;
@@ -110,9 +144,9 @@
 
 .unit-element {
   position: absolute;
-  top: min(4px, calc(4 * 0.1667vh));
-  left: min(4px, calc(4 * 0.1667vh));
-  width: min(25px, calc(25 * 0.1667vh)) !important;
+  top: max(4px, calc(4vh/12));
+  left: max(4px, calc(4vh/12));
+  width: max(24px, calc(24vh/12)) !important;
   z-index: 5;
 }
 
@@ -121,13 +155,13 @@
 
   bottom: 0;
   width: 100%;
-  padding: min(2px, calc(2 * 0.1667vh)) 0;
+  padding: clamp(1px, 0.3vw, 2px) 0;
 
   background-color: rgba(0, 0, 0, 0.6);
   text-align: center;
-  font-size: min(18px, calc(18 * 0.1667vh)) !important;
+  font-size: max(16px, calc(16vh/12)) !important;
   font-weight: 500;
 
-  border-radius: 0 0 min(16px, calc(16 * 0.1667vh)) min(16px, calc(16 * 0.1667vh));
+  border-radius: 0 0 clamp(10px, 2vw, 16px) clamp(10px, 2vw, 16px);
   z-index: 5;
 }

@@ -1,12 +1,9 @@
 .tags {
   white-space: nowrap;
   
-  padding-left: min(10px, calc(10 * 0.1667vh));
-  padding-right: min(10px, calc(10 * 0.1667vh));
-  padding-top: min(5px, calc(5 * 0.1667vh));
-  padding-bottom: min(5px, calc(5 * 0.1667vh));
+  padding: max(5px, calc(5vh/12)) max(10px, calc(10vh/12));
 
-  font-size: min(20px, calc(20 * 0.1667vh));
+  font-size: max(20px, calc(20vh/12));
 
   transition: 0.2s;
 }
@@ -18,7 +15,7 @@
 .image-tag {
   display: flex;
   
-  padding-right: min(12px, calc(12 * 0.1667vh));
+  padding-right: max(12px, calc(12vh/12));
 
   column-gap: min(5px, calc(5 * 0.1667vh));
   

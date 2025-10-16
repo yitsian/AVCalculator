@@ -35,6 +35,14 @@ body {
   text-align: center;
 }
 
+@media (max-height: 700px) {
+  .title {
+    margin: 0;
+    font-size: 0px !important;
+    padding: 0;
+  }
+}
+
 .header-margin {
   margin-bottom: min(12px, calc(12 * 0.1667vh));
 }
@@ -52,7 +60,7 @@ body {
 
   flex-direction: row;
   align-items: stretch;
-  column-gap: 1%;
+  gap: 1%;
 }
 
 .round-form {
@@ -76,7 +84,7 @@ body {
 }
 
 .font-size-20 {
-  font-size: min(20px, calc(18 * 0.1667vh)) !important;
+  font-size: max(20px, calc(8vh/6)) !important;
 }
 
 .font-size-48 {
@@ -96,9 +104,9 @@ body {
 .line-divided-text {
   display: flex;
   align-items: center;
-  gap: min(6px, calc(6vh/6));
+  gap: max(6px, calc(6vh/16));
   
-  font-size: min(24px, calc(24vh/6));
+  font-size: max(24px, calc(24vh/16));
 }
 
 .text-divider-line {

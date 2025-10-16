@@ -5,15 +5,15 @@
   overflow-x: hidden;
   
   height: 100%;
-  width: 35%;
+  width: 40%;
   max-width: min(500px, calc(500 * 0.1667vh));
 
   flex-direction: column;
-  row-gap: min(10px, calc(10 * 0.1667vh));
+  row-gap: max(12px, calc(12vh/12));
 
-  border-radius: min(20px, calc(20 * 0.1667vh));
+  border-radius: max(20px, calc(20vh/12));
 
-  padding: min(12px, calc(12 * 0.1667vh));
+  padding: max(12px, calc(12vh/12));
   background-color: rgba(60, 60, 60, 0.3);
 }
 
@@ -33,7 +33,7 @@
 
   padding: min(4px, calc(4 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
 
-  font-size: min(18px, calc(18 * 0.1667vh)) !important;
+  font-size: max(18px, calc(18vh/12)) !important;
   min-width: 0;
 }
 
@@ -61,10 +61,10 @@
   border: none;
   border-radius: min(99px, calc(99 * 0.1667vh));
 
-  max-width: min(150px, calc(150 * 0.1667vh));
+  max-width: max(150px, calc(150vh/12));
   min-width: 0;
 
-  font-size: min(18px, calc(18 * 0.1667vh)) !important;
+  font-size: max(18px, calc(18vh/12)) !important;
   cursor: pointer;
 
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='white' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
@@ -73,8 +73,14 @@
   background-size: min(12px, calc(12 * 0.1667vh));
 }
 
-.catagories {
-  font-size: min(24px, calc(24 * 0.1667vh)) !important;
+.sort-type option,
+.sort-order
+option {
+  font-size: max(18px, calc(18vh/12));
+}
+
+.sort-catagories {
+  font-size: max(24px, calc(24vh/12)) !important;
 }
 
 .sort-options {

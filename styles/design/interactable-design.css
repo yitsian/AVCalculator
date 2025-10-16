@@ -23,9 +23,9 @@
   padding: min(0px, calc(0 * 0.1667vh)) min(0px, calc(0 * 0.1667vh));
   flex-shrink: 0;
 
-  width: min(36px, calc(36 * 0.1667vh));;
+  width: max(36px, calc(36vh/12));
 
-  font-size: min(18px, calc(18 * 0.1667vh)) !important;
+  font-size: max(18px, calc(18vh/12)) !important;
 
   background-color: rgba(0, 0, 0, 0);
   border: none;
@@ -51,7 +51,7 @@
   appearance: none;
   
   flex: 1;
-  height: min(10px, calc(10 * 0.1667vh));
+  height: max(10px, calc(10vh/12));
   border-radius: min(16px, calc(16 * 0.1667vh));  
   background: rgba(0, 0, 0, 0.75);
   outline: none;
@@ -64,8 +64,8 @@
 
 .slider::-webkit-slider-thumb {
   appearance: none;
-  width: min(18px, calc(18 * 0.1667vh));
-  height: min(18px, calc(18 * 0.1667vh));
+  width: max(18px, calc(18vh/12));
+  height: max(18px, calc(18vh/12));
   border-radius: 50%; 
   background: #ffffff;
   cursor: pointer;
@@ -119,10 +119,10 @@
 /* Checkboxes */
 
 .checkmark {
-  width: min(18px, calc(18 * 0.1667vh));
-  height: min(18px, calc(18 * 0.1667vh));
+  width: max(18px, calc(18vh/12));
+  height: max(18px, calc(18vh/12));
   background-color: transparent;
-  border-radius: min(4px, calc(4 * 0.1667vh));
+  border-radius: max(4px, calc(4vh/12));
 
   border: min(2px, calc(2 * 0.1667vh)) solid rgba(255, 255, 255, 0.5);
   
@@ -133,11 +133,11 @@
 .clickable-label input:checked + .checkmark::after {
   content: "";
   position: absolute;
-  left: min(6px, calc(6 * 0.1667vh));
-  top: min(3px, calc(3 * 0.1667vh));
+  left: max(6px, calc(6vh/12));
+  top: max(3px, calc(3vh/12));
 
-  width: min(4px, calc(4 * 0.1667vh));
-  height: min(8px, calc(8 * 0.1667vh));
+  width: max(4px, calc(4vh/12));
+  height: max(8px, calc(8vh/12));
   border: solid rgb(0, 0, 0);
   border-width: 0 min(2px, calc(2 * 0.1667vh)) min(2px, calc(2 * 0.1667vh)) 0;
   transform: rotate(45deg);

@@ -37,6 +37,12 @@ const FamiliarDescriptions = {
 
   },
 
+  "Birb": {
+    rarity: "secret",
+    description: "Birb.",
+    image: "Images/Familiars/Birb.webp"
+  },
+
   "Birb (Dmg + Rng)": {
     rarity: "secret",
     description: "High roll Birbs with around 15%+ both in Dmg and Rng, Crit not accounted",
@@ -59,6 +65,12 @@ const FamiliarDescriptions = {
     rarity: "secret",
     description: "High rolls with 15%+ Dmg and decent crit stats. Dmg stat contributes more for Dps than Crit in most cases.",
     image: "Images/Familiars/Birb.webp"
+  },
+
+  "BlackSpirit": {
+    rarity: "mythic",
+    description: "For units that rely on meters either for more damage or utility",
+    image: "Images/Familiars/BlackSpirit.webp"
   },
 
   "Black Spirit": {

@@ -23,7 +23,7 @@
   gap: min(16px, calc(16 * 0.1667vh));
 
   border-radius: min(16px, calc(16 * 0.1667vh));
-  padding: min(12px, calc(12 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
+  padding: max(12px, calc(12vh/12));
 
   background-color: rgba(0, 0, 0, 0.3);
 }
@@ -41,10 +41,10 @@
 
 .final-stat-number {
   display: flex;
-  
-  gap: min(12px, calc(12 * 0.1667vh));
 
-  width: min(180px, calc(180 * 0.1667vh));
+  gap: max(12px, calc(12vh/12));
+
+  width: max(180px, calc(180vh/12));
 
   align-items: center;
   text-align: end;
@@ -60,7 +60,7 @@
 
   border-radius: min(20px, calc(20 * 0.1667vh));
 
-  padding: min(12px, calc(12 * 0.1667vh));
+  padding: max(12px, calc(12vh/12));
   background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -72,11 +72,28 @@
 }
 
 .attack-image {
-  height: min(100px, calc(100 * 0.1667vh));
-  width: min(100px, calc(100 * 0.1667vh));
+  width: calc((1vw + 1vh) * 3);
+  height: calc((1vw + 1vh) * 3);
 
-  min-width: min(100px, calc(100 * 0.1667vh));
-  max-height: min(100px, calc(100 * 0.1667vh));
+  min-width: calc((1vw + 1vh) * 3);
+}
+
+@media (orientation: portrait) {
+  .attack-image {
+    width: calc((1vw + 1vh) * 4);
+    height: calc((1vw + 1vh) * 4);
+
+    min-width: calc((1vw + 1vh) * 4);
+  }
+}
+
+@media (max-width: 1280px) and (orientation: landscape) {
+  .attack-image {
+    width: calc((1vw + 1vh) * 5);
+    height: calc((1vw + 1vh) * 5);
+
+    min-width: calc((1vw + 1vh) * 5);
+  }
 }
 
 .attack-description {

@@ -29,7 +29,7 @@
   padding: min(4px, calc(4 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
   flex-shrink: 0;
 
-  font-size: min(18px, calc(18 * 0.1667vh));
+  font-size: max(18px, calc(18vh/12));
 }
 
 .suggestion-box {
@@ -38,13 +38,13 @@
   display: flex;
   flex-direction: column;
 
-  gap: 8px;
+  gap: max(8px, calc(8vh/12));
 
   bottom: calc(100% + 12px);
   left: -12px;
   right: 0;
 
-  padding: 6px;
+  padding: max(6px, calc(6vh/12));
 
   width: calc(100% + 24px);
 

@@ -27,7 +27,7 @@
 }
 
 .percent-symbol {
-  font-size: min(18px, calc(18 * 0.1667vh));
+  font-size: max(18px, calc(18vh/12))
 }
 
 .aoe-info {
@@ -72,8 +72,10 @@
 
   gap: min(6px, calc(6 * 0.1667vh));
 
-  font-size: min(20px, calc(20 * 0.1667vh)) !important;
-
   align-items: center;
   justify-self: flex-start;
+}
+
+.passive-description {
+  font-size: max(20px, calc(20vh/12)) !important;
 }

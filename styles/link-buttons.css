@@ -1,5 +1,5 @@
 .navigate-button {
-  font-size: min(24px, calc(24 * 0.1667vh)) !important; 
+  font-size: max(24px, calc(12vh/8)) !important; 
 }
 
 .link-button {
@@ -9,7 +9,7 @@
   padding: min(6px, calc(6 * 0.1667vh)) min(12px, calc(12 * 0.1667vh));
   border-radius: min(99px, calc(99 * 0.1667vh));
 
-  font-size: min(18px, calc(18 * 0.1667vh)) !important; 
+  font-size: max(18px, calc(18vh/16)) !important; 
 
   font-weight: 550;
   text-decoration: none;
@@ -24,7 +24,7 @@
 }
 
 .link-button img {
-  height: min(24px, calc(24 * 0.1667vh));
+  height: max(24px, calc(24vh/16));
 
   margin-right: min(8px, calc(8 * 0.1667vh));
 }

@@ -1,0 +1,19 @@
+@media (max-width: 1400px) {
+  .main {
+    flex-direction: column;
+
+    overflow-y: scroll;
+  }
+
+  .unit-section {
+    overflow: unset;
+  }
+
+  .buffs-section {
+    overflow: unset;
+  }
+
+  .stat-section {
+    overflow: unset;
+  }
+}
