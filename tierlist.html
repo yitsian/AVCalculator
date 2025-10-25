@@ -3,8 +3,18 @@
 <html>
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDXLTGTBW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-QDXLTGTBW9');
+  </script>
+
   <meta charset="UTF-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <title>Anime Vanguards DPS Calculator</title>
@@ -65,12 +75,12 @@
     <div class="tierlist-categories">
       <button id="Optimal" class="tierlist-category-button selected-category"
         onclick="selectButton('Optimal')">Optimal</button>
-      <button id="Sub-Optimal" class="tierlist-category-button"
-        onclick="selectButton('Sub-Optimal')">Traitless (TBA)</button>
+      <button id="Sub-Optimal" class="tierlist-category-button" onclick="selectButton('Sub-Optimal')">Traitless
+        (TBA)</button>
       <button id="Infinite" class="tierlist-category-button" onclick="selectButton('Infinite')">Infinite (TBA)</button>
       <button id="Pvp" class="tierlist-category-button" onclick="selectButton('Pvp')">Pvp (TBA)</button>
-      <button id="Tournaments" class="tierlist-category-button"
-        onclick="selectButton('Tournaments')">Tourneys (TBA)</button>
+      <button id="Tournaments" class="tierlist-category-button" onclick="selectButton('Tournaments')">Tourneys
+        (TBA)</button>
     </div>
 
     <div class="tierlist-filters">
@@ -294,7 +304,8 @@
                 Cleave and Dismantle
               </div>
               <div class="tl-popup-team-description">
-                Constant Bleed application along with DoT buffs from Dark Mage. The Struggler also provides demons to proc followups.
+                Constant Bleed application along with DoT buffs from Dark Mage. The Struggler also provides demons to
+                proc followups.
               </div>
             </div>
 

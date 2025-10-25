@@ -59,7 +59,7 @@ const unitTagData = {
   Igros: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse"], aoes: ["Full"], mechanics: ["Immune"] },
   Regnaw: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Holy"], aoes: ["Circle"], mechanics: ["CC"] },
   Soburo: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Circle"], mechanics: ["Ability", "Buffer"] },
-  Isdead: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Buffer"] },
+  Isdead: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Buffer", "Domain"] },
   Sokora: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unknown"], aoes: ["Full"], mechanics: ["Immune", "Ability", "Buffer"] },
   Salter: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse"], aoes: ["Circle"], mechanics: ["CC", "DOT", "Debuffer", "Immune"] },
 
@@ -68,7 +68,7 @@ const unitTagData = {
   Newsman: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Water"], aoes: ["OCone"], mechanics: ["CC", "Debuffer", "DOT"] },
   Quetzalcoatl: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "Buffer"] },
   Reimu: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["Full"], mechanics: ["Ability"] },
-  Sakuya: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Ability", "Domain", "CC"] },
+  Sakuya: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Ability", "CC"] },
   Arc: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["ACone"], mechanics: ["Ability", "CC", "Summoner", "DOT"] },
   Hebano: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["DOT", "Buffer", "Debuffer"] },
   Marlin: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Circle"], mechanics: ["Ability", "Buffer", "Debuffer"] },
