@@ -23,4 +23,7 @@ headerIconSectionElm.innerHTML = `
 
   <button class="tags general-text round-form ${getSelectedClass('reroll.html')} navigate-button"
     onclick="navigateTo('reroll.html')">Rerolling</button>
+    
+  <button class="tags general-text round-form ${getSelectedClass('compare.html')} navigate-button"
+    onclick="navigateTo('compare.html')">Compare</button>
 `

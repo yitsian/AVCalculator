@@ -23,7 +23,7 @@ const unitAttacks = {
     multiplier: 0.7, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
 
     {name: "Alien Cadet Summon", aoe: "Single", hits: 1, type: "Summon", description: "Basic summon that spawns with 1x this unit's Dmg.", 
-    multiplier: 1, image: "Images/Abilities/Friezo.png", gradient: "rare"},
+    multiplier: 1, image: "Images/Units/LordFriezo.webp", gradient: "rare"},
   ],
 
   Wolf: [

@@ -1,8 +1,8 @@
 const unitStats = {
-  BrolziSuper: { displayName: "Brolzi Super (Wrathful)", placementCount: 3, placementCost: 3000, maxCost: 152000, damage: 13000, spa: 10.5, range: 50, aoe: "90° Cone", hits: 5 },
-  RogitaSuper: { displayName: "Rogita (Super)", placementCount: 3, placementCost: 1200, maxCost: 86925, damage: 8000, spa: 6, range: 40, aoe: "70 (12 Radius) Splash", hits: 3 },
+  BrolziSuper: { displayName: "Brolzi Super (Wrathful)", placementCount: 3, placementCost: 3000, maxCost: 107300, damage: 13000, spa: 10.5, range: 50, aoe: "90° Cone", hits: 5 },
+  RogitaSuper: { displayName: "Rogita (Super)", placementCount: 3, placementCost: 1200, maxCost: 86925, damage: 8000, spa: 6, range: 40, aoe: "70 (22 Radius) Splash", hits: 3 },
   LordFriezo: { displayName: "Lord Friezo (Emperor)", placementCount: 3, placementCost: 2000, maxCost: 119400, damage: 10500, spa: 6, range: 40, aoe: "16 Circle", hits: 3 },
-  Wolf: { displayName: "Wolf (Resurrection)", placementCount: 4, placementCost: 1800, maxCost: 99800, damage: 8850, spa: 8, range: 50, aoe: "180° Cone", hits: 3 },
+  Wolf: { displayName: "Wolf (Resurrection)", placementCount: 4, placementCost: 1800, maxCost: 99800, damage: 8850, spa: 8, range: 50, aoe: "180° Cone", hits: 5 },
 
   TheStruggler: { displayName: "The Struggler (Rampage)", placementCount: 3, placementCost: 1200, maxCost: 137800, damage: 21000, spa: 9, range: 40, aoe: "Full", hits: 4 },
   TheFalcon: { displayName: "The Falcon (of Light)", placementCount: 1, placementCost: 1000, maxCost: 1000, damage: 12300, spa: 7, range: 52, aoe: "120° Cone", hits: 8 },

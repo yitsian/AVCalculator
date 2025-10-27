@@ -1,0 +1,103 @@
+#comparison-container {
+  display: flex;
+  flex-direction: row;
+  gap: max(18px, calc(18vh/12));
+
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: max(24px, calc(24vh/12));
+  padding: max(18px, calc(18vh/12));
+
+  flex: 2;
+}
+
+#comparison-selection-1,
+#comparison-selection-2 {
+  display: flex;
+  flex-direction: column;
+  gap: max(12px, calc(12vh/12));
+
+  overflow-y: scroll;
+
+  flex: 1;
+
+  padding: max(18px, calc(18vh/12));
+  border-radius: max(18px, calc(18vh/12));
+
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1400px) {
+  #comparison-selection-1,
+  #comparison-selection-2 {
+    overflow: unset;
+  }
+}
+
+/* Top */
+
+.comparison-unit-top {
+  display: flex;
+  flex-direction: row;
+
+  gap: max(12px, calc(12vh/12))
+}
+
+.comparison-unit-description {
+  display: flex;
+  flex-direction: column;
+
+  gap: max(8px, calc(8vh/12))
+}
+
+.comparison-unit-name {
+  font-size: max(28px, calc(28vh/12));
+}
+
+.comparison-unit-modifier {
+  font-size: max(28px, calc(28vh/12));
+}
+
+.comparison-unit-trait {
+  font-size: max(20px, calc(20vh/12))
+}
+
+.comparison-unit-trait img {
+  width: max(20px, calc(20vh/12));
+  height: max(20px, calc(20vh/12));
+}
+
+/* Attacks */
+
+.comparison-attack-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: max(12px, calc(12vh/12));
+
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: max(12px, calc(12vh/12));
+  border-radius: max(18px, calc(18vh/12));
+}
+
+.comparison-attack-title {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+
+  flex: 1;
+}
+
+.comparison-attack-name {
+  font-size: max(30px, calc(30vh/12));
+  text-wrap-mode: wrap;
+}
+
+.comparison-attack-description {
+  display: flex;
+  flex-direction: column;
+  gap: max(12px, calc(12vh/12));
+
+  flex: 1;
+
+  min-width: 100px;
+}

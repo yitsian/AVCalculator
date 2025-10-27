@@ -99,7 +99,7 @@ let unitPassives = {
       name: "Lord Friezo", upgrade: 0,
       conditions: [
         {
-          description: "This unit gainz different buffs based on the minions placed.", type: "None"
+          description: "This unit gains different buffs based on the minions placed. (Aliens don't recieve this buff)", type: "None"
         },
 
         {

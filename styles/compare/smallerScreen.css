@@ -1,0 +1,13 @@
+@media (max-width: 1400px) {
+  .main {
+    flex-direction: column;
+    
+    overflow-y: scroll;
+
+    gap: min(12px, calc(12vh/6));
+  }
+
+  #comparison-container {
+    flex-direction: column; 
+  }
+}

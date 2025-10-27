@@ -35,6 +35,12 @@
 
   font-size: max(18px, calc(18vh/12)) !important;
   min-width: 0;
+
+  transition: 0.3s;
+}
+
+.sort-search:hover {
+  transform: scale(1.05);
 }
 
 .sort-indexes {
@@ -71,12 +77,14 @@
   background-repeat: no-repeat;
   background-position: right min(12px, calc(12 * 0.1667vh)) center;
   background-size: min(12px, calc(12 * 0.1667vh));
+
+  transition: 0.3s;
 }
 
 .sort-type option,
 .sort-order
 option {
-  font-size: max(18px, calc(18vh/12));
+  font-size: max(18px, calc(12vh/12));
 }
 
 .sort-catagories {
