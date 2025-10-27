@@ -15,15 +15,6 @@
 
   <meta charset="UTF-8">
 
-  <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-      }
-    }
-  </script>
-
   <title>Anime Vanguards DPS Calculator</title>
   <link rel="icon" type="image/x-icon" href="Images/Icons/Trait_Reroll.webp">
 
@@ -48,6 +39,15 @@
   <link rel="stylesheet" href="styles/compare/comparison.css">
   <link rel="stylesheet" href="styles/compare/catalog.css">
   <link rel="stylesheet" href="styles/compare/smallerScreen.css">
+
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@<version>/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@<version>/examples/jsm/"
+  }
+}
+</script>
 </head>
 
 <body>
@@ -80,7 +80,8 @@
 
     <div id="comparison-catalog">
       <div class="catalog-search-index">
-        <input id="comparison-catalog-search-input" class="sort-search general-text round-form" type="text" placeholder="Search Unit">
+        <input id="comparison-catalog-search-input" class="sort-search general-text round-form" type="text"
+          placeholder="Search Unit">
 
         <div class="sort-indexes">
           <select id="comparison-catalog-sort-type" class="sort-type general-text round-form">
@@ -109,8 +110,8 @@
   <script src="javascript/shared/icons.js"></script>
   <script src="javascript/shared/pageHandler.js"></script>
   <script src="javascript/shared/tooltips.js"></script>
-  
-  <script type="module" src="javascript/modules/three.js"></script>
+
+  <script type="module" src="javascript/modules/three.js?v=2"></script>
 
   <script src="javascript/shared/unitData/unitAttacks.js"></script>
   <script src="javascript/shared/unitData/unitPassives.js"></script>
