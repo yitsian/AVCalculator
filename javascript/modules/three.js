@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const camera = new THREE.PerspectiveCamera(75, 300 / 200, 0.1, 1000);
 
