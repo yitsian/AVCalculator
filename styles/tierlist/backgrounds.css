@@ -4,6 +4,10 @@
   inherits: false;
 }
 
+.tl-valentine {
+  background-image: linear-gradient(var(--gradient-angle), rgb(17, 42, 77) 0%, rgb(160, 160, 160) 50%, rgb(88, 13, 29) 100%);
+}
+
 .tl-obita {
   background-image: linear-gradient(var(--gradient-angle), #5f5f8d 0%, #06060a 50%, #5f5f8d 100%);;
 }
