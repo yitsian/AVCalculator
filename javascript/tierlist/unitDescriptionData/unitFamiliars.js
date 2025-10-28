@@ -356,4 +356,7 @@ const unitFamiliars = {
   ObitaFamiliar: {
     fam1: "ObitaFamiliar",
   },
+  ValentineFamiliar: {
+    fam1: "ValentineFamiliar",
+  },
 };

@@ -4,6 +4,7 @@ const unitTagData = {
   TengonFamiliar: { availability: ["Limited"], rarities: ["Mythic", "Tengon"], elements: ["Blast", "Fire"], aoes: ["Full"], mechanics: ["Debuffer", "Buffer"] },
   GilgameshFamiliar: { availability: ["Unobtainable"], rarities: ["Exclusive", "Gilgamesh"], elements: ["Holy", "Unbound"], aoes: ["ACone"], mechanics: ["Nuke", "CC", "Immune", "Ability"] },
   ObitaFamiliar: { availability: ["Limited"], rarities: ["Mythic", "Obita"], elements: ["Fire"], aoes: ["OCone"], mechanics: ["DOT"] },
+  ValentineFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Valentine"], elements: ["Passion"], aoes: ["Circle"], mechanics: ["Immune", "Ability"] },
 
   BrolziSuper: { availability: ["Permanent"], rarities: ["Vanguard", "BrolziSuper"], elements: ["Unbound"], aoes: ["OCone"], mechanics: ["Debuffer", "Buffer", "Ability", "Domain"] },
   RogitaSuper: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Blast"], aoes: ["Splash"], mechanics: ["Buffer", "Immune"] },
@@ -52,7 +53,7 @@ const unitTagData = {
   Eizan: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "Immune", "CC", "Debuffer"] },
   Yehowach: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Ability", "Buffer", "Immune"] },
   Yomomata: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "Ability", "Summoner"] },
-  Valentine: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Circle"], mechanics: [""] },
+  Valentine: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Circle"], mechanics: ["Immune", "Ability"] },
   Sukono: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse", "Fire"], aoes: ["ACone"], mechanics: ["DOT", "Ability", "Immune", "Domain", "Debuffer", "Nuke"] },
   Gujo: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["CC", "Immune", "Ability", "Domain"] },
   Alocard: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "Summoner", "Debuffer", "DOT"] },

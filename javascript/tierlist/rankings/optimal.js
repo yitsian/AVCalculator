@@ -16,9 +16,9 @@ const optimalRankings = {
         { id: "TengonFamiliar", trait: "Monarch", description: "Blast and Fire Buffer / Scorched" },
         { id: "Koguro", trait: "Monarch", description: "Domains / Nuke / Teleport" },
         { id: "TheStruggler", trait: "Monarch", description: "Berserker Armor" },
+        { id: "ValentineFamiliar", trait: "Monarch", description: "Clones / Teleport" },
         { id: "GujoFamiliar", trait: "Monarch", description: "Timestop / Inf Range Attack 3" },
         { id: "Vsjw", trait: "Monarch", description: "Summons / Nuke" },
-        { id: "MonkeyKing", trait: "Monarch", description: "All Groups / Clones" },
       ],
 
       support: [
@@ -52,6 +52,7 @@ const optimalRankings = {
       ],
 
       subDamage: [
+        { id: "MonkeyKing", trait: "Monarch", description: "All Groups / Clones" },
         { id: "GG", trait: "Monarch", description: "High Burst / Cleanser" },
         { id: "Wolf", trait: "Monarch", description: "Slow / Chases Leaks / Guaranteed Crit" },
         { id: "Conqueror", trait: "Monarch", description: "High Range / Multi Attack" },

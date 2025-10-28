@@ -29,6 +29,12 @@ const FamiliarDescriptions = {
     image: "Images/Units/ObitaFamiliar.webp"
   },
 
+  "ValentineFamiliar": {
+    rarity: "valentine",
+    description: "Suppose that you were sitting down at this table. The napkins are in front of you, which napkin would you take?",
+    image: "Images/Units/ValentineFamiliar.webp"
+  },
+
   "ChasoFamiliar": {
 
   },

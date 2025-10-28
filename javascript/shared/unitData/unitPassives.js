@@ -397,6 +397,48 @@ let unitPassives = {
     },
   ],
 
+  ValentineFamiliar: [
+    {
+      name: "23rd President", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg & Rng +1% after hitting an enemy (up to 23%).",
+          multiplicative: false, type: "Slider", min: 0, max: 23, step: 1, buffs: [1, 0, 1, 0, 0, 0]
+        }
+      ]
+    },
+
+    {
+      name: "A Gift From the Other Side", upgrade: 0,
+      conditions: [
+        {
+          description: "Spa -5% with each use of This is Another Me... (down to -15%).",
+          multiplicative: false, type: "Slider", min: 0, max: 15, step: 5, buffs: [0, 1, 0, 0, 0, 0]
+        }
+      ]
+    },
+
+    {
+      name: "Ticket to Ride", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +10% after redirecting an attack (up to +30%).",
+          multiplicative: false, type: "Slider", min: 0, max: 30, step: 10, buffs: [1, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+
+    {
+      name: "Mr. President", upgrade: 0,
+      conditions: [
+        {
+          description: "Use this slider for amount of clones active",
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 1, buffs: [0, 0, 0, 0, 0, 0], suffix: " Clones"
+        },
+      ]
+    },
+  ],
+
   Iscanur: [
     {
       name: "High Noon", upgrade: 0,

@@ -4,6 +4,11 @@
   inherits: false;
 }
 
+.valentine {
+  background-image: repeating-linear-gradient(150deg, rgb(31, 74, 133) 0%, rgb(241, 243, 246) 12%, rgb(208, 16, 58) 25%, rgb(241, 243, 246) 38%, rgb(31, 74, 133) 50%);
+  background-size: 200% 200%;
+}
+
 .obita {
   background-image: repeating-linear-gradient(150deg, #9e9eed 0%, #06060a 25%, #9e9eed 50%);
   background-size: 200% 200%;

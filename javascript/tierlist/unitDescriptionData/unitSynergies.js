@@ -1,3 +1,4 @@
+
 const unitSynergies = {
   Al: [
     {},
@@ -30,7 +31,7 @@ const unitSynergies = {
   BrolziSuper: [
     {
       name: "These Units are Finally Useful?",
-      desc: "Finally a unit to gain full benefit from Hercule and Boohon, simply taking one is enough to boost Brolzi's dps by 30% or 67% with both.",
+      desc: "Finally a unit to gain full benefit from Hercule and Boohon, simply taking one is enough to boost Brolzi's dps by 30% or up to a whole 67% with both.",
       units: ["Hercool", "Boohon"]
     },
   ],
@@ -178,7 +179,7 @@ const unitSynergies = {
   MonkeyKing: [
     {
       name: "Sandbox Warriors",
-      units: ["TheSmith", "GiantQueen"]
+      units: ["RogitaSuper", "GiantQueen"]
     },
   ],
   Newsman: [
@@ -358,7 +359,8 @@ const unitSynergies = {
       desc: "Pretty self explanatory as its specifically made for them, but with cost reduction from Silly Fairy or Aurin, and whatever future cost reduction, will make this synergy a lot more viable",
       units: ["Arin", "GiantQueen"]
     },
-
+  ],
+  ValentineFamiliar: [
     {},
   ],
 };

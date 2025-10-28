@@ -90,6 +90,11 @@ const unitAttacks = {
     multiplier: 0.3, image: "Images/Units/ObitaFamiliar.webp", gradient: "obita"},
   ],
 
+  ValentineFamiliar: [
+    {name: "This is Another Me...", aoe: "18 Circle", hits: 1, type: "Spa-Followup", description: "Each use places a clone that each do 20% of this unit's Dmg, lasting 20s.", 
+    multiplier: (finalStats, conditions) => {return (conditions["3-0"].active == true ? (conditions["3-0"].value * 0.2) : 0)}, image: "Images/Abilities/This_is_Another_Me..._Ability.webp", gradient: "valentine"},
+  ],
+
   Iscanur: [
     {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},
