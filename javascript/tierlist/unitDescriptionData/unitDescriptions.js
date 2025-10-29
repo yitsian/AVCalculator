@@ -373,6 +373,6 @@ const unitDescriptions = {
   ValentineFamiliar: {
     pros: ["Teleport Ability","Amazing Single Target Dps","Immune to status effects"],
     cons: ["Bad Aoes especially on clones","Relatively expensive"],
-    description: "Valentine with his familiar is elected as your new president. He passively gains a clone every 10 seconds and on every 30 takedowns. Clones last for 30 seconds and do 20% of Valentine's damage. Selling Valentine will swap him with the nearest active clone, allowing for you to teleport him anywhere you wish. Valentine is immune to status effects and deals massive dps making him a great boss killer. His downsides are his bad aoes and somewhat expensive cost. Overall he is an amazing unit and performs as a better version of Monkey King."
+    description: "Valentine with his familiar is elected as your new president. He passively gains a clone every 10 seconds and on every 30 takedowns. Clones last for 20 seconds and do 20% of Valentine's damage. Selling Valentine will swap him with the nearest active clone, allowing for you to teleport him anywhere you wish. Valentine is immune to status effects and deals massive dps making him a great boss killer. His downsides are his bad aoes and somewhat expensive cost. Overall he is an amazing unit and performs as a better version of Monkey King."
   },
 };
