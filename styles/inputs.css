@@ -20,7 +20,7 @@
 /* Tab Input*/
 
 .stat-input {
-  padding: min(0px, calc(0 * 0.1667vh)) min(0px, calc(0 * 0.1667vh));
+  padding: 0px;
   flex-shrink: 0;
 
   width: max(36px, calc(36vh/12));

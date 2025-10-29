@@ -5,6 +5,7 @@ const buffsCatalog = document.getElementById("buffs-catalog");
 const buffFilter = document.getElementById("buff-filter")
 
 let appliedBuffs = []
+let appliedConditionMap = {}
 
 function searchBuffs(query) {
   const lowerQuery = query.toLowerCase();
@@ -71,7 +72,7 @@ function showSuggestions() {
     layout.addEventListener("click", () => {
       searchInput.value = ""
       suggestionBox.classList.add("hidden");
-      createBuff(buffData)
+      createBuff(key, buffData)
     });
   });
 
@@ -94,7 +95,7 @@ const buffsContainer = document.getElementById("buffs-container")
 const maxBuffs = document.getElementById("max-buffs")
 const clearBuffs = document.getElementById("clear-buffs")
 
-function createBuff(buffData) {
+function createBuff(buffId, buffData, conditionMap) {
   const layout = createElement("div", "buff-layout", buffsContainer);
 
   // ─── Buff Top ───────────────────────────────
@@ -124,7 +125,7 @@ function createBuff(buffData) {
   const eventHandlers = [];
 
   buffData.conditions.forEach((condition, index) => {
-    const conditionId = `${buffData.name}-${index}`;
+    const conditionId = `${buffId}-${index}`;
 
     // Create a group container for each condition
     const conditionGroup = createElement("div", "passive-condition-group", bottom);
@@ -148,7 +149,7 @@ function createBuff(buffData) {
       slider.min = condition.minRange;
       slider.max = condition.maxRange;
       slider.step = condition.step;
-      slider.value = condition.maxRange / 2;
+      slider.value = conditionMap ? conditionMap[conditionId] : condition.maxRange / 2;
       slider.id = conditionId;
 
       valueDisplay = createElement("div", "general-text round-form tags passive-number-padding slider-value", conditionGroup);
@@ -161,12 +162,16 @@ function createBuff(buffData) {
       maxBuffs.addEventListener("click", maxHandler);
       eventHandlers.push(() => maxBuffs.removeEventListener("click", maxHandler));
 
+      saveAppliedCondtionMap(conditionId, slider.value)
+      slider.addEventListener("input", () => {
+        saveAppliedCondtionMap(conditionId, slider.value)
+      })
     } else if (condition.type === "Static") {
       const statement = createElement("div", "general-text round-form tags passive-number-padding passive-condition", conditionGroup);
       statement.textContent = condition.statement;
     }
 
-    buffUpdate(checkbox, slider, valueDisplay, conditionId, condition);
+    setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, condition);
   });
 
   // Trash Button
@@ -175,22 +180,52 @@ function createBuff(buffData) {
 
   const deleteBuff = () => {
     buffData.conditions.forEach((condition, index) => {
-      clearBuffActive(`${buffData.name}-${index}`)
+      clearBuffActive(`${buffId}-${index}`)
+      saveAppliedCondtionMap(`${buffId}-${index}`, null)
     });
 
     eventHandlers.forEach(remove => remove());
 
-    appliedBuffs = appliedBuffs.filter(n => n !== buffData.name);
+    appliedBuffs = appliedBuffs.filter(n => n !== buffId);
 
     layout.remove();
+
+    saveAppliedBuffs()
   };
-  
+
   trashButton.addEventListener("click", deleteBuff);
   clearBuffs.addEventListener("click", deleteBuff);
   eventHandlers.push(() => clearBuffs.removeEventListener("click", deleteBuff));
   eventHandlers.push(() => trashButton.removeEventListener("click", deleteBuff));
 
-  appliedBuffs.push(buffData.name);
+  appliedBuffs.push(buffId);
+
+  saveAppliedBuffs()
 
   return layout;
 }
+
+function saveAppliedBuffs() {
+  localStorage.setItem("appliedBuffsSave", JSON.stringify(appliedBuffs))
+}
+
+function saveAppliedCondtionMap(conditionId, value) {
+  if (value) {
+    appliedConditionMap[conditionId] = value
+  } else {
+    delete appliedConditionMap[conditionId]
+  }
+
+  localStorage.setItem("appliedConditionMap", JSON.stringify(appliedConditionMap))
+}
+
+function loadAppliedBuffs() {
+  const appliedBuffsSave = JSON.parse(localStorage.getItem("appliedBuffsSave"))
+  const appliedConditionMapSave = JSON.parse(localStorage.getItem("appliedConditionMap"))
+
+  for (buffId of appliedBuffsSave) {
+    createBuff(buffId, buffData[buffId], appliedConditionMapSave)
+  }
+}
+
+document.addEventListener("DOMContentLoaded", loadAppliedBuffs)

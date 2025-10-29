@@ -168,7 +168,7 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
   updateBaseStats(); // Final update after all buffs are applied
 }
 
-function buffUpdate(checkbox, slider, valueDisplay, conditionId, condition) {
+function setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, condition) {
   const update = () => {
     condition.active = checkbox ? checkbox.checked : true;
     condition.value = checkbox && !checkbox.checked ? 0 : (slider ? parseFloat(slider.value) : 1);

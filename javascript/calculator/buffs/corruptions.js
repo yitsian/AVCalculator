@@ -21,7 +21,7 @@ function createCorruption4Slider(min, max) {
 
   const buff = corruption == 4 ? [1, 0, 0, 0, 0, 0] : familiarsData[selectedFamiliar].buffs.map(number => number / 100)
 
-  buffUpdate(null, corruptionSlider, corruptionValueDisplay, "corruption-slider", 
+  setBuffUpdateLoop(null, corruptionSlider, corruptionValueDisplay, "corruption-slider", 
     {multiplicative: corruption == 4 ? true : familiarsData[selectedFamiliar].multiplicative, buffs: buff, type: "Slider"}
   )
 }

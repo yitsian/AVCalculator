@@ -1,4 +1,5 @@
 let selectedFamiliar = "Birb"
+let familiarPassiveConditionMap = {}
 
 let corruption = 4;
 let familiarPassiveSliders = []
@@ -12,7 +13,7 @@ const elementSliderText = document.getElementById("element-slider-text")
 
 const familiarPassiveContainer = document.getElementById("familiar-passive")
 
-function loadElements() {
+function loadFamiliarElements() {
   familiarElements.innerHTML = ""
 
   for (elementIndex in familiarsData[selectedFamiliar].elements) {
@@ -28,9 +29,9 @@ function loadElements() {
   }
 }
 
-buffUpdate(null, elementSlider, elementSliderText, "element-buff", { multiplicative: true, buffs: [1, 0, 0, 0, 0, 0], type: "Slider" })
+setBuffUpdateLoop(null, elementSlider, elementSliderText, "element-buff", { multiplicative: true, buffs: [1, 0, 0, 0, 0, 0], type: "Slider" })
 
-function clearFamiliarUI() {
+function clearFamiliarPassives() {
   familiarPassiveContainer.innerHTML = "";
   Object.keys(familiarPassiveSliders).forEach(id => delete familiarPassiveSliders[id]);
 }
@@ -39,8 +40,8 @@ function loadFamiliar() {
   familiarImage.src = familiarsData[selectedFamiliar].image
   familiarName.textContent = selectedFamiliar
 
-  loadElements()
-  clearFamiliarUI()
+  loadFamiliarElements()
+  clearFamiliarPassives()
 
   const passiveLayout = createElement("div", "passive-layout", familiarPassiveContainer);
 
@@ -57,49 +58,49 @@ function loadFamiliar() {
 
   if (familiarsData[selectedFamiliar].type === "Slider") {
     for (stat in familiarsData[selectedFamiliar].minRanges) {
-      const conditionId = "Familiar-Slider-" + stat
+      const conditionId = selectedFamiliar + "-" + stat
 
       const sliderMinRange = familiarsData[selectedFamiliar].minRanges[stat];
       const sliderMaxRange = familiarsData[selectedFamiliar].maxRanges[stat];
 
       const sliderConfig = { type: "Slider", multiplicative: familiarsData[selectedFamiliar].multiplicative, buffs: statToBuffVector(stat), otherBuffs: statToOtherBuffVector(stat) }
 
-      const [checkbox, slider, valueDisplay] = createPassiveBottom(passiveLayout, familiarsData[selectedFamiliar].type, sliderMinRange, sliderMaxRange, familiarsData[selectedFamiliar].step, conditionId)
+      const [checkbox, slider, valueDisplay] = createPassiveBottom(passiveLayout, familiarsData[selectedFamiliar].type, sliderMinRange, sliderMaxRange, familiarsData[selectedFamiliar].step, conditionId, familiarPassiveConditionMap[conditionId])
 
       familiarPassiveSliders[conditionId] = { slider: slider, origMax: slider.max, origMin: slider.min }
       valueDisplay.classList.add(stat)
 
-      buffUpdate(checkbox, slider, valueDisplay, conditionId, sliderConfig)
+      setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, sliderConfig)
+
+      saveFamiliarData(conditionId, slider.value)
+      slider.addEventListener("input", () => {
+        saveFamiliarData(conditionId, slider.value)
+      })
     }
   } else {
     const conditionId = "Familiar-Passive"
 
     const buffConfig = { type: "Statement", multiplicative: familiarsData[selectedFamiliar].multiplicative, buffs: familiarsData[selectedFamiliar].buffs }
 
-    buffUpdate(null, null, null, conditionId, buffConfig)
+    setBuffUpdateLoop(null, null, null, conditionId, buffConfig)
   }
 }
 
-function updatePassive(passiveLayout, checkbox, condition, conditionId, slider) {
-  const isActive = checkbox.checked;
-  const value = slider ? slider.value : 1;
-  setBuffActive(conditionId, condition, isActive, value);
-
-  if (isActive == false) {
-    passiveLayout.classList.add("faded-passive")
-  } else {
-    passiveLayout.classList.remove("faded-passive")
-  }
-
-  if (slider) {
-    corruptionValueDisplay.textContent = slider.value + (condition.suffix || "%");
-  }
+function saveFamiliarData(conditionId, value) {
+  familiarPassiveConditionMap[conditionId] = value
+  localStorage.setItem("familiarPassiveConditionMap", JSON.stringify(familiarPassiveConditionMap))
 }
 
+function loadFamiliarData() {
+  familiarPassiveConditionMap = JSON.parse(localStorage.getItem("familiarPassiveConditionMap"))
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadFamiliarData()
+  loadFamiliar()
+})
 
 elementSliderText.textContent = elementSlider.value + "%"
-
-loadFamiliar()
 
 const popup = document.getElementById("familiar-popup");
 const openBtn = document.getElementById("openPopup");
@@ -112,22 +113,22 @@ function showPopup() {
   if (unitStats[selectedUnit] && unitStats[selectedUnit].familiar === false) {
     // Lock familiar to None and don't open popup
     if (selectedFamiliar !== "None") {
-      clearFamiliarUI()
+      clearFamiliarPassives()
       clearBuffActive("Familiar-Passive")
-      
+
       for (stat in familiarsData[selectedFamiliar].minRanges) {
         clearBuffActive("Familiar-Slider-" + stat)
       }
-      
+
       clearBuffActive("corruption-slider")
-      
+
       selectedFamiliar = "None"
       loadFamiliar()
       updateCorruption()
     }
     return; // Don't open the popup
   }
-  
+
   popup.classList.remove("hidden");
 }
 
@@ -182,7 +183,7 @@ function createFamiliarButton(familiar) {
   layout.addEventListener("click", () => {
     hidePopup();
 
-    clearFamiliarUI()
+    clearFamiliarPassives()
 
     clearBuffActive("Familiar-Passive")
 
@@ -220,15 +221,15 @@ for (familiar in familiarsData) {
 // Check if the selected unit has familiar: false and lock it to None
 if (unitStats[selectedUnit] && unitStats[selectedUnit].familiar === false) {
   if (selectedFamiliar !== "None") {
-    clearFamiliarUI()
+    clearFamiliarPassives()
     clearBuffActive("Familiar-Passive")
-    
+
     for (stat in familiarsData[selectedFamiliar].minRanges) {
       clearBuffActive("Familiar-Slider-" + stat)
     }
-    
+
     clearBuffActive("corruption-slider")
-    
+
     selectedFamiliar = "None"
     loadFamiliar()
     updateCorruption()

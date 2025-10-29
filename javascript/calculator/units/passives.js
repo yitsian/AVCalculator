@@ -2,60 +2,60 @@ const passiveContainer = document.getElementById("passive-container")
 
 function loadPassive(passive, pIndex, enabled) {
   // Outer layout
-    const passiveLayout = document.createElement("div");
-    passiveLayout.className = "passive-layout";
-    passiveContainer.appendChild(passiveLayout);
+  const passiveLayout = document.createElement("div");
+  passiveLayout.className = "passive-layout";
+  passiveContainer.appendChild(passiveLayout);
 
-    // Top section
-    const passiveTop = document.createElement("div");
-    passiveTop.className = "passive-top";
-    passiveLayout.appendChild(passiveTop);
+  // Top section
+  const passiveTop = document.createElement("div");
+  passiveTop.className = "passive-top";
+  passiveLayout.appendChild(passiveTop);
 
-    const passiveName = document.createElement("div");
-    passiveName.className = "passive-name general-text text-gradient passive";
-    passiveName.textContent = passive.name;
-    passiveTop.appendChild(passiveName);
+  const passiveName = document.createElement("div");
+  passiveName.className = "passive-name general-text text-gradient passive";
+  passiveName.textContent = passive.name;
+  passiveTop.appendChild(passiveName);
 
-    const passiveUpgrade = document.createElement("div");
-    passiveUpgrade.className = "general-text font-size-20 no-wrap";
-    passiveUpgrade.innerHTML = `Upgrade ${passive.upgrade}`;
-    passiveTop.appendChild(passiveUpgrade);
+  const passiveUpgrade = document.createElement("div");
+  passiveUpgrade.className = "general-text font-size-20 no-wrap";
+  passiveUpgrade.innerHTML = `Upgrade ${passive.upgrade}`;
+  passiveTop.appendChild(passiveUpgrade);
 
-    // Iterate over Conditions
-    passive.conditions.forEach((condition, cIndex) => {
-      const conditionId = `${pIndex}-${cIndex}`;
+  // Iterate over Conditions
+  passive.conditions.forEach((condition, cIndex) => {
+    const conditionId = `${pIndex}-${cIndex}`;
 
-      const passiveDesc = document.createElement("div");
-      passiveDesc.className = "passive-description general-text font-size-20";
-      passiveDesc.innerHTML = formatPassiveDescription(condition.description);
-      passiveLayout.appendChild(passiveDesc);
+    const passiveDesc = document.createElement("div");
+    passiveDesc.className = "passive-description general-text font-size-20";
+    passiveDesc.innerHTML = formatPassiveDescription(condition.description);
+    passiveLayout.appendChild(passiveDesc);
 
-      if (condition.type != "None") {
-        let checkbox = null;
-        let slider = null;
-        let valueDisplay = null;
+    if (condition.type != "None") {
+      let checkbox = null;
+      let slider = null;
+      let valueDisplay = null;
 
-        let statement = null;
+      let statement = null;
 
-        if (condition.type === "Slider") {
-          [checkbox, slider, valueDisplay] = createPassiveBottom(passiveLayout, condition.type, condition.min, condition.max, condition.step, `Slider-${conditionId}`)
-        } else if (condition.type === "Statement") {
-          [checkbox, statement] = createPassiveBottom(passiveLayout, condition.type, condition.statement)
-        }
-
-        checkbox.checked = condition.default !== undefined ? condition.default : enabled
-
-        conditionMetaMap[conditionId] = condition;
-
-        if (condition.dependancy) {
-          const dep = condition.dependancy;
-          if (!dependencyReverseMap[dep]) dependencyReverseMap[dep] = [];
-          dependencyReverseMap[dep].push(conditionId);
-        }
-
-        buffUpdate(checkbox, slider, valueDisplay, conditionId, condition)
+      if (condition.type === "Slider") {
+        [checkbox, slider, valueDisplay] = createPassiveBottom(passiveLayout, condition.type, condition.min, condition.max, condition.step, `Slider-${conditionId}`)
+      } else if (condition.type === "Statement") {
+        [checkbox, statement] = createPassiveBottom(passiveLayout, condition.type, condition.statement)
       }
-    });
+
+      checkbox.checked = condition.default !== undefined ? condition.default : enabled
+
+      conditionMetaMap[conditionId] = condition;
+
+      if (condition.dependancy) {
+        const dep = condition.dependancy;
+        if (!dependencyReverseMap[dep]) dependencyReverseMap[dep] = [];
+        dependencyReverseMap[dep].push(conditionId);
+      }
+
+      setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, condition)
+    }
+  });
 }
 
 function createPassives() {
@@ -67,13 +67,13 @@ function createPassives() {
   }
 
   if (!passives) return;
-  
+
   passives.forEach((passive, pIndex) => {
     loadPassive(passive, pIndex, true)
   });
 }
 
-function createPassiveBottom(passiveLayout, type, minRange, maxRange, step, sliderID) {
+function createPassiveBottom(passiveLayout, type, minRange, maxRange, step, sliderID, value) {
   const passiveBottom = document.createElement("div");
   passiveBottom.className = "passive-bottom";
   passiveLayout.appendChild(passiveBottom);
@@ -99,7 +99,7 @@ function createPassiveBottom(passiveLayout, type, minRange, maxRange, step, slid
     slider.min = minRange;
     slider.max = maxRange;
     slider.step = step;
-    slider.value = 0;
+    slider.value = value || 0;
     slider.id = sliderID;
     passiveBottom.appendChild(slider);
 

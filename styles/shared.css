@@ -144,7 +144,7 @@
   word-wrap: break-word;
   overflow-wrap: break-word;
 
-  font-size: max(16px, calc(16vh/12)) !important;
+  font-size: max(18px, calc(18vh/12)) !important;
   border-radius: 20px;
 }
 
