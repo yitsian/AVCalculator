@@ -92,7 +92,7 @@ function saveFamiliarData(conditionId, value) {
 }
 
 function loadFamiliarData() {
-  familiarPassiveConditionMap = JSON.parse(localStorage.getItem("familiarPassiveConditionMap"))
+  familiarPassiveConditionMap = JSON.parse(localStorage.getItem("familiarPassiveConditionMap")) || {}
 }
 
 document.addEventListener("DOMContentLoaded", () => {

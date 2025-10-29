@@ -220,8 +220,8 @@ function saveAppliedCondtionMap(conditionId, value) {
 }
 
 function loadAppliedBuffs() {
-  const appliedBuffsSave = JSON.parse(localStorage.getItem("appliedBuffsSave"))
-  const appliedConditionMapSave = JSON.parse(localStorage.getItem("appliedConditionMap"))
+  const appliedBuffsSave = JSON.parse(localStorage.getItem("appliedBuffsSave")) || []
+  const appliedConditionMapSave = JSON.parse(localStorage.getItem("appliedConditionMap")) || {}
 
   for (buffId of appliedBuffsSave) {
     createBuff(buffId, buffData[buffId], appliedConditionMapSave)
