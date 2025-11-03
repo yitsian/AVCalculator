@@ -63,7 +63,7 @@ let unitPassives = {
         },
 
         {
-          description: "Barbs of Spite (1): Deals 1% Dmg per second to all enemies in 3 range", type: "Statement", statement: "Toggle Notch.",
+          description: "Barbs of Spite (1): Deals 1% Dmg per second to all enemies in range", type: "Statement", statement: "Toggle Notch.",
           multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
         },
       ]

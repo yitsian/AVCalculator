@@ -11,6 +11,9 @@ const unitAttacks = {
 
     {name: "Lost Shade", aoe: "Single", hits: 1, type: "Summon", description: "Summons in a Lost Shade Summon every takedown for 35% Dmg (65% with Void Given Claw). (2s CD)", 
     multiplier: (finalStats, conditions) => {return conditions["2-5"].active == true ? 0.65 : 0.35}, image: "Images/Units/Hollowseph.webp", gradient: "legendary"},
+
+    {name: "Barbs of Spite", aoe: "Full", hits: 1, type: "Condition-Followup", description: "This unit deals 1% Dmg per second to all enemies in range.", 
+    multiplier: (finalStats, conditions) => {return conditions["2-8"].active == true ? 0.01 : 0}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "epic"},
     
     {name: "Soul Stacks", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter.", 
     multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
