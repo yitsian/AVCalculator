@@ -1,4 +1,315 @@
 let unitPassives = {
+  Hollowseph: [
+    {
+      name: "Void Given Focus", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit doesn't use spells or attack for 10s, buffs next attack by 100% Dmg.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [100, 0, 0, 0, 0, 0], default: false
+        },
+      ]
+    },
+
+    {
+      name: "Dream Nail", upgrade: 0,
+      conditions: [
+        {
+          description: "Makes the next attack for 50% more Dmg. (60s CD)", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: true, buffs: [50, 0, 0, 0, 0, 0], default: false
+        },
+      ]
+    },
+    
+    {
+      name: "Soul Tree", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit has 3 Notch Slots to equip an of the following Notches.", type: "None"
+        },
+
+        {
+          description: "Honed Nail (2): +40% Dmg", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [40, 0, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Nailmaster's Will (2): -20% Spa", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 20, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Sigil of Reach (2): +20% Rng", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 0, 20, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Fury of The Forsaken (2): +100% Dmg but loses 10% per unit placed", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 0, 20, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Void Given Claw (1): Summons gain 30% more Hp", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Sigil of Focus (1): Spells cost 20% less soul", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Shaman Relic (2): 33 cost Spells deal 50% more Dmg", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Barbs of Spite (1): Deals 1% Dmg to all enemies in range per second", type: "Statement", statement: "Toggle Notch.",
+          multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
+        },
+      ]
+    },
+  ],
+
+  Shero: [
+    {
+      name: "Magical Circuits", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit has a mana bar that gives him a Dmg buff equal to how much mana he has. (Max of 100%)",
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 10, buffs: [1, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Trace On", upgrade: 0,
+      conditions: [
+        {
+          description: "Yin-Yang Swords: Each attack gives 10 mana. (Circle Aoe)", type: "Statement", statement: "Toggle Weapon.",
+          multiplicative: false, buffs: [0, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Caliburn: Each attack consumes 10 mana, 20% less Dmg and 50% more Rng. (Small Cone Aoe)", type: "Statement", statement: "Toggle Weapon.",
+          multiplicative: false, buffs: [-20, 0, 50, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Nine Lives Forgery: Each attack consumes 10 mana, 50% more Dmg and 20% less Rng. (Splash Aoe)", type: "Statement", statement: "Toggle Weapon.",
+          multiplicative: false, buffs: [50, 0, -20, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Kaleidoscope Dagger: Each attack consumes 0 mana, 30% more Dmg. (Cone Aoe)", type: "Statement", statement: "Toggle Weapon.",
+          multiplicative: false, buffs: [30, 0, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Unlimited Forgeries: Each attack consumes 30 mana. (Full Map Aoe)", type: "Statement", statement: "Toggle Weapon.",
+          multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
+        },
+      ]
+    },
+    
+    {
+      name: "Faker", upgrade: 0,
+      conditions: [
+        {
+          description: "Every weapon swap this unit does before activating Unlimited Forgeries grants him a 5% Dmg buff during it. (Max of 60%)",
+          multiplicative: false, type: "Slider", min: 0, max: 60, step: 5, buffs: [1, 0, 0, 0, 0, 0], default: false
+        },
+      ]
+    }
+  ],
+
+  Hellkiller: [
+    {
+      name: "The Only Thing They Fear", upgrade: 0,
+      conditions: [
+        {
+          description: "This starts with 3 ammo, each attack uses 1 ammo. When ammo hits 0, swaps guns, stops attacking for 4s and gains a 50% Dmg Buff for 10s.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+
+    {
+      name: "Glory Kill", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit performs a glory kill, if it kills an enemy, buffs Dmg by 50% for 30s and refreshes ammo.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        }
+      ]
+    },
+  ],
+
+  Callasuba: [
+    {
+      name: "Callasuba!", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit's attack slow for 30% for 30s and buff Spa by 15%.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [0, 15, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Every 15s cleanses all allies in range and buffs them by 20% Dmg. (In Buffs Tab)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  Rideon: [
+    {
+      name: "Memories Broken", upgrade: 0,
+      conditions: [
+        {
+          description: "Each attack increases this unit's Dmg by 50% (Up to 200%) then resets after its maxed out. (Average of 100%)",
+          multiplicative: false, type: "Slider", min: 0, max: 200, step: 50, buffs: [1, 0, 0, 0, 0, 0]
+        },
+      ]
+    }
+  ],
+
+  Rummie: [
+    {
+      name: "Wide Swing", upgrade: 0,
+      conditions: [
+        {
+          description: "For every hit on an enemy, this unit gains 3% Dmg (Up to 120%) for 10s, can be refreshed.",
+          multiplicative: false, type: "Slider", min: 0, max: 120, step: 3, buffs: [1, 0, 0, 0, 0, 0]
+        },
+      ]
+    }
+  ],
+
+  Lizard: [
+    {
+      name: "Nuclear Apex", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains a radiation meter that fills every time this unit attacks or is attacked. This unit also has an Spa cap of roughly 7s.",
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 1, suffix: "%", buffs: [0, 0, 0, 0, 0, 0], extra: (finalStats, value) => { finalStats.spa = Math.max(finalStats.spa, 7) }
+        },
+
+        {
+          description: "Enemies in this unit's range take 30% more DoT Dmg. (In Buffs Tab)", type: "None" 
+        }
+      ]
+    },
+
+    {
+      name: "King of Monsters", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit activates its ability, consumes all its Radiation and converts half of it into a Dmg buff for 30s.", type: "Statement", 
+          statement: "Toggle Active Buff.", multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => {
+            return [conditionMetaMap["0-0"].value / 2, 0, 0, 0, 0, 0]
+          }, default: false
+        }
+      ]
+    },
+  ],
+
+  GodAboveHeaven: [
+    {
+      name: "Above Heaven", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit uses the ability, Above Heaven, and buff Dmg by 50% for 90s", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+
+    {
+      name: "Rewrite the Heavens", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit is swapped in, buff Dmg by 50% for 60s", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  GodStandless: [
+    {
+      name: "Reality Rewrite", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit hits an enemy with a status effect, buff Dmg by 50% for 10s", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Cat: [
+    {
+      name: "Stupid Cat", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit applies any random status effect on hit except for Timestops and Walkback.", type: "None" 
+        }
+      ]
+    },
+
+    {
+      name: "Advantage of Surprise", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit does 5% more Dmg for each status effect on an enemy.",
+          multiplicative: true, type: "Slider", min: 0, max: 10, step: 1, suffix: " Statuses", buffs: [5, 0, 0, 0, 0, 0]
+        }
+      ]
+    }
+  ],
+
+  Thunder: [
+    {
+      name: "Wonderous You", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit does not attack, instead they walk from base as a summon who puts all enemies in calamity.", type: "None" 
+        }
+      ]
+    },
+
+    {
+      name: "Target of Calamity", upgrade: 0,
+      conditions: [
+        {
+          description: "Enemies hit by Calamity 3 stay in it for 30s.", type: "None" 
+        }
+      ]
+    }
+  ],
+
+  Traitless: [
+    {
+      name: "Justice Unleashed", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit gains 0.4s Spa every attack on an enemy, resets on new target. (Spa cap of 4s)",
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 0, 0, 0, 0, 0], 
+          suffix: " attacks", extra: (finalStats, value) => { finalStats.spa = Math.max(4, value * 0.4) }
+        }
+      ]
+    },
+
+    {
+      name: "Dark Tendrils", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit does 40% more Dmg (Up to 200%) per attack to the same enemy.",
+          multiplicative: true, type: "Slider", min: 0, max: 5, step: 1, suffix: " Attacks", buffs: [40, 0, 0, 0, 0, 0]
+        }
+      ]
+    }
+  ],
+
   BrolziSuper: [
     {
       name: "Quick Learner", upgrade: 0,

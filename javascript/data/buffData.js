@@ -1,4 +1,62 @@
 const buffData = {
+  Callasuba: {
+    name: "Callasuba", description: "Buffs all units in range by 20% Dmg for 15s every 15s.",
+    background: "exclusive", image: "Images/Units/Callasuba.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Toggle Buff", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  Lizard: {
+    name: "Lizard", description: "Enemies in Lizard's range take 30% more DoT Dmg.",
+    background: "exclusive", image: "Images/Units/Lizard.webp", multiplicative: true,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "DoT Buff", buffs: [0, 0, 0, 0, 0, 0], otherBuffs: [0, 30, 30]
+      },
+    ]
+  },
+
+  TengonFamiliar: {
+    name: "Tengon Familiar", description: "Buffs all Blast and Fire allies in range by 30% Dmg. Attacks also apply Scorched.",
+    background: "tengon", image: "Images/Units/Tengon.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Blast and Fire Allies", buffs: [30, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: true, type: "Static", statement: "Scorched Fire Buff", buffs: [20, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  SukonoFamiliar: {
+    name: "Sukono Familiar", description: "Buffs all Curse allies in range by 30% Dmg.",
+    background: "sukono", image: "Images/Units/Sukono.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Static", statement: "Curse Allies", buffs: [30, 0, 0, 0, 0, 0]
+      },
+    ]
+  },
+
+  BrolziSuper: {
+    name: "Brolzi Super", description: "Buffs all Unbound allies by 20% Crit per wave up to 100% and CritDmg by 10% after 7 waves up to 80%.",
+    background: "brolzisuper", image: "Images/Units/BrolziSuper.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 100, step: 10, buffs: [0, 0, 0, 1, 0, 0],
+      },
+
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 80, step: 10, buffs: [0, 0, 0, 0, 1, 0],
+      },
+    ]
+  },
+
   Worldlines: {
     name: "Worldlines Weather", description: "Worldlines elemental buffs increase Dmg by +20%-150% and debuffs decrease by -50%-100%", background: "secret",
     image: "Images/Units/Conqueror.webp", multiplicative: false,
@@ -436,50 +494,12 @@ const buffData = {
     ]
   },
 
-  SukonoFamiliar: {
-    name: "Sukono Familiar", description: "Buffs all Curse allies in range by 30% Dmg.",
-    background: "sukono", image: "Images/Units/Sukono.webp", multiplicative: false,
-    conditions: [
-      {
-        multiplicative: false, type: "Static", statement: "Curse Allies", buffs: [30, 0, 0, 0, 0, 0]
-      },
-    ]
-  },
-
-  BrolziSuper: {
-    name: "Brolzi Super", description: "Buffs all Unbound allies by 20% Crit per wave up to 100% and CritDmg by 10% after 7 waves up to 80%.",
-    background: "brolzisuper", image: "Images/Units/BrolziSuper.webp", multiplicative: false,
-    conditions: [
-      {
-        multiplicative: false, type: "Slider", minRange: 0, maxRange: 100, step: 10, buffs: [0, 0, 0, 1, 0, 0],
-      },
-
-      {
-        multiplicative: false, type: "Slider", minRange: 0, maxRange: 80, step: 10, buffs: [0, 0, 0, 0, 1, 0],
-      },
-    ]
-  },
-
   RogitaSuper: {
     name: "Rogita Super", description: "Anytime Rogita crits, buffs all Fused units' Crit by 50%",
     background: "secret", image: "Images/Units/RogitaSuper.webp", multiplicative: false,
     conditions: [
       {
         multiplicative: false, type: "Static", statement: "Fused Allies", buffs: [0, 0, 0, 50, 0, 0]
-      },
-    ]
-  },
-
-  TengonFamiliar: {
-    name: "Tengon Familiar", description: "Buffs all Blast and Fire allies in range by 30% Dmg. Attacks also apply Scorched.",
-    background: "tengon", image: "Images/Units/Tengon.webp", multiplicative: false,
-    conditions: [
-      {
-        multiplicative: false, type: "Static", statement: "Blast and Fire Allies", buffs: [30, 0, 0, 0, 0, 0]
-      },
-
-      {
-        multiplicative: true, type: "Static", statement: "Scorched Fire Buff", buffs: [20, 0, 0, 0, 0, 0]
       },
     ]
   },

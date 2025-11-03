@@ -100,6 +100,7 @@ function addBuffs(conditionId, condition, isActive, value) {
 }
 
 function setBuffActive(conditionId, condition, isActive, value = 1) {
+  console.log(conditionId)
   const isRangeFormat = stat => /^\d+-\d+$/.test(stat);
 
   for (const stat in appliedMultBuffs) {

@@ -4,24 +4,29 @@ const optimalRankings = {
 
     categories: {
       carry: [
-        { id: "SukonoFamiliar", trait: "Monarch", description: "Cleave / Full Aoe Followup" },
+        { id: "GodAboveHeaven", trait: "Monarch", description: "Time Stop / Reality Overwrite" },
         { id: "BrolziSuper", trait: "Monarch", description: "Crit Demon / Full aoe Followup" },
-        { id: "RogitaSuper", trait: "Monarch", description: "Crit Sharing / Highest Potential Dps" },
+        { id: "Hollowseph", trait: "Monarch", description: "Modularity / Spells" },
+        { id: "SukonoFamiliar", trait: "Monarch", description: "Cleave / Full Aoe Followup" },
         { id: "TheFalcon", trait: "Monarch", description: "Self-Max / Jack of All Trades" },
-        { id: "Yehowach", trait: "Monarch", description: "Cheap / Absurd Range" },
+        { id: "Lizard", trait: "Monarch", description: "High Burn / Good Aoes" },
+        { id: "RogitaSuper", trait: "Monarch", description: "Crit Sharing / Highest Potential Dps" },
         { id: "ObitaFamiliar", trait: "Monarch", description: "Free Replacement" },
+        { id: "Rideon", trait: "Monarch", description: "Constant Attacking / Cheap Upgrades" },
       ],
 
       subDamage: [
+        { id: "Hellkiller", trait: "Monarch", description: "1st Person Shooter" },
         { id: "TengonFamiliar", trait: "Monarch", description: "Blast and Fire Buffer / Scorched" },
         { id: "Koguro", trait: "Monarch", description: "Domains / Nuke / Teleport" },
-        { id: "TheStruggler", trait: "Monarch", description: "Berserker Armor" },
+        { id: "Shero", trait: "Monarch", description: "Unlimited Forgeries" },
         { id: "ValentineFamiliar", trait: "Monarch", description: "Clones / Teleport" },
+        { id: "TheStruggler", trait: "Monarch", description: "Berserker Armor" },
         { id: "GujoFamiliar", trait: "Monarch", description: "Timestop / Inf Range Attack 3" },
-        { id: "Vsjw", trait: "Monarch", description: "Summons / Nuke" },
       ],
 
       support: [
+        { id: "GodAboveHeaven", trait: "Marksman", description: "Time Stop / Reality Overwrite" },
         { id: "Newsman", trait: "Marksman", description: "Bubbled / Snails" },
         { id: "Alocard", trait: "Marksman", description: "Wounded / Bleed" },
         { id: "Byeken", trait: "Marksman", description: "Tethered / Repulse / Pull" },
@@ -33,8 +38,10 @@ const optimalRankings = {
         { id: "GilgameshFamiliar", trait: "Monarch", description: "Execute / Nuke / CC" },
         { id: "Vsjw", trait: "Deadeye", description: "Scaling Summons" },
         { id: "BrolziSuper", trait: "Deadeye", description: "Unbound Crit Buffer / Full aoe Rupture" },
-        { id: "GoblinKiller", trait: "Deadeye", description: "Rupture / Traps" },
+        { id: "Thunder", trait: "Monarch", description: "Calamity / Macro Unit" },
+        { id: "GoblinKiller", trait: "Monarch", description: "Rupture / Traps" },
         { id: "TheSmith", trait: "Fortune", description: "Masterworks" },
+        { id: "Callasuba", trait: "Monarch", description: "Slows / Buffs / Summons / Nuke" },
       ]
     }
   },
@@ -44,25 +51,28 @@ const optimalRankings = {
 
     categories: {
       carry: [
+        { id: "Yehowach", trait: "Monarch", description: "Cheap / Absurd Range" },
         { id: "TheKing", trait: "Monarch", description: "Teleport / Flip Debuff " },
         { id: "SmithJohn", trait: "Monarch", description: "Nuke / Great Aoes" },
+        { id: "Rummie", trait: "Monarch", description: "Aoe Swap" },
+        { id: "Conqueror", trait: "Monarch", description: "High Range / Multi Attack" },
         { id: "Eizan", trait: "Monarch", description: "Aura / Wall" },
         { id: "Dawntay", trait: "Monarch", description: "Devil Trigger / Crit" },
         { id: "Byeken", trait: "Monarch", description: "On-Kill Followup / CC" },
       ],
 
       subDamage: [
+        { id: "Vsjw", trait: "Monarch", description: "Summons / Nuke" },
         { id: "MonkeyKing", trait: "Monarch", description: "All Groups / Clones" },
         { id: "GG", trait: "Monarch", description: "High Burst / Cleanser" },
+        { id: "Traitless", trait: "Monarch", description: "Chase / Damage Build-up" },
         { id: "Wolf", trait: "Monarch", description: "Slow / Chases Leaks / Guaranteed Crit" },
-        { id: "Conqueror", trait: "Monarch", description: "High Range / Multi Attack" },
         { id: "Lfelt", trait: "Monarch", description: "Burst Dps / Love Shot" },
-        { id: "LordFriezo", trait: "Monarch", description: "Placeable Minions" },
-        { id: "Leo", trait: "Monarch", description: "Scaling Burn / Hellfire Incarnate" },
       ],
 
       support: [
         { id: "Wolf", trait: "Solar", description: "Long Slow / Chases Leaks" },
+        { id: "Dot", trait: "Blitz", description: "Repulse / Chase" },
         { id: "Clatakiri", trait: "Ethereal", description: "Slow / Chase" },
         { id: "Kazzy", trait: "Solar", description: "Bubbled / Freeze" },
         { id: "Ken", trait: "Marksman", description: "Bleed / Slow" },
@@ -72,8 +82,10 @@ const optimalRankings = {
         { id: "Astolfo", trait: "Marksman", description: "Spellbook / Spear / Repulse" },
         { id: "Roku", trait: "Ethereal", description: "Slow / Stun / Rupture" },
         { id: "Rohan", trait: "Monarch", description: "Free Placement" },
+        { id: "Hebano", trait: "Marksman", description: "Burn Reapply / Scorched" },
         { id: "TheWitch", trait: "Marksman", description: "Nullify" },
         { id: "Al", trait: "Marksman", description: "Cleanse / Buffer" },
+        { id: "Senator", trait: "Marksman", description: "Burn Detonate" },
       ]
     }
   },
@@ -91,6 +103,8 @@ const optimalRankings = {
       ],
 
       subDamage: [
+        { id: "LordFriezo", trait: "Monarch", description: "Placeable Minions" },
+        { id: "Leo", trait: "Monarch", description: "Scaling Burn / Hellfire Incarnate" },
         { id: "Quetzalcoatl", trait: "Monarch", description: "Buffer / Cycles Attacks" },
         { id: "Hei", trait: "Monarch", description: "Black Flames" },
         { id: "Zak", trait: "Monarch", description: "Burst Damage / Rumbling" },
@@ -100,6 +114,7 @@ const optimalRankings = {
       ],
 
       support: [
+        { id: "Cat", trait: "Blitz", description: "Inconsistent all CC/Debuffs" },
         { id: "Priestess", trait: "Solar", description: "Slow / Stun / Cleanse" },
         { id: "Aurin", trait: "Fortune", description: "Buffer / Cost Reduction" },
         { id: "Isdead", trait: "Solar", description: "Freeze / Mahokorada" },
@@ -111,7 +126,6 @@ const optimalRankings = {
       utility: [
         { id: "Boohon", trait: "Fortune", description: "Summons / Crit Buffer" },
         { id: "Hercool", trait: "Fortune", description: "CritDmg Buffer" },
-        { id: "Hebano", trait: "Marksman", description: "Burn Reapply / Scorched" },
         { id: "DarkMage", trait: "Solar", description: "Slow / Bleed / Diseased" },
         { id: "GiantQueen", trait: "Fortune", description: "Rumbling / Group Buffer" },
         { id: "Luce", trait: "Marksman", description: "Nullify" },

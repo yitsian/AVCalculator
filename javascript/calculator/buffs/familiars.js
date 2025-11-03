@@ -78,7 +78,7 @@ function loadFamiliar() {
       })
     }
   } else {
-    const conditionId = "Familiar-Passive"
+    const conditionId = selectedFamiliar + "-Passive"
 
     const buffConfig = { type: "Statement", multiplicative: familiarsData[selectedFamiliar].multiplicative, buffs: familiarsData[selectedFamiliar].buffs }
 
@@ -114,10 +114,10 @@ function showPopup() {
     // Lock familiar to None and don't open popup
     if (selectedFamiliar !== "None") {
       clearFamiliarPassives()
-      clearBuffActive("Familiar-Passive")
+      clearBuffActive(selectedFamiliar + "-Passive")
 
       for (stat in familiarsData[selectedFamiliar].minRanges) {
-        clearBuffActive("Familiar-Slider-" + stat)
+        clearBuffActive(selectedFamiliar + "-" + stat)
       }
 
       clearBuffActive("corruption-slider")
@@ -185,10 +185,10 @@ function createFamiliarButton(familiar) {
 
     clearFamiliarPassives()
 
-    clearBuffActive("Familiar-Passive")
+    clearBuffActive(selectedFamiliar + "-Passive")
 
     for (stat in familiarsData[selectedFamiliar].minRanges) {
-      clearBuffActive("Familiar-Slider-" + stat)
+      clearBuffActive(selectedFamiliar + "-" + stat)
     }
 
     clearBuffActive("corruption-slider")
@@ -222,16 +222,15 @@ for (familiar in familiarsData) {
 if (unitStats[selectedUnit] && unitStats[selectedUnit].familiar === false) {
   if (selectedFamiliar !== "None") {
     clearFamiliarPassives()
-    clearBuffActive("Familiar-Passive")
+    clearBuffActive(selectedFamiliar + "-Passive")
 
     for (stat in familiarsData[selectedFamiliar].minRanges) {
-      clearBuffActive("Familiar-Slider-" + stat)
+      clearBuffActive(selectedFamiliar + "-" + stat)
     }
 
     clearBuffActive("corruption-slider")
 
     selectedFamiliar = "None"
     loadFamiliar()
-    updateCorruption()
   }
 }

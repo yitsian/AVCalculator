@@ -1,4 +1,106 @@
 const unitAttacks = {
+  Hollowseph: [
+    {name: "Embrace the Void", aoe: "Single", hits: 1, type: "Condition-Followup", description: "Attacks the highest hp enemy for 400% Dmg. (100 Cost)", 
+    multiplier: 4, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "obita"},
+
+    {name: "Abyss Shriek", aoe: "8 Circle", hits: 15, type: "Condition-Followup", description: "This unit spawns an area on the track that deals 20% Dmg per second for 15s. (33 Cost)", 
+    multiplier: (finalStats, conditions) => {return conditions["2-7"].active == true ? 3 : 4.5}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "secret"},
+
+    {name: "Shade Strike", aoe: "Single", hits: 1, type: "Condition-Followup", description: "Attacks the closest enemy for 100% Dmg. (33 Cost)", 
+    multiplier: (finalStats, conditions) => {return conditions["2-7"].active == true ? 1.5 : 1}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "exclusive"},
+
+    {name: "Lost Shade", aoe: "Single", hits: 1, type: "Summon", description: "Summons in a Lost Shade Summon every takedown for 35% Dmg (65% with Void Given Claw). (2s CD)", 
+    multiplier: (finalStats, conditions) => {return conditions["2-5"].active == true ? 0.65 : 0.35}, image: "Images/Units/Hollowseph.webp", gradient: "legendary"},
+    
+    {name: "Soul Stacks", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter.", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
+  ],
+
+  Shero: [
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter (If using Yin-Yang Blade)", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
+  ],
+
+  Hellkiller: [
+    {name: "Glory Kill", aoe: "8 Circle", hits: 3, type: "Condition-Followup", description: "When this unit gets an enemy below 50% Hp, attacks them for 200% Dmg. (10s CD)", 
+    multiplier: 2, image: "Images/Units/Hellkiller.webp", gradient: "exclusive"},
+
+    {name: "HellWalker", aoe: "Full", hits: 30, type: "Nuke", description: "Ability go into first person that 50% Dmg per attack at 1 attack per 0.66s, last 20s. (180s Cd).", 
+    multiplier: 15, image: "Images/Abilities/Hellkiller_Ability.webp", gradient: "exclusive"},
+  ],
+
+  Dot: [
+    {name: "The Dot", aoe: "16 Circle", hits: 3, type: "Spa-Followup", description: "This unit can target units outside his range, but doing 50% Dmg per attack instead.", 
+    multiplier: 0.5, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Nemesis", aoe: "Single", hits: 1, type: "Spa-Followup", description: "Every attack also inflicts the same damage onto this unit's nemesis.", 
+    multiplier: 1, image: "Images/Units/Dot.webp", gradient: "exclusive"},
+  ],
+
+  Callasuba: [
+    {name: "Dark", aoe: "Single", hits: 1, type: "Summon", description: "Summons Dark who starts with 100% Dmg as Hp going up to 1000%. Respawns after 30s.", 
+    multiplier: 10, image: "Images/Units/Callasuba.webp", gradient: "secret"},
+
+    {name: "The Crimson Mage", aoe: "Full", hits: 1, type: "Nuke", description: "Ability to use a nuke that does 1500% Dmg to all enemies in range but disables the unit for 40s after use.", 
+    multiplier: 15, image: "Images/Abilities/Callasuba_Ability.webp", gradient: "exclusive"},
+  ],
+
+  Rideon: [
+    {name: "Truth Goes Unspoken", aoe: "120° Cone", hits: 3, type: "Spa-Followup", description: "Every attack inflicts its damage again after 10s", 
+    multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+  ],
+
+  Rummie: [
+    {name: "Red Gem", aoe: "15 Circle", hits: 1, type: "Spa-Followup", description: "While there are less than 30 enemies in this units range, follow up after every attack for 50% Dmg. (Main attack becomes Full Aoe when this is disabled)", 
+    multiplier: 0.5, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+  ],
+
+  Senator: [
+    {name: "Burn", aoe: "Single", hits: 8, type: "Dot", description: "Attacks inflict burn for 50% Dmg over 8s.", 
+    multiplier: 0.5, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "Nanomachines, Son", aoe: "35° Cone", hits: 3, type: "Condition-Followup", description: "When this unit hits a burning enemy, follows up with attack 2 for 100% Dmg and Detonates all burns for 200% Dmg. (20s CD)", 
+    multiplier: 1, image: "Images/Units/Senator.webp", gradient: "legendary"},
+
+    {name: "Followup Burn", aoe: "Single", hits: 8, type: "Conditional-Dot", description: "Follow up also inflicts burn for 50% Dmg over 8s.", 
+    multiplier: 0.5, image: "Images/Abilities/Burn.png", gradient: "secret"},
+  ],
+
+  Lizard: [
+    {name: "Burn", aoe: "Single", hits: 8, type: "Dot", description: "Attacks inflict burn for half of this units Radiation meter as Dmg.", 
+    multiplier: (finalStats, conditions) => {return conditions["0-0"].active == true ? conditions["0-0"].value / 200 : 0}, image: "Images/Abilities/Burn.png", gradient: "secret"},
+
+    {name: "King of Monsters", aoe: "20° Cone", hits: 14, type: "Nuke", description: "Deals 20% to 400% Dmg to in all enemies in front of this units. (Infinite Range)", 
+    multiplier: 4, image: "Images/Abilities/Heat_Overload_Ability.webp", gradient: "exclusive"},
+
+    {name: "Meter", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter", 
+    multiplier: 1, image: "Images/Familiars/BlackSpirit.webp", gradient: "rare"},
+  ],
+
+  GodStandless: [
+    {name: "Your Reality is Mine!", aoe: "Single", hits: 1, type: "Summon", description: "Spawns a summons with 50% for this unit's Dmg. (2s cd)", 
+    multiplier: 0.5, image: "Images/Units/GodStandless.webp", gradient: "secret"},
+
+    {name: "DoTs", aoe: "Single", hits: 8, type: "Dot", description: "This unit's DoTs are for 30% Dmg over 8s", 
+    multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+  ],
+
+  Cat: [
+    {name: "DoTs", aoe: "Single", hits: 8, type: "Conditional-Dot", description: "All DoTs this unit applies are for 30% Dmg over 8s", 
+    multiplier: 0.3, image: "Images/Units/Cat.webp", gradient: "secret"},
+  ],
+
+  Thunder: [
+    {name: "Calamity 1", aoe: "15 Circle", hits: 1, type: "Spa-Followup", description: "70 Rng radius around the unit that does 50% of this units Dmg.", 
+    multiplier: 0.5, image: "Images/Units/Thunder.webp", gradient: "rare"},
+
+    {name: "Calamity 2", aoe: "25 Circle", hits: 1, type: "Spa-Followup", description: "50 Rng radius around the unit that does 100% of this units Dmg.", 
+    multiplier: 1, image: "Images/Units/Thunder.webp", gradient: "legendary"},
+
+    {name: "Calamity 3", aoe: "40 Circle", hits: 1, type: "Spa-Followup", description: "15 Rng radius around the unit that does 300% of this units Dmg.", 
+    multiplier: 3, image: "Images/Units/Thunder.webp", gradient: "secret"},
+  ],
+
   BrolziSuper: [
     {name: "Unrestrained Power", aoe: "Full", hits: 5, type: "Spa-Followup", description: "Follows up with attack 3 for 100% Dmg when this unit crits (5s local cd)", 
     multiplier: 1, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
