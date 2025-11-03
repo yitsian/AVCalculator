@@ -44,7 +44,7 @@ let unitPassives = {
 
         {
           description: "Fury of The Forsaken (2): +100% Dmg but loses 10% per unit placed", type: "Statement", statement: "Toggle Notch.",
-          multiplicative: false, buffs: [0, 0, 20, 0, 0, 0], default: false
+          multiplicative: false, type: "Slider", min: -100, max: 100, step: 10, buffs: [1, 0, 0, 0, 0, 0], default: false
         },
 
         {
@@ -63,7 +63,7 @@ let unitPassives = {
         },
 
         {
-          description: "Barbs of Spite (1): Deals 1% Dmg to all enemies in range per second", type: "Statement", statement: "Toggle Notch.",
+          description: "Barbs of Spite (1): Deals 1% Dmg per second to all enemies in 3 range", type: "Statement", statement: "Toggle Notch.",
           multiplicative: false, buffs: [0, 0, 0, 0, 0, 0], default: false
         },
       ]
