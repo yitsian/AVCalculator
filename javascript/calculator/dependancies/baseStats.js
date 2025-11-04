@@ -62,7 +62,7 @@ function updateBaseStats() {
 
   const critDmg = 125
 
-  baseStats.critDmg = Math.max((critDmg + traitCritDmg * 100) + ((statMultBuffs.critDmg - 1) * 100), critDmg)
+  baseStats.critDmg = (critDmg + traitCritDmg * 100) + ((statMultBuffs.critDmg - 1) * 100)
 
   baseDamage.innerHTML = statMultBuffs.damage != 1 ? createToolTip(formatDamage(baseStats.damage), formatMultBuff(statMultBuffs.damage)) : formatDamage(baseStats.damage)
   baseSpa.innerHTML = statMultBuffs.spa != 1 ? createToolTip(formatSpa(baseStats.spa), formatMultBuff(statMultBuffs.spa)) : formatSpa(baseStats.spa)

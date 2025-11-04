@@ -54,11 +54,10 @@ const optimalRankings = {
         { id: "Yehowach", trait: "Monarch", description: "Cheap / Absurd Range" },
         { id: "TheKing", trait: "Monarch", description: "Teleport / Flip Debuff " },
         { id: "SmithJohn", trait: "Monarch", description: "Nuke / Great Aoes" },
-        { id: "Rummie", trait: "Monarch", description: "Aoe Swap" },
         { id: "Conqueror", trait: "Monarch", description: "High Range / Multi Attack" },
+        { id: "Rummie", trait: "Monarch", description: "Aoe Swap" },
         { id: "Eizan", trait: "Monarch", description: "Aura / Wall" },
         { id: "Dawntay", trait: "Monarch", description: "Devil Trigger / Crit" },
-        { id: "Byeken", trait: "Monarch", description: "On-Kill Followup / CC" },
       ],
 
       subDamage: [
@@ -95,6 +94,7 @@ const optimalRankings = {
 
     categories: {
       carry: [
+        { id: "Byeken", trait: "Monarch", description: "On-Kill Followup / CC" },
         { id: "Yomomata", trait: "Monarch", description: "Insane Summoner / Early Full Aoe" },
         { id: "Rogita", trait: "Monarch", description: "Teleport" },
         { id: "DarkMage", trait: "Monarch", description: "High DoT Damage" },

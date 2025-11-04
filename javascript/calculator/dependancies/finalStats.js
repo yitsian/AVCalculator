@@ -50,7 +50,7 @@ function updateFinalStats() {
         finalStats[key] = Math.max(baseStats[key] + statAddBuffs[key] * 100, 0)
         break;
       case "critDmg":
-        finalStats[key] = Math.max(baseStats[key] + statAddBuffs[key] * 100, 125)
+        finalStats[key] = baseStats[key] + statAddBuffs[key] * 100
         break;
       default:
         finalStats[key] = baseStats[key] * (1 + (statAddBuffs[key]))

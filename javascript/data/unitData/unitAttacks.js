@@ -4,7 +4,7 @@ const unitAttacks = {
     multiplier: 4, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "obita"},
 
     {name: "Abyss Shriek", aoe: "8 Circle", hits: 15, type: "Condition-Followup", description: "This unit spawns an area on the track that deals 20% Dmg per second for 15s. (33 Cost)", 
-    multiplier: (finalStats, conditions) => {return conditions["2-7"].active == true ? 3 : 4.5}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "secret"},
+    multiplier: (finalStats, conditions) => {return conditions["2-7"].active == true ? 4.5 : 3}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "secret"},
 
     {name: "Shade Strike", aoe: "Single", hits: 1, type: "Condition-Followup", description: "Attacks the closest enemy for 100% Dmg. (33 Cost)", 
     multiplier: (finalStats, conditions) => {return conditions["2-7"].active == true ? 1.5 : 1}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "exclusive"},
@@ -12,7 +12,7 @@ const unitAttacks = {
     {name: "Lost Shade", aoe: "Single", hits: 1, type: "Summon", description: "Summons in a Lost Shade Summon every takedown for 35% Dmg (65% with Void Given Claw). (2s CD)", 
     multiplier: (finalStats, conditions) => {return conditions["2-5"].active == true ? 0.65 : 0.35}, image: "Images/Units/Hollowseph.webp", gradient: "legendary"},
 
-    {name: "Barbs of Spite", aoe: "Full", hits: 1, type: "Condition-Followup", description: "This unit deals 1% Dmg per second to all enemies in range.", 
+    {name: "Barbs of Spite", aoe: "Full", hits: 1, type: "Condition-Followup", description: "This unit deals 1% Dmg per second to all enemies in a 3 range radius.", 
     multiplier: (finalStats, conditions) => {return conditions["2-8"].active == true ? 0.01 : 0}, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "epic"},
     
     {name: "Soul Stacks", aoe: "None", hits: 1, type: "Meter", description: "Average time to fill 100% meter.", 
