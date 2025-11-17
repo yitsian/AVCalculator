@@ -29,7 +29,7 @@ const unitAttacks = {
     multiplier: 2, image: "Images/Units/Hellkiller.webp", gradient: "exclusive"},
 
     {name: "HellWalker", aoe: "Full", hits: 30, type: "Nuke", description: "Ability go into first person that 50% Dmg per attack at 1 attack per 0.66s, last 20s. (180s Cd).", 
-    multiplier: 15, image: "Images/Abilities/Hellkiller_Ability.webp", gradient: "exclusive"},
+    multiplier: 15, image: "Images/Abilities/Hellwalker_Ability.webp", gradient: "exclusive"},
   ],
 
   Dot: [
@@ -82,10 +82,10 @@ const unitAttacks = {
 
   GodStandless: [
     {name: "Your Reality is Mine!", aoe: "Single", hits: 1, type: "Summon", description: "Spawns a summons with 50% for this unit's Dmg. (2s cd)", 
-    multiplier: 0.5, image: "Images/Units/GodStandless.webp", gradient: "secret"},
+    multiplier: 0.5, image: "Images/Abilities/Above_Heaven_Ability.webp", gradient: "secret"},
 
     {name: "DoTs", aoe: "Single", hits: 8, type: "Dot", description: "This unit's DoTs are for 30% Dmg over 8s", 
-    multiplier: 0.3, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+    multiplier: 0.3, image: "Images/Abilities/Reality_Rewrite_Ability.webp", gradient: "secret"},
   ],
 
   Cat: [
@@ -273,7 +273,7 @@ const unitAttacks = {
 
   Arin: [
     {name: "Placement Nuke", aoe: "Full", hits: 1, type: "Nuke", description: "Whenever this unit is placed, does damage in its area equal to 500% of its Dmg stat.", 
-    multiplier: 5, image: "Images/Unit/Arin.webp", gradient: "secret"},
+    multiplier: 5, image: "Images/Units/Arin.webp", gradient: "secret"},
 
     {name: "Rumbling", aoe: "Mapwide", hits: 1, type: "Nuke", description: "Does 20 million Dmg and does 35% max hp damage to all enemies it crosses. (Cannot be buffed, ignore shown damage)", 
     multiplier: 1, image: "Images/Abilities/Rumbling_Ability.webp", gradient: "secret"},

@@ -21,8 +21,8 @@ const unitSynergies = {
   Aurin: [
     {
       name: "At Your Finger (Toe) Tips",
-      desc: "(I couldn't think of a good name) But if you are somehow reading this, technically Aurin has the highest Dps in the game if you transform with High noon Iscanur.",
-      units: ["Iscanur"]
+      desc: "(I couldn't think of a good name) But if you are somehow reading this, technically Aurin has the highest Dps in the game if you transform with High noon Iscanur or God.",
+      units: ["Iscanur", "GodAboveHeaven"]
     },
   ],
   Boo: [
@@ -362,5 +362,54 @@ const unitSynergies = {
   ],
   ValentineFamiliar: [
     {},
+  ],
+  Traitless: [
+    {
+      units: ["The Falcon"]
+    },
+  ],
+  Thunder: [
+    {},
+  ],
+  Cat: [
+    {},
+  ],
+  GodAboveHeaven: [
+    {},
+  ],
+  Lizard: [
+    {
+      units: ["Senator", "Dark Mage"]
+    },
+  ],
+  Senator: [
+    {},
+  ],
+  Rummie: [
+    {},
+  ],
+  Rideon: [
+    {},
+  ],
+  Callasuba: [
+    {},
+  ],
+  Hellkiller: [
+    {
+      units: ["BrolziSuper"]
+    },
+  ],
+  Shero: [
+    {
+      units: ["Koguro"]
+    },
+  ],
+  Dot: [
+    {},
+  ],
+  Hollowseph: [
+    {
+      units: ["Sukono", "Koguro"]
+    },
   ],
 };

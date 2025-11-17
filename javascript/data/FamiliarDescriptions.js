@@ -97,6 +97,12 @@ const FamiliarDescriptions = {
     image: "Images/Familiars/StrangeCat.webp"
   },
 
+  "StrangeCat": {
+    rarity: "exclusive",
+    description: "Usually best in slot if range doesnt matter and damage is around 20%+ for desired element.",
+    image: "Images/Familiars/StrangeCat.webp"
+  },
+
   "Nose": {
     rarity: "mythic",
     description: "Good for units with low or no damage buffs or for those that need to be stunned for passives.",
@@ -104,12 +110,18 @@ const FamiliarDescriptions = {
   },
 
   "Silly Fairy": {
-    rarity: "mythic",
+    rarity: "exclusive",
     description: "Very useful familiar for most units, getting abilities earlier. Not recommended for single placement or monarchs.",
     image: "Images/Familiars/SillyFairy.webp"
   },
 
   "Summer Ham": {
+    rarity: "exclusive",
+    description: "Very high potential damage increase especially on Burn units, downside is requiring lifestock to be lost first.",
+    image: "Images/Familiars/SummerHam.webp"
+  },
+
+  "SummerHam": {
     rarity: "exclusive",
     description: "Very high potential damage increase especially on Burn units, downside is requiring lifestock to be lost first.",
     image: "Images/Familiars/SummerHam.webp"
@@ -131,5 +143,29 @@ const FamiliarDescriptions = {
     rarity: "mythic",
     description: "Good for units that have high base crit chances or on deadeye units.",
     image: "Images/Familiars/Chili.webp"
-  }
+  },
+
+  "Belu": {
+    rarity: "mythic",
+    description: "Buns.",
+    image: "Images/Familiars/Belu.webp"
+  },
+
+  "Pupper": {
+    rarity: "mythic",
+    description: "Buns.",
+    image: "Images/Familiars/Pupper.webp"
+  },
+
+  "Pachiru": {
+    rarity: "mythic",
+    description: "Buns.",
+    image: "Images/Familiars/Pupper.webp"
+  },
+
+  "SpiritDispenser": {
+    rarity: "exclusive",
+    description: "Buns.",
+    image: "Images/Familiars/Pupper.webp"
+  },
 }

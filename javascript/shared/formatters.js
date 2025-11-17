@@ -113,7 +113,10 @@ function formatFlavorText(text) {
     'time-stop': { image: 'Timestop.webp', class: 'cosmic' },
     'wound': { image: 'Wounded.webp', class: 'damage' },
     'wounded': { image: 'Wounded.webp', class: 'damage' },
-    'wounding': { image: 'Wounded.webp', class: 'damage' }
+    'wounding': { image: 'Wounded.webp', class: 'damage' },
+    'calamity 1': { image: 'calamity.webp', class: 'buff' },
+    'calamity 2': { image: 'calamity.webp', class: 'range' },
+    'calamity 3': { image: 'calamity.webp', class: 'unbound' },
   };
 
   let formattedText = text;

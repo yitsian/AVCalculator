@@ -27,3 +27,7 @@ headerIconSectionElm.innerHTML = `
   <button class="tags general-text round-form ${getSelectedClass('compare.html')} navigate-button"
     onclick="navigateTo('compare.html')">Compare</button>
 `
+
+function navigateTo(page) {
+  window.location.href = page;
+}

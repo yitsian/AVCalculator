@@ -2927,8 +2927,13 @@ let unitPassives = {
       name: "Infinite Spin", upgrade: 0,
       conditions: [
         {
+          description: "This unit gains 1% more Dmg and Rng (Up to 25%) per enemy spun during Infinite Spin ability.",
+          multiplicative: false, type: "Slider", min: 0, max: 25, step: 1, buffs: [1, 0, 1, 0, 0, 0],
+        },
+
+        {
           description: "This unit gains 25% more Dmg for the next 5 attacks after activating Infinite Spin.",
-          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [25, 0, 0, 0, 0, 0]
+          multiplicative: false, type: "Statement", statement: "Toggle Active Buff", buffs: [25, 0, 0, 0, 0, 0], default: false
         },
       ]
     },

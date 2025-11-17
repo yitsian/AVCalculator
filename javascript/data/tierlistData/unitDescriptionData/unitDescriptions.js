@@ -375,4 +375,69 @@ const unitDescriptions = {
     cons: ["Bad Aoes especially on clones","Relatively expensive"],
     description: "Valentine with his familiar is elected as your new president. He passively gains a clone every 10 seconds and on every 30 takedowns. Clones last for 20 seconds and do 20% of Valentine's damage. Selling Valentine will swap him with the nearest active clone, allowing for you to teleport him anywhere you wish. Valentine is immune to status effects and deals massive dps making him a great boss killer. His downsides are his bad aoes and somewhat expensive cost. Overall he is an amazing unit and performs as a better version of Monkey King."
   },
+  Traitless: {
+    pros: ["teleport","stacking dps","low SPA"],
+    cons: ["average overall dps","Relies on swapping targets"],
+    description: "Traitless is a DPS unit that does not have a base SPA. Every attack on the same enemy will increase his SPA by 0.4 (uncapped) and increase damage by 40% (up to 200%). Whenever an enemy leaves his range, Traitless will teleport to that enemy (2s cd). This makes him good at clearing low-mid range hp enemies. Because of his SPA increasing without a cap, he is not great for tanky bosses. Overall Traitless is a decent unit which can be used skillfully if the player constantly switches his targeting. "
+  },
+  Thunder: {
+    pros: ["full immunity","high burst damage","afk"],
+    cons: ["can be unreliable","not great for multi-path tracks","single hit"],
+    description: "Thunder is a spawner unit which walks along the track and is immune to all effects. He has 3 different circles, indicated by color. Calamity 1: Enemies hit in the outermost circle take 50% dmg; Calamity 2: enemies hit in the middle circle take 100% dmg; Calamity 3: enemies in the innermost circle take 300% damage. Whenever an enemy is hit by Calamity 3, they take 300% damage for 30s even when leaving the range of the inner circle. This unit makes afking easy and is easily able to deal with the hammer giant crystal. His weaknesses are that he can be unreliable at times and is single hit. <br>"
+  },
+  Cat: {
+    pros: ["applies random cc","good support"],
+    cons: ["2 placement","low dps"],
+    description: "Cat is a support unit that randomly applies various statuses to enemies excluding hard status effects such as repulse, time stop, walk back. Cat will deal +5% damage for every effect on the enemy, which doesn't do much as her damage isn’t great. Additionally her range is bad across all upgrades, is limited to 2 placements,  and has a bad cost/upgrade ratio. Overall cat is an alright support unit who can have niche use cases. <br>"
+  },
+  GodAboveHeaven: {
+    pros: ["applies any status effect","best timestop","amazing dps"],
+    cons: ["low range","mediocre aoes","Bad cost Scaling"],
+    description: "God is a swap unit that stands at the top of meta. God (Standless) has a menu that allows him to choose between 9 different status effects which he applies on hit, he gains 50% damage when attacking an enemy inflicted with a status effect. Every takedown spawns a summon equal to 50% of this unit's damage (2s). God (Standless) is immune to debuffs and time stops all enemies on the map for 10s when placed/swapped in (limit to 3 times per game). \r<br>His other form, God (Above Heaven) gains 50% damage when swapped in for 60s and has an active which time stops all enemies on the map for 10s (60s base cd; reduced by 0.2s for every takedown). Whenever this unit stops time he gains 50% damage for 90s. God's only downsides are his relatively expensive cost and small range; overall God is a unit that can do it all having insane dps, high hp scaling summons, and a stacked support arsenal.  \r<br>"
+  },
+  Lizard: {
+    pros: ["great range and aoes","buffs DoT","great dps"],
+    cons: ["meter takes a while to charge","spa capped by long animation"],
+    description: "Lizard is a dps unit having a radiation meter that charges by 2% on attack and on being attacked. He inflicts burn equal to half of his meter (100% meter = 50% burn damage), enemies in range take 30% damage from DoT. Lizard has an active ability which charges by holding the button and deals (20%-400% damage) based on charge time. When the ability is released it deals damage to all enemies in the AoE and has infinite range making it a decent nuke. (meter resets to 0 after using active). His biggest con is the incredibly long time it takes to charge his meter without black spirit. Overall Lizard is a great dps unit with good AoEs and is inexpensive. \r<br>"
+  },
+  Senator: {
+    pros: ["detonates burn (20s) immune to status effects"],
+    cons: ["expensive","mediocre dps"],
+    description: "Senator is a unit that follows up with attack 2 when attacking a burning enemy (20s) cd. Whenever the followup hits an enemy it detonates all burn for 200% damage. This makes a good pair and combo with Iscanur and Hebano as you can stack burn and detonate for huge burst. Outside of the specific burn team, Senator is mediocre as a dps and is costly. \r<br>  \r<br>\r<br>"
+  },
+  Rummie: {
+    pros: ["swaps aoes","damage stacking"],
+    cons: ["Overshadowed by other dps units"],
+    description: "Rummie is a dps unit that swaps her AOEs and stacks damage. She will attack with a circle AOE and followup for 50% of her damage when there are less than 30 enemies. When there are 30+ enemies, she will swap to full aoe and will no longer follow up. Rummie will stack damage when hitting enemies (up to 120%) which resets after not attacking for 10s. Overall Rummie is a great unit which deals good boss damage and can deal with large crowds. "
+  },
+  Rideon: {
+    pros: ["constantly attacks","good dps","good cost scaling"],
+    cons: ["purely a stat stick","below average range"],
+    description: "Rideon vs Samuel is a versus unit which constantly attacks even with no enemies in range. Each attack they do increases damage by 50% (up to 200%); damage buff resets to 0% after hitting max stacks. Every time this unit attacks, after a 10s delay they will deal that damage again. This essentially doubles Raidens and Sams dps and can proc even if enemies leave range. Overall they are a high dps unit made to dish out damage. \r<br>"
+  },
+  Callasuba: {
+    pros: ["summons","slows","damage buff","nuke"],
+    cons: ["mediocre base stats"],
+    description: "Callasuba are a utility unit with each member unlocking a new function.\r<br>Attack 1: slows enemies by 30% on hit and reduces spa by 15s for 30s\r<br>Attack 2: Every 15s cleanses allies in range and buffs allies dmg by 15% for 15s \r<br>Attack 3: Summons Dark on the track which has 100% of damage as hp, gaining 10% hp/s (up to 1000%); respawns 30s after she dies\r<br>Attack 4: unlocks the crimson mage ability; deals 1500% damage to all enemies in range and disables this unit for 40s after. \r<br>Overall Callasuba is a great addition to any team with their unique kit being able to slow enemies, buff allies, deal with leaks, and having a nuke."
+  },
+  Hellkiller: {
+    pros: ["1st person roam","very high dps"],
+    cons: ["ability lasts for 20s with a 180s cd","High Cost"],
+    description: "HellKiller is a high dps unit that consumes ammo stacks. Each attack consumes 1 ammo, after 3 ammo are spent, he will reload for 4s and swap weapons, refreshing ammo stacks and increasing damage by +50% for 10s. When an enemy drops below 50% for the first time, Hellkiller will immediately attack them for 200% damage, if the enemy dies ammo stacks are refreshed. The Hellwalker active (20s duration; 180s cd) puts the player into first person mode and allows them to use Hellkillers kit and move around freely. Overall Hellkiller is an amazing dps unit that can be paired with brolzi super for ludicrous damage. \r<br>"
+  },
+  Shero: {
+    pros: ["Full map attack","High Range","Aoe Swapping"],
+    cons: ["Decently Expensive","Crippled without meter"],
+    description: "Shero is a dps unit which has a mana bar that can be used to toggle his different attacks with varying AOEs. Damage increases based on current mana (100% mana = 100% damage); If his mana bar goes below 0, he will be stunned for half of the negative mana (-30 mana = 15s stun). Every time a different attack/projection is toggled, Shero gains 5% dmg (up to 60%) and resets when unlimited forgeries goes on cd.   \r<br>Upg 0: Yin Yang swords: gains 10 mana per attack\r<br>Upg 4: Caliburn: -20% dmg; +20 % rng (10% mana cost)\r<br>Upg 7: Nine Lives Forgery: +50% dmg; -20% rng (10% mana cost)\r<br>Upg 10: Kaleidoscope dagger: +30% dmg (0 mana cost)\r<br>Upg 12: Unlimited Forgeries: infinite range mapwide dps (30% mana cost) [ Has a 40s cd after it ends]\r<br>Shero can use black spirit to increase his mana gain and is overall a great dps unit with a versatile kit having many different attacks.   \r"
+  },
+  Dot: {
+    pros: ["mapwide range","repulse"],
+    cons: ["Below average dps","circle aoe"],
+    description: "Dot is a support unit that repulses enemies on hit. He will teleport to an enemy anytime they enter or leave his range, making him constantly teleport. He is able to hit enemies outside of range for 50% of his damage giving him mapwide repulse and dps. Dot will select 1 enemy as a nemesis; Dot effectively does 2x damage to his nemesis attacking them an extra time with his normal attacks. Overall Dot is a great support unit with mapwide repulse and dps making him a good afk unit. \r"
+  },
+  Hollowseph: {
+    pros: ["summons","nukes","amazing dps"],
+    cons: ["High Placement cost","High total Cost"],
+    description: "Hollowseph is a unit that has a soul meter and gains 3 soul per attack. He dodges all attacks and spawns a summon on takedown (2s) equal to 35% of damage. If no enemies are in range and no spells are used for 10s, the next attack does 100% damage. Hollowseph has a spell menu that costs soul to use:<br>Embrace the Void [100 soul]: attacks the highest hp enemy for 400% anywhere on the map.<br>Shade Strike [33 soul]: deals 100% damage to the enemy closest to the base.<br>Ascending Dark [33 soul]: spawns a zone on the track dealing 20% dps (15s).<br>Dream Nail [0 soul; 60s cd]: increases the damage of the next attack by 50%.<br>Before you start the match, you are able to equip relics on the soul tree each giving their own buffs (limit to 3 total cost). The best relics to take are:<br>Fury of the Forsaken [2 cost]: +100% damage (-10% for every unit placed)<br>Honed Nail [2 cost]: +40% damage.<br>Nailmaster’s Will [2 cost]: -20% SPA.<br>Void claw [1 cost]: +30% summon hp.<br>Sigil of Focus [1 cost]: -20% spell cost.<br>Hollowseph’s downside is his expensive overall cost, besides this he is a very solid unit with many abilities and customization making him a top tier carry. <br>"
+  },
 };

@@ -147,3 +147,9 @@ window.addEventListener("DOMContentLoaded", renderButtons);
 document.getElementById("search-input").addEventListener("input", renderButtons);
 document.getElementById("sort-type").addEventListener("change", renderButtons);
 document.getElementById("sort-order").addEventListener("change", renderButtons);
+
+
+function selectUnit(unit) {
+  localStorage.setItem("selectedUnit", JSON.stringify(unit));
+  window.location.href = "calculator.html";
+}

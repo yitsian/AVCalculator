@@ -5,6 +5,7 @@ let corruption = 4;
 let familiarPassiveSliders = []
 
 const familiarImage = document.getElementById("familiar-image")
+const familiarGradient = document.getElementById("familiar-gradient")
 const familiarName = document.getElementById("familiar-name")
 const familiarElements = document.getElementById("familiar-elements")
 
@@ -37,7 +38,10 @@ function clearFamiliarPassives() {
 }
 
 function loadFamiliar() {
+  const familiarRarity = selectedFamiliar != "None" ? FamiliarDescriptions[selectedFamiliar].rarity : "secret"
+
   familiarImage.src = familiarsData[selectedFamiliar].image
+  familiarGradient.classList.add(familiarRarity)
   familiarName.textContent = selectedFamiliar
 
   loadFamiliarElements()
@@ -103,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 elementSliderText.textContent = elementSlider.value + "%"
 
 const popup = document.getElementById("familiar-popup");
-const openBtn = document.getElementById("openPopup");
+const openBtn = document.getElementById("familiar-button");
 // const closeBtn = document.getElementById("closePopup");
 
 const familiarCatalog = document.getElementById("familiars-catalog")
@@ -149,8 +153,10 @@ function createFamiliarButton(familiar) {
 
   const top = createElement("div", "buff-top", layout);
 
+  const familiarRarity = familiar != "None" ? FamiliarDescriptions[familiar].rarity : "secret"
+
   const button = createElement("button", "unit-button buff-image", top);
-  const gradient = createElement("div", "unit-gradient exclusive", button);
+  const gradient = createElement("div", "unit-gradient " + familiarRarity, button);
   const texture = createElement("img", "unit-gradient-texture", gradient);
   texture.src = "Images/Icons/Dots.webp";
 
