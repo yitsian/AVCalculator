@@ -750,6 +750,28 @@ let unitPassives = {
     },
   ],
 
+  SosukeFamiliar: [
+    {
+      name: "Way of the Snake", upgrade: 0,
+      conditions: [
+        {
+          description: "Dmg +2% with each consecutive attack on the same enemy.",
+          multiplicative: true, type: "Slider", min: 0, max: 100, step: 2, buffs: [1, 0, 0, 0, 0, 0],
+        },
+      ]
+    },
+
+    {
+      name: "Lightning Powered Assault", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit deals 50% more Dmg to enemies that have been Stunned.",
+          multiplicative: true, type: "Statement", statement: "Toggle Passive Buff", buffs: [50, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
   Iscanur: [
     {
       name: "High Noon", upgrade: 0,

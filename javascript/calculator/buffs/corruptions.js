@@ -16,13 +16,30 @@ function createCorruption4Slider(min, max) {
   corruptionSlider.value = 0;
   corruptionSlider.id = "corruption-slider";
 
-  corruptionValueDisplay = createElement("div", "general-text round-form tags font-size-20 passive-number-padding", corruptionInput);
-  corruptionValueDisplay.textContent = corruptionSlider.value + "%";
+  corruptionValueDisplay = createElement("div", "general-text round-form tags clickable-label", corruptionInput);
+  corruptionValueDisplay.onclick = () => { focusInput(corruptionValueDisplay) }
+
+  const corruptionValueInput = createElement("input", "stat-input general-text", corruptionValueDisplay)
+  corruptionValueInput.type = "number"
+  corruptionValueInput.min = min
+  corruptionValueInput.max = max
+  corruptionValueInput.value = 0
+
+  corruptionValueInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      corruptionValueInput.blur();
+    }
+  });
+
+  corruptionValueInput.addEventListener("blur", () => { clampSliderInput(corruptionValueInput, min, max, 1) });
+
+  const corruptionValueSuffix = createElement("span", "general-text no-select", corruptionValueDisplay)
+  corruptionValueSuffix.textContent = "%"
 
   const buff = corruption == 4 ? [1, 0, 0, 0, 0, 0] : familiarsData[selectedFamiliar].buffs.map(number => number / 100)
 
-  setBuffUpdateLoop(null, corruptionSlider, corruptionValueDisplay, "corruption-slider", 
-    {multiplicative: corruption == 4 ? true : familiarsData[selectedFamiliar].multiplicative, buffs: buff, type: "Slider"}
+  setBuffUpdateLoop(null, corruptionSlider, corruptionValueDisplay, "corruption-slider",
+    { multiplicative: corruption == 4 ? true : familiarsData[selectedFamiliar].multiplicative, buffs: buff, type: "Slider" }
   )
 }
 

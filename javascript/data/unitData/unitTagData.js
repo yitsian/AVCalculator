@@ -20,6 +20,7 @@ const unitTagData = {
   GilgameshFamiliar: { availability: ["Permanent"], rarities: ["Exclusive", "Gilgamesh"], elements: ["Holy", "Unbound"], aoes: ["ACone"], mechanics: ["Nuke", "CC", "Immune", "Ability"] },
   ObitaFamiliar: { availability: ["Permanent"], rarities: ["Mythic", "Obita"], elements: ["Fire"], aoes: ["OCone"], mechanics: ["DOT"] },
   ValentineFamiliar: { availability: ["Permanent"], rarities: ["Secret", "Valentine"], elements: ["Passion"], aoes: ["Circle"], mechanics: ["Immune", "Ability"] },
+  SosukeFamiliar: { availability: ["Permanent"], rarities: ["Mythic", "Sosuke"], elements: ["Spark"], aoes: ["Circle"], mechanics: ["CC"] },
 
   BrolziSuper: { availability: ["Permanent"], rarities: ["Vanguard", "BrolziSuper"], elements: ["Unbound"], aoes: ["OCone"], mechanics: ["Debuffer", "Buffer", "Ability", "Domain"] },
   RogitaSuper: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Blast"], aoes: ["Splash"], mechanics: ["Buffer", "Immune"] },

@@ -71,33 +71,4 @@ function handleDividers(isSmallScreen) {
   `
 }
 
-function resizeTierlist() {
-  handleDividers(window.innerWidth <= SMALL_SCREEN_SIZE)
-  createListElements(optimalRankings, window.innerWidth <= SMALL_SCREEN_SIZE);
-}
-
-window.addEventListener('resize', resizeTierlist)
-window.addEventListener('DOMContentLoaded', resizeTierlist)
-
-function loadTierList(isSmallScreen) {
-  // Reload based on selected rankings
-  switch (selectedRankings) {
-    case "Optimal": {
-      createListElements(optimalRankings, isSmallScreen);
-      break;
-    }
-  }
-
-  /* Load Screen Size Dividers*/
-  handleDividers(isSmallScreen)
-
-  // console.log('Tierlist reloaded with filters:', {
-  //   elements: elementFilters,
-  //   obtainability: obtainabilityFilters,
-  //   aoes: aoesFilter,
-  //   search: searchBar?.value || ''
-  // });
-}
-
-// Initial load
-loadTierList(window.innerWidth <= SMALL_SCREEN_SIZE);
+window.addEventListener('resize', loadTierList)

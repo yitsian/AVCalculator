@@ -10,7 +10,8 @@ const familiarName = document.getElementById("familiar-name")
 const familiarElements = document.getElementById("familiar-elements")
 
 const elementSlider = document.getElementById("element-slider")
-const elementSliderText = document.getElementById("element-slider-text")
+const elementValueDisplay = document.getElementById("element-slider-text")
+const elementValueInput = elementValueDisplay.querySelector("input")
 
 const familiarPassiveContainer = document.getElementById("familiar-passive")
 
@@ -30,7 +31,16 @@ function loadFamiliarElements() {
   }
 }
 
-setBuffUpdateLoop(null, elementSlider, elementSliderText, "element-buff", { multiplicative: true, buffs: [1, 0, 0, 0, 0, 0], type: "Slider" })
+elementValueDisplay.onclick = () => { focusInput(elementValueDisplay) }
+
+elementValueInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    elementValueInput.blur();
+  }
+});
+
+elementValueInput.addEventListener("blur", () => { clampSliderInput(elementValueInput, 0, 5, 0.1) });
+setBuffUpdateLoop(null, elementSlider, elementValueDisplay, "element-buff", { multiplicative: true, buffs: [1, 0, 0, 0, 0, 0], type: "Slider" })
 
 function clearFamiliarPassives() {
   familiarPassiveContainer.innerHTML = "";
@@ -72,7 +82,8 @@ function loadFamiliar() {
       const [checkbox, slider, valueDisplay] = createPassiveBottom(passiveLayout, familiarsData[selectedFamiliar].type, sliderMinRange, sliderMaxRange, familiarsData[selectedFamiliar].step, conditionId, familiarPassiveConditionMap[conditionId])
 
       familiarPassiveSliders[conditionId] = { slider: slider, origMax: slider.max, origMin: slider.min }
-      valueDisplay.classList.add(stat)
+      valueDisplay.querySelector('input').classList.add(stat)
+      valueDisplay.querySelector('span').classList.add(stat)
 
       setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, sliderConfig)
 
@@ -103,8 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadFamiliarData()
   loadFamiliar()
 })
-
-elementSliderText.textContent = elementSlider.value + "%"
 
 const popup = document.getElementById("familiar-popup");
 const openBtn = document.getElementById("familiar-button");

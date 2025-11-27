@@ -26,10 +26,6 @@
   border-radius: min(20px, calc(20 * 0.1667vh));
 }
 
-.percent-symbol {
-  font-size: max(18px, calc(18vh/12))
-}
-
 .aoe-info {
   display: flex;
 

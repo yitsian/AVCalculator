@@ -94,6 +94,7 @@ document.querySelectorAll('.clamp-percent-input').forEach(input => {
 function focusInput(container) {
   const input = container.querySelector("input");
   if (input) input.focus();
+  input.value = ""
 }
 
 updateAscensions()

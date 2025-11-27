@@ -1,0 +1,24 @@
+.heat-hover {
+  position: relative;
+  background: #222;
+  padding: 100px 180px;
+  border-radius: 16px;
+  font-size: 1.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.heat-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle 800px at var(--x, 50%) var(--y, 50%),
+    rgba(255, 0, 0, 0.6) 0%,
+    rgba(255, 140, 0, 0.4) 25%,
+    rgba(255, 240, 0, 0.25) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  transition: background 0.1s linear;
+}

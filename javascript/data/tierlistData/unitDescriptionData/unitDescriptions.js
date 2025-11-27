@@ -401,8 +401,8 @@ const unitDescriptions = {
     description: "Lizard is a dps unit having a radiation meter that charges by 2% on attack and on being attacked. He inflicts burn equal to half of his meter (100% meter = 50% burn damage), enemies in range take 30% damage from DoT. Lizard has an active ability which charges by holding the button and deals (20%-400% damage) based on charge time. When the ability is released it deals damage to all enemies in the AoE and has infinite range making it a decent nuke. (meter resets to 0 after using active). His biggest con is the incredibly long time it takes to charge his meter without black spirit. Overall Lizard is a great dps unit with good AoEs and is inexpensive. \r<br>"
   },
   Senator: {
-    pros: ["detonates burn (20s) immune to status effects"],
-    cons: ["expensive","mediocre dps"],
+    pros: ["detonates burn (20s)","immune to status effects"],
+    cons: ["expensive","mediocre dps","niche"],
     description: "Senator is a unit that follows up with attack 2 when attacking a burning enemy (20s) cd. Whenever the followup hits an enemy it detonates all burn for 200% damage. This makes a good pair and combo with Iscanur and Hebano as you can stack burn and detonate for huge burst. Outside of the specific burn team, Senator is mediocre as a dps and is costly. \r<br>  \r<br>\r<br>"
   },
   Rummie: {
@@ -439,5 +439,10 @@ const unitDescriptions = {
     pros: ["summons","nukes","amazing dps"],
     cons: ["High Placement cost","High total Cost"],
     description: "Hollowseph is a unit that has a soul meter and gains 3 soul per attack. He dodges all attacks and spawns a summon on takedown (2s) equal to 35% of damage. If no enemies are in range and no spells are used for 10s, the next attack does 100% damage. Hollowseph has a spell menu that costs soul to use:<br>Embrace the Void [100 soul]: attacks the highest hp enemy for 400% anywhere on the map.<br>Shade Strike [33 soul]: deals 100% damage to the enemy closest to the base.<br>Ascending Dark [33 soul]: spawns a zone on the track dealing 20% dps (15s).<br>Dream Nail [0 soul; 60s cd]: increases the damage of the next attack by 50%.<br>Before you start the match, you are able to equip relics on the soul tree each giving their own buffs (limit to 3 total cost). The best relics to take are:<br>Fury of the Forsaken [2 cost]: +100% damage (-10% for every unit placed)<br>Honed Nail [2 cost]: +40% damage.<br>Nailmaster’s Will [2 cost]: -20% SPA.<br>Void claw [1 cost]: +30% summon hp.<br>Sigil of Focus [1 cost]: -20% spell cost.<br>Hollowseph’s downside is his expensive overall cost, besides this he is a very solid unit with many abilities and customization making him a top tier carry. <br>"
+  },
+  SosukeFamiliar: {
+    pros: ["Cheap","Stuns and does more dmg to stunned units","Stacking Damage"],
+    cons: ["Low Range","Arc is very thin and needs specific placement"],
+    description: "Sosuke sparks his way into the meta with his new familiar. On placement this unit gains 400%, will damage all enemies in range (30), and creates an arc between himself and the nearest spark unit in range. The arc works like an attack (breaks shields) and is affected by Sosuke's other passives, stunning enemies and increasing damage by 2% every attack on the same enemy. This dps is able to ramp up quickly dealing massive damage over time to enemies before they leave range. A great unit to pair with is Wolf as he is spark and slows enemies by 50%, allowing them to stay in arc range for a longer time. Overall Sosuke is a great unit that can be used as a stun support and spark dps. <br>"
   },
 };

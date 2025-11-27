@@ -35,6 +35,12 @@ const FamiliarDescriptions = {
     image: "Images/Units/ValentineFamiliar.webp"
   },
 
+  "SosukeFamiliar": {
+    rarity: "sosuke",
+    description: "I'm not the same as you. I'm traveling a path the rest of you can't follow.",
+    image: "Images/Units/SosukeFamiliar.webp"
+  },
+
   "ChasoFamiliar": {
 
   },

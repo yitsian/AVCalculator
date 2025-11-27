@@ -91,8 +91,6 @@ function updateAttacks() {
     if (attack.type == "Meter") {
       let meterPerAttack = unitStats[selectedUnit].meter * otherStats.meter
 
-      console.log(otherStats.meter)
-
       statLabels.meterPerAttack[0].textContent = formatMeter(meterPerAttack)
       statLabels.meterPerAttack[1].textContent = formatBuff(otherStats.meter - 1)
 

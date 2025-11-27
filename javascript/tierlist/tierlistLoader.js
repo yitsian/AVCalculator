@@ -19,8 +19,10 @@ function createTierlistUnitDisplay(parent, unitData) {
   const unitElement = createElement("img", "unit-element", unitContent);
   unitElement.src = `Images/Elements/${unitTagData[unitData.id].elements[0]}.webp`;
 
-  const unitTrait = createElement("img", "unit-trait", unitContent);
-  unitTrait.src = `Images/Traits/${unitData.trait}.webp`;
+  if (selectedRankings != "Traitless") {
+    const unitTrait = createElement("img", "unit-trait", unitContent);
+    unitTrait.src = `Images/Traits/${unitData.trait}.webp`;
+  }
 
   const unitDescription = createElement("div", "", unitDisplay);
   unitDescription.textContent = unitData.description;
@@ -36,7 +38,7 @@ function filterList(unit) {
   if (obtainabilityFilters.length > 0 && !obtainabilityFilters.includes(unitObtainability)) {
     return false;
   }
-  
+
   if (elementFilters.length > 0 && !elementFilters.includes(unitElement)) {
     return false;
   }
@@ -129,3 +131,23 @@ function createListElements(rankings, isSmallScreen) {
   // Load tooltips after all content is loaded
   setTimeout(loadTooltips, 0);
 }
+
+function loadTierList() {
+  // Reload based on selected rankings
+  switch (selectedRankings) {
+    case "Optimal": {
+      createListElements(optimalRankings, window.innerWidth <= SMALL_SCREEN_SIZE);
+      break;
+    }
+    case "Traitless": {
+      createListElements(traitlessRankings, window.innerWidth <= SMALL_SCREEN_SIZE);
+      break;
+    }
+  }
+
+  handleDividers(window.innerWidth <= SMALL_SCREEN_SIZE)
+}
+
+// Initial load
+window.addEventListener('DOMContentLoaded', loadTierList)
+loadTierList();

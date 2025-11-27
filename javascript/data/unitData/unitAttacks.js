@@ -200,6 +200,11 @@ const unitAttacks = {
     multiplier: (finalStats, conditions) => {return (conditions["3-0"].active == true ? (conditions["3-0"].value * 0.2) : 0)}, image: "Images/Abilities/This_is_Another_Me..._Ability.webp", gradient: "valentine"},
   ],
 
+  SosukeFamiliar: [
+    {name: "Wielder of Lightning", aoe: "2 Line", hits: 1, type: "Condition-Followup", description: "Spawns a lightning arc between this unit and another Spark units that deals 40% Dmg per second",
+      multiplier: 0.4, image: "Images/Units/SosukeFamiliar.webp", gradient: "sosuke"},
+  ],
+
   Iscanur: [
     {name: "Burn", aoe: "Single", hits: 5, type: "Dot", description: "Attacks inflict burn for 30% Dmg over 5 seconds.", 
     multiplier: 0.3, image: "Images/Abilities/Burn.png", gradient: "secret"},

@@ -121,21 +121,21 @@
             <img class="element no-select" src="Images/Icons/Dmg_Icon.webp">
             <input id="dmg-input" class="stat-input general-text clamp-percent-input" type="number" min="0" max="25.0"
               step="0.1" value="25.0">
-            <span class="percent-symbol no-select">%</span>
+            <span class="stat-input-suffix no-select">%</span>
           </div>
 
           <div class="general-text round-form tags image-tag clickable-label" onclick="focusInput(this)">
             <img class="element no-select" src="Images/Icons/Spa_icon.webp">
             <input id="spa-input" class="stat-input general-text clamp-percent-input" type="number" min="0" max="12.5"
               step="0.1" value="12.5">
-            <span class="percent-symbol no-select">%</span>
+            <span class="stat-input-suffix no-select">%</span>
           </div>
 
           <div class="general-text round-form tags image-tag clickable-label" onclick="focusInput(this)">
             <img class="element no-select" src="Images/Icons/Rng_icon.webp">
             <input id="rng-input" class="stat-input general-text clamp-percent-input" type="number" min="0" max="12.5"
               step="0.1" value="12.5">
-            <span class="percent-symbol no-select">%</span>
+            <span class="stat-input-suffix no-select">%</span>
           </div>
         </div>
       </div>
@@ -237,7 +237,10 @@
 
           <input id="element-slider" class="slider" type="range" min="0" max="5" step="0.1" value="0">
 
-          <div id="element-slider-text" class="general-text round-form tags font-size-20 passive-number-padding"></div>
+          <div id="element-slider-text" class="general-text round-form tags clickable-label">
+            <input type="number" class="general-text stat-input" min="0" max="10" value="20">
+            <span class="stat-input-suffix no-select">%</span>
+          </div>
         </div>
 
         <div id="familiar-passive" class="passive-layout"></div>

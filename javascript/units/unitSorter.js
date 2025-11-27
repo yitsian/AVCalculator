@@ -20,6 +20,11 @@ function matchesFilters(unit) {
 
 function renderButtons() {
   const unitContainer = document.getElementById("units-catalog");
+
+  if (!unitContainer) {
+    return
+  }
+
   unitContainer.innerHTML = "";
 
   const units = Object.entries(unitTagData).map(([name, tags]) => ({ name, ...tags }));
@@ -144,9 +149,9 @@ function toggleTag(category, tag) {
 
 window.addEventListener("DOMContentLoaded", renderButtons);
 
-document.getElementById("search-input").addEventListener("input", renderButtons);
-document.getElementById("sort-type").addEventListener("change", renderButtons);
-document.getElementById("sort-order").addEventListener("change", renderButtons);
+document.getElementById("search-input")?.addEventListener("input", renderButtons);
+document.getElementById("sort-type")?.addEventListener("change", renderButtons);
+document.getElementById("sort-order")?.addEventListener("change", renderButtons);
 
 
 function selectUnit(unit) {

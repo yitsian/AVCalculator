@@ -100,7 +100,6 @@ function addBuffs(conditionId, condition, isActive, value) {
 }
 
 function setBuffActive(conditionId, condition, isActive, value = 1) {
-  console.log(conditionId)
   const isRangeFormat = stat => /^\d+-\d+$/.test(stat);
 
   for (const stat in appliedMultBuffs) {
@@ -170,7 +169,7 @@ function setBuffActive(conditionId, condition, isActive, value = 1) {
 }
 
 function setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, condition) {
-  const update = () => {
+  const updateUsingSlider = () => {
     condition.active = checkbox ? checkbox.checked : true;
     condition.value = checkbox && !checkbox.checked ? 0 : (slider ? parseFloat(slider.value) : 1);
 
@@ -185,16 +184,28 @@ function setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, conditio
     }
 
     if (slider) {
-      valueDisplay.textContent = slider.value + (condition.suffix || "%");
-    }
+      const valueInput = valueDisplay.querySelector("input")
+      valueInput.value = slider.value
 
+      const valueSuffix = valueDisplay.querySelector("span")
+      valueSuffix.textContent = (condition.suffix || "%")
+    }
+    
     updateAttacks()
   };
 
-  if (checkbox) checkbox.addEventListener("change", update);
-  if (slider) slider.addEventListener("input", update);
+  const updateUsingInput = () => {
+    condition.value = checkbox && !checkbox.checked ? 0 : (valueDisplay.querySelector("input").value);
+    setBuffActive(conditionId, condition, condition.active, condition.value)
 
-  update();
+    slider.value = valueDisplay.querySelector("input").value
+  }
+
+  if (checkbox) checkbox.addEventListener("change", updateUsingSlider);
+  if (slider) slider.addEventListener("input", updateUsingSlider);
+  if (slider) valueDisplay.querySelector("input").addEventListener("blur", updateUsingInput);
+
+  updateUsingSlider();
 }
 
 function clearBuffActive(conditionID) {

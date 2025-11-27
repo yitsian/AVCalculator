@@ -412,4 +412,7 @@ const unitSynergies = {
       units: ["Sukono", "Koguro"]
     },
   ],
+  SosukeFamiliar: [
+    
+  ]
 };

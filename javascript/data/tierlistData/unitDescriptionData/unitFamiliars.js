@@ -416,4 +416,6 @@ const unitFamiliars = {
  fam2: "Black Spirit",    
  fam3: "Birb (Dmg + Crit)"
   },
+  SosukeFamiliar: {    
+ fam1: "SosukeFamiliar",          },
 };

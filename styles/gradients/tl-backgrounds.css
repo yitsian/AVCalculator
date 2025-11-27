@@ -4,6 +4,10 @@
   inherits: false;
 }
 
+.tl-sosuke {
+  background-image: linear-gradient(var(--gradient-angle), #800000 10%, #06060a 50%, #800000 90%);
+}
+
 .tl-valentine {
   background-image: linear-gradient(var(--gradient-angle), rgb(17, 42, 77) 0%, rgb(160, 160, 160) 50%, rgb(88, 13, 29) 100%);
 }

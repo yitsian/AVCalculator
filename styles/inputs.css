@@ -43,6 +43,10 @@
   outline: none;
 }
 
+.stat-input-suffix {
+  font-size: max(18px, calc(18vh/12)) !important;
+}
+
 /* Sliders */
 
 .slider {

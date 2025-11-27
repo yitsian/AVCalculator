@@ -84,6 +84,7 @@ function createPassiveBottom(passiveLayout, type, minRange, maxRange, step, slid
 
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
+  checkbox.id = sliderID + "-checkbox"
   checkbox.checked = true;
   label.appendChild(checkbox);
 
@@ -93,30 +94,54 @@ function createPassiveBottom(passiveLayout, type, minRange, maxRange, step, slid
   label.appendChild(document.createTextNode("On"));
 
   if (type == "Slider") {
-    const slider = document.createElement("input");
+    const slider = createElement("input", "slider", passiveBottom);
     slider.type = "range";
-    slider.className = "slider";
     slider.min = minRange;
     slider.max = maxRange;
     slider.step = step;
     slider.value = value || 0;
     slider.id = sliderID;
-    passiveBottom.appendChild(slider);
 
-    const valueDisplay = document.createElement("div");
-    valueDisplay.className = "general-text round-form tags passive-number-padding";
-    valueDisplay.textContent = slider.value + "%";
-    passiveBottom.appendChild(valueDisplay);
+    const valueDisplay = createElement("div", "general-text round-form tags clickable-label", passiveBottom);
+    valueDisplay.onclick = () => { focusInput(valueDisplay) }
+
+    const valueInput = createElement("input", "stat-input general-text", valueDisplay)
+    valueInput.type = "number"
+    valueInput.min = minRange
+    valueInput.max = maxRange
+    valueInput.value = value || 0;
+
+    valueInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        valueInput.blur();
+      }
+    });
+
+    valueInput.addEventListener("blur", () => {clampSliderInput(valueInput, minRange, maxRange, step)});
+
+    const valueSuffix = createElement("span", "stat-input-suffix no-select", valueDisplay)
+    valueSuffix.textContent = "%"
 
     return [checkbox, slider, valueDisplay]
   } else {
-    const statement = document.createElement("div");
-    statement.className = "general-text round-form tags passive-number-padding passive-condition";
+    const statement = createElement("div", "general-text round-form tags passive-number-padding passive-condition", passiveBottom);
     statement.textContent = minRange;
-    passiveBottom.appendChild(statement);
 
     return [checkbox, statement]
   }
+}
+
+function clampSliderInput(input, min, max, step) {
+  let raw = input.value
+  let num = parseFloat(raw);
+
+  if (isNaN(num)) num = 0;
+
+  num = Math.max(min, Math.min(num, max));
+
+  // Format nicely: always show %, trim .00 if whole number
+  const decimalAccuracy = Math.max(step.toString().indexOf("."), 0) 
+  input.value = num//.toFixed(decimalAccuracy);
 }
 
 createPassives()
