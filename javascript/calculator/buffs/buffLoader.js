@@ -149,11 +149,28 @@ function createBuff(buffId, buffData, conditionMap) {
       slider.min = condition.minRange;
       slider.max = condition.maxRange;
       slider.step = condition.step;
-      slider.value = conditionMap ? conditionMap[conditionId] : condition.maxRange / 2;
+      slider.value = conditionMap ? conditionMap[conditionId] : 0;
       slider.id = conditionId;
 
-      valueDisplay = createElement("div", "general-text round-form tags passive-number-padding slider-value", conditionGroup);
-      valueDisplay.textContent = `+${slider.value}%`;
+      valueDisplay = createElement("div", "general-text round-form tags clickable-label", conditionGroup);
+      valueDisplay.onclick = () => { focusInput(valueDisplay) }
+
+      const valueInput = createElement("input", "stat-input general-text", valueDisplay)
+      valueInput.type = "number"
+      valueInput.min = condition.minRange
+      valueInput.max = condition.maxRange
+      valueInput.value = 0;
+
+      valueInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          valueInput.blur();
+        }
+      });
+
+      valueInput.addEventListener("blur", () => { clampSliderInput(valueInput, condition.minRange, condition.maxRange, condition.step) });
+
+      const valueSuffix = createElement("span", "stat-input-suffix no-select", valueDisplay)
+      valueSuffix.textContent = "%"
 
       const maxHandler = () => {
         slider.value = slider.max;

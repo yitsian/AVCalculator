@@ -1,9 +1,17 @@
-.cleave {
-  color: rgb(165, 66, 67);
+.bleed {
+  color: rgb(255, 28, 32);
 }
 
-.bleed {
-  color: rgb(212, 13, 17);
+.slow {
+  color: rgb(28, 176, 255);
+}
+
+.freeze {
+  color: rgb(112, 205, 255);
+}
+
+.time-stop {
+  color: rgb(0, 154, 197);
 }
 
 .flavor-icon {

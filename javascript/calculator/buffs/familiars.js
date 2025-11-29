@@ -91,6 +91,10 @@ function loadFamiliar() {
       slider.addEventListener("input", () => {
         saveFamiliarData(conditionId, slider.value)
       })
+
+      valueDisplay.querySelector('input').addEventListener("blur", () => {
+        saveFamiliarData(conditionId, valueDisplay.querySelector('input').value)
+      })
     }
   } else {
     const conditionId = selectedFamiliar + "-Passive"

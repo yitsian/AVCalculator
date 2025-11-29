@@ -141,7 +141,7 @@ function loadUnitComparison(unitName, variantData, selectionNumber) {
  * Creates a divider line with text
  */
 function createDivider(parent, rarity, text) {
-  const divider = createElement('div', 'line-divided-text general-text', parent);
+  const divider = createElement('div', 'line-divider-text general-text', parent);
   createElement('div', `text-divider-line ${rarity}`, divider);
   const dividerText = createElement('div', `text-gradient ${rarity}`, divider);
   dividerText.textContent = text;

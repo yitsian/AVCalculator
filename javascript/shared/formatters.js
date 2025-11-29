@@ -63,16 +63,20 @@ function getTraitBonus(trait) {
 
 function formatKeyWords(text) {
   return text
-    .replace(/\bmana\b/gi, `<span class="curse">mana</span>`)
-    .replace(/\bmeter\b/gi, `<span class="curse">meter</span>`)
-    .replace(/\bsummon\b/gi, `<span class="curse">summon</span>`)
-    .replace(/\bdmg\b/gi, match => `<span class="damage">${match}</span>`)
-    .replace(/\bspa\b/gi, match => `<span class="spa">${match}</span>`)
-    .replace(/\brng\b/gi, match => `<span class="range">${match}</span>`)
-    .replace(/\bcrit\b/gi, match => `<span class="crit">${match}</span>`)
-    .replace(/\bcritdmg\b/gi, match => `<span class="critDmg">${match}</span>`)
-    .replace(/\bhealth\b/gi, match => `<span class="buff">${match}</span>`)
-    .replace(/\bevery\b/gi, match => `<span class="spa">${match}</span>`)
+    .replace(/\bmana\b/gi, `<span class="text-gradient vsjw">mana</span>`)
+    .replace(/\bmeter\b/gi, `<span class="text-gradient vsjw">meter</span>`)
+    .replace(/\bsummons?\b/gi, (match) => `<span class="text-gradient vsjw">${capitalizeFirstLetter(match)}</span>`)
+
+    .replace(/\bdmg\b/gi, () => `<span class="damage">Dmg</span>`)
+    .replace(/\bspa\b/gi, () => `<span class="spa">Spa</span>`)
+    .replace(/\brng\b/gi, () => `<span class="range">Rng</span>`)
+
+    .replace(/\bcritdmg\b/gi, () => `<span class="critdmg">Crit Damage</span>`)
+    .replace(/\bcrit\s+damage\b/gi, () => `<span class="critDmg">Crit Damage</span>`)
+    .replace(/\bcrit(?!\s*damage|\s*dmg)(?:\s+rate)?\b/gi, () => `<span class="crit">Crit</span>`)
+
+    .replace(/\bhealth\b/gi, (match) => `<span class="buff">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bevery\b/gi, (match) => `<span class="spa">${capitalizeFirstLetter(match)}</span>`)
 }
 
 function formatPassiveDescription(text) {
@@ -87,36 +91,36 @@ function formatFlavorText(text) {
   const flavorKeywords = {
     'bleed': { image: 'Bleed.webp', class: 'bleed' },
     'bleeding': { image: 'Bleed.webp', class: 'bleed' },
-    'bubble': { image: 'Bubbled.webp', class: 'water' },
-    'bubbled': { image: 'Bubbled.webp', class: 'water' },
     'burn': { image: 'Burn.webp', class: 'fire' },
     'burning': { image: 'Burn.webp', class: 'fire' },
     'burned': { image: 'Burn.webp', class: 'fire' },
-    'cleave': { image: 'Cleave.webp', class: 'cleave' },
-    'cleaved': { image: 'Cleave.webp', class: 'cleave' },
-    'freeze': { image: 'Freeze.webp', class: 'water' },
-    'frozen': { image: 'Freeze.webp', class: 'water' },
-    'freezing': { image: 'Freeze.webp', class: 'water' },
-    'nullify': { image: 'Nullify.webp', class: 'cosmic' },
-    'nullified': { image: 'Nullify.webp', class: 'cosmic' },
-    'repulse': { image: 'Repulse.webp', class: 'blast' },
-    'repulsed': { image: 'Repulse.webp', class: 'blast' },
-    'rupture': { image: 'Rupture.webp', class: 'curse' },
-    'ruptured': { image: 'Rupture.webp', class: 'curse' },
-    'slow': { image: 'Slow.webp', class: 'water' },
-    'slowed': { image: 'Slow.webp', class: 'water' },
+    'freeze': { image: 'Freeze.webp', class: 'freeze' },
+    'frozen': { image: 'Freeze.webp', class: 'freeze' },
+    'freezing': { image: 'Freeze.webp', class: 'freeze' },
+    'repulse': { image: 'Repulse.webp', class: 'nature' },
+    'repulsed': { image: 'Repulse.webp', class: 'nature' },
+    'rupture': { image: 'Rupture.webp', class: 'debuff' },
+    'ruptured': { image: 'Rupture.webp', class: 'debuff' },
+    'slow': { image: 'Slow.webp', class: 'slow' },
+    'slowed': { image: 'Slow.webp', class: 'slow' },
     'stun': { image: 'Stun.webp', class: 'spark' },
     'stuns': { image: 'Stun.webp', class: 'spark' },
     'stunned': { image: 'Stun.webp', class: 'spark' },
-    'timestop': { image: 'Timestop.webp', class: 'cosmic' },
-    'time stop': { image: 'Timestop.webp', class: 'cosmic' },
-    'time-stop': { image: 'Timestop.webp', class: 'cosmic' },
+    'timestop': { image: 'Timestop.webp', class: 'time-stop' },
+    'time stops': { image: 'Timestop.webp', class: 'time-stop' },
     'wound': { image: 'Wounded.webp', class: 'damage' },
     'wounded': { image: 'Wounded.webp', class: 'damage' },
     'wounding': { image: 'Wounded.webp', class: 'damage' },
     'calamity 1': { image: 'calamity.webp', class: 'buff' },
     'calamity 2': { image: 'calamity.webp', class: 'range' },
     'calamity 3': { image: 'calamity.webp', class: 'unbound' },
+
+    'support': { image: 'utility.webp', class: 'text-gradient legendary' },
+    'nullify': { image: 'Nullify.webp', class: 'text-gradient epic' },
+    'nullified': { image: 'Nullify.webp', class: 'text-gradient epic' },
+    'bubbled': { image: 'Bubbled.webp', class: 'text-gradient rare' },
+    'cleave': { image: 'Cleave.webp', class: 'text-gradient sukono' },
+    'cleaved': { image: 'Cleave.webp', class: 'text-gradient sukono' },
   };
 
   let formattedText = text;
@@ -125,7 +129,7 @@ function formatFlavorText(text) {
   for (const [keyword, data] of Object.entries(flavorKeywords)) {
     const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
     formattedText = formattedText.replace(regex, (match) => {
-      return `<span class="${data.class} flavor-text-keyword"><img src="Images/FlavorText/${data.image}" class="flavor-icon" alt="${match}">${match}</span>`;
+      return `<span class="${data.class} flavor-text-keyword"><img src="Images/FlavorText/${data.image}" class="flavor-icon"">${capitalizeFirstLetter(match)}</span>`;
     });
   }
 
@@ -215,4 +219,11 @@ function getAttackType(attackString) {
 
   // If format doesn't match known patterns, return as-is
   return attackString;
+}
+
+function capitalizeFirstLetter(str) {
+  if (typeof str !== 'string' || str.length === 0) {
+    return ""; // Handle empty strings or non-string inputs
+  }
+  return str[0].toUpperCase() + str.slice(1);
 }

@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: row;
 
-  gap: max(12px, calc(12vh/12))
+  gap: max(18px, calc(18vh/12))
 }
 
 .comparison-unit-description {
@@ -50,7 +50,7 @@
 }
 
 .comparison-unit-name {
-  font-size: max(28px, calc(28vh/12));
+  font-size: max(32px, calc(32vh/12))
 }
 
 .comparison-unit-modifier {

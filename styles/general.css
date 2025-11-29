@@ -84,11 +84,11 @@ body {
 }
 
 .font-size-20 {
-  font-size: max(20px, calc(8vh/6)) !important;
+  font-size: max(20px, calc(20vh/12)) !important;
 }
 
 .font-size-48 {
-  font-size: min(48px, calc(48 * 0.1667vh)) !important;
+  font-size: max(48px, calc(48vh/12)) !important;
 }
 
 .no-wrap {
@@ -101,15 +101,16 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.line-divided-text {
+.line-divider-text {
   display: flex;
   align-items: center;
-  gap: max(6px, calc(6vh/16));
+  gap: max(8px, calc(8vh/12));
   
-  font-size: max(24px, calc(24vh/16));
+  font-size: max(28px, calc(28vh/12))
 }
 
 .text-divider-line {
   flex: 1;
-  height: 2px;
+  height: max(2px, calc(2vh/12));
+  border-radius: 100%;
 }
