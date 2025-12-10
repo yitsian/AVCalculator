@@ -74,8 +74,8 @@ function loadFamiliar() {
     for (stat in familiarsData[selectedFamiliar].minRanges) {
       const conditionId = selectedFamiliar + "-" + stat
 
-      const sliderMinRange = familiarsData[selectedFamiliar].minRanges[stat];
-      const sliderMaxRange = familiarsData[selectedFamiliar].maxRanges[stat];
+      const sliderMinRange = familiarsData[selectedFamiliar].minRanges[stat] * (corruption == 3 ? 1.5 : 1);
+      const sliderMaxRange = familiarsData[selectedFamiliar].maxRanges[stat] * (corruption == 3 ? 1.5 : 1);
 
       const sliderConfig = { type: "Slider", multiplicative: familiarsData[selectedFamiliar].multiplicative, buffs: statToBuffVector(stat), otherBuffs: statToOtherBuffVector(stat) }
 
@@ -87,7 +87,6 @@ function loadFamiliar() {
 
       setBuffUpdateLoop(checkbox, slider, valueDisplay, conditionId, sliderConfig)
 
-      saveFamiliarData(conditionId, slider.value)
       slider.addEventListener("input", () => {
         saveFamiliarData(conditionId, slider.value)
       })

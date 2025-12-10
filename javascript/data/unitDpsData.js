@@ -1,4 +1,3 @@
-
 const unitDpsData = {
   "BrolziSuper": [
     {
@@ -121,6 +120,37 @@ const unitDpsData = {
     {
       "trait": "Monarch",
       "familiar": "Birb",
+      "modifier": "1 Life and Boss",
+      "cost": 57000,
+      "dps": 148,
+      "rng": 89.4,
+      "attacks": [
+        {
+          "name": "Attack 1",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 66.7,
+          "hits": 1
+        },
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 110,
+          "percent": 16.7,
+          "hits": 4
+        },
+        {
+          "name": "Attack 2",
+          "aoeType": "Cone",
+          "size": 90,
+          "percent": 16.7,
+          "hits": 2
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
       "modifier": "1 Life Left",
       "cost": 57000,
       "dps": 74,
@@ -207,37 +237,6 @@ const unitDpsData = {
           "aoeType": "Cone",
           "size": 90,
           "percent": 15.8,
-          "hits": 2
-        }
-      ]
-    },
-    {
-      "trait": "Monarch",
-      "familiar": "Birb",
-      "modifier": "1 Life and Boss",
-      "cost": 57000,
-      "dps": 148,
-      "rng": 89.4,
-      "attacks": [
-        {
-          "name": "Attack 1",
-          "aoeType": "Full",
-          "size": 0,
-          "percent": 66.7,
-          "hits": 1
-        },
-        {
-          "name": "Attack 3",
-          "aoeType": "Cone",
-          "size": 110,
-          "percent": 16.7,
-          "hits": 4
-        },
-        {
-          "name": "Attack 2",
-          "aoeType": "Cone",
-          "size": 90,
-          "percent": 16.7,
           "hits": 2
         }
       ]
@@ -451,6 +450,61 @@ const unitDpsData = {
       ]
     }
   ],
+  "GodAboveHeaven": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Passives Active",
+      "cost": 130400,
+      "dps": 410,
+      "rng": 43.5,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 50,
+          "percent": 100,
+          "hits": 7
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Base",
+      "cost": 130400,
+      "dps": 205,
+      "rng": 43.5,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 50,
+          "percent": 100,
+          "hits": 7
+        }
+      ]
+    }
+  ],
+  "GodStandless": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Passives and DoT",
+      "cost": 130400,
+      "dps": 400,
+      "rng": 43.5,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 100,
+          "hits": 6
+        }
+      ]
+    }
+  ],
   "GujoFamiliar": [
     {
       "trait": "Monarch",
@@ -483,6 +537,112 @@ const unitDpsData = {
           "size": 0,
           "percent": 100,
           "hits": 1
+        }
+      ]
+    }
+  ],
+  "Hellkiller": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Base",
+      "cost": 132264,
+      "dps": 150,
+      "rng": 51.6,
+      "attacks": [
+        {
+          "name": "Attack 1",
+          "aoeType": "Cone",
+          "size": 50,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "GK + TOTTF",
+      "cost": 132264,
+      "dps": 300,
+      "rng": 51.6,
+      "attacks": [
+        {
+          "name": "Attack 1",
+          "aoeType": "Cone",
+          "size": 50,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "Hollowseph": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Max Fury of Forsaken",
+      "cost": 133700,
+      "dps": 203,
+      "rng": 51.6,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "BlackSpirit",
+      "modifier": "Max Fury of Forsaken",
+      "cost": 133700,
+      "dps": 164,
+      "rng": 44.9,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Honed Nail",
+      "cost": 133700,
+      "dps": 142,
+      "rng": 51.6,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "BlackSpirit",
+      "modifier": "Honed Nail",
+      "cost": 133700,
+      "dps": 115,
+      "rng": 44.9,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 3
         }
       ]
     }
@@ -970,6 +1130,25 @@ const unitDpsData = {
       ]
     }
   ],
+  "Rideon": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Average",
+      "cost": 77500,
+      "dps": 175,
+      "rng": 51.6,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 120,
+          "percent": 100,
+          "hits": 3
+        }
+      ]
+    }
+  ],
   "RogitaSuper": [
     {
       "trait": "Monarch",
@@ -1134,6 +1313,85 @@ const unitDpsData = {
       ]
     }
   ],
+  "Rummie": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Less than 30 enemy",
+      "cost": 88500,
+      "dps": 152,
+      "rng": 57.1,
+      "attacks": [
+        {
+          "name": "Attack 2",
+          "aoeType": "Circle",
+          "size": 15,
+          "percent": 100,
+          "hits": 3
+        },
+        {
+          "name": "Followup",
+          "aoeType": "Circle",
+          "size": 15,
+          "percent": 100,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "30 or more enemy",
+      "cost": 88500,
+      "dps": 102,
+      "rng": 57.1,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "Shero": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Kaleidoscope",
+      "cost": 120700,
+      "dps": 177,
+      "rng": 67.9,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Cone",
+          "size": 70,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Black Spirit",
+      "cost": 120700,
+      "dps": 144,
+      "rng": 67.9,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Cone",
+          "size": 70,
+          "percent": 100,
+          "hits": 2
+        }
+      ]
+    }
+  ],
   "SmithJohn": [
     {
       "trait": "Monarch",
@@ -1183,6 +1441,104 @@ const unitDpsData = {
           "size": 0,
           "percent": 100,
           "hits": 8
+        }
+      ]
+    }
+  ],
+  "SosukeFamiliar": [
+    {
+      "trait": "Monarch",
+      "familiar": "SosukeFamiliar",
+      "modifier": "Base",
+      "cost": 60100,
+      "dps": 232,
+      "rng": 53.3,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 28,
+          "hits": 1
+        },
+        {
+          "name": "Lightning Arc",
+          "aoeType": "Line",
+          "size": 2,
+          "percent": 72,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "SosukeFamiliar",
+      "modifier": "10 Hits",
+      "cost": 60100,
+      "dps": 263,
+      "rng": 53.3,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 28,
+          "hits": 1
+        },
+        {
+          "name": "Lightning Arc",
+          "aoeType": "Line",
+          "size": 2,
+          "percent": 72,
+          "hits": 2
+        }
+      ]
+    },
+    {
+      "trait": "Deadeye",
+      "familiar": "SosukeFamiliar",
+      "modifier": "Base",
+      "cost": 60100,
+      "dps": 75,
+      "rng": 50.8,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 28,
+          "hits": 1
+        },
+        {
+          "name": "Lightning Arc",
+          "aoeType": "Line",
+          "size": 2,
+          "percent": 72,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "trait": "Deadeye",
+      "familiar": "SosukeFamiliar",
+      "modifier": "10 Hits",
+      "cost": 60100,
+      "dps": 85,
+      "rng": 50.8,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 28,
+          "hits": 1
+        },
+        {
+          "name": "Lightning Arc",
+          "aoeType": "Line",
+          "size": 2,
+          "percent": 72,
+          "hits": 4
         }
       ]
     }
@@ -1550,10 +1906,10 @@ const unitDpsData = {
         },
         {
           "name": "Attack 3",
-          "aoeType": "12",
-          "size": 27,
-          "percent": 2,
-          "hits": 0
+          "aoeType": "Line",
+          "size": 12,
+          "percent": 27,
+          "hits": 2
         },
         {
           "name": "Attack 4",
@@ -1595,6 +1951,42 @@ const unitDpsData = {
           "size": 0,
           "percent": 100,
           "hits": 8
+        }
+      ]
+    }
+  ],
+  "Traitless": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Initial",
+      "cost": 98100,
+      "dps": 88,
+      "rng": 54.3,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 70,
+          "percent": 100,
+          "hits": 5
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Maxed Dark Tendrils",
+      "cost": 98100,
+      "dps": 240,
+      "rng": 54.3,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 70,
+          "percent": 100,
+          "hits": 5
         }
       ]
     }
@@ -1868,6 +2260,325 @@ const unitDpsData = {
           "size": 0,
           "percent": 50,
           "hits": 5
+        }
+      ]
+    }
+  ],
+  "Horsegirls": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Maxed, Namak",
+      "cost": 26400,
+      "dps": 1255,
+      "rng": 1,
+      "attacks": [
+        {
+          "name": "Summon",
+          "aoeType": "Single",
+          "size": 0,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Wave 15, Namak",
+      "cost": 132000,
+      "dps": 173,
+      "rng": 1,
+      "attacks": [
+        {
+          "name": "Summon",
+          "aoeType": "Single",
+          "size": 0,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "Unstable": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Base",
+      "cost": 136000,
+      "dps": 128,
+      "rng": 61.1,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Stressful Mind",
+      "cost": 136000,
+      "dps": 321,
+      "rng": 73.4,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "All Maxed",
+      "cost": 136000,
+      "dps": 481,
+      "rng": 73.4,
+      "attacks": [
+        {
+          "name": "Attack 4",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "Ghoul": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Max Takedowns",
+      "cost": 51800,
+      "dps": 112,
+      "rng": 54.3,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 90,
+          "percent": 77,
+          "hits": 1
+        },
+        {
+          "name": "Shard Thrower",
+          "aoeType": "Line",
+          "size": 2,
+          "percent": 23,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "trait": "Ethereal",
+      "familiar": "Birb",
+      "modifier": "Max Takedowns",
+      "cost": 51800,
+      "dps": 38,
+      "rng": 54.3,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Cone",
+          "size": 90,
+          "percent": 77,
+          "hits": 1
+        },
+        {
+          "name": "Shard Thrower",
+          "aoeType": "Line",
+          "size": 2,
+          "percent": 23,
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "BlackHole": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Average",
+      "cost": 118400,
+      "dps": 135,
+      "rng": 62.5,
+      "attacks": [
+        {
+          "name": "No Weapon",
+          "aoeType": "Circle",
+          "size": 18,
+          "percent": 16.5,
+          "hits": 1
+        },
+        {
+          "name": "Sword",
+          "aoeType": "Circle",
+          "size": 18,
+          "percent": 20.7,
+          "hits": 5
+        },
+        {
+          "name": "Smoke Bomb",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 16.5,
+          "hits": 1
+        },
+        {
+          "name": "Chain Scythe",
+          "aoeType": "Circle",
+          "size": 18,
+          "percent": 16.5,
+          "hits": 2
+        },
+        {
+          "name": "Shuriken",
+          "aoeType": "Line",
+          "size": 16,
+          "percent": 29.8,
+          "hits": 1
+        }
+      ]
+    }
+  ],
+  "GhostGirl": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Base",
+      "cost": 32200,
+      "dps": 21,
+      "rng": 47.5,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 100,
+          "hits": 8
+        }
+      ]
+    }
+  ],
+  "Jailer": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Base",
+      "cost": 87300,
+      "dps": 157,
+      "rng": 43.5,
+      "attacks": [
+        {
+          "name": "Attack 3",
+          "aoeType": "Line",
+          "size": 14,
+          "percent": 33.3,
+          "hits": 3
+        },
+        {
+          "name": "Attack 2",
+          "aoeType": "Circle",
+          "size": 16,
+          "percent": 66.7,
+          "hits": 4
+        }
+      ]
+    }
+  ],
+  "LichKing": [
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Curse/Passion",
+      "cost": 218500,
+      "dps": 65,
+      "rng": 99.4,
+      "attacks": [
+        {
+          "name": "Aura of Despair",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 100,
+          "hits": 3
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Passion/Water",
+      "cost": 218500,
+      "dps": 524,
+      "rng": 99.4,
+      "attacks": [
+        {
+          "name": "Aura of Despair",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 6.3,
+          "hits": 3
+        },
+        {
+          "name": "Undead Control",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 6.3,
+          "hits": 1
+        },
+        {
+          "name": "Acid Rain",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 87.4,
+          "hits": 30
+        }
+      ]
+    },
+    {
+      "trait": "Monarch",
+      "familiar": "Birb",
+      "modifier": "Passion/Fire",
+      "cost": 218500,
+      "dps": 229,
+      "rng": 99.4,
+      "attacks": [
+        {
+          "name": "Aura of Despair",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 28.6,
+          "hits": 3
+        },
+        {
+          "name": "Undead Control",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 28.6,
+          "hits": 1
+        },
+        {
+          "name": "Apocolypse",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 28.6,
+          "hits": 6
+        },
+        {
+          "name": "Intense Burn",
+          "aoeType": "Full",
+          "size": 0,
+          "percent": 14.3,
+          "hits": 10
         }
       ]
     }

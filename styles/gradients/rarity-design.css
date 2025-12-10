@@ -4,6 +4,11 @@
   inherits: false;
 }
 
+.lichking {
+  background-image: repeating-linear-gradient(150deg, #f7cc78 0%, #1e1a1a 25%, #f7cc78 50%);
+  background-size: 200% 200%;
+}
+
 .sosuke {
   background-image: repeating-linear-gradient(150deg, #ff0000 0%, #06060a 25%, #ff0000 50%);
   background-size: 200% 200%;

@@ -1,4 +1,12 @@
 const unitTagData = {
+  LichKing: { availability: ["Limited"], rarities: ["Vanguard", "LichKing"], elements: ["Curse"], aoes: ["Circle"], mechanics: ["Ability", "Summoner", "CC", "Nuke", "Buffer", "Debuffer", "DOT", "Immune"] },
+  Horsegirls: { availability: ["Limited"], rarities: ["Secret"], elements: ["Passion"], aoes: ["Single"], mechanics: ["Ability", "Summoner"] },
+  Unstable: { availability: ["Limited"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Meter", "CC", "Immune"] },
+  Ghoul: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["OCone"], mechanics: [] },
+  BlackHole: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Blast"], aoes: ["Circle"], mechanics: ["DOT", "CC"] },
+  GhostGirl: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["Circle"], mechanics: ["Debuffer", "CC"] },
+  Jailer: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["OCone"], mechanics: ["CC", "Summoner"] },
+
   Hollowseph: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["OCone"], mechanics: ["Ability", "Meter"] },
   Dot: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Cosmic"], aoes: ["OCone"], mechanics: ["CC"] },
   Shero: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["OCone"], mechanics: ["Meter", "Ability", "Nuke"] },
@@ -25,7 +33,7 @@ const unitTagData = {
   BrolziSuper: { availability: ["Permanent"], rarities: ["Vanguard", "BrolziSuper"], elements: ["Unbound"], aoes: ["OCone"], mechanics: ["Debuffer", "Buffer", "Ability", "Domain"] },
   RogitaSuper: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Blast"], aoes: ["Splash"], mechanics: ["Buffer", "Immune"] },
   LordFriezo: { availability: ["Permanent"], rarities: ["Mythic"], elements: ["Cosmic"], aoes: ["Circle"], mechanics: ["Summoner", "Immune"] },
-  Wolf: { availability: ["Limited"], rarities: ["Secret"], elements: ["Spark"], aoes: ["OCone"], mechanics: ["CC"] },
+  Wolf: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Spark"], aoes: ["OCone"], mechanics: ["CC"] },
 
   TheStruggler: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unbound"], aoes: ["Full"], mechanics: ["Ability", "CC", "DOT"] },
   TheFalcon: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["OCone"], mechanics: ["Debuffer", "CC", "Buffer"] },
@@ -41,13 +49,13 @@ const unitTagData = {
 
   GG: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse"], aoes: ["OCone"], mechanics: [] },
 
-  Iscanur: { availability: ["Limited"], rarities: ["Vanguard", "Iscanur"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Nuke"] },
+  Iscanur: { availability: ["Unobtainable"], rarities: ["Vanguard", "Iscanur"], elements: ["Fire"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Nuke"] },
   Koguro: { availability: ["Unobtainable"], rarities: ["Vanguard", "Koguro"], elements: ["Nature"], aoes: ["Circle"], mechanics: ["Ability", "CC", "Buffer", "DOT", "Domain", "Nuke"] },
   Vsjw: { availability: ["Permanent"], rarities: ["Vanguard", "Vsjw"], elements: ["Unknown"], aoes: ["Circle"], mechanics: ["Ability", "Summoner", "Nuke", "Immune"] },
   Divalo: { availability: ["Unobtainable"], rarities: ["Vanguard", "Divalo"], elements: ["Cosmic"], aoes: ["Line"], mechanics: ["Ability", "Domain", "CC", "Immune"] },
   Rogita: { availability: ["Unobtainable"], rarities: ["Vanguard", "Rogita"], elements: ["Blast"], aoes: ["ACone"], mechanics: ["Ability", "CC"] },
 
-  Leo: { availability: ["Limited"], rarities: ["Secret"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT"] },
+  Leo: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT"] },
   MonkeyKing: { availability: ["Unobtainable"], rarities: ["Secret"], elements: ["Holy"], aoes: ["Circle"], mechanics: ["Ability", "Buffer"] },
   GiantQueen: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Buffer"] },
   Arin: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Cosmic"], aoes: ["Full"], mechanics: ["Ability", "Buffer", "Nuke"] },
@@ -80,10 +88,10 @@ const unitTagData = {
   Sokora: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Unknown"], aoes: ["Full"], mechanics: ["Immune", "Ability", "Buffer"] },
   Salter: { availability: ["Permanent"], rarities: ["Secret"], elements: ["Curse"], aoes: ["Circle"], mechanics: ["CC", "DOT", "Debuffer", "Immune"] },
 
-  Ali: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["OCone"], mechanics: ["DOT"] },
-  Hei: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["Full"], mechanics: ["DOT"] },
-  Newsman: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Water"], aoes: ["OCone"], mechanics: ["CC", "Debuffer", "DOT"] },
-  Quetzalcoatl: { availability: ["Limited"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "Buffer"] },
+  Ali: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["OCone"], mechanics: ["DOT"] },
+  Hei: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Curse"], aoes: ["Full"], mechanics: ["DOT"] },
+  Newsman: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Water"], aoes: ["OCone"], mechanics: ["CC", "Debuffer", "DOT"] },
+  Quetzalcoatl: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Fire"], aoes: ["Full"], mechanics: ["DOT", "Buffer"] },
   Reimu: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["Full"], mechanics: ["Ability"] },
   Sakuya: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Nature"], aoes: ["Full"], mechanics: ["Ability", "CC"] },
   Arc: { availability: ["Unobtainable"], rarities: ["Exclusive"], elements: ["Holy"], aoes: ["ACone"], mechanics: ["Ability", "CC", "Summoner", "DOT"] },

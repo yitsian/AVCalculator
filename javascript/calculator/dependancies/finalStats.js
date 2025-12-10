@@ -33,7 +33,7 @@ function checkExtraConditions() {
     for (conditionIndex in unitPassives[selectedUnit][passiveIndex].conditions) {
       const condition = unitPassives[selectedUnit][passiveIndex].conditions[conditionIndex]
 
-      if (condition.extra && condition.active) {
+      if (condition.extra && (condition.active || condition.type == "None")) {
         condition.extra(finalStats, condition.value)
       }
     }

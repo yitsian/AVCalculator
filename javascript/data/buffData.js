@@ -1,4 +1,82 @@
 const buffData = {
+  CustomDmg: {
+    name: "Custom Dmg Buffs", description: "Multiplicative then Additive Dmg Buff",
+    background: "secret", image: "Images/Abilities/World_Items_Ability.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 1000, step: 1, buffs: [1, 0, 0, 0, 0, 0],
+      },
+
+      {
+        multiplicative: true, type: "Slider", minRange: 0, maxRange: 1000, step: 1, buffs: [1, 0, 0, 0, 0, 0],
+      },
+    ]
+  },
+
+  CustomSpa: {
+    name: "Custom Spa Buffs", description: "Multiplicative then Additive Spa Buff",
+    background: "rare", image: "Images/Abilities/World_Items_Ability.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 100, step: 1, buffs: [0, 1, 0, 0, 0, 0],
+      },
+
+      {
+        multiplicative: true, type: "Slider", minRange: 0, maxRange: 100, step: 1, buffs: [0, 1, 0, 0, 0, 0],
+      },
+    ]
+  },
+
+  CustomRng: {
+    name: "Custom Rng Buffs", description: "Multiplicative then Additive Rng Buff",
+    background: "legendary", image: "Images/Abilities/World_Items_Ability.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: false, type: "Slider", minRange: 0, maxRange: 100, step: 1, buffs: [0, 0, 1, 0, 0, 0],
+      },
+
+      {
+        multiplicative: true, type: "Slider", minRange: 0, maxRange: 100, step: 1, buffs: [0, 0, 1, 0, 0, 0],
+      },
+    ]
+  },
+
+  CustomCrit: {
+    name: "Custom Crit Buffs", description: "Crit buffs are already Multiplicative",
+    background: "iscanur", image: "Images/Abilities/World_Items_Ability.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: true, type: "Slider", minRange: 0, maxRange: 200, step: 1, buffs: [0, 0, 0, 1, 0, 0],
+      },
+    ]
+  },
+
+  CustomCritDmg: {
+    name: "Custom Crit Dmg Buffs", description: "CritDmg buffs are already Multiplicative",
+    background: "epic", image: "Images/Abilities/World_Items_Ability.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: true, type: "Slider", minRange: 0, maxRange: 1000, step: 1, buffs: [0, 0, 0, 0, 1, 0],
+      },
+    ]
+  },
+
+  LichKing: {
+    name: "Lich King", description: "Aura of Despair (3 Passion): Enemies take 30% more Dmg and are slowed by 30% for 10s <br> <br> Aura of the Overlord (2 Passion): Allies in range are buffed by 50% Dmg and 20% Rng for 30s",
+    background: "lichking", image: "Images/Units/LichKing.webp", multiplicative: false,
+    conditions: [
+      {
+        multiplicative: true, type: "Static", statement: "Toggle Debuff", 
+        buffs: [30, 0, 0, 0, 0, 0]
+      },
+
+      {
+        multiplicative: false, type: "Static", statement: "Toggle Passive Buff", 
+        buffs: [50, 0, 20, 0, 0, 0]
+      },
+    ]
+  },
+
   Callasuba: {
     name: "Callasuba", description: "Buffs all units in range by 20% Dmg for 15s every 15s.",
     background: "exclusive", image: "Images/Units/Callasuba.webp", multiplicative: false,
@@ -344,8 +422,8 @@ const buffData = {
     ]
   },
 
-  DarkMage: {
-    name: "Dark Mage", description: "Enemies inflicted with Diseased receive 50% more DoT Dmg.",
+  Diseased: {
+    name: "Diseased", description: "Enemies inflicted with Diseased receive 50% more DoT Dmg.",
     background: "exclusive", image: "Images/Units/DarkMage.webp", multiplicative: true,
     conditions: [
       {

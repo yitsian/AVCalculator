@@ -77,10 +77,25 @@ function formatKeyWords(text) {
 
     .replace(/\bhealth\b/gi, (match) => `<span class="buff">${capitalizeFirstLetter(match)}</span>`)
     .replace(/\bevery\b/gi, (match) => `<span class="spa">${capitalizeFirstLetter(match)}</span>`)
+
+    // Elements
+    .replace(/\bpassion\b/gi, (match) => `<span class="passion">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bcurse\b/gi, (match) => `<span class="curse">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bfire\b/gi, (match) => `<span class="fire">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bwater\b/gi, (match) => `<span class="water">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bunbound\b/gi, (match) => `<span class="unbound">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bspark\b/gi, (match) => `<span class="spark">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bholy\b/gi, (match) => `<span class="holy">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bunknown\b/gi, (match) => `<span class="unknown">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bblast\b/gi, (match) => `<span class="blast">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bnature\b/gi, (match) => `<span class="nature">${capitalizeFirstLetter(match)}</span>`)
+    .replace(/\bcosmic\b/gi, (match) => `<span class="cosmic">${capitalizeFirstLetter(match)}</span>`)
+    //.replace(/\b\b/gi, (match) => `<span class="">${capitalizeFirstLetter(match)}</span>`)
 }
 
 function formatPassiveDescription(text) {
   return formatKeyWords(text)
+    .replace(/([+-]?\d+(\.\d+)?%|[+-]\/[+-]?\d+(\.\d+)?%|[+-]?\d+(\.\d+)?(?!%))/g, `<span class="spark">$1</span>`)
     .replace(/([+-]?\d+(\.\d+)?%|[+-]\/[+-]?\d+(\.\d+)?%)/g, `<span class="buff">$1</span>`)
     .replace(/([+-]?\d+(\.\d+)?s)/g, `<span class="spa">$1</span>`)
     .replace(/(\d+(?:\.\d+)?x)/g, `<span class="buff">$1</span>`);
@@ -111,9 +126,7 @@ function formatFlavorText(text) {
     'wound': { image: 'Wounded.webp', class: 'damage' },
     'wounded': { image: 'Wounded.webp', class: 'damage' },
     'wounding': { image: 'Wounded.webp', class: 'damage' },
-    'calamity 1': { image: 'calamity.webp', class: 'buff' },
-    'calamity 2': { image: 'calamity.webp', class: 'range' },
-    'calamity 3': { image: 'calamity.webp', class: 'unbound' },
+    'calamity': { image: 'calamity.webp', class: 'unbound' },
 
     'support': { image: 'utility.webp', class: 'text-gradient legendary' },
     'nullify': { image: 'Nullify.webp', class: 'text-gradient epic' },
@@ -133,12 +146,6 @@ function formatFlavorText(text) {
     });
   }
 
-  // Apply existing number formatting
-  formattedText = formattedText
-    .replace(/([+-]?\d+(\.\d+)?%|[+-]\/[+-]?\d+(\.\d+)?%)/g, `<span class="buff">$1</span>`)
-    .replace(/([+-]?\d+(\.\d+)?s)/g, `<span class="spa">$1</span>`)
-    .replace(/(\d+(?:\.\d+)?x)/g, `<span class="buff">$1</span>`);
-
   return formattedText;
 }
 
@@ -152,7 +159,7 @@ function statToBuffVector(stat) {
       return [0, 0, 0, 1, 0, 0]
     case "critDmg":
       return [0, 0, 0, 0, 1, 0]
-    default: 
+    default:
       return [0, 0, 0, 0, 0, 0]
   }
 }

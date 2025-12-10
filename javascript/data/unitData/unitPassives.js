@@ -1,4 +1,194 @@
 let unitPassives = {
+  LichKing: [
+    {
+      name: "Arcane Knowledge", upgrade: 0,
+      conditions: [
+        {
+          description: "Extra Spells Active - Scales the Spa to cycle back to each spell", 
+          multiplicative: true, type: "Slider", min: 0, max: 3, step: 1, buffs: [0, -100, 0, 0, 0, 0],
+          suffix: " Spells"
+        }
+      ]
+    },
+
+    {
+      name: "Undead Body", upgrade: 0,
+      conditions: [
+        {
+          description: "Whenever this unit resists a buff of status effect, buffs Dmg by 40% and Rng by 10% for 60s", 
+          type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [40, 0, 10, 0, 0, 0], default: false
+        }
+      ]
+    },
+
+    {
+      name: "Buff Spells", upgrade: 0,
+      conditions: [
+        {
+          description: "Aura of the Overlord (3 Passion): Buffs all units in range by 50% Dmg and 20% Rng for 30s", 
+          type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 20, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Haste (2 Unbound): Buffs this unit's Spa by 20% for 50s", 
+          type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [0, 20, 0, 0, 0, 0], default: false
+        },
+
+        {
+          description: "Rage (3 Unbound): Buffs this unit's Dmg by 50% for 50s", 
+          type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0], default: false
+        }
+      ]
+    },
+  ],
+
+  Horsegirls: [
+    {
+      name: "Horsegirl Racing!", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit levels 4 different stats, with 4 action points per wave.", type: "None",
+          extra: (finalStats, value) => {
+            finalStats.spa =
+              conditionMetaMap["0-1"] ?
+                250 / (2 + conditionMetaMap["0-1"].value * 0.1) / (conditionMetaMap["1-0"] && conditionMetaMap["1-0"].active ? 2 : 1)
+                : 125
+          }
+        },
+
+        {
+          description: "Speed, Movespeed increases by 0.1 per point. (Uses Namak for loop time)",
+          multiplicative: true, type: "Slider", min: 0, max: 200, step: 1, buffs: [0, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Dmg, Every point gets converted into 1% Dmg",
+          multiplicative: false, type: "Slider", min: 0, max: 200, step: 1, buffs: [1, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Cost, Decreases cost by 0.4% per point. (Does nothing for now, max cost reduction makes them cost 80% less or 26.4k to max)",
+          multiplicative: false, type: "Slider", min: 0, max: 200, step: 1, buffs: [0, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "Crit, each point gives 1% Crit.",
+          multiplicative: false, type: "Slider", min: 0, max: 200, step: 1, buffs: [0, 0, 0, 1, 0, 0]
+        },
+
+        {
+          description: "Any Crit over 100% gets converted to CritDmg.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => {
+            // Calculate total crit using current baseStats (now updated before dynamic buffs)
+            const totalCrit = Math.max(baseStats.crit + statAddBuffs.crit * 100, 0);
+            return [0, 0, 0, 0, Math.max(totalCrit - 100, 0), 0];
+          },
+        },
+      ]
+    },
+
+    {
+      name: "World Champion", upgrade: 0,
+      conditions: [
+        {
+          description: "When this unit gets all 4 stats maxed out, gains 100% Dmg and runs 2x faster.", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [100, 0, 0, 0, 0, 0], default: false
+        },
+      ]
+    },
+  ],
+
+  Unstable: [
+    {
+      name: "Stressful Mind", upgrade: 0,
+      conditions: [
+        {
+          description: "This unit has a stress meter that fills by 1% for every enemy that enters range. In the mode, gain 100% Dmg, -20% Spa and 20% Rng. (Lasts 33.3s or Permanent after wave 20)", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [100, 20, 20, 0, 0, 0], default: false
+        }
+      ]
+    },
+
+    {
+      name: "Unfathomable Power", upgrade: 0,
+      conditions: [
+        {
+          description: "When outside of stress mode, repulses and gain 1% Dmg for each enemy repulsed (Up to 100%).", type: "Slider",
+          multiplicative: false, min: 0, max: 100, step: 1, buffs: [1, 0, 0, 0, 0, 0]
+        },
+      ]
+    },
+  ],
+
+  Ghoul: [
+    {
+      name: "Flesh Eater", upgrade: 0,
+      conditions: [
+        {
+          description: "Every takedown increases Dmg by 1% (Up to 50%).", type: "Slider",
+          multiplicative: false, min: 0, max: 50, step: 1, buffs: [1, 0, 0, 0, 0, 0]
+        },
+
+        {
+          description: "When first condition is maxed, decrease SPA by 20%", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [0, 20, 0, 0, 0, 0], default: false
+        },
+      ]
+    },
+  ],
+
+  BlackHole: [
+    {
+      name: "Ninjutsu Master", upgrade: 0,
+      conditions: [
+        {
+          description: "Every attack swaps this unit's weapon and buffs Dmg by 50% (100% Uptime)", type: "Statement", statement: "Toggle Passive Buff.",
+          multiplicative: false, buffs: [50, 0, 0, 0, 0, 0], default: false
+        }
+      ]
+    },
+
+    {
+      name: "Ninja's Armory", upgrade: 0,
+      conditions: [
+        {
+          description: "No Weapon: No Bonus (Aoe: 18 Circle)", type: "None"
+        },
+
+        {
+          description: "Sword: -20% Spa (Aoe: 18 Circle)", type: "None"
+        },
+
+        {
+          description: "Smoke Bomb: Slows enemies by 40% for 30s (Aoe: Full)", type: "None"
+        },
+
+        {
+          description: "Chain Scythe: 20% Rng (Aoe: 18 Circle)", type: "None"
+        },
+
+        {
+          description: "Shuriken: Inflicts Bleed for 80% Dmg over 10s (Aoe: 16 Line)", type: "None"
+        },
+      ]
+    },
+  ],
+
+  GhostGirl: [
+    {
+      name: "Bringer of Negativity", upgrade: 0,
+      conditions: [
+        {
+          description: "Attacks slow enemies for 50% for 30s and inflict diseased for 10s", type: "None"
+        },
+      ]
+    }
+  ],
+
   Hollowseph: [
     {
       name: "Void Given Focus", upgrade: 0,
@@ -19,7 +209,7 @@ let unitPassives = {
         },
       ]
     },
-    
+
     {
       name: "Soul Tree", upgrade: 0,
       conditions: [
@@ -110,7 +300,7 @@ let unitPassives = {
         },
       ]
     },
-    
+
     {
       name: "Faker", upgrade: 0,
       conditions: [
@@ -190,11 +380,11 @@ let unitPassives = {
       conditions: [
         {
           description: "This unit gains a radiation meter that fills every time this unit attacks or is attacked. This unit also has an Spa cap of roughly 7s.",
-          multiplicative: false, type: "Slider", min: 0, max: 100, step: 1, suffix: "%", buffs: [0, 0, 0, 0, 0, 0], extra: (finalStats, value) => { finalStats.spa = Math.max(finalStats.spa, 7) }
+          multiplicative: false, type: "Slider", min: 0, max: 100, step: 1, suffix: "%", buffs: [0, 0, 0, 0, 0, 0], extra: (finalStats, value) => { finalStats.spa = Math.max(finalStats.spa, 6.7) }
         },
 
         {
-          description: "Enemies in this unit's range take 30% more DoT Dmg. (In Buffs Tab)", type: "None" 
+          description: "Enemies in this unit's range take 30% more DoT Dmg. (In Buffs Tab)", type: "None"
         }
       ]
     },
@@ -203,7 +393,7 @@ let unitPassives = {
       name: "King of Monsters", upgrade: 0,
       conditions: [
         {
-          description: "When this unit activates its ability, consumes all its Radiation and converts half of it into a Dmg buff for 30s.", type: "Statement", 
+          description: "When this unit activates its ability, consumes all its Radiation and converts half of it into a Dmg buff for 30s.", type: "Statement",
           statement: "Toggle Active Buff.", multiplicative: false, getBuffs: (value, conditionMetaMap, statAddBuffs, statMultBuffs) => {
             return [conditionMetaMap["0-0"].value / 2, 0, 0, 0, 0, 0]
           }, default: false
@@ -251,7 +441,7 @@ let unitPassives = {
       name: "Stupid Cat", upgrade: 0,
       conditions: [
         {
-          description: "This unit applies any random status effect on hit except for Timestops and Walkback.", type: "None" 
+          description: "This unit applies any random status effect on hit except for Timestops and Walkback.", type: "None"
         }
       ]
     },
@@ -272,7 +462,7 @@ let unitPassives = {
       name: "Wonderous You", upgrade: 0,
       conditions: [
         {
-          description: "This unit does not attack, instead they walk from base as a summon who puts all enemies in calamity.", type: "None" 
+          description: "This unit does not attack, instead they walk from base as a summon who puts all enemies in calamity.", type: "None"
         }
       ]
     },
@@ -281,7 +471,7 @@ let unitPassives = {
       name: "Target of Calamity", upgrade: 0,
       conditions: [
         {
-          description: "Enemies hit by Calamity 3 stay in it for 30s.", type: "None" 
+          description: "Enemies hit by Calamity 3 stay in it for 30s.", type: "None"
         }
       ]
     }
@@ -293,8 +483,8 @@ let unitPassives = {
       conditions: [
         {
           description: "This unit gains 0.4s Spa every attack on an enemy, resets on new target. (Spa cap of 4s)",
-          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 0, 0, 0, 0, 0], 
-          suffix: " attacks", extra: (finalStats, value) => { finalStats.spa = Math.max(4, value * 0.4) }
+          multiplicative: false, type: "Slider", min: 0, max: 20, step: 1, buffs: [0, 0, 0, 0, 0, 0],
+          suffix: " attacks", extra: (finalStats, value) => { finalStats.spa = Math.max(3.6, value * 0.4) }
         }
       ]
     },

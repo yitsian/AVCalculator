@@ -1,4 +1,12 @@
 const unitStats = {
+  LichKing: { displayName: "Lich King (Ruler)", placementCount: 1, placementCost: 1000, maxCost: 218500, damage: 45000, spa: 10, range: 61, aoe: "12 Circle", hits: 1},
+  Horsegirls: { displayName: "Horsegirls (Racers)", placementCount: 1, placementCost: 1000, maxCost: 132000, damage: 30000, spa: 125, range: 1, aoe: "Single", hits: 1},
+  Unstable: { displayName: "Unstable (Psychosis)", placementCount: 3, placementCost: 2000, maxCost: 136000, damage: 50000, spa: 12, range: 45, aoe: "Full", hits: 1},
+  Ghoul: { displayName: "Ghoul (Winged)", placementCount: 4, placementCost: 1400, maxCost: 51800, damage: 9000, spa: 6, range: 40, aoe: "90° Cone", hits: 1},
+  BlackHole: { displayName: "Black Hole (Ninjitsu)", placementCount: 3, placementCost: 1500, maxCost: 118400, damage: 17000, spa: 7, range: 46, aoe: "18 Circle", hits: 1},
+  GhostGirl: { displayName: "Ghost Girl (Umbrella)", placementCount: 3, placementCost: 2000, maxCost: 32200, damage: 8000, spa: 12, range: 35, aoe: "16 Circle", hits: 8},
+  Jailer: { displayName: "Jailer (Underworld)", placementCount: 3, placementCost: 1000, maxCost: 87300, damage: 17000, spa: 10, range: 32, aoe: "14 Line", hits: 3},
+
   Hollowseph: { displayName: "Hollowseph (Pure)", placementCount: 1, placementCost: 4000, maxCost: 133700, damage: 33000, spa: 10, range: 38, aoe: "Full", hits: 3, meter: 3 },
   Dot: { displayName: "Dot (Nemesis)", placementCount: 4, placementCost: 2400, maxCost: 87400, damage: 13000, spa: 6, range: 48, aoe: "16 Circle", hits: 3 },
   Shero: { displayName: "Shero (Hero of Justice)", placementCount: 3, placementCost: 1200, maxCost: 120700, damage: 20000, spa: 8, range: 50, aoe: "9 Circle", hits: 1, meter: 10 },

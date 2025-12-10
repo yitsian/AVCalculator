@@ -1,4 +1,75 @@
 const unitAttacks = {
+  LichKing: [
+    {name: "Aura of Despair", aoe: "Full", hits: 3, type: "Spa-Followup", description: "(2 Passion) Does 100% Dmg and inflicts all enemies hit with Despair", 
+    multiplier: 1, image: "Images/Elements/Passion.webp", gradient: "exclusive"},
+
+    {name: "Nuclear Blast", aoe: "16 Circle", hits: 3, type: "Spa-Followup", description: "(2 Blast) Does 150% Dmg and stuns this unit for 10s", 
+    multiplier: 1, image: "Images/Elements/Blast.webp", gradient: "koguro"},
+
+    {name: "Astral Smite", aoe: "Full", hits: 1, type: "Spa-Followup", description: "(3 Holy) Does 100% Dmg and ignores Damage Reduction/Dodge Chance", 
+    multiplier: 1, image: "Images/Elements/Holy.webp", gradient: "legendary"},
+
+    {name: "Ray of Negative Energy", aoe: "18 Circle", hits: 4, type: "Spa-Followup", description: "(2 Cosmic) Does 100% Dmg and slows enemies for 50% for 30s", 
+    multiplier: 1, image: "Images/Elements/Cosmic.webp", gradient: "epic"},
+
+    {name: "Black Hole", aoe: "12 Circle", hits: 3, type: "Spa-Followup", description: "(3 Cosmic) Does 100% Dmg and pulls all enemies together", 
+    multiplier: 1, image: "Images/Elements/Cosmic.webp", gradient: "epic"},
+    
+    {name: "Paralysis", aoe: "Full", hits: 1, type: "Spa-Followup", description: "(2 Spark) Does 100% Dmg and stuns all enemies hit", 
+    multiplier: 1, image: "Images/Elements/Spark.webp", gradient: "gujo"},
+
+    {name: "Grasp Heart", aoe: "16 Heart", hits: 2, type: "Spa-Followup", description: "(3 Spark) Does 100% Dmg and executes all enemies under 15% Hp", 
+    multiplier: 1, image: "Images/Elements/Spark.webp", gradient: "gujo"},
+
+    {name: "Cyclone", aoe: "Full", hits: 1, type: "Spa-Followup", description: "(2 Nature) Does 100% Dmg and repulses all enemies hit", 
+    multiplier: 1, image: "Images/Elements/Nature.webp", gradient: "brolzisuper"},
+
+    {name: "Water Sword", aoe: "8 Line", hits: 1, type: "Spa-Followup", description: "(2 Water) Does 100% Dmg and applies bubbled to all enemies hit", 
+    multiplier: 1, image: "Images/Elements/Water.webp", gradient: "rare"},
+
+    {name: "Acid Rain", aoe: "Full", hits: 30, type: "Spa-Followup", description: "(3 Water) Does 20% Dmg per second for 30s. (Multiple can't be active)", 
+    multiplier: 6, image: "Images/Elements/Water.webp", gradient: "rare"},
+
+    {name: "Fireball", aoe: "12 Circle", hits: 1, type: "Spa-Followup", description: "(2 Fire) Does 100% Dmg then inflicts burn for 100% Dmg over 8s", 
+    multiplier: 1, image: "Images/Elements/Fire.webp", gradient: "iscanur"},
+
+    {name: "Fireball Burn", aoe: "12 Circle", hits: 1, type: "Dot", description: "Burn for 100% Dmg over 8s", 
+    multiplier: 1, image: "Images/Elements/Fire.webp", gradient: "iscanur"},
+
+    {name: "Apocalypse", aoe: "Full", hits: 6, type: "Spa-Followup", description: "(3 Fire) Does 100% Dmg then inflicts Intense Burn for 50% Dmg over 10s", 
+    multiplier: 1, image: "Images/Elements/Fire.webp", gradient: "iscanur"},
+
+    {name: "Apocalypse Burn", aoe: "Full", hits: 6, type: "Dot", description: "Intense Burn for 50% Dmg over 10s", 
+    multiplier: 0.5, image: "Images/Elements/Fire.webp", gradient: "iscanur"},
+
+    {name: "Creation", aoe: "Single", hits: 1, type: "Summon", description: "(3 Blast) Summons a wall with for 400% Dmg as Hp, lasts 30s", 
+    multiplier: 4, image: "Images/Elements/Blast.webp", gradient: "koguro"},
+
+    {name: "Create Greater Undead", aoe: "Single", hits: 2, type: "Summon", description: "(2 Curse) Summons 2 Death Knights with for 400% Dmg as Hp", 
+    multiplier: 8, image: "Images/Elements/Curse.webp", gradient: "vsjw"},
+
+    {name: "Supreme Summoning", aoe: "Single", hits: 1, type: "Summon", description: "(3 Curse) Summons a Goat with for 1200% Dmg as Hp", 
+    multiplier: 12, image: "Images/Elements/Curse.webp", gradient: "vsjw"},
+  ],
+
+  Ghoul: [
+    {name: "Shard Thrower", aoe: "2 Line", hits: 1, type: "Condition-Followup", description: "Every attack throws out a shard. When 10 are present, recalls the shards each doing 30% Dmg.", 
+    multiplier: 0.3, image: "Images/Abilities/Condition_Followup.webp", gradient: "rare"},
+  ],
+
+  BlackHole: [
+    {name: "Bleed", aoe: "Single", hits: 10, type: "Conditional-Dot", description: "Shuriken inflicts a bleed for 80% Dmg over 10s.", 
+    multiplier: 0.8, image: "Images/Abilities/Bleed.webp", gradient: "secret"},
+  ],
+
+  Jailer: [
+    {name: "Relentless Science", aoe: "16 Circle", hits: 4, type: "Spa-Followup", description: "Every time this unit attacks with Attack 3, followup with Attack 2 for 200% Dmg.", 
+    multiplier: 2, image: "Images/Abilities/Spa_Followup.webp", gradient: "epic"},
+
+    {name: "Doll Maker", aoe: "Single", hits: 1, type: "Summon", description: "Spawns a summons with 20% for this unit's Dmg every time this unit attacks with Attack 2. (2s cd)", 
+    multiplier: 0.2, image: "Images/Units/Jailer.webp", gradient: "exclusive"},
+  ],
+
   Hollowseph: [
     {name: "Embrace the Void", aoe: "Single", hits: 1, type: "Condition-Followup", description: "Attacks the highest hp enemy for 400% Dmg. (100 Cost)", 
     multiplier: 4, image: "Images/Abilities/Void_Spells_Ability.webp", gradient: "obita"},

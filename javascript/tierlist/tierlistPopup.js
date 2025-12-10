@@ -60,7 +60,7 @@ function loadUnitInfo(unitID) {
 
   /* Description */
 
-  popupDescriptionElm.innerHTML = (unitDescriptions[unitID] && unitDescriptions[unitID].description != "") ? formatFlavorText(formatPassiveDescription(unitDescriptions[unitID].description)) : "Description N/A";
+  popupDescriptionElm.innerHTML = (unitDescriptions[unitID] && unitDescriptions[unitID].description != "") ? formatPassiveDescription(formatFlavorText(unitDescriptions[unitID].description)) : "Description N/A";
 
   /* Pros and Cons */
 

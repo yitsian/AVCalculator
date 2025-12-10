@@ -70,20 +70,11 @@ function updateCorruption(change) {
 
   if (corruption == 4) {
     createCorruption4Slider(0, 10)
-  } else if (corruption == 3) {
-    for (sliderIndex in familiarPassiveSliders) {
-      const slider = familiarPassiveSliders[sliderIndex].slider
-
-      slider.max = familiarPassiveSliders[sliderIndex].origMax * 1.5
-      slider.min = familiarPassiveSliders[sliderIndex].origMin * 1.5
-    }
-
-    if (familiarsData[selectedFamiliar].type == "Statement") {
-      createCorruption4Slider(0, 50)
-    }
   }
 
   corruptionText.textContent = "Corruption " + corruption
+
+  loadFamiliar()
 }
 
 updateCorruption()
